@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh10a">
+      <PropertyDef name="transItem">
+        <Property></Property>
+        <Property name="label">运单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">司机手机</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property></Property>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="onWay">
+        <Property></Property>
+        <Property name="label">是否在途</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveryAddress">
+        <Property name="label">目的地</Property>
+      </PropertyDef>
+      <PropertyDef name="outDate">
+        <Property name="label">日期</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh10a">
+      <Property name="dataType">[dtSh10a]</Property>
+      <Property name="dataProvider">shjc41Service#loadsh10a</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaSh10a">
+      <Property name="dataResolver">shjc31Service#saveSh31</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh31</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*</Property>
+      <AutoFormElement id="driverName" layoutConstraint="colSpan:2">
+        <Property name="property">driverName</Property>
+        <Property name="label">司机名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="carNo" layoutConstraint="colSpan:2">
+        <Property name="label">车号</Property>
+        <Property name="property">carNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="date" layoutConstraint="colSpan:2">
+        <Property name="label">日期</Property>
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsSh10a&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dsSh10a&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot id="sh10a">
+        <Property name="itemCodes">pages</Property>
+        <Property name="dataSet">dsSh10a</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarLabel id="msg"/>
+    </ToolBar>
+    <DataGrid id="dgSh10a">
+      <Property name="dataSet">dsSh10a</Property>
+      <Property name="dataType">dtSh10a</Property>
+      <DataColumn name="carNo">
+        <Property name="property">carNo</Property>
+      </DataColumn>
+      <DataColumn name="userName">
+        <Property name="property">userName</Property>
+      </DataColumn>
+      <DataColumn name="phoneNo">
+        <Property name="property">phoneNo</Property>
+      </DataColumn>
+      <DataColumn name="outDate">
+        <Property name="property">outDate</Property>
+      </DataColumn>
+      <DataColumn name="transItem">
+        <Property name="property">transItem</Property>
+      </DataColumn>
+      <DataColumn name="onWay">
+        <Property name="property">onWay</Property>
+      </DataColumn>
+      <DataColumn name="deliveryAddress">
+        <Property name="property">deliveryAddress</Property>
+      </DataColumn>
+    </DataGrid>
+    <CustomDropDown id="cdpCont">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsSh31&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCont&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:500,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;contNo&quot;,selectArray[&quot;contNo&quot;]);&#xD;
+			data.set(&quot;prodTypeName&quot;,selectArray[&quot;prodTypeName&quot;]);&#xD;
+			data.set(&quot;productName&quot;,selectArray[&quot;productName&quot;]);&#xD;
+			data.set(&quot;productDetail&quot;,selectArray[&quot;prodDetail&quot;]);&#xD;
+			data.set(&quot;despatchNo&quot;,selectArray[&quot;despatchNo&quot;]);&#xD;
+			data.set(&quot;despatchName&quot;,selectArray[&quot;despatchName&quot;]);&#xD;
+			data.set(&quot;despatchAddress&quot;,selectArray[&quot;despatchAddress&quot;]);&#xD;
+			data.set(&quot;despatchMobile&quot;,selectArray[&quot;despatchMobile&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+ </ClientEvent>
+      <Import src="com.jghz.sh.view.select.cdpCont#$dialogCont"/>
+    </CustomDropDown>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+  </View>
+</ViewConfig>

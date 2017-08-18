@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbsh01">
+      <Property name="creationType">com.jghz.entity.Tbsh01</Property>
+      <PropertyDef name="sh01Id">
+        <Property name="dataType">String</Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property name="dataType">String</Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property name="dataType">String</Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property name="dataType">String</Property>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="pyname">
+        <Property name="dataType">String</Property>
+        <Property name="label">拼音简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationname">
+        <Property name="dataType">String</Property>
+        <Property name="label">到站名称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property name="dataType">String</Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property name="dataType">String</Property>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property name="dataType">String</Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property name="dataType">String</Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property name="dataType">String</Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property name="dataType">String</Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Tbsh01b">
+      <Property name="creationType">com.jghz.entity.Tbsh01b</Property>
+      <PropertyDef name="sh01bId">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="linecode">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="linename">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="fullname">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="shortname">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouse">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="line">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">查询</Property>
+    <DataSet id="dataSetTbsh01">
+      <Property name="dataProvider">shjc01Service#queryTbsh01</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">Tbsh01</Property>
+    </DataSet>
+    <DataSet id="dataSetTbsh01b">
+      <Property name="dataType">Tbsh01b</Property>
+      <Property name="dataProvider">shjc01Service#queryTbsh01b</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <SplitPanel>
+      <Property name="direction">top</Property>
+      <Property name="position">230</Property>
+      <MainControl>
+        <Container>
+          <ToolBar>
+            <DataPilot>
+              <Property name="dataSet">dataSetTbsh01b</Property>
+              <Property name="itemCodes">pages</Property>
+            </DataPilot>
+          </ToolBar>
+          <DataGrid>
+            <Property name="dataSet">dataSetTbsh01b</Property>
+            <Property name="dataType">Tbsh01b</Property>
+            <DataColumn name="sh01bId">
+              <Property name="property">sh01bId</Property>
+            </DataColumn>
+            <DataColumn name="compId">
+              <Property name="property">compId</Property>
+            </DataColumn>
+            <DataColumn name="compCode">
+              <Property name="property">compCode</Property>
+            </DataColumn>
+            <DataColumn name="stationcode">
+              <Property name="property">stationcode</Property>
+            </DataColumn>
+            <DataColumn name="linecode">
+              <Property name="property">linecode</Property>
+            </DataColumn>
+            <DataColumn name="linename">
+              <Property name="property">linename</Property>
+            </DataColumn>
+            <DataColumn name="fullname">
+              <Property name="property">fullname</Property>
+            </DataColumn>
+            <DataColumn name="shortname">
+              <Property name="property">shortname</Property>
+            </DataColumn>
+            <DataColumn name="transport">
+              <Property name="property">transport</Property>
+            </DataColumn>
+            <DataColumn name="warehouse">
+              <Property name="property">warehouse</Property>
+            </DataColumn>
+            <DataColumn name="line">
+              <Property name="property">line</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+            </DataColumn>
+            <DataColumn name="createEmp">
+              <Property name="property">createEmp</Property>
+            </DataColumn>
+            <DataColumn name="createDate">
+              <Property name="property">createDate</Property>
+            </DataColumn>
+            <DataColumn name="updateEmp">
+              <Property name="property">updateEmp</Property>
+            </DataColumn>
+            <DataColumn name="updateDate">
+              <Property name="property">updateDate</Property>
+            </DataColumn>
+            <DataColumn name="version">
+              <Property name="property">version</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </MainControl>
+      <SideControl>
+        <Container>
+          <ToolBar>
+            <DataPilot>
+              <Property name="dataSet">dataSetTbsh01</Property>
+              <Property name="itemCodes">pages</Property>
+            </DataPilot>
+            <Separator/>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dataSetTbsh01&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+            </ToolBarButton>
+          </ToolBar>
+          <AutoForm id="formCondition">
+            <Property name="cols">*,*,*</Property>
+            <AutoFormElement>
+              <Property name="name">pyname</Property>
+              <Property name="label">拼音简称</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">stationname</Property>
+              <Property name="label">到站名称</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement>
+              <Property name="name">transport</Property>
+              <Property name="label">运输方式</Property>
+              <Editor/>
+            </AutoFormElement>
+          </AutoForm>
+          <DataGrid>
+            <Property name="dataSet">dataSetTbsh01</Property>
+            <Property name="dataType">Tbsh01</Property>
+            <DataColumn name="sh01Id">
+              <Property name="property">sh01Id</Property>
+            </DataColumn>
+            <DataColumn name="compId">
+              <Property name="property">compId</Property>
+            </DataColumn>
+            <DataColumn name="compCode">
+              <Property name="property">compCode</Property>
+            </DataColumn>
+            <DataColumn name="stationcode">
+              <Property name="property">stationcode</Property>
+            </DataColumn>
+            <DataColumn name="pyname">
+              <Property name="property">pyname</Property>
+            </DataColumn>
+            <DataColumn name="stationname">
+              <Property name="property">stationname</Property>
+            </DataColumn>
+            <DataColumn name="transport">
+              <Property name="property">transport</Property>
+            </DataColumn>
+            <DataColumn name="area">
+              <Property name="property">area</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+            </DataColumn>
+            <DataColumn name="deleteFlag">
+              <Property name="property">deleteFlag</Property>
+            </DataColumn>
+            <DataColumn name="createEmp">
+              <Property name="property">createEmp</Property>
+            </DataColumn>
+            <DataColumn name="createDate">
+              <Property name="property">createDate</Property>
+            </DataColumn>
+            <DataColumn name="updateEmp">
+              <Property name="property">updateEmp</Property>
+            </DataColumn>
+            <DataColumn name="updateDate">
+              <Property name="property">updateDate</Property>
+            </DataColumn>
+            <DataColumn name="version">
+              <Property name="property">version</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </SideControl>
+    </SplitPanel>
+  </View>
+</ViewConfig>

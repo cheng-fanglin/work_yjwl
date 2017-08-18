@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:d="http://www.bstek.com/dorado/schema"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.bstek.com/dorado/schema http://www.bstek.com/dorado/schema/spring-dorado-7.0.xsd">
+
+<!--修改图片上传到服务器地址 -->	
+	<bean parent="dorado.resolverRegister">
+		<property name="url" value="/dorado/ueditor/imageupload" />
+		<property name="resolver">
+			<bean class="com.bstek.dorado.ueditor.resolver.ImageUploadResolver">
+				<property name="savePath" value="file:/home/ueditor/upload" />
+				<property name="diskFileDownloadUrl" value="/dorado/ueditor/imagedownload" />
+				<property name="allowedExtensions" value="jpg|gif|jpeg|png|bmp" />
+			</bean>
+		</property>
+	</bean>
+	<bean parent="dorado.resolverRegister">
+		<property name="url" value="/dorado/ueditor/imagedownload" />
+		<property name="resolver">
+			<bean class="com.bstek.dorado.ueditor.resolver.FileDownloadResolver">
+				<property name="savePath" value="file:/home/ueditor/upload" />
+			</bean>
+		</property>
+	</bean>
+	
+<!--修改图片管理器上传到服务器地址-->
+	<bean parent="dorado.resolverRegister">
+		<property name="url" value="/dorado/ueditor/imagemanager" />
+		<property name="resolver">
+			<bean class="com.bstek.dorado.ueditor.resolver.ImageManagerResolver">
+				<property name="imagePath" value="file:/home/ueditor/upload" />
+				<!-- <property name="imagePath" value="http://yjwl-upload.oss-cn-hangzhou.aliyuncs.com/upload" /> -->
+			</bean>
+		</property>
+	</bean>
+	
+<!--修改涂鸦到服务器地址-->
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/scrawupload" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.ScrawUploadResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />
+	            <property name="diskFileDownloadUrl" value="/dorado/ueditor/scrawdownload" />                
+	            <property name="allowedExtensions" value="jpg|gif|jpeg|png|bmp" />
+	        </bean>
+	    </property>
+	</bean>
+	 
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/scrawdownload" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.FileDownloadResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />             
+	        </bean>
+	    </property>
+	</bean>
+	
+<!--修改附件到服务器地址-->
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/fileupload" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.FileUploadResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />
+	            <property name="diskFileDownloadUrl" value="/dorado/ueditor/filedownload" />                
+	            <property name="allowedExtensions" value="rar|doc|docx|zip|pdf|txt|swf|wmv|mp4|avi" />
+	        </bean>
+	    </property>
+	</bean>
+	 
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/filedownload" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.FileDownloadResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />             
+	        </bean>
+	    </property>
+	</bean>
+
+<!--修改远程到服务器地址-->
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/getremoteimage" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.RemoteImageResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />
+	            <property name="diskFileDownloadUrl" value="/dorado/ueditor/remoteimagedownload" />             
+	        </bean>
+	    </property>
+	</bean> 
+	 
+	<bean parent="dorado.resolverRegister">
+	    <property name="url" value="/dorado/ueditor/remoteimagedownload" />
+	    <property name="resolver">
+	        <bean class="com.bstek.dorado.ueditor.resolver.FileDownloadResolver">
+	            <property name="savePath" value="file:/home/ueditor/upload" />             
+	        </bean>
+	    </property>
+	</bean>
+
+
+</beans>

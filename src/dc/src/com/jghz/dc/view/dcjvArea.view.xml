@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtArea" meta="x:1393;y:10">
+      <Property name="creationType">com.jghz.dc.entity.Tbdctree</Property>
+      <Property name="autoCreatePropertyDefs">false</Property>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="fatherId">
+        <Property></Property>
+        <Property name="label">父节点ID</Property>
+      </PropertyDef>
+      <PropertyDef name="treeType">
+        <Property></Property>
+        <Property name="label">节点类型</Property>
+      </PropertyDef>
+      <PropertyDef name="treeNo">
+        <Property></Property>
+        <Property name="label">地区编码</Property>
+        <Property name="dataType">String</Property>
+        <Property name="required">true</Property>
+        <Validator type="ajax">
+          <Property name="service">dcjcTreeService#uniqueCheck</Property>
+          <Property name="runAt">server</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="treeName">
+        <Property></Property>
+        <Property name="label">节点编名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="memo">
+        <Property></Property>
+        <Property name="label">备注</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property></Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <Reference name="children">
+        <Property name="dataType">[dtArea]</Property>
+        <Property name="activeOnNewEntity">false</Property>
+        <Property>
+          <Entity>
+            <Property name="ID">$${this.id}</Property>
+            <Property name="TYPE">A</Property>
+          </Entity>
+        </Property>
+        <Property name="parameter">
+          <Entity>
+            <Property name="treeType">A</Property>
+            <Property name="fatherId">$${this.treeNo}</Property>
+            <Property name="compId"></Property>
+          </Entity>
+        </Property>
+        <Property name="dataProvider">dcjcTreeService#queryByFatherId</Property>
+      </Reference>
+      <PropertyDef name="dctreeId">
+        <Property></Property>
+        <Property name="label">系统ID</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <ClientEvent name="onCreate">window.openUrlInFrameTab=function(url,caption,icon,double){&#xD;
+	if(!url){&#xD;
+		dorado.MessageBox.alert(&quot;Url不能空&quot;);&#xD;
+		return;&#xD;
+	}&#xD;
+	if(!caption){&#xD;
+		dorado.MessageBox.alert(&quot;caption不能空&quot;);&#xD;
+		return;&#xD;
+	}&#xD;
+	if(!icon){&#xD;
+		icon=&quot;url(skin>common/icons.gif) -40px -120px&quot;;&#xD;
+	}&#xD;
+	var tabControl=view.id(&quot;tabControlWorkarea&quot;);&#xD;
+	var tab=tabControl.getTab(url);&#xD;
+	if(!tab){&#xD;
+		tab=new dorado.widget.tab.IFrameTab({&#xD;
+			name:url,&#xD;
+			path:url,&#xD;
+			caption:caption,&#xD;
+			icon:icon,&#xD;
+			closeable:true,&#xD;
+		});&#xD;
+		tabControl.addTab(tab);&#xD;
+	}else if(double){&#xD;
+		tab.set(&quot;path&quot;,url);&#xD;
+	}&#xD;
+	tabControl.set(&quot;currentTab&quot;,tab);&#xD;
+}&#xD;
+</ClientEvent>
+    <Property name="packages">tree</Property>
+    <DataSet id="dsArea">
+      <Property name="dataType">[dtArea]</Property>
+      <Property name="dataProvider">dcjcTreeService#queryByFatherId</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="treeType">A</Property>
+          <Property name="fatherId"></Property>
+          <Property name="compId"></Property>
+        </Entity>
+      </Property>
+    </DataSet>
+    <DataTree id="dataTreeDept" layoutConstraint="left">
+      <ClientEvent name="onContextMenu">view.id(&quot;menuDepts&quot;).show({&#xD;
+	position:{&#xD;
+		left:arg.event.pageX,&#xD;
+		top:arg.event.pageY&#xD;
+	}&#xD;
+});</ClientEvent>
+      <ClientEvent name="onDraggingSourceDrop">//当有某被拖拽对象在此对象的区域内被释放之前触发的事件。&#xD;
+var draggingInfo=arg.draggingInfo;&#xD;
+//拖拽信息对象&#xD;
+if(!draggingInfo){&#xD;
+	return true;&#xD;
+}&#xD;
+&#xD;
+var parentNode=draggingInfo.get(&quot;targetObject&quot;);&#xD;
+&#xD;
+if(!parentNode){&#xD;
+	return true;&#xD;
+}&#xD;
+var parentId=parentNode.get(&quot;data.treeNo&quot;);&#xD;
+parentNode.get(&quot;nodes&quot;).each(function(node){&#xD;
+	var data=node.get(&quot;data&quot;);&#xD;
+	data.set(&quot;fatherId&quot;,parentId);&#xD;
+});&#xD;
+view.id(&quot;updateActionSaveAreas&quot;).execute();</ClientEvent>
+      <ClientEvent name="beforeCurrentChange">var node=arg.oldCurrent;&#xD;
+if(node){&#xD;
+	var data=node.get(&quot;data&quot;);&#xD;
+	if(data &amp;&amp; data.state!=dorado.Entity.STATE_NONE){&#xD;
+		view.id(&quot;updateActionSaveAreas&quot;).execute();&#xD;
+		if(data.validate()!=&quot;ok&quot;){&#xD;
+			arg.processDefault=false;&#xD;
+		}&#xD;
+	}&#xD;
+}</ClientEvent>
+      <Property name="dataSet">dsArea</Property>
+      <Property name="defaultIcon"> url(>skin>common/icons.gif) -260px -40px</Property>
+      <Property name="currentNodeDataPath">CurrentArea</Property>
+      <Property name="draggable">true</Property>
+      <Property name="dragTags">area</Property>
+      <Property name="droppableTags">area</Property>
+      <Property name="droppable">true</Property>
+      <Property name="dropMode">onOrInsertItems</Property>
+      <BindingConfigs>
+        <BindingConfig>
+          <Property name="recursive">true</Property>
+          <Property name="expandLevel">1</Property>
+          <Property name="labelProperty">treeName</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -260px -40px</Property>
+          <Property name="childrenProperty">children</Property>
+        </BindingConfig>
+      </BindingConfigs>
+    </DataTree>
+    <AutoForm layoutConstraint="center">
+      <Property name="dataSet">dsArea</Property>
+      <Property name="dataPath">!CurrentArea</Property>
+      <AutoFormElement>
+        <Property name="name">treeNo</Property>
+        <Property name="property">treeNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">treeName</Property>
+        <Property name="property">treeName</Property>
+        <Property name="editorType">TextEditor</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">memo</Property>
+        <Property name="property">memo</Property>
+        <Property name="editorType">TextArea</Property>
+        <Property name="height">100</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
+    <Container layout="anchor" layoutConstraint="center">
+      <Property name="height">30</Property>
+      <Button layoutConstraint="right:30">
+        <Property name="caption">保存</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -20px -0px</Property>
+        <Property name="action">updateActionSaveAreas</Property>
+      </Button>
+    </Container>
+    <Menu id="menuDepts">
+      <MenuItem>
+        <ClientEvent name="onClick">var dsDept=view.id(&quot;dsArea&quot;);&#xD;
+var entity=dsDept.getData().insert();&#xD;
+entity.set(&quot;treeType&quot;,&quot;A&quot;);&#xD;
+entity.set(&quot;fatherId&quot;,&quot;root&quot;);&#xD;
+this.id(&quot;dataTreeDept&quot;).set(&quot;currentEntity&quot;, entity);</ClientEvent>
+        <Property name="caption">添加顶级节点</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -260px -100px</Property>
+      </MenuItem>
+      <MenuItem>
+        <ClientEvent name="onClick">var treeDept = this.id(&quot;dataTreeDept&quot;);&#xD;
+var currentEntity = treeDept.get(&quot;currentEntity&quot;);&#xD;
+if (currentEntity) {&#xD;
+	   newEntity = currentEntity.createChild(&quot;children&quot;, {&#xD;
+       		fatherId: currentEntity.get(&quot;treeNo&quot;),//设置父节点为当前记录no&#xD;
+	   		treeType: &quot;A&quot;//地区默认设置为A&#xD;
+    	});&#xD;
+    treeDept.get(&quot;currentNode&quot;).expand();&#xD;
+    treeDept.set(&quot;currentEntity&quot;, newEntity);&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">添加子节点</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -280px -120px</Property>
+      </MenuItem>
+      <MenuItem>
+        <ClientEvent name="onClick">var treeDept = this.id(&quot;dataTreeDept&quot;);&#xD;
+var currentEntity = treeDept.get(&quot;currentEntity&quot;);&#xD;
+if (currentEntity) {&#xD;
+	view.id(&quot;ajaxActionCheckChildren&quot;).set(&quot;parameter&quot;,{treeNo:currentEntity.get(&quot;treeNo&quot;) ,treeType:currentEntity.get(&quot;treeType&quot;)}).execute(function(count){&#xD;
+		if (count>0){&#xD;
+			dorado.MessageBox.alert(&quot;请先删除子节点&quot;);&#xD;
+		} else {&#xD;
+			dorado.MessageBox.confirm(&quot;是否确定删除此节点信息？&quot;,function(){&#xD;
+				currentEntity.remove();&#xD;
+			});&#xD;
+		}&#xD;
+	});&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">删除当前节点</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -40px -0px</Property>
+      </MenuItem>
+    </Menu>
+    <UpdateAction id="updateActionSaveAreas">
+      <Property name="dataResolver">dcjcTreeService#saveTbdctree</Property>
+      <Property name="successMessage">数据保存成功!</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsArea</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionCheckChildren">
+      <Property name="service">dcjcTreeService#countChildren</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

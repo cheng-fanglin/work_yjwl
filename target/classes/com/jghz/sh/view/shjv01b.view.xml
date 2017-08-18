@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh01">
+      <Property name="creationType">com.jghz.entity.Tbsh01</Property>
+      <PropertyDef name="sh01Id">
+        <Property/>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property/>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property/>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property/>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="pyname">
+        <Property/>
+        <Property name="label">拼音简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationname">
+        <Property/>
+        <Property name="label">到站名称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property/>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property/>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property/>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property/>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property/>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property/>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh01b">
+      <Property name="creationType">com.jghz.entity.Tbsh01b</Property>
+      <PropertyDef name="sh01bId">
+        <Property/>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property/>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property/>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property/>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linecode">
+        <Property/>
+        <Property name="label">专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linename">
+        <Property/>
+        <Property name="label">专用线名称</Property>
+      </PropertyDef>
+      <PropertyDef name="fullname">
+        <Property/>
+        <Property name="label">全称</Property>
+      </PropertyDef>
+      <PropertyDef name="shortname">
+        <Property/>
+        <Property name="label">简称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property/>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouse">
+        <Property/>
+        <Property name="label">仓库</Property>
+      </PropertyDef>
+      <PropertyDef name="line">
+        <Property/>
+        <Property name="label">线路</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property/>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property/>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property/>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh01">
+      <Property name="dataType">[dtSh01]</Property>
+    </DataSet>
+    <DataSet id="dsSh01b">
+      <Property name="dataType">[dtSh01b]</Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons>
+        <Button id="btnQry">
+          <Property name="caption">查询</Property>
+        </Button>
+        <Button id="btnReset">
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm/>
+      </Children>
+    </FieldSet>
+  </View>
+</ViewConfig>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Dialog id="$dialogSh06">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsArea">
+          <Property name="dataProvider">shjc06Service#getAreaRoot</Property>
+          <Property name="dataType">[dtArea]</Property>
+        </DataSet>
+        <DataTree id="dtArea">
+          <ClientEvent name="onDataRowClick">var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+if(currentNode.get(&quot;hasChild&quot;)){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}</ClientEvent>
+          <ClientEvent name="onDataRowDoubleClick">//var dropdown = dorado.widget.DropDown.findDropDown(self);&#xD;
+var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+var entity = currentNode.get(&quot;data&quot;);&#xD;
+var areaname = entity.get(&quot;areaname&quot;);&#xD;
+var areacode = entity.get(&quot;areacode&quot;);&#xD;
+var sh06Id = entity.get(&quot;sh06Id&quot;);&#xD;
+var level=currentNode.get(&quot;level&quot;);&#xD;
+var parentNode = currentNode.get(&quot;parent&quot;);&#xD;
+with(view.get(&quot;#dsSh06&quot;)){&#xD;
+	set(&quot;parameter&quot;, {sh06Id:sh06Id});&#xD;
+	flushAsync();&#xD;
+}&#xD;
+/**if(level==1||level==2){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}&#xD;
+if(level==3){&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	areaname = entity.get(&quot;areaname&quot;) + &quot;-&quot; + areaname;&#xD;
+	parentNode = parentNode.get(&quot;parent&quot;);&#xD;
+	&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	areaname = entity.get(&quot;areaname&quot;) + &quot;-&quot; + areaname;&#xD;
+	dropdown.close(areaname);&#xD;
+}*/&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsArea</Property>
+          <BindingConfigs>
+            <BindingConfig>
+              <Property name="labelProperty">areaname</Property>
+              <Property name="name">area</Property>
+              <Property name="childrenProperty">area</Property>
+              <BindingConfig>
+                <Property name="labelProperty">areaname</Property>
+                <Property name="name">city</Property>
+                <Property name="childrenProperty">city</Property>
+                <BindingConfig>
+                  <Property name="labelProperty">areaname</Property>
+                  <Property name="name">county</Property>
+                  <Property name="childrenProperty">county</Property>
+                </BindingConfig>
+              </BindingConfig>
+            </BindingConfig>
+          </BindingConfigs>
+        </DataTree>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

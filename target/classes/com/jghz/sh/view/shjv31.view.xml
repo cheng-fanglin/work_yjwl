@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh31">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh31</Property>
+      <PropertyDef name="sh31Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同编号</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">货物名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="startStation">
+        <Property></Property>
+        <Property name="label">起点</Property>
+      </PropertyDef>
+      <PropertyDef name="startLine">
+        <Property></Property>
+        <Property name="label">起点专用线</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchAddress">
+        <Property></Property>
+        <Property name="label">具体发货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchNo">
+        <Property></Property>
+        <Property name="label">发货人编号</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchName">
+        <Property></Property>
+        <Property name="label">发货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="endStation">
+        <Property></Property>
+        <Property name="label">终点</Property>
+      </PropertyDef>
+      <PropertyDef name="endLine">
+        <Property></Property>
+        <Property name="label">终点专用线</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveryAddress">
+        <Property></Property>
+        <Property name="label">具体收货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="transType">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="transPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">运输价格</Property>
+      </PropertyDef>
+      <PropertyDef name="chargeType">
+        <Property></Property>
+        <Property name="label">计价方式</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh31">
+      <Property name="dataType">[dtSh31]</Property>
+      <Property name="dataProvider">shjc31Service#loadSh31</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaSh31">
+      <Property name="dataResolver">shjc31Service#saveSh31</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh31</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dsSh31&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <Property name="createPrivateDataSet">true</Property>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="sh31">
+        <Property name="itemCodes">pages,+,-,x</Property>
+        <Property name="dataSet">dsSh31</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="action">uaSh31</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">确认</Property>
+      </ToolBarButton>
+      <ToolBarLabel id="msg"/>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dsSh31</Property>
+      <Property name="dataType">dtSh31</Property>
+      <DataColumn>
+        <Property name="property">contNo</Property>
+        <Property name="name">contNo</Property>
+        <Property name="trigger">cdpCont</Property>
+      </DataColumn>
+      <DataColumn name="custName">
+        <Property name="property">custName</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="prodTypeName">
+        <Property name="property">prodTypeName</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="productName">
+        <Property name="property">productName</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="endStation">
+        <Property name="property">endStation</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="endLine">
+        <Property name="property">endLine</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="transType">
+        <Property name="property">transType</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="transPrice">
+        <Property name="property">transPrice</Property>
+      </DataColumn>
+      <DataColumn name="chargeType">
+        <Property name="property">chargeType</Property>
+      </DataColumn>
+    </DataGrid>
+    <CustomDropDown id="cdpCont">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsSh31&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCont&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:500,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;contNo&quot;,selectArray[&quot;contNo&quot;]);&#xD;
+			data.set(&quot;prodTypeName&quot;,selectArray[&quot;prodTypeName&quot;]);&#xD;
+			data.set(&quot;productName&quot;,selectArray[&quot;productName&quot;]);&#xD;
+			data.set(&quot;productDetail&quot;,selectArray[&quot;prodDetail&quot;]);&#xD;
+			data.set(&quot;ownerName&quot;,selectArray[&quot;ownerName&quot;]);&#xD;
+			data.set(&quot;ownerNo&quot;,selectArray[&quot;ownerNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+ </ClientEvent>
+      <Import src="com.jghz.sh.view.select.cdpCont#$dialogCont"/>
+    </CustomDropDown>
+  </View>
+</ViewConfig>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Property name="title">查询</Property>
+    <Dialog id="$dialogCustNo">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsTbdcd1">
+          <Property name="dataProvider">dcjcd1Service#queryTbdcd1</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbdcd1]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsTbdcd1</Property>
+            <Property name="itemCodes">pages</Property>
+          </DataPilot>
+          <Separator/>
+          <ToolBarButton>
+            <ClientEvent name="onClick">var data = view.get(&quot;#$formTbdcd1.entity&quot;);&#xD;
+with(view.get(&quot;#$dsTbdcd1&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </ToolBarButton>
+          <ToolBarButton>
+            <ClientEvent name="onClick">view.get(&quot;#$formTbdcd1&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+            <Property name="icon"> url(>skin>common/icons.gif) -280px -220px</Property>
+            <Property name="caption">重置</Property>
+          </ToolBarButton>
+        </ToolBar>
+        <AutoForm id="$formTbdcd1">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="name">custNo</Property>
+            <Property name="property">custNo</Property>
+            <Property name="label">客户编码</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">custName</Property>
+            <Property name="property">custName</Property>
+            <Property name="label">客户全称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">searchName</Property>
+            <Property name="property">searchName</Property>
+            <Property name="label">搜索名</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+        <DataGrid id="$dgTbdcd1">
+          <ClientEvent name="onDataRowDoubleClick">&#xD;
+var data = view.get(&quot;#$dsTbdcd1&quot;).getData(&quot;#&quot;);&#xD;
+//var result=[];&#xD;
+//result.push(data.toJSON());&#xD;
+view.id(&quot;$dialogCustNo&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsTbdcd1</Property>
+          <Property name="readOnly">true</Property>
+          <DataColumn name="custNo">
+            <Property name="property">custNo</Property>
+          </DataColumn>
+          <DataColumn name="custName">
+            <Property name="property">custName</Property>
+          </DataColumn>
+          <DataColumn name="custSname">
+            <Property name="property">custSname</Property>
+          </DataColumn>
+          <DataColumn name="searchName">
+            <Property name="property">searchName</Property>
+          </DataColumn>
+          <DataColumn name="status">
+            <Property name="property">status</Property>
+          </DataColumn>
+          <DataColumn name="memo">
+            <Property name="property">memo</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

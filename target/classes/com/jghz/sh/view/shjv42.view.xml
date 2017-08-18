@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtWd09">
+      <Property name="creationType">com.jghz.sh.entity.Tbwd09</Property>
+      <PropertyDef name="wd09Id">
+        <Property/>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="driverName">
+        <Property/>
+        <Property name="label">司机名称</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">手机号</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property/>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="date">
+        <Property/>
+        <Property name="label">违章日期</Property>
+      </PropertyDef>
+      <PropertyDef name="amt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">违章金额</Property>
+      </PropertyDef>
+      <PropertyDef name="reason">
+        <Property/>
+        <Property name="label">违章原因</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property/>
+        <Property name="label">新增人员</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property/>
+        <Property name="label">更新人员</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsWd09">
+      <Property name="dataType">[dtWd09]</Property>
+      <Property name="dataProvider">shjc42Service#loadwd09</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsCarNo">
+      <Property name="dataType">[BaseCarNo]</Property>
+      <Property name="dataProvider">shjc42Service#findCarNo</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaWd09">
+      <Property name="dataResolver">shjc42Service#saveTbwd09</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsWd09</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*</Property>
+      <AutoFormElement id="driverName" layoutConstraint="colSpan:2">
+        <Property name="property">driverName</Property>
+        <Property name="label">司机名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="carNo" layoutConstraint="colSpan:2">
+        <Property name="label">车号</Property>
+        <Property name="property">carNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="date" layoutConstraint="colSpan:2">
+        <Property name="label">日期</Property>
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsWd09&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dsWd09&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot id="wd09">
+        <Property name="itemCodes">pages,+,-</Property>
+        <Property name="dataSet">dsWd09</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="action">uaWd09</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">确认</Property>
+      </ToolBarButton>
+      <ToolBarLabel id="msg"/>
+    </ToolBar>
+    <DataGrid id="dgWd09">
+      <Property name="dataSet">dsWd09</Property>
+      <Property name="dataType">dtWd09</Property>
+      <DataColumn name="driverName">
+        <Property name="property">driverName</Property>
+        <Property name="trigger">cdpWd02</Property>
+      </DataColumn>
+      <DataColumn name="phoneNo">
+        <Property name="property">phoneNo</Property>
+      </DataColumn>
+      <DataColumn name="carNo">
+        <Property name="property">carNo</Property>
+        <Property name="trigger">ddCarNo</Property>
+      </DataColumn>
+      <DataColumn name="date">
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+      </DataColumn>
+      <DataColumn name="amt">
+        <Property name="property">amt</Property>
+      </DataColumn>
+      <DataColumn name="reason">
+        <Property name="property">reason</Property>
+        <Property name="width">550</Property>
+        <Property name="editorType">TextArea</Property>
+      </DataColumn>
+    </DataGrid>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+    <DataSetDropDown id="ddCarNo" dynaFilter="true">
+      <Property name="dataSet">dsCarNo</Property>
+      <Property name="autoOpen">true</Property>
+      <Property name="displayProperty">carNo</Property>
+      <Property name="property">carNo</Property>
+    </DataSetDropDown>
+    <CustomDropDown id="cdpWd02">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsWd09&quot;).getData(&quot;#&quot;);&#xD;
+//if(!data){&#xD;
+//	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+//	arg.processDefault=false;&#xD;
+//	return;&#xD;
+//}&#xD;
+var dialog=view.id(&quot;$dialogWd02&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:1000,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;phoneNo&quot;,selectArray[&quot;phoneNo&quot;]);&#xD;
+			data.set(&quot;driverName&quot;,selectArray[&quot;userName&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+ </ClientEvent>
+      <Import src="com.jghz.sh.view.select.cdpWd02#$dialogWd02"/>
+    </CustomDropDown>
+  </View>
+</ViewConfig>

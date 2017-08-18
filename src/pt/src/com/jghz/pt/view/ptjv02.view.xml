@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbpt01">
+      <Property name="creationType">com.jghz.pt.entity.Tbpt01</Property>
+      <PropertyDef name="pt01Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="titleName">
+        <Property></Property>
+        <Property name="label">标题</Property>
+      </PropertyDef>
+      <PropertyDef name="newsContent">
+        <Property></Property>
+        <Property name="label">内容</Property>
+      </PropertyDef>
+      <PropertyDef name="newsType">
+        <Property></Property>
+        <Property name="label">类型</Property>
+      </PropertyDef>
+      <PropertyDef name="newsClass">
+        <Property></Property>
+        <Property name="label">信息发布类型</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">0</Property>
+                <Property name="value">未发布</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">已发布</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="auditor">
+        <Property></Property>
+        <Property name="label">发布人</Property>
+      </PropertyDef>
+      <PropertyDef name="opinion">
+        <Property></Property>
+        <Property name="label">审核意见</Property>
+      </PropertyDef>
+      <PropertyDef name="releaseTime">
+        <Property></Property>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+      <PropertyDef name="remark">
+        <Property></Property>
+        <Property name="label">备注</Property>
+      </PropertyDef>
+      <PropertyDef name="allPeople">
+        <Property></Property>
+        <Property name="label">所有人</Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+        <Property name="label">部门ID</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property></Property>
+        <Property name="label">人员ID</Property>
+      </PropertyDef>
+      <PropertyDef name="startTime">
+        <Property></Property>
+        <Property name="label">开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endTime">
+        <Property></Property>
+        <Property name="label">结束时间</Property>
+      </PropertyDef>
+      <PropertyDef name="uploadAddress">
+        <Property></Property>
+        <Property name="label">附件地址</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">更新人</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="bdf2message">
+      <Property name="creationType">com.jghz.pt.entity.Bdf2Message</Property>
+      <PropertyDef name="id">
+        <Property/>
+        <Property name="label">ID_</Property>
+      </PropertyDef>
+      <PropertyDef name="content">
+        <Property/>
+        <Property name="label">内容</Property>
+      </PropertyDef>
+      <PropertyDef name="read">
+        <Property name="dataType">boolean</Property>
+        <Property name="label">是否已读</Property>
+      </PropertyDef>
+      <PropertyDef name="receiver">
+        <Property/>
+        <Property name="label">接受人</Property>
+      </PropertyDef>
+      <PropertyDef name="reply">
+        <Property name="dataType">boolean</Property>
+        <Property name="label">是否为回复消息</Property>
+      </PropertyDef>
+      <PropertyDef name="sendDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">发送时间</Property>
+      </PropertyDef>
+      <PropertyDef name="sender">
+        <Property/>
+        <Property name="label">发送人</Property>
+      </PropertyDef>
+      <PropertyDef name="title">
+        <Property/>
+        <Property name="label">标题</Property>
+      </PropertyDef>
+      <PropertyDef name="tags">
+        <Property/>
+        <Property name="label">TAGS_</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSetTbpt01">
+      <Property name="dataType">[Tbpt01]</Property>
+      <Property name="dataProvider">ptjc02Service#loadTbpt01</Property>
+      <Property name="pageSize">15</Property>
+    </DataSet>
+    <DataSet id="dataSetMsg">
+      <Property name="dataProvider">ptjc02Service#loadBdf2Message</Property>
+      <Property name="dataType">[bdf2message]</Property>
+      <Property name="pageSize">6</Property>
+    </DataSet>
+    <Portal>
+      <Columns>
+        <Column>
+          <Property name="width">50%</Property>
+        </Column>
+        <Column>
+          <Property name="width">*</Property>
+        </Column>
+      </Columns>
+      <Portlets>
+        <Portlet>
+          <Property name="caption">新闻公告</Property>
+          <Property name="height">500</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -100px -100px</Property>
+          <Buttons/>
+          <Children>
+            <DataGrid id="dgTbpt01">
+              <ClientEvent name="onDataRowDoubleClick">view.get(&quot;#dialog1&quot;).show();&#xD;
+&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="dataSet">dataSetTbpt01</Property>
+              <Property name="dataType">Tbpt01</Property>
+              <Property name="selectionMode">singleRow</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="height">445</Property>
+              <DataColumn>
+                <Property name="property">titleName</Property>
+                <Property name="name">titleName</Property>
+              </DataColumn>
+              <DataColumn>
+                <Property name="property">releaseTime</Property>
+                <Property name="name">releaseTime</Property>
+              </DataColumn>
+            </DataGrid>
+            <Dialog id="dialog1">
+              <Property name="caption">新闻公告信息</Property>
+              <Property name="width">1000</Property>
+              <Property name="height">550</Property>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var entityTbpt01=view.get(&quot;#dataSetTbpt01&quot;).getData(&quot;#&quot;);&#xD;
+if(entityTbpt01.get(&quot;pt01Id&quot;)){&#xD;
+	&#xD;
+}else{&#xD;
+	entityTbpt01.remove();&#xD;
+}&#xD;
+view.get(&quot;#dialog1&quot;).hide();</ClientEvent>
+                  <Property name="caption">关闭</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <AutoForm id="afTbpt01">
+                  <Property name="dataSet">dataSetTbpt01</Property>
+                  <Property name="dataType">Tbpt01</Property>
+                  <Property name="cols">220,220,220</Property>
+                  <Property name="width">900</Property>
+                  <Property name="labelWidth">50</Property>
+                  <Property name="padding">0</Property>
+                  <Property name="readOnly">false</Property>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="name">titleName</Property>
+                    <Property name="property">titleName</Property>
+                    <Property name="width">950</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="label">内容</Property>
+                    <Property name="name">newsContent</Property>
+                    <Property name="width">950</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor>
+                      <UEditor layoutConstraint="colSpan:2">
+                        <Property name="dataSet">dataSetTbpt01</Property>
+                        <Property name="property">newsContent</Property>
+                        <Property name="height">400</Property>
+                        <Property name="supportsDirtyFlag">true</Property>
+                        <Property name="imageUploadMode">local</Property>
+                        <Property name="hideMode">visibility</Property>
+                        <Property name="mode">simple</Property>
+                      </UEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+              <Tools/>
+            </Dialog>
+            <ToolBar>
+              <DataPilot>
+                <Property name="dataSet">dataSetTbpt01</Property>
+                <Property name="itemCodes">pages</Property>
+                <Property name="style">
+                  <Property name="align">right</Property>
+                </Property>
+              </DataPilot>
+            </ToolBar>
+          </Children>
+          <Tools/>
+        </Portlet>
+        <Portlet>
+          <Property name="caption">我收到的消息</Property>
+          <Property name="column">1</Property>
+          <Property name="height">245</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -220px -0px</Property>
+          <Buttons/>
+          <Children>
+            <UpdateAction id="uaMsgRead">
+              <Property name="dataResolver">ptjc02Service#executeRead</Property>
+              <UpdateItem>
+                <Property name="dataSet">dataSetMsg</Property>
+                <Property name="dataPath">!DIRTY_TREE</Property>
+              </UpdateItem>
+            </UpdateAction>
+            <DataGrid id="dgMsg">
+              <ClientEvent name="onDataRowDoubleClick">var msgEntity = view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+var read = msgEntity.get(&quot;read&quot;);&#xD;
+&#xD;
+if(read){&#xD;
+	view.get(&quot;#btnRead&quot;).set(&quot;visible&quot;,false);&#xD;
+	view.get(&quot;#dialog2&quot;).show();&#xD;
+}else{&#xD;
+	view.get(&quot;#btnRead&quot;).set(&quot;visible&quot;,true);&#xD;
+	view.get(&quot;#dialog2&quot;).show();&#xD;
+}&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="dataSet">dataSetMsg</Property>
+              <Property name="dataType">bdf2message</Property>
+              <Property name="selectionMode">singleRow</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="height">190</Property>
+              <DataColumn>
+                <Property name="property">title</Property>
+                <Property name="name">title</Property>
+              </DataColumn>
+              <DataColumn>
+                <Property name="property">sendDate</Property>
+                <Property name="name">sendDate</Property>
+              </DataColumn>
+              <DataColumn>
+                <Property name="name">sender</Property>
+                <Property name="property">sender</Property>
+                <Editor/>
+              </DataColumn>
+              <DataColumn>
+                <Property name="name">read</Property>
+                <Property name="property">read</Property>
+                <Editor/>
+              </DataColumn>
+            </DataGrid>
+            <Dialog id="dialog2">
+              <Property name="caption">我收到的消息</Property>
+              <Property name="width">500</Property>
+              <Property name="height">550</Property>
+              <Buttons>
+                <Button id="btnRead">
+                  <ClientEvent name="onClick">var msgEntity = view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+msgEntity.set(&quot;read&quot;,true);&#xD;
+var action=view.get(&quot;#uaMsgRead&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#dialog2&quot;).hide();&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;消息提示： 已设置为已读消息！&quot;);&#xD;
+});</ClientEvent>
+                  <Property name="caption">设为已读</Property>
+                  <Property name="action">uaMsgRead</Property>
+                </Button>
+                <Button>
+                  <ClientEvent name="onClick">var entityMsg=view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+if(entityMsg.get(&quot;id&quot;)){&#xD;
+	&#xD;
+}else{&#xD;
+	entityMsg.remove();&#xD;
+}&#xD;
+view.get(&quot;#dialog2&quot;).hide();</ClientEvent>
+                  <Property name="caption">关闭</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <AutoForm id="afTbmsg">
+                  <Property name="dataSet">dataSetMsg</Property>
+                  <Property name="dataType">bdf2message</Property>
+                  <Property name="width">490</Property>
+                  <Property name="labelWidth">50</Property>
+                  <Property name="padding">0</Property>
+                  <Property name="readOnly">false</Property>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="name">title</Property>
+                    <Property name="property">title</Property>
+                    <Property name="width">450</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="label">内容</Property>
+                    <Property name="name">content</Property>
+                    <Property name="width">450</Property>
+                    <Property name="editorType">TextArea</Property>
+                    <Property name="height">380</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+              <Tools/>
+            </Dialog>
+            <ToolBar>
+              <DataPilot>
+                <Property name="dataSet">dataSetMsg</Property>
+                <Property name="itemCodes">pages</Property>
+                <Property name="style">
+                  <Property name="align">right</Property>
+                </Property>
+              </DataPilot>
+            </ToolBar>
+          </Children>
+          <Tools/>
+        </Portlet>
+        <Portlet>
+          <Property name="caption">我发送的消息</Property>
+          <Property name="column">1</Property>
+          <Property name="height">245</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -240px -0px</Property>
+          <Buttons/>
+          <Children>
+            <UpdateAction id="uaMsgReply">
+              <Property name="dataResolver">ptjc02Service#executeReply</Property>
+              <UpdateItem>
+                <Property name="dataSet">dataSetMsg</Property>
+                <Property name="dataPath">!DIRTY_TREE</Property>
+              </UpdateItem>
+            </UpdateAction>
+            <DataGrid id="dgMsgReply">
+              <ClientEvent name="onDataRowDoubleClick">var msgEntity = view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+var reply = msgEntity.get(&quot;reply&quot;);&#xD;
+&#xD;
+if(reply){&#xD;
+	view.get(&quot;#btnReply&quot;).set(&quot;visible&quot;,false);&#xD;
+	view.get(&quot;#dialog3&quot;).show();&#xD;
+}else{&#xD;
+	view.get(&quot;#btnReply&quot;).set(&quot;visible&quot;,true);&#xD;
+	view.get(&quot;#dialog3&quot;).show();&#xD;
+}&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="dataSet">dataSetMsg</Property>
+              <Property name="dataType">bdf2message</Property>
+              <Property name="selectionMode">singleRow</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="height">190</Property>
+              <DataColumn>
+                <Property name="property">title</Property>
+                <Property name="name">title</Property>
+              </DataColumn>
+              <DataColumn>
+                <Property name="property">sendDate</Property>
+                <Property name="name">sendDate</Property>
+              </DataColumn>
+              <DataColumn>
+                <Property name="name">receiver</Property>
+                <Property name="property">receiver</Property>
+                <Editor/>
+              </DataColumn>
+              <DataColumn>
+                <Property name="name">read</Property>
+                <Property name="property">read</Property>
+                <Editor/>
+              </DataColumn>
+              <DataColumn>
+                <Property name="name">reply</Property>
+                <Property name="property">reply</Property>
+                <Editor/>
+              </DataColumn>
+            </DataGrid>
+            <Dialog id="dialog3">
+              <Property name="caption">我发送的消息</Property>
+              <Property name="width">500</Property>
+              <Property name="height">550</Property>
+              <Buttons>
+                <Button id="btnReply">
+                  <ClientEvent name="onClick">var msgEntity = view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+var action=view.get(&quot;#uaMsgReply&quot;);&#xD;
+msgEntity.set(&quot;reply&quot;,true);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#dialog3&quot;).hide();&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;消息提示： 已设置为回复消息！&quot;);&#xD;
+});</ClientEvent>
+                  <Property name="caption">标记回复</Property>
+                  <Property name="action">uaMsgReply</Property>
+                </Button>
+                <Button>
+                  <ClientEvent name="onClick">var entityMsg=view.get(&quot;#dataSetMsg&quot;).getData(&quot;#&quot;);&#xD;
+if(entityMsg.get(&quot;id&quot;)){&#xD;
+	&#xD;
+}else{&#xD;
+	entityMsg.remove();&#xD;
+}&#xD;
+view.get(&quot;#dialog3&quot;).hide();</ClientEvent>
+                  <Property name="caption">关闭</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <AutoForm id="afTbmsgReply">
+                  <Property name="dataSet">dataSetMsg</Property>
+                  <Property name="dataType">bdf2message</Property>
+                  <Property name="width">490</Property>
+                  <Property name="labelWidth">50</Property>
+                  <Property name="padding">0</Property>
+                  <Property name="readOnly">false</Property>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="name">title</Property>
+                    <Property name="property">title</Property>
+                    <Property name="width">450</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                  <AutoFormElement layoutConstraint="colSpan:2">
+                    <Property name="label">内容</Property>
+                    <Property name="name">content</Property>
+                    <Property name="width">450</Property>
+                    <Property name="editorType">TextArea</Property>
+                    <Property name="height">380</Property>
+                    <Property name="readOnly">true</Property>
+                    <Editor/>
+                  </AutoFormElement>
+                </AutoForm>
+              </Children>
+              <Tools/>
+            </Dialog>
+            <ToolBar>
+              <DataPilot>
+                <Property name="dataSet">dataSetMsg</Property>
+                <Property name="itemCodes">pages</Property>
+                <Property name="style">
+                  <Property name="align">right</Property>
+                </Property>
+              </DataPilot>
+            </ToolBar>
+          </Children>
+          <Tools/>
+        </Portlet>
+      </Portlets>
+    </Portal>
+  </View>
+</ViewConfig>

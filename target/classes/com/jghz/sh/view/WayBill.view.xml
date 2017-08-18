@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtWayBillList">
+      <Property name="creationType">com.ih.d7.dto.goods.ZczyWaybillForm</Property>
+      <PropertyDef name="order_number">
+        <Property name="label">货运信息单号</Property>
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="title">
+        <Property name="label">标题</Property>
+      </PropertyDef>
+      <PropertyDef name="enterprise_name">
+        <Property name="label">公司名称</Property>
+      </PropertyDef>
+      <PropertyDef name="tname">
+        <Property name="label">货主联系人</Property>
+      </PropertyDef>
+      <PropertyDef name="tmobile">
+        <Property name="label">货主号码</Property>
+      </PropertyDef>
+      <PropertyDef name="zdname">
+        <Property name="label">承运人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="zdmobile">
+        <Property name="label">承运人号码</Property>
+      </PropertyDef>
+      <PropertyDef name="quote">
+        <Property name="label">报价</Property>
+      </PropertyDef>
+      <PropertyDef name="money">
+        <Property name="label">挂价</Property>
+      </PropertyDef>
+      <PropertyDef name="weight">
+        <Property name="label">总吨位</Property>
+      </PropertyDef>
+      <PropertyDef name="volumn">
+        <Property name="label">总体积</Property>
+      </PropertyDef>
+      <PropertyDef name="putUpTime">
+        <Property name="label">挂单日期</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="delistTime">
+        <Property name="label">摘牌日期</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="action">
+        <Property name="label">操作</Property>
+      </PropertyDef>
+      <PropertyDef name="order_Id">
+        <Property name="dataType">long</Property>
+      </PropertyDef>
+      <PropertyDef name="isSet">
+        <Property name="label">是否指定</Property>
+        <Property name="mapping">
+          <Property name="mapValues"></Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="cyrType">
+        <Property name="label">承运人类型</Property>
+        <Property name="mapping">
+          <Property name="mapValues"></Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="nodeTags">
+        <Property name="label">节点状态</Property>
+      </PropertyDef>
+      <PropertyDef name="plateNum">
+        <Property name="label">车牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="startPlace">
+        <Property name="label">启运地</Property>
+      </PropertyDef>
+      <PropertyDef name="endPlace">
+        <Property name="label">目的地</Property>
+      </PropertyDef>
+      <PropertyDef name="actualWeight">
+        <Property name="label">确认发货数量</Property>
+      </PropertyDef>
+      <PropertyDef name="plateNumber">
+        <Property name="label">车牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="payType">
+        <Property name="label">承运方结算方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues"></Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="payTypeLabel">
+        <Property name="label">承运方结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="selfComment">
+        <Property name="label">自定义编号</Property>
+      </PropertyDef>
+      <PropertyDef name="invoiceName">
+        <Property name="label">发票公司名称</Property>
+      </PropertyDef>
+      <PropertyDef name="isBranchable">
+        <Property name="label">是否可拆</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtContion">
+      <PropertyDef name="delistTimeSta">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="delistTimeEnd">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="putUpTimeSta">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="putUpTimeEnd">
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="hzComplayName"/>
+      <PropertyDef name="orderNo"/>
+      <PropertyDef name="tname"/>
+      <PropertyDef name="tmobile"/>
+      <PropertyDef name="zdname"/>
+      <PropertyDef name="zdmobile"/>
+      <PropertyDef name="startAddr"/>
+      <PropertyDef name="endtAddr"/>
+      <PropertyDef name="isUrgent">
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">是</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">0</Property>
+                <Property name="value">否</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="isSet">
+        <Property name="label">是否指定</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">0</Property>
+                <Property name="value">否</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">是</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="cyrType">
+        <Property name="label">承运人类型</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">个体</Property>
+                <Property name="value">个体</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">承运商</Property>
+                <Property name="value">承运商</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">经纪人</Property>
+                <Property name="value">经纪人</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="nodeTags">
+        <Property name="label">节点状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">0</Property>
+                <Property name="value">己摘牌</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">己发货</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">己收货</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">3</Property>
+                <Property name="value">己完成</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="unloadTimeStart">
+        <Property name="label">卸货时间起</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="unloadTimeEnd">
+        <Property name="label">卸货时间止</Property>
+        <Property name="dataType">DateTime</Property>
+      </PropertyDef>
+      <PropertyDef name="plateNumber">
+        <Property name="label">车牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="sjMobile">
+        <Property name="label">司机手机号</Property>
+      </PropertyDef>
+      <PropertyDef name="payType">
+        <Property name="label">承运方结算方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">智运宝结算</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">线下结算</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="selfComment">
+        <Property name="label">自定义编号</Property>
+      </PropertyDef>
+      <PropertyDef name="invoiceName">
+        <Property name="label">发票公司名称</Property>
+      </PropertyDef>
+      <PropertyDef name="isBranchable">
+        <Property name="label">是否可拆</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">否</Property>
+                <Property name="value">否</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">是</Property>
+                <Property name="value">是</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="keyProperty">key</Property>
+          <Property name="valueProperty">value</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtArea">
+      <Property name="creationType">com.ih.base.domain.system.group.ZczyArea</Property>
+      <PropertyDef name="addressId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addrType">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addressCode">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="fatherId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addressName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="createBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <Reference name="cities">
+        <Property name="dataType">[dtCity]</Property>
+        <Property name="dataProvider">areaDropdownService#queryAllCityById</Property>
+        <Property name="parameter">$${this.addressId}</Property>
+      </Reference>
+    </DataType>
+    <DataType name="dtCity">
+      <Property name="creationType">com.ih.base.domain.system.group.ZczyArea</Property>
+      <PropertyDef name="addressId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addrType">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addressCode">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="fatherId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="addressName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="createBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <Reference name="county">
+        <Property name="dataType">[SELF]</Property>
+        <Property name="dataProvider">areaDropdownService#queryAllCountyById</Property>
+        <Property name="parameter">$${this.addressId}</Property>
+      </Reference>
+    </DataType>
+    <DataType name="dtOrder">
+      <Property name="creationType">com.ih.base.domain.goods.ZczyOrderT</Property>
+      <PropertyDef name="orderId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="insuranceType">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isInvoice">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isEntry">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="validityPeriod">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="entryBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="waybillNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="nodeId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="money">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="isDamageLoss">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="shipperVersion">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="settlementTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="isSettlement">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierEvaluate">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="shipperEvaluate">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="matchState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isDeviate">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerIdentity">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="diagramTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="orderRate">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="orderFee">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="isDisplay">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="timeoutCl">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isLoad">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isUrgent">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="contactName">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="contactPhone">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="republish">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="bigCarrierId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="expectHours">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="expectPeriod">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="orderModel">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="haveBigcyr">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="realMoney">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="freightType">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="cyrUnitFreight">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="orderUnitFee">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="breachMatchState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="breachAddMoney">
+        <Property name="dataType">Double</Property>
+      </PropertyDef>
+      <PropertyDef name="orderClose">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="freePercent">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="moneyLimit">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="isPayment">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="hzSettleState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="cySettleState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="closeTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="closeUserid">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="cysState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isCancelClose">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="hzState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="selfComment">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="cyrState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="reSettlementSize">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="reBackSize">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isAuto">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="isAllowSettle">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="childId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="subsidiaryId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="comSettleState">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtYN">
+      <PropertyDef name="value"/>
+      <PropertyDef name="label"/>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsWayBillList">
+      <Property name="dataType">[dtWayBillList]</Property>
+      <Property name="dataProvider">wayBillListService#queryWayBillList</Property>
+      <Property name="loadMode">lazy</Property>
+      <Property name="pageSize">15</Property>
+    </DataSet>
+    <DataSet id="dsWayBillListAdd">
+      <Property name="dataType">[dtWayBillList]</Property>
+      <Property name="dataProvider">wayBillListService#queryWayBillList</Property>
+      <Property name="loadMode">lazy</Property>
+      <Property name="pageSize">15</Property>
+    </DataSet>
+    <DataSet id="dsWayBillListBranch">
+      <Property name="dataType">[dtWayBillList]</Property>
+    </DataSet>
+    <DataSet id="dsArea">
+      <Property name="dataType">[dtArea]</Property>
+      <Property name="dataProvider">areaDropdownService#queryAllProvince</Property>
+    </DataSet>
+    <DataSet id="dsPayType">
+      <Property name="dataType">[dtYN]</Property>
+      <Property name="dataProvider">shipperGurenteeService#getPayType</Property>
+      <Property name="parameter"></Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Property name="width">100%</Property>
+      <Buttons>
+        <Button id="btnQuery">
+          <ClientEvent name="onClick">var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dsWayBillList&quot;).flushAsync(function(entityList){&#xD;
+	if (entityList.isEmpty()) {&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查无资料！&quot;);&#xD;
+    }else {&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查询成功！&quot;);&#xD;
+    }&#xD;
+});&#xD;
+chooseEntitys = {};&#xD;
+view.set(&quot;#dgWayBill.selection&quot;, []);&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="icon"> url(>skin>common/icons.gif) -40px -100px</Property>
+          <Property name="caption">查询</Property>
+        </Button>
+        <Button id="btnClear">
+          <ClientEvent name="onClick">view.get(&quot;#afCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,{});&#xD;
+&#xD;
+chooseEntitys = {};&#xD;
+view.set(&quot;#dgWayBill.selection&quot;, []);</ClientEvent>
+          <Property name="caption">重置</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -280px -220px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afCondition">
+          <Property name="cols">*,*,*,*</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <Property name="dataType">dtContion</Property>
+          <Property name="labelWidth">100</Property>
+          <AutoFormElement>
+            <Property name="name">hzComplayName</Property>
+            <Property name="label">公司名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">orderNo</Property>
+            <Property name="label">货运信息单号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">tname</Property>
+            <Property name="label">货主联系人</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">tmobile</Property>
+            <Property name="label">货主号码</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">zdname</Property>
+            <Property name="label">承运人名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">zdmobile</Property>
+            <Property name="label">承运人号码</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">startAddr</Property>
+            <Property name="label">启运地</Property>
+            <Property name="trigger">cddArea</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">endtAddr</Property>
+            <Property name="label">目的地</Property>
+            <Property name="trigger">cddArea</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">delistTimeSta</Property>
+            <Property name="property">delistTimeSta</Property>
+            <Property name="label">摘牌时间起</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">delistTimeEnd</Property>
+            <Property name="property">delistTimeEnd</Property>
+            <Property name="label">摘牌时间止</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">putUpTimeSta</Property>
+            <Property name="property">putUpTimeSta</Property>
+            <Property name="label">挂单时间起</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">putUpTimeEnd</Property>
+            <Property name="property">putUpTimeEnd</Property>
+            <Property name="label">挂单时间止</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isUrgent</Property>
+            <Property name="label">是否加急</Property>
+            <Property name="trigger">autoMappingDropDown1</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">nodeTags</Property>
+            <Property name="property">nodeTags</Property>
+            <Property name="label">节点状态</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isSet</Property>
+            <Property name="property">isSet</Property>
+            <Property name="editable">false</Property>
+            <Property name="label">是否指定</Property>
+            <Property name="trigger">autoMappingDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">cyrType</Property>
+            <Property name="property">cyrType</Property>
+            <Property name="editable">false</Property>
+            <Property name="label">承运人类型</Property>
+            <Property name="trigger">autoMappingDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">unloadTimeStart</Property>
+            <Property name="property">unloadTimeStart</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">unloadTimeEnd</Property>
+            <Property name="property">unloadTimeEnd</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">plateNumber</Property>
+            <Property name="property">plateNumber</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">sjMobile</Property>
+            <Property name="property">sjMobile</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">payType</Property>
+            <Property name="property">payType</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">selfComment</Property>
+            <Property name="property">selfComment</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">invoiceName</Property>
+            <Property name="property">invoiceName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isBranchable</Property>
+            <Property name="property">isBranchable</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Property name="editable">false</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="dpWayBill">
+        <Property name="dataSet">dsWayBillList</Property>
+        <Property name="itemCodes">pages,pageSize</Property>
+      </DataPilot>
+      <ToolBarButton id="btnExport">
+        <Property name="caption">Excel导出</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -240px -240px</Property>
+        <Property name="action">export2ReportActionExcel</Property>
+      </ToolBarButton>
+      <Button id="btnSave">
+        <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgWayBill&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var ids=&quot;&quot;;&#xD;
+var i=0;&#xD;
+for(i;i&lt;selEntitys.length;i++){&#xD;
+	if(i==0){&#xD;
+		ids=selEntitys[i].get(&quot;order_Id&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		ids=ids+&quot;,&quot;+selEntitys[i].get(&quot;order_Id&quot;);&#xD;
+	}&#xD;
+}&#xD;
+var ajaxExcuteBefore = view.get(&quot;#ajaxCheckIfUpdate&quot;);&#xD;
+ajaxExcuteBefore.set(&quot;parameter&quot;,{ids:ids});&#xD;
+ajaxExcuteBefore.execute(function(returnValue){&#xD;
+    var flag = returnValue[&quot;flag&quot;];&#xD;
+	if(flag){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：勾选的数据中存在己对账数据，不能修改付款方式&quot;);&#xD;
+	    return false;&#xD;
+	}else{&#xD;
+		var action=view.get(&quot;#uaSaveUpdate&quot;);&#xD;
+        action.execute(function(returnValue){&#xD;
+		    view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,{});&#xD;
+			var entityAdd = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+		    view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,entityAdd);&#xD;
+			view.get(&quot;#dsWayBillList&quot;).flushAsync();&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+        });&#xD;
+	}&#xD;
+});&#xD;
+</ClientEvent>
+        <Property name="caption">保存</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -60px -0px</Property>
+      </Button>
+      <Button id="btIsBranchable">
+        <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgWayBill&quot;);&#xD;
+var dtWayBillList=view.get(&quot;#dtWayBillList&quot;);&#xD;
+&#xD;
+var selEntitys = new Array();&#xD;
+for(var key in chooseEntitys) {&#xD;
+	selEntitys.push(chooseEntitys[key]);&#xD;
+}&#xD;
+&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var count=0;&#xD;
+var ids = new Array();&#xD;
+&#xD;
+var dataGridB = view.get(&quot;#dgBranch&quot;);&#xD;
+&#xD;
+selEntitys = selEntitys.sort(function(entity1,entity2){&#xD;
+	return entity1.get(&quot;isBranchable&quot;) == '否' ? -1 : 1;&#xD;
+});&#xD;
+&#xD;
+for(var i=0;i&lt;selEntitys.length;i++){&#xD;
+	if(selEntitys[i].get(&quot;isBranchable&quot;)==&quot;否&quot;){&#xD;
+		count++;&#xD;
+	}else{&#xD;
+		&#xD;
+		ids.push(selEntitys[i].get(&quot;order_Id&quot;));&#xD;
+	}&#xD;
+	&#xD;
+	var entity=new dorado.Entity(null,&quot;before&quot;,dtWayBillList);&#xD;
+	entity.set(&quot;order_Id&quot;,selEntitys[i].get(&quot;order_Id&quot;));&#xD;
+	entity.set(&quot;order_number&quot;,selEntitys[i].get(&quot;order_number&quot;));&#xD;
+	entity.set(&quot;title&quot;,selEntitys[i].get(&quot;title&quot;));&#xD;
+	entity.set(&quot;tname&quot;,selEntitys[i].get(&quot;tname&quot;));&#xD;
+	entity.set(&quot;isBranchable&quot;,selEntitys[i].get(&quot;isBranchable&quot;));&#xD;
+	view.get(&quot;#dsWayBillListBranch&quot;).insert(entity);&#xD;
+	&#xD;
+}&#xD;
+&#xD;
+view.get(&quot;#ids&quot;).set(&quot;text&quot;,ids.join(&quot;,&quot;));&#xD;
+view.get(&quot;#tipMsg&quot;).set(&quot;text&quot;,&quot;注：系统检测到你选择的运单中有     &quot;+count+&quot;  单不可拆单，点击“拆单确认”，系统将自动过滤掉不可拆单的运单。&quot;);&#xD;
+view.get(&quot;#dlBranch&quot;).show();</ClientEvent>
+        <Property name="caption">运单拆单</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -280px -100px</Property>
+      </Button>
+      <Label id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </Label>
+    </ToolBar>
+    <DataGrid id="dgWayBill">
+      <ClientEvent name="onSelectionChange">//var entityAdd=arg.added;&#xD;
+//var entityDel=arg.removed;&#xD;
+//获取存勾选数据集dsWayBillListAdd里面的数据&#xD;
+//var ds=view.get(&quot;#dsWayBillListAdd&quot;);&#xD;
+//var entitiesSelect=ds.getData();&#xD;
+//var gridWay= view.get(&quot;#dgWayBill&quot;);&#xD;
+//获取当前页的数据集&#xD;
+//var dsUpd=view.get(&quot;#dsWayBillList&quot;);&#xD;
+//var entityList=dsUpd.getData();&#xD;
+//var pageNo=entityList.pageNo;&#xD;
+//var entityListCurrent=entityList.getPage(pageNo);&#xD;
+//if(entityAdd){&#xD;
+//	entitiesSelect.insert(entityAdd);&#xD;
+//}&#xD;
+//if(entityDel){&#xD;
+//	entitiesSelect.remove(entityDel);&#xD;
+//}&#xD;
+//alert(entitiesSelect);&#xD;
+//alert(entityListCurrent);&#xD;
+&#xD;
+//遍历当前面的数据集，如果在勾选数据集中，则设置为勾选状态&#xD;
+//entityListCurrent.each(function(entityC){&#xD;
+	//alert(entityC.get(&quot;order_Id&quot;));&#xD;
+//	console.log(entityC);&#xD;
+//    entitiesSelect.each(function(entityS){&#xD;
+//		console.log(entityS);&#xD;
+//		console.log(entityS.get(&quot;0&quot;).get(&quot;order_Id&quot;));&#xD;
+		//alert(entityS.get(&quot;order_Id&quot;));&#xD;
+//		alert(entityS.get(&quot;0&quot;).get(&quot;order_Id&quot;)==entityC.get(&quot;order_Id&quot;));&#xD;
+//        if(entityS.get(&quot;0&quot;).get(&quot;order_Id&quot;)==entityC.get(&quot;order_Id&quot;)){&#xD;
+//			gridWay.set(&quot;selection&quot;,entityS);&#xD;
+//		}&#xD;
+//   });&#xD;
+//});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="dataSet">dsWayBillList</Property>
+      <Property name="width">100%</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
+      <RowNumColumn>
+        <Property name="width">50</Property>
+      </RowNumColumn>
+      <DataColumn name="order_number">
+        <Property name="property">order_number</Property>
+        <Property name="width">160</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="title">
+        <Property name="property">title</Property>
+        <Property name="width">150</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="name">selfComment</Property>
+        <Property name="property">selfComment</Property>
+        <Property name="readOnly">true</Property>
+        <Editor/>
+      </DataColumn>
+      <DataColumn name="enterprise_name">
+        <Property name="property">enterprise_name</Property>
+        <Property name="width">150</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="tname">
+        <Property name="property">tname</Property>
+        <Property name="width">100</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="tmobile">
+        <Property name="property">tmobile</Property>
+        <Property name="width">100</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="isSet">
+        <Property name="property">isSet</Property>
+        <Property name="width">80</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="name">isBranchable</Property>
+        <Property name="property">isBranchable</Property>
+        <Property name="caption">是否可拆</Property>
+        <Property name="readOnly">true</Property>
+        <Editor/>
+      </DataColumn>
+      <DataColumn name="cyrType">
+        <Property name="property">cyrType</Property>
+        <Property name="width">80</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">arg.dom.style.color =&quot;red&quot;;&#xD;
+arg.processDefault = true;</ClientEvent>
+        <Property name="property">payTypeLabel</Property>
+        <Property name="width">90</Property>
+        <Property name="trigger">dsddPayType</Property>
+        <Property name="name">payTypeLabel</Property>
+      </DataColumn>
+      <DataColumn name="nodeTags">
+        <Property name="property">nodeTags</Property>
+        <Property name="width">80</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="zdname">
+        <Property name="property">zdname</Property>
+        <Property name="width">100</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="zdmobile">
+        <Property name="property">zdmobile</Property>
+        <Property name="width">100</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="plateNum">
+        <Property name="property">plateNum</Property>
+        <Property name="width">180</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="quote">
+        <Property name="property">quote</Property>
+        <Property name="width">60</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="money">
+        <Property name="property">money</Property>
+        <Property name="width">60</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="weight">
+        <Property name="property">weight</Property>
+        <Property name="width">60</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="volumn">
+        <Property name="property">volumn</Property>
+        <Property name="width">60</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="actualWeight">
+        <Property name="property">actualWeight</Property>
+        <Property name="width">100</Property>
+        <Property name="align">center</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="putUpTime">
+        <Property name="property">putUpTime</Property>
+        <Property name="width">120</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="delistTime">
+        <Property name="property">delistTime</Property>
+        <Property name="width">120</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="startPlace">
+        <Property name="property">startPlace</Property>
+        <Property name="width">150</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="endPlace">
+        <Property name="property">endPlace</Property>
+        <Property name="width">150</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="invoiceName">
+        <Property name="property">invoiceName</Property>
+        <Property name="readOnly">true</Property>
+        <Property name="width">100</Property>
+      </DataColumn>
+      <DataColumn name="action">
+        <ClientEvent name="onRenderCell">var orderId=arg.data.get(&quot;order_Id&quot;);&#xD;
+$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;A&quot;,&#xD;
+    href: $url(&quot;${pageContext.request.contextPath }/goods/freightInfo/queryFreightInfo.xhtml?orderId=&quot;+orderId),&#xD;
+    target: &quot;_blank&quot;,&#xD;
+    content: &quot;详情&quot;&#xD;
+});</ClientEvent>
+        <Property name="property">action</Property>
+        <Property name="align">center</Property>
+        <Property name="width">60</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="name">order_Id</Property>
+        <Property name="property">order_Id</Property>
+        <Property name="ignored">true</Property>
+        <Property name="readOnly">true</Property>
+        <Editor/>
+      </DataColumn>
+    </DataGrid>
+    <Export2ReportAction id="export2ReportActionExcel">
+      <Property name="executingMessage">正在导出Excel...</Property>
+      <Property name="template">dgWayBill</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="maxSize">1000000</Property>
+    </Export2ReportAction>
+    <CustomDropDown id="cddArea">
+      <Property name="width">400</Property>
+      <Property name="height">400</Property>
+      <DataTree id="dtArea">
+        <ClientEvent name="onDataRowDoubleClick">var dropdown = dorado.widget.DropDown.findDropDown(self);&#xD;
+var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+var entity = currentNode.get(&quot;data&quot;);&#xD;
+var addressName = entity.get(&quot;addressName&quot;);&#xD;
+var level=currentNode.get(&quot;level&quot;);&#xD;
+var parentNode = currentNode.get(&quot;parent&quot;);&#xD;
+if(level==1){&#xD;
+	if(!currentNode.get(&quot;hasChild&quot;)){&#xD;
+	   dropdown.close(addressName);&#xD;
+	}&#xD;
+}else if(level==2){&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	addressName = entity.get(&quot;addressName&quot;) + &quot;&quot; + addressName;&#xD;
+	&#xD;
+	dropdown.close(addressName);&#xD;
+}else{&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	addressName = entity.get(&quot;addressName&quot;) + &quot;&quot; + addressName;&#xD;
+	parentNode = parentNode.get(&quot;parent&quot;);&#xD;
+	&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	addressName = entity.get(&quot;addressName&quot;) + &quot;&quot; + addressName;&#xD;
+	dropdown.close(addressName);&#xD;
+} &#xD;
+&#xD;
+/**if(level==1||level==2){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}&#xD;
+if(level==3){&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	addressName = entity.get(&quot;addressName&quot;) + &quot;-&quot; + addressName;&#xD;
+	parentNode = parentNode.get(&quot;parent&quot;);&#xD;
+	&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	addressName = entity.get(&quot;addressName&quot;) + &quot;-&quot; + addressName;&#xD;
+	dropdown.close(addressName);&#xD;
+}*/&#xD;
+</ClientEvent>
+        <ClientEvent name="onDataRowClick">var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+if(currentNode.get(&quot;hasChild&quot;)){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dsArea</Property>
+        <Property name="width">500</Property>
+        <Property name="height">400</Property>
+        <BindingConfigs>
+          <BindingConfig>
+            <Property name="name">area</Property>
+            <Property name="labelProperty">addressName</Property>
+            <Property name="recursive">false</Property>
+            <BindingConfig>
+              <Property name="name">city</Property>
+              <Property name="labelProperty">addressName</Property>
+              <Property name="childrenProperty">cities</Property>
+              <Property name="recursive">false</Property>
+              <BindingConfig>
+                <Property name="name">county</Property>
+                <Property name="labelProperty">addressName</Property>
+                <Property name="childrenProperty">county</Property>
+              </BindingConfig>
+            </BindingConfig>
+          </BindingConfig>
+        </BindingConfigs>
+      </DataTree>
+    </CustomDropDown>
+    <Dialog id="dlAddUpdate">
+      <ClientEvent name="beforeClose">view.get(&quot;#dsWayBillList&quot;).getData(&quot;#&quot;).cancel();&#xD;
+var current=view.get(&quot;#dsWayBillList&quot;).getData(&quot;#&quot;);&#xD;
+if(null!=current){&#xD;
+	var entity=view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+	view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+	view.get(&quot;#dsWayBillList&quot;).flushAsync();&#xD;
+}</ClientEvent>
+      <Property name="width">300</Property>
+      <Property name="height">200</Property>
+      <Property name="caption">修改付款方式</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="resizeable">false</Property>
+      <Property name="closeable">false</Property>
+      <Buttons>
+        <Button id="btSave2">
+          <ClientEvent name="onClick">var entity=view.get(&quot;#dsWayBillList&quot;).getData(&quot;#&quot;);&#xD;
+if(entity.get(&quot;payType&quot;)==null||&quot;&quot;==entity.get(&quot;payType&quot;)){&#xD;
+	dorado.MessageBox.alert(&quot;请选择付款方式&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var action=view.get(&quot;#uaSaveUpdate&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+	view.get(&quot;#dlAddUpdate&quot;).close();&#xD;
+	view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,{});&#xD;
+	var entityAdd = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+    view.get(&quot;#dsWayBillList&quot;).set(&quot;parameter&quot;,entityAdd);&#xD;
+	view.get(&quot;#dsWayBillList&quot;).flushAsync();&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+	&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">保存</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button id="btCancel2">
+          <ClientEvent name="onClick">view.get(&quot;#dlAddUpdate&quot;).close();&#xD;
+</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -300px -100px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afAddUpdate">
+          <Property name="width">100%</Property>
+          <Property name="editorWidth">300</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <Property name="dataType">dtWayBillList</Property>
+          <Property name="dataSet">dsWayBillList</Property>
+          <Property name="labelWidth">100</Property>
+          <Property name="labelAlign">center</Property>
+          <Property name="cols">*</Property>
+          <AutoFormElement>
+            <Property name="name">payTypeLabel</Property>
+            <Property name="property">payTypeLabel</Property>
+            <Property name="trigger">dsddPayType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="label">付款方式</Property>
+            <Property name="name">payType</Property>
+            <Property name="property">payType</Property>
+            <Property name="ignored">true</Property>
+            <Property name="trigger">dsddPayType</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <DataSetDropDown id="dsddPayType">
+      <Property name="dataSet">dsPayType</Property>
+      <Property name="displayProperty">label</Property>
+      <Property name="property">label</Property>
+      <Property name="assignmentMap">payType=value,payTypeLabel=label</Property>
+      <Property name="dynaFilter">true</Property>
+    </DataSetDropDown>
+    <UpdateAction id="uaSaveUpdate">
+      <ClientEvent name="onGetUpdateData">var dataGrid = view.get(&quot;#dgWayBill&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+arg.data=selEntitys;</ClientEvent>
+      <Property name="confirmMessage">是否确认修改结算方式？</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="hotkey">ctrl+s</Property>
+      <Property name="dataResolver">wayBillListService#savePayType</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsWayBillList</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxCheckIfUpdate">
+      <Property name="service">wayBillListService#checkIfUpdate</Property>
+    </AjaxAction>
+    <Dialog id="dlBranch">
+      <ClientEvent name="beforeClose">view.get(&quot;#dsWayBillListBranch&quot;).clear();&#xD;
+view.get(&quot;#ids&quot;).set(&quot;text&quot;,&quot;&quot;);&#xD;
+</ClientEvent>
+      <Property name="caption">拆单确认</Property>
+      <Property name="closeable">false</Property>
+      <Property name="width">800</Property>
+      <Property name="height">550</Property>
+      <Property name="containerUi">default</Property>
+      <Property name="draggable">false</Property>
+      <Buttons>
+        <Button id="btSave3">
+          <ClientEvent name="onClick">var ids=view.get(&quot;#ids&quot;).get(&quot;text&quot;);&#xD;
+	&#xD;
+dorado.MessageBox.confirm(&quot;本次操作将无法撤销，是否确认操作？&quot;,function(){&#xD;
+	var aaBranch=view.get(&quot;#aaBranch&quot;);&#xD;
+	aaBranch.set(&quot;parameter&quot;,{&#xD;
+	       &quot;ids&quot;:ids&#xD;
+    });&#xD;
+	aaBranch.execute(function(returnValue){&#xD;
+		dorado.MessageBox.alert(returnValue[&quot;msg&quot;]);&#xD;
+		view.get(&quot;#dlBranch&quot;).close();&#xD;
+		view.get(&quot;#dsWayBillList&quot;).flush();&#xD;
+	});&#xD;
+});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="caption">拆单确认</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button id="btCancel3">
+          <ClientEvent name="onClick">view.get(&quot;#dlBranch&quot;).close();&#xD;
+</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -300px -100px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <DataGrid id="dgBranch">
+          <Property name="height">350</Property>
+          <Property name="dataSet">dsWayBillListBranch</Property>
+          <RowNumColumn>
+            <Property name="caption">序号</Property>
+          </RowNumColumn>
+          <DataColumn>
+            <Property name="name">order_Id</Property>
+            <Property name="property">order_Id</Property>
+            <Property name="ignored">false</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </DataColumn>
+          <DataColumn name="order_number">
+            <Property name="property">order_number</Property>
+            <Property name="width">150</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="caption">运单号</Property>
+          </DataColumn>
+          <DataColumn name="title">
+            <Property name="property">title</Property>
+            <Property name="width">250</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="caption">标题</Property>
+          </DataColumn>
+          <DataColumn name="tname">
+            <Property name="property">tname</Property>
+            <Property name="width">250</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="caption">会员名称 </Property>
+          </DataColumn>
+          <DataColumn id="isBranchable">
+            <Property name="name">isBranchable</Property>
+            <Property name="property">isBranchable</Property>
+            <Property name="caption">是否可拆</Property>
+            <Property name="readOnly">true</Property>
+            <Editor/>
+          </DataColumn>
+        </DataGrid>
+        <Label id="ids">
+          <Property name="visible">false</Property>
+        </Label>
+        <Label id="tipMsg">
+          <Property name="height">50</Property>
+          <Property name="text">注：系统检测到你选择的运单中有  0 单不可拆单，点击“拆单确认”，系统将自动过滤掉不可拆单的运单。</Property>
+          <Property name="style">
+            <Property name="text-align">center</Property>
+            <Property name="color">red</Property>
+          </Property>
+        </Label>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <AjaxAction id="aaBranch">
+      <Property name="service">wayBillListService#executeBranch</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

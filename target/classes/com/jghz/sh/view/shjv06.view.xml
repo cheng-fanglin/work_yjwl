@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtArea">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh06</Property>
+      <Reference name="city">
+        <Property name="dataProvider">shjc06Service#getAreaByParentId</Property>
+        <Property name="parameter">$${this.sh06Id}</Property>
+        <Property name="dataType">[dtCity]</Property>
+      </Reference>
+      <PropertyDef name="sh06Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="areacode">
+        <Property></Property>
+        <Property name="label">区域编码</Property>
+      </PropertyDef>
+      <PropertyDef name="areaname">
+        <Property></Property>
+        <Property name="label">区域名称</Property>
+      </PropertyDef>
+      <PropertyDef name="parentId">
+        <Property></Property>
+        <Property name="label">上级区域</Property>
+      </PropertyDef>
+      <PropertyDef name="isuse">
+        <Property></Property>
+        <Property name="label">是否启用</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="ecode">
+        <Property></Property>
+        <Property name="label">邮编</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCity">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh06</Property>
+      <Reference name="county">
+        <Property name="dataProvider">shjc06Service#getAreaByParentId</Property>
+        <Property name="dataType">[SELF]</Property>
+        <Property name="parameter">$${this.sh06Id}</Property>
+      </Reference>
+      <PropertyDef name="sh06Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="areacode">
+        <Property></Property>
+        <Property name="label">区域编码</Property>
+      </PropertyDef>
+      <PropertyDef name="areaname">
+        <Property></Property>
+        <Property name="label">区域名称</Property>
+      </PropertyDef>
+      <PropertyDef name="parentId">
+        <Property></Property>
+        <Property name="label">上级区域</Property>
+      </PropertyDef>
+      <PropertyDef name="isuse">
+        <Property></Property>
+        <Property name="label">是否启用</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="ecode">
+        <Property></Property>
+        <Property name="label">邮编</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh06">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh06</Property>
+      <PropertyDef name="sh06Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="areacode">
+        <Property></Property>
+        <Property name="label">区域编码</Property>
+      </PropertyDef>
+      <PropertyDef name="areaname">
+        <Property></Property>
+        <Property name="label">区域名称</Property>
+      </PropertyDef>
+      <PropertyDef name="parentId">
+        <Property></Property>
+        <Property name="label">上级区域</Property>
+      </PropertyDef>
+      <PropertyDef name="isuse">
+        <Property></Property>
+        <Property name="label">是否启用</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="ecode">
+        <Property></Property>
+        <Property name="label">邮政编码</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtAll">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh06</Property>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsAll">
+      <Property name="dataType">[dtAll]</Property>
+      <Property name="dataProvider">shjc06Service#getAreaAll</Property>
+    </DataSet>
+    <DataSet id="dsArea">
+      <Property name="dataProvider">shjc06Service#getAreaRoot</Property>
+      <Property name="dataType">[dtArea]</Property>
+    </DataSet>
+    <DataSet id="dsSh06">
+      <Property name="dataType">[dtSh06]</Property>
+      <Property name="dataProvider">shjc06Service#getAreaByAreaId</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaSave">
+      <Property name="dataResolver">shjc06Service#saveSh06</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh06</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <SplitPanel>
+      <MainControl>
+        <Panel>
+          <Buttons/>
+          <Children>
+            <ToolBar>
+              <DataPilot>
+                <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+   switch(code){&#xD;
+     case &quot;+&quot;:{&#xD;
+	 	//得到主表的数据集对象&#xD;
+			var dsSh06 = this.get(&quot;#dsSh06&quot;);&#xD;
+			var sh06Entity = this.get(&quot;#dsSh06&quot;).getData(&quot;#&quot;);&#xD;
+			dsSh06.insert({&#xD;
+				sh06Id: sh06Entity.get(&quot;sh06Id&quot;),&#xD;
+				compId: sh06Entity.get(&quot;compId&quot;),&#xD;
+				compCode: sh06Entity.get(&quot;compCode&quot;),&#xD;
+				parentId: sh06Entity.get(&quot;parentId&quot;)&#xD;
+			});&#xD;
+			view.set((&quot;#dgTbsh06.selection&quot;),view.get(&quot;#dgTbsh06&quot;).getCurrentItem());&#xD;
+			view.get(&quot;#dlTbsh06&quot;).show();&#xD;
+			arg.processDefault = false;&#xD;
+			break;&#xD;
+		}&#xD;
+		case &quot;-&quot; :{&#xD;
+			var dataGrid = view.get(&quot;#dgTbsh06&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        var action = view.get(&quot;#uaSave&quot;);&#xD;
+        if(selEntitys.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			selEntitys.each(function(select){&#xD;
+				select.remove();&#xD;
+			})&#xD;
+				action.execute(function(){&#xD;
+					view.get(&quot;#uaSave&quot;).set(&quot;successMessage&quot;,&quot;删除成功!&quot;);&#xD;
+				});&#xD;
+			});&#xD;
+		}&#xD;
+        if(selEntitys.length&lt;1){&#xD;
+	         view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	        &#xD;
+         }&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+		}&#xD;
+   }&#xD;
+   </ClientEvent>
+                <Property name="dataSet">dsSh06</Property>
+                <Property name="itemCodes">pages,+,-,x</Property>
+              </DataPilot>
+              <Button>
+                <ClientEvent name="onClick">var selections = view.get(&quot;#dgTbsh06&quot;).get(&quot;selection&quot;);&#xD;
+if(selections.length==1){&#xD;
+	selections.each(function(data){&#xD;
+		view.get(&quot;#dsSh06.data&quot;).setCurrent(data);&#xD;
+	});&#xD;
+	view.get(&quot;#dlTbsh06&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;请只选择一条数据!&quot;);&#xD;
+}&#xD;
+</ClientEvent>
+                <Property name="caption">修改</Property>
+                <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+              </Button>
+              <ToolBarLabel id="msg"/>
+            </ToolBar>
+            <DataGrid id="dgTbsh06">
+              <Property name="dataSet">dsSh06</Property>
+              <Property name="dataType">dtSh06</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="selectionMode">multiRows</Property>
+              <RowSelectorColumn>
+                <Property name="name">select</Property>
+              </RowSelectorColumn>
+              <DataColumn name="areacode">
+                <Property name="property">areacode</Property>
+              </DataColumn>
+              <DataColumn name="areaname">
+                <Property name="property">areaname</Property>
+              </DataColumn>
+              <DataColumn name="isuse">
+                <Property name="property">isuse</Property>
+              </DataColumn>
+              <DataColumn name="createEmp">
+                <Property name="property">createEmp</Property>
+              </DataColumn>
+              <DataColumn name="createDate">
+                <Property name="property">createDate</Property>
+              </DataColumn>
+              <DataColumn name="ecode">
+                <Property name="property">ecode</Property>
+              </DataColumn>
+            </DataGrid>
+          </Children>
+          <Tools/>
+        </Panel>
+      </MainControl>
+      <SideControl>
+        <Panel>
+          <Buttons/>
+          <Children>
+            <DataTree id="dtArea">
+              <ClientEvent name="onDataRowClick">var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+if(currentNode.get(&quot;hasChild&quot;)){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}</ClientEvent>
+              <ClientEvent name="onDataRowDoubleClick">//var dropdown = dorado.widget.DropDown.findDropDown(self);&#xD;
+var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+var entity = currentNode.get(&quot;data&quot;);&#xD;
+var areaname = entity.get(&quot;areaname&quot;);&#xD;
+var areacode = entity.get(&quot;areacode&quot;);&#xD;
+var sh06Id = entity.get(&quot;sh06Id&quot;);&#xD;
+var level=currentNode.get(&quot;level&quot;);&#xD;
+var parentNode = currentNode.get(&quot;parent&quot;);&#xD;
+with(view.get(&quot;#dsSh06&quot;)){&#xD;
+	set(&quot;parameter&quot;, {sh06Id:sh06Id});&#xD;
+	flushAsync();&#xD;
+}&#xD;
+/**if(level==1||level==2){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}&#xD;
+if(level==3){&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	areaname = entity.get(&quot;areaname&quot;) + &quot;-&quot; + areaname;&#xD;
+	parentNode = parentNode.get(&quot;parent&quot;);&#xD;
+	&#xD;
+	entity = parentNode.get(&quot;data&quot;);&#xD;
+	areaname = entity.get(&quot;areaname&quot;) + &quot;-&quot; + areaname;&#xD;
+	dropdown.close(areaname);&#xD;
+}*/&#xD;
+</ClientEvent>
+              <Property name="dataSet">dsArea</Property>
+              <BindingConfigs>
+                <BindingConfig>
+                  <Property name="labelProperty">areaname</Property>
+                  <Property name="name">area</Property>
+                  <BindingConfig>
+                    <Property name="labelProperty">areaname</Property>
+                    <Property name="name">city</Property>
+                    <Property name="childrenProperty">city</Property>
+                    <BindingConfig>
+                      <Property name="labelProperty">areaname</Property>
+                      <Property name="name">county</Property>
+                      <Property name="childrenProperty">county</Property>
+                    </BindingConfig>
+                  </BindingConfig>
+                </BindingConfig>
+              </BindingConfigs>
+            </DataTree>
+          </Children>
+          <Tools/>
+        </Panel>
+      </SideControl>
+    </SplitPanel>
+    <Dialog id="dlTbsh06">
+      <Property name="width">500</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">  var uaSave=view.get(&quot;#uaSave&quot;);&#xD;
+uaSave.execute(function(returnValue){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+	view.get(&quot;#dlTbsh06&quot;).hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">确定</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#dsSh06&quot;).getData().cancel();&#xD;
+view.get(&quot;#dlTbsh06&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">关闭</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dsSh06</Property>
+          <AutoFormElement>
+            <Property name="name">areacode</Property>
+            <Property name="property">areacode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">areaname</Property>
+            <Property name="property">areaname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isuse</Property>
+            <Property name="property">isuse</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createEmp</Property>
+            <Property name="property">createEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createDate</Property>
+            <Property name="property">createDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">ecode</Property>
+            <Property name="property">ecode</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

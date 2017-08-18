@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Dialog id="$dialogStation">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsStation">
+          <Property name="dataProvider">shjcCommService#queryStation</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbsh01]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsStation</Property>
+            <Property name="itemCodes">pageSize,pages</Property>
+          </DataPilot>
+          <Separator/>
+        </ToolBar>
+        <DataGrid id="$dgStation">
+          <ClientEvent name="onDataRowDoubleClick">&#xD;
+var data = view.get(&quot;#$dsStation&quot;).getData(&quot;#&quot;);&#xD;
+//var result=[];&#xD;
+//result.push(data.toJSON());&#xD;
+view.id(&quot;$dialogStation&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsStation</Property>
+          <Property name="readOnly">true</Property>
+          <Property name="showFilterBar">true</Property>
+          <DataColumn name="stationname">
+            <Property name="property">stationname</Property>
+          </DataColumn>
+          <DataColumn name="transport">
+            <Property name="property">transport</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

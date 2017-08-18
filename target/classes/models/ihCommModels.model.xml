@@ -1,0 +1,2621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="BaseTbih01" meta="x:8;y:10">
+    <Property name="creationType">com.jghz.ih.entity.Tbih01</Property>
+    <Property name="tags">库区库位明细档</Property>
+    <PropertyDef name="ih01Id">
+      <Property/>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property/>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="fatherId">
+      <Property/>
+      <Property name="label">父节点ID</Property>
+    </PropertyDef>
+    <PropertyDef name="treeType">
+      <Property/>
+      <Property name="label">节点类型</Property>
+    </PropertyDef>
+    <PropertyDef name="wareCode">
+      <Property/>
+      <Property name="label">仓库编码</Property>
+    </PropertyDef>
+    <PropertyDef name="wareName">
+      <Property/>
+      <Property name="label">仓库名称</Property>
+    </PropertyDef>
+    <PropertyDef name="qwCode">
+      <Property/>
+      <Property name="label">区位编码</Property>
+    </PropertyDef>
+    <PropertyDef name="qwName">
+      <Property/>
+      <Property name="label">区位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="businature">
+      <Property/>
+      <Property name="label">经营属性</Property>
+    </PropertyDef>
+    <PropertyDef name="city">
+      <Property/>
+      <Property name="label">所在城市</Property>
+    </PropertyDef>
+    <PropertyDef name="stationCode">
+      <Property/>
+      <Property name="label">到站</Property>
+    </PropertyDef>
+    <PropertyDef name="kb">
+      <Property/>
+      <Property name="label">库别</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadKB&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="area">
+      <Property/>
+      <Property name="label">片区</Property>
+    </PropertyDef>
+    <PropertyDef name="isall">
+      <Property/>
+      <Property name="label">包干</Property>
+    </PropertyDef>
+    <PropertyDef name="contacts">
+      <Property/>
+      <Property name="label">联系人</Property>
+    </PropertyDef>
+    <PropertyDef name="telephone">
+      <Property/>
+      <Property name="label">联系电话</Property>
+    </PropertyDef>
+    <PropertyDef name="fax">
+      <Property/>
+      <Property name="label">传真</Property>
+    </PropertyDef>
+    <PropertyDef name="zcode">
+      <Property/>
+      <Property name="label">邮编</Property>
+    </PropertyDef>
+    <PropertyDef name="wareAddress">
+      <Property/>
+      <Property name="label">仓库地址</Property>
+    </PropertyDef>
+    <PropertyDef name="mainType">
+      <Property/>
+      <Property name="label">主营品种类型</Property>
+    </PropertyDef>
+    <PropertyDef name="mainTypeName">
+      <Property/>
+      <Property name="label">主营品种类型名称</Property>
+    </PropertyDef>
+    <PropertyDef name="mainProductNo">
+      <Property/>
+      <Property name="label">主营品种</Property>
+    </PropertyDef>
+    <PropertyDef name="mainProductName">
+      <Property/>
+      <Property name="label">主营品种名称</Property>
+    </PropertyDef>
+    <PropertyDef name="maxnum">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">最大存量</Property>
+    </PropertyDef>
+    <PropertyDef name="remainnum">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">剩余存量</Property>
+    </PropertyDef>
+    <PropertyDef name="height">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">高度</Property>
+    </PropertyDef>
+    <PropertyDef name="width">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">宽度</Property>
+    </PropertyDef>
+    <PropertyDef name="length">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">长度</Property>
+    </PropertyDef>
+    <PropertyDef name="remainHeight">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">剩余高度</Property>
+    </PropertyDef>
+    <PropertyDef name="remainWidth">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">剩余宽度</Property>
+    </PropertyDef>
+    <PropertyDef name="remainLength">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">剩余长度</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property/>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property/>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property/>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property/>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="by4">
+      <Property/>
+      <Property name="label">备用4</Property>
+    </PropertyDef>
+    <PropertyDef name="by5">
+      <Property/>
+      <Property name="label">备用5</Property>
+    </PropertyDef>
+    <PropertyDef name="by6">
+      <Property/>
+      <Property name="label">备用6</Property>
+    </PropertyDef>
+    <PropertyDef name="by7">
+      <Property/>
+      <Property name="label">备用7</Property>
+    </PropertyDef>
+    <PropertyDef name="by8">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用8</Property>
+    </PropertyDef>
+    <PropertyDef name="by9">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用9</Property>
+    </PropertyDef>
+    <PropertyDef name="by10">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用10</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property/>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property/>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property/>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+    <PropertyDef name="maxLayerCode">
+      <Property name="label">最大层号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih21">
+    <Property name="creationType">com.jghz.ih.entity.Tbih21</Property>
+    <Property name="tags">合同协议主档</Property>
+    <PropertyDef name="ih21Id">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">合同编号</Property>
+    </PropertyDef>
+    <PropertyDef name="nContNo">
+      <Property></Property>
+      <Property name="label">内部合同编号</Property>
+    </PropertyDef>
+    <PropertyDef name="ngContNo">
+      <Property></Property>
+      <Property name="label">南钢合同编号</Property>
+    </PropertyDef>
+    <PropertyDef name="contName">
+      <Property></Property>
+      <Property name="label">合同名称</Property>
+    </PropertyDef>
+    <PropertyDef name="year">
+      <Property></Property>
+      <Property name="label">年度</Property>
+    </PropertyDef>
+    <PropertyDef name="ctype">
+      <Property></Property>
+      <Property name="label">协议分类</Property>
+    </PropertyDef>
+    <PropertyDef name="goodsSource">
+      <Property></Property>
+      <Property name="label">货源</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadHY&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="basecodeXz">
+      <Property></Property>
+      <Property name="label">合同性质</Property>
+    </PropertyDef>
+    <PropertyDef name="basecodeBm">
+      <Property></Property>
+      <Property name="label">合同部门</Property>
+    </PropertyDef>
+    <PropertyDef name="settleType">
+      <Property></Property>
+      <Property name="label">结算方式</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadSettleType&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="payType">
+      <Property></Property>
+      <Property name="label">付款方式</Property>
+    </PropertyDef>
+    <PropertyDef name="priceType">
+      <Property></Property>
+      <Property name="label">价格类型</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">货物编号</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">货物名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="settleCompNo">
+      <Property></Property>
+      <Property name="label">结算方编号</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadSettleComp&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="settleCompName">
+      <Property></Property>
+      <Property name="label">结算方名称</Property>
+    </PropertyDef>
+    <PropertyDef name="zgdwNo">
+      <Property></Property>
+      <Property name="label">合同主管单位编码</Property>
+    </PropertyDef>
+    <PropertyDef name="zgdwName">
+      <Property></Property>
+      <Property name="label">合同主管单位</Property>
+    </PropertyDef>
+    <PropertyDef name="ccb">
+      <Property></Property>
+      <Property name="label">合同承办人员</Property>
+    </PropertyDef>
+    <PropertyDef name="telephone">
+      <Property></Property>
+      <Property name="label">联系电话</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">对方当事人编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">对方当事人</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo2">
+      <Property></Property>
+      <Property name="label">第二当事人编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custName2">
+      <Property></Property>
+      <Property name="label">第二当事人</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">审批状态</Property>
+    </PropertyDef>
+    <PropertyDef name="startDate">
+      <Property></Property>
+      <Property name="label">合同开始日期</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property></Property>
+      <Property name="label">合同截止日期</Property>
+    </PropertyDef>
+    <PropertyDef name="object">
+      <Property></Property>
+      <Property name="label">标的</Property>
+    </PropertyDef>
+    <PropertyDef name="mdate">
+      <Property></Property>
+      <Property name="label">合同签订日期</Property>
+    </PropertyDef>
+    <PropertyDef name="cdate">
+      <Property></Property>
+      <Property name="label">合同执行期限</Property>
+    </PropertyDef>
+    <PropertyDef name="fwfl">
+      <Property></Property>
+      <Property name="label">服务分类</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadFWFL&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="jsxm">
+      <Property></Property>
+      <Property name="label">结算项目</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadJSXM&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="kljs">
+      <Property></Property>
+      <Property name="label">库龄计算方式</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadKLJS&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="drdcId">
+      <Property></Property>
+      <Property name="label">文件ID</Property>
+    </PropertyDef>
+    <PropertyDef name="isuse">
+      <Property></Property>
+      <Property name="label">是否启用</Property>
+    </PropertyDef>
+    <PropertyDef name="startStation">
+      <Property></Property>
+      <Property name="label">起点</Property>
+    </PropertyDef>
+    <PropertyDef name="endStation">
+      <Property></Property>
+      <Property name="label">终点</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih21b">
+    <Property name="creationType">com.jghz.ih.entity.Tbih21b</Property>
+    <Property name="tags">价格定义档</Property>
+    <PropertyDef name="ih21bId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="ih21Id">
+      <Property></Property>
+      <Property name="label">主表主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="sno">
+      <Property></Property>
+      <Property name="label">序号</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">协议号</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编码</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">产品编码</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property></Property>
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="steelNo">
+      <Property></Property>
+      <Property name="label">钢种</Property>
+    </PropertyDef>
+    <PropertyDef name="contWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">协议量</Property>
+    </PropertyDef>
+    <PropertyDef name="cycle">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">存储周期</Property>
+    </PropertyDef>
+    <PropertyDef name="storagePrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">仓储单价</Property>
+    </PropertyDef>
+    <PropertyDef name="tranPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">运输单价</Property>
+    </PropertyDef>
+    <PropertyDef name="discountPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">优惠单价</Property>
+    </PropertyDef>
+    <PropertyDef name="overduePrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">超期价</Property>
+    </PropertyDef>
+    <PropertyDef name="liftingPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">吊装价格</Property>
+    </PropertyDef>
+    <PropertyDef name="premiumsPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">保险价格</Property>
+    </PropertyDef>
+    <PropertyDef name="orderPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">特殊加收费用单价</Property>
+    </PropertyDef>
+    <PropertyDef name="returnPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">返还价格</Property>
+    </PropertyDef>
+    <PropertyDef name="turnningPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">翻堆价格</Property>
+    </PropertyDef>
+    <PropertyDef name="bprice1">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用单价1</Property>
+    </PropertyDef>
+    <PropertyDef name="bprice2">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用单价2</Property>
+    </PropertyDef>
+    <PropertyDef name="price">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">协议价</Property>
+    </PropertyDef>
+    <PropertyDef name="fwlx">
+      <Property></Property>
+      <Property name="label">服务类型</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadFWLX&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="priceType">
+      <Property></Property>
+      <Property name="label">价格类型</Property>
+    </PropertyDef>
+    <PropertyDef name="settleType">
+      <Property></Property>
+      <Property name="label">结算方式</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadSettleType&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="payType">
+      <Property></Property>
+      <Property name="label">付款方式</Property>
+    </PropertyDef>
+    <PropertyDef name="kb">
+      <Property></Property>
+      <Property name="label">库别</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadKB&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isOverdue">
+      <Property></Property>
+      <Property name="label">超期标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isStorage">
+      <Property></Property>
+      <Property name="label">仓储管理标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isDiscount">
+      <Property></Property>
+      <Property name="label">优惠政策标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isPremiums">
+      <Property></Property>
+      <Property name="label">保险费标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isTran">
+      <Property></Property>
+      <Property name="label">运输费标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isLifting">
+      <Property></Property>
+      <Property name="label">吊装标志</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isManager">
+      <Property></Property>
+      <Property name="label">仓储管理费状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isTurnning">
+      <Property></Property>
+      <Property name="label">翻堆费结算状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isOrder">
+      <Property></Property>
+      <Property name="label">特殊价格费结算状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadYN&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="isuse">
+      <Property></Property>
+      <Property name="label">是否启用</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="useDate">
+      <Property></Property>
+      <Property name="label">启用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="useEmp">
+      <Property></Property>
+      <Property name="label">启用人</Property>
+    </PropertyDef>
+    <PropertyDef name="stopDate">
+      <Property></Property>
+      <Property name="label">停用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="stopEmp">
+      <Property></Property>
+      <Property name="label">停用人</Property>
+    </PropertyDef>
+    <PropertyDef name="fno">
+      <Property></Property>
+      <Property name="label">方案号</Property>
+    </PropertyDef>
+    <PropertyDef name="troad">
+      <Property></Property>
+      <Property name="label">物流线路</Property>
+    </PropertyDef>
+    <PropertyDef name="tranType">
+      <Property></Property>
+      <Property name="label">运输方式</Property>
+    </PropertyDef>
+    <PropertyDef name="startStation">
+      <Property></Property>
+      <Property name="label">起点</Property>
+    </PropertyDef>
+    <PropertyDef name="startLine">
+      <Property></Property>
+      <Property name="label">起点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="endStation">
+      <Property></Property>
+      <Property name="label">终点</Property>
+    </PropertyDef>
+    <PropertyDef name="endLine">
+      <Property></Property>
+      <Property name="label">终点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+    <PropertyDef name="startDate">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">起始库龄</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">结束库龄</Property>
+    </PropertyDef>
+    <PropertyDef name="overdueStdPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">超期基价</Property>
+    </PropertyDef>
+    <PropertyDef name="overdueType">
+      <Property></Property>
+      <Property name="label">超期单价累计方式</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih03a">
+    <Property name="creationType">com.jghz.ih.entity.Tbih03a</Property>
+    <Property name="tags">超期价格表</Property>
+    <PropertyDef name="ih03aId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">合同号</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户名称</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">产品编码</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property></Property>
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="steelNo">
+      <Property></Property>
+      <Property name="label">钢种</Property>
+    </PropertyDef>
+    <PropertyDef name="contWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">协议量</Property>
+    </PropertyDef>
+    <PropertyDef name="startDate">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">起始库龄</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">结束库龄</Property>
+    </PropertyDef>
+    <PropertyDef name="overdueStdPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">超期基价</Property>
+    </PropertyDef>
+    <PropertyDef name="overduePrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">超期单价</Property>
+    </PropertyDef>
+    <PropertyDef name="overdueType">
+      <Property></Property>
+      <Property name="label">超期单价累计方式</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="useDate">
+      <Property></Property>
+      <Property name="label">启用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="useEmp">
+      <Property></Property>
+      <Property name="label">启用人</Property>
+    </PropertyDef>
+    <PropertyDef name="stopDate">
+      <Property></Property>
+      <Property name="label">停用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="stopEmp">
+      <Property></Property>
+      <Property name="label">停用人</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="by4">
+      <Property></Property>
+      <Property name="label">备用4</Property>
+    </PropertyDef>
+    <PropertyDef name="by5">
+      <Property></Property>
+      <Property name="label">备用5</Property>
+    </PropertyDef>
+    <PropertyDef name="by6">
+      <Property></Property>
+      <Property name="label">备用6</Property>
+    </PropertyDef>
+    <PropertyDef name="by7">
+      <Property></Property>
+      <Property name="label">备用7</Property>
+    </PropertyDef>
+    <PropertyDef name="by8">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用8</Property>
+    </PropertyDef>
+    <PropertyDef name="by9">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用9</Property>
+    </PropertyDef>
+    <PropertyDef name="by10">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用10</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih03c">
+    <Property name="creationType">com.jghz.ih.entity.Tbih03c</Property>
+    <Property name="tags">优惠政策价格表</Property>
+    <PropertyDef name="ih03cId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">合同号</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编码</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户</Property>
+    </PropertyDef>
+    <PropertyDef name="contWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">订货量</Property>
+    </PropertyDef>
+    <PropertyDef name="discountReason">
+      <Property></Property>
+      <Property name="label">优惠原因</Property>
+    </PropertyDef>
+    <PropertyDef name="tranType">
+      <Property></Property>
+      <Property name="label">运输方式</Property>
+    </PropertyDef>
+    <PropertyDef name="cycle">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">存储周期</Property>
+    </PropertyDef>
+    <PropertyDef name="discountPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">优惠价格</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="usedate">
+      <Property></Property>
+      <Property name="label">启用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="by4">
+      <Property></Property>
+      <Property name="label">备用4</Property>
+    </PropertyDef>
+    <PropertyDef name="by5">
+      <Property></Property>
+      <Property name="label">备用5</Property>
+    </PropertyDef>
+    <PropertyDef name="by6">
+      <Property></Property>
+      <Property name="label">备用6</Property>
+    </PropertyDef>
+    <PropertyDef name="by7">
+      <Property></Property>
+      <Property name="label">备用7</Property>
+    </PropertyDef>
+    <PropertyDef name="by8">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用8</Property>
+    </PropertyDef>
+    <PropertyDef name="by9">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用9</Property>
+    </PropertyDef>
+    <PropertyDef name="by10">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用10</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih22">
+    <Property name="creationType">com.jghz.ih.entity.Tbih22</Property>
+    <Property name="tags">合同协议订单</Property>
+    <PropertyDef name="ih22Id">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="ih21Id">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">协议号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderNo">
+      <Property></Property>
+      <Property name="label">订单号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderItem">
+      <Property></Property>
+      <Property name="label">订单项次号</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="orderType">
+      <Property></Property>
+      <Property name="label">订单类型</Property>
+    </PropertyDef>
+    <PropertyDef name="orderMethod">
+      <Property></Property>
+      <Property name="label">订货方式</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productModality">
+      <Property></Property>
+      <Property name="label">产品形态</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property></Property>
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="steelNo">
+      <Property></Property>
+      <Property name="label">钢种</Property>
+    </PropertyDef>
+    <PropertyDef name="thick">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">厚度</Property>
+    </PropertyDef>
+    <PropertyDef name="width">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">宽度</Property>
+    </PropertyDef>
+    <PropertyDef name="length">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">长度</Property>
+    </PropertyDef>
+    <PropertyDef name="factory">
+      <Property></Property>
+      <Property name="label">生产厂</Property>
+    </PropertyDef>
+    <PropertyDef name="standardName">
+      <Property></Property>
+      <Property name="label">标准全名</Property>
+    </PropertyDef>
+    <PropertyDef name="useType">
+      <Property></Property>
+      <Property name="label">用途码</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryDate">
+      <Property></Property>
+      <Property name="label">交货日期</Property>
+    </PropertyDef>
+    <PropertyDef name="orderWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">订单量</Property>
+    </PropertyDef>
+    <PropertyDef name="ladingWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">已开发货量</Property>
+    </PropertyDef>
+    <PropertyDef name="outWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">已出货量</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">产品编码</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="impContType">
+      <Property></Property>
+      <Property name="label">重点合同类型</Property>
+    </PropertyDef>
+    <PropertyDef name="steel">
+      <Property></Property>
+      <Property name="label">钢质</Property>
+    </PropertyDef>
+    <PropertyDef name="size">
+      <Property></Property>
+      <Property name="label">尺寸信息</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryStatus">
+      <Property></Property>
+      <Property name="label">交货状态</Property>
+    </PropertyDef>
+    <PropertyDef name="sprayContext">
+      <Property></Property>
+      <Property name="label">加喷内容</Property>
+    </PropertyDef>
+    <PropertyDef name="unit">
+      <Property></Property>
+      <Property name="label">计重方式</Property>
+    </PropertyDef>
+    <PropertyDef name="zdLength">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">指定长度</Property>
+    </PropertyDef>
+    <PropertyDef name="sprayColor">
+      <Property></Property>
+      <Property name="label">喷漆颜色</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompNo">
+      <Property></Property>
+      <Property name="label">收货单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompName">
+      <Property></Property>
+      <Property name="label">收货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="endStation">
+      <Property></Property>
+      <Property name="label">终点</Property>
+    </PropertyDef>
+    <PropertyDef name="tranType">
+      <Property></Property>
+      <Property name="label">运输方式</Property>
+    </PropertyDef>
+    <PropertyDef name="ngContNo">
+      <Property></Property>
+      <Property name="label">南钢合同编号</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierNo">
+      <Property></Property>
+      <Property name="label">承运商编号</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierName">
+      <Property></Property>
+      <Property name="label">承运商</Property>
+    </PropertyDef>
+    <PropertyDef name="ifZx">
+      <Property></Property>
+      <Property name="label">是否直销</Property>
+    </PropertyDef>
+    <PropertyDef name="carType">
+      <Property></Property>
+      <Property name="label">车型</Property>
+    </PropertyDef>
+    <PropertyDef name="transPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">运费单价</Property>
+    </PropertyDef>
+    <PropertyDef name="orderNum">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">块数</Property>
+    </PropertyDef>
+    <PropertyDef name="memo">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="saleEmp">
+      <Property></Property>
+      <Property name="label">销售人员</Property>
+    </PropertyDef>
+    <PropertyDef name="transPriceYpz">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">一票制运费单价</Property>
+    </PropertyDef>
+    <PropertyDef name="proPriceYpz">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">一票制加工单价</Property>
+    </PropertyDef>
+    <PropertyDef name="mbb">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">毛边板</Property>
+    </PropertyDef>
+    <PropertyDef name="price">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">单价</Property>
+    </PropertyDef>
+    <PropertyDef name="memoImpor">
+      <Property></Property>
+      <Property name="label">接单注意事项</Property>
+    </PropertyDef>
+    <PropertyDef name="ifImporCust">
+      <Property></Property>
+      <Property name="label">是否为重点客户</Property>
+    </PropertyDef>
+    <PropertyDef name="prodStandNo">
+      <Property></Property>
+      <Property name="label">产品规范编号</Property>
+    </PropertyDef>
+    <PropertyDef name="sideSpray">
+      <Property></Property>
+      <Property name="label">侧喷内容</Property>
+    </PropertyDef>
+    <PropertyDef name="jcjgsdsr">
+      <Property></Property>
+      <Property name="label">检查机关手动输入</Property>
+    </PropertyDef>
+    <PropertyDef name="jcjg">
+      <Property></Property>
+      <Property name="label">检查机关</Property>
+    </PropertyDef>
+    <PropertyDef name="ifThree">
+      <Property></Property>
+      <Property name="label">是否第三方认证</Property>
+    </PropertyDef>
+    <PropertyDef name="shipNo">
+      <Property></Property>
+      <Property name="label">船号</Property>
+    </PropertyDef>
+    <PropertyDef name="ifImporOrder">
+      <Property></Property>
+      <Property name="label">是否重点订单</Property>
+    </PropertyDef>
+    <PropertyDef name="orderItemAmt">
+      <Property></Property>
+      <Property name="label">订单项次总价</Property>
+    </PropertyDef>
+    <PropertyDef name="assignFactory">
+      <Property></Property>
+      <Property name="label">指定厂</Property>
+    </PropertyDef>
+    <PropertyDef name="returnFactory">
+      <Property></Property>
+      <Property name="label">质量设计返回生产厂</Property>
+    </PropertyDef>
+    <PropertyDef name="contYm">
+      <Property></Property>
+      <Property name="label">合同月份</Property>
+    </PropertyDef>
+    <PropertyDef name="wareName">
+      <Property></Property>
+      <Property name="label">仓库</Property>
+    </PropertyDef>
+    <PropertyDef name="wareCode">
+      <Property></Property>
+      <Property name="label">仓库编码</Property>
+    </PropertyDef>
+    <PropertyDef name="startStation">
+      <Property></Property>
+      <Property name="label">起点</Property>
+    </PropertyDef>
+    <PropertyDef name="startLine">
+      <Property></Property>
+      <Property name="label">起点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="endLine">
+      <Property></Property>
+      <Property name="label">终点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompNo">
+      <Property></Property>
+      <Property name="label">订货单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompName">
+      <Property></Property>
+      <Property name="label">订货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="productDate">
+      <Property></Property>
+      <Property name="label">生产日期</Property>
+    </PropertyDef>
+    <PropertyDef name="qfh">
+      <Property></Property>
+      <Property name="label">质量防护</Property>
+    </PropertyDef>
+    <PropertyDef name="billCompNo">
+      <Property></Property>
+      <Property name="label">开票单位编码</Property>
+    </PropertyDef>
+    <PropertyDef name="billCompName">
+      <Property></Property>
+      <Property name="label">开票单位</Property>
+    </PropertyDef>
+    <PropertyDef name="pemp">
+      <Property></Property>
+      <Property name="label">联系人</Property>
+    </PropertyDef>
+    <PropertyDef name="telephone">
+      <Property></Property>
+      <Property name="label">电话</Property>
+    </PropertyDef>
+    <PropertyDef name="czemp">
+      <Property></Property>
+      <Property name="label">操作人员</Property>
+    </PropertyDef>
+    <PropertyDef name="source">
+      <Property></Property>
+      <Property name="label">货源</Property>
+    </PropertyDef>
+    <PropertyDef name="ladingNo">
+      <Property></Property>
+      <Property name="label">提单号</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih19">
+    <Property name="creationType">com.jghz.ih.entity.Tbih19</Property>
+    <Property name="tags">出库单</Property>
+    <PropertyDef name="ih19Id">
+      <Property></Property>
+      <Property name="label">系统ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司编码</Property>
+    </PropertyDef>
+    <PropertyDef name="outNo">
+      <Property></Property>
+      <Property name="label">出库单编号</Property>
+    </PropertyDef>
+    <PropertyDef name="outType">
+      <Property></Property>
+      <Property name="label">出库单类型</Property>
+    </PropertyDef>
+    <PropertyDef name="ownnerCompNo">
+      <Property></Property>
+      <Property name="label">货主单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="ownnerCompName">
+      <Property></Property>
+      <Property name="label">货主单位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户名称</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierNo">
+      <Property></Property>
+      <Property name="label">承运商编号</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierName">
+      <Property></Property>
+      <Property name="label">承运商名称</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompNo">
+      <Property></Property>
+      <Property name="label">收货单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompName">
+      <Property></Property>
+      <Property name="label">收货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="tranOrderNo">
+      <Property></Property>
+      <Property name="label">运输订单号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompNo">
+      <Property></Property>
+      <Property name="label">订货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompName">
+      <Property></Property>
+      <Property name="label">订货单位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="payCompNo">
+      <Property></Property>
+      <Property name="label">付款公司编码</Property>
+    </PropertyDef>
+    <PropertyDef name="payCompName">
+      <Property></Property>
+      <Property name="label">付款公司名称</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">合同协议号</Property>
+    </PropertyDef>
+    <PropertyDef name="forecastNo">
+      <Property></Property>
+      <Property name="label">通知单号</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryNo">
+      <Property></Property>
+      <Property name="label">来函流水号</Property>
+    </PropertyDef>
+    <PropertyDef name="ladingNo">
+      <Property></Property>
+      <Property name="label">提货号</Property>
+    </PropertyDef>
+    <PropertyDef name="settleType">
+      <Property></Property>
+      <Property name="label">结算方式</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadSettleType&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="orderItem">
+      <Property></Property>
+      <Property name="label">出厂订单项次号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderNo">
+      <Property></Property>
+      <Property name="label">出厂订单号</Property>
+    </PropertyDef>
+    <PropertyDef name="tranNo">
+      <Property></Property>
+      <Property name="label">运单号</Property>
+    </PropertyDef>
+    <PropertyDef name="labelNo">
+      <Property></Property>
+      <Property name="label">标签号</Property>
+    </PropertyDef>
+    <PropertyDef name="soure">
+      <Property></Property>
+      <Property name="label">数据来源</Property>
+    </PropertyDef>
+    <PropertyDef name="checkNo">
+      <Property></Property>
+      <Property name="label">关联单号</Property>
+    </PropertyDef>
+    <PropertyDef name="unit">
+      <Property></Property>
+      <Property name="label">计量单位</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">产品编码</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property></Property>
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="steelNo">
+      <Property></Property>
+      <Property name="label">钢种</Property>
+    </PropertyDef>
+    <PropertyDef name="qb">
+      <Property></Property>
+      <Property name="label">切边</Property>
+    </PropertyDef>
+    <PropertyDef name="dc">
+      <Property></Property>
+      <Property name="label">定尺信息</Property>
+    </PropertyDef>
+    <PropertyDef name="thick">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">厚度</Property>
+    </PropertyDef>
+    <PropertyDef name="size">
+      <Property></Property>
+      <Property name="label">产品型号</Property>
+    </PropertyDef>
+    <PropertyDef name="width">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">宽度</Property>
+    </PropertyDef>
+    <PropertyDef name="length">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">长度</Property>
+    </PropertyDef>
+    <PropertyDef name="pieceNum">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">出库件数</Property>
+    </PropertyDef>
+    <PropertyDef name="num">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">出库数量</Property>
+    </PropertyDef>
+    <PropertyDef name="wgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">出库重量</Property>
+    </PropertyDef>
+    <PropertyDef name="tareWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">过磅皮重</Property>
+    </PropertyDef>
+    <PropertyDef name="grossWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">过磅毛重</Property>
+    </PropertyDef>
+    <PropertyDef name="netWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">过磅净重</Property>
+    </PropertyDef>
+    <PropertyDef name="kwWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">扣量</Property>
+    </PropertyDef>
+    <PropertyDef name="outDate">
+      <Property></Property>
+      <Property name="label">出库日期</Property>
+    </PropertyDef>
+    <PropertyDef name="outWareCode">
+      <Property></Property>
+      <Property name="label">发出仓库</Property>
+    </PropertyDef>
+    <PropertyDef name="startAddress">
+      <Property></Property>
+      <Property name="label">发运地</Property>
+    </PropertyDef>
+    <PropertyDef name="endAddress">
+      <Property></Property>
+      <Property name="label">收货地</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptWareCode">
+      <Property></Property>
+      <Property name="label">收货仓库</Property>
+    </PropertyDef>
+    <PropertyDef name="tranType">
+      <Property></Property>
+      <Property name="label">运输方式</Property>
+    </PropertyDef>
+    <PropertyDef name="carTeam">
+      <Property></Property>
+      <Property name="label">车行</Property>
+    </PropertyDef>
+    <PropertyDef name="carNo">
+      <Property></Property>
+      <Property name="label">车号</Property>
+    </PropertyDef>
+    <PropertyDef name="telephone">
+      <Property></Property>
+      <Property name="label">联系电话</Property>
+    </PropertyDef>
+    <PropertyDef name="area">
+      <Property></Property>
+      <Property name="label">市场</Property>
+    </PropertyDef>
+    <PropertyDef name="settleNo">
+      <Property></Property>
+      <Property name="label">结算号</Property>
+    </PropertyDef>
+    <PropertyDef name="invoice">
+      <Property></Property>
+      <Property name="label">发票号</Property>
+    </PropertyDef>
+    <PropertyDef name="wareQwCode">
+      <Property></Property>
+      <Property name="label">库位</Property>
+    </PropertyDef>
+    <PropertyDef name="layerCode">
+      <Property></Property>
+      <Property name="label">层数</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadOutStatus&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="applyStatus">
+      <Property></Property>
+      <Property name="label">单据状态</Property>
+    </PropertyDef>
+    <PropertyDef name="ifMix">
+      <Property></Property>
+      <Property name="label">是否混箱</Property>
+    </PropertyDef>
+    <PropertyDef name="syhch">
+      <Property></Property>
+      <Property name="label">航次号(水运)</Property>
+    </PropertyDef>
+    <PropertyDef name="shipNo">
+      <Property></Property>
+      <Property name="label">船号</Property>
+    </PropertyDef>
+    <PropertyDef name="shr">
+      <Property></Property>
+      <Property name="label">收货人</Property>
+    </PropertyDef>
+    <PropertyDef name="driverLicense">
+      <Property></Property>
+      <Property name="label">驾驶证号</Property>
+    </PropertyDef>
+    <PropertyDef name="phDate">
+      <Property></Property>
+      <Property name="label">配货时间</Property>
+    </PropertyDef>
+    <PropertyDef name="phEmp">
+      <Property></Property>
+      <Property name="label">配货人</Property>
+    </PropertyDef>
+    <PropertyDef name="outEmp">
+      <Property></Property>
+      <Property name="label">出库人</Property>
+    </PropertyDef>
+    <PropertyDef name="xzEmp">
+      <Property></Property>
+      <Property name="label">销帐人</Property>
+    </PropertyDef>
+    <PropertyDef name="xzTime">
+      <Property></Property>
+      <Property name="label">销帐时间</Property>
+    </PropertyDef>
+    <PropertyDef name="stationCode">
+      <Property></Property>
+      <Property name="label">到站ID</Property>
+    </PropertyDef>
+    <PropertyDef name="cdTime">
+      <Property></Property>
+      <Property name="label">撤单时间</Property>
+    </PropertyDef>
+    <PropertyDef name="zcr">
+      <Property></Property>
+      <Property name="label">装车人</Property>
+    </PropertyDef>
+    <PropertyDef name="liftingTeam">
+      <Property></Property>
+      <Property name="label">装卸班组</Property>
+    </PropertyDef>
+    <PropertyDef name="liftingEmp">
+      <Property></Property>
+      <Property name="label">理货员</Property>
+    </PropertyDef>
+    <PropertyDef name="craneDriver">
+      <Property></Property>
+      <Property name="label">行车工</Property>
+    </PropertyDef>
+    <PropertyDef name="pip">
+      <Property></Property>
+      <Property name="label">配IP</Property>
+    </PropertyDef>
+    <PropertyDef name="zz">
+      <Property></Property>
+      <Property name="label">中转</Property>
+    </PropertyDef>
+    <PropertyDef name="ts">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">天数(库龄)</Property>
+    </PropertyDef>
+    <PropertyDef name="dsyf">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">代收运费</Property>
+    </PropertyDef>
+    <PropertyDef name="price">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">单价</Property>
+    </PropertyDef>
+    <PropertyDef name="totalAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">总费用</Property>
+    </PropertyDef>
+    <PropertyDef name="storageAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">仓储费</Property>
+    </PropertyDef>
+    <PropertyDef name="liftingAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">吊装费</Property>
+    </PropertyDef>
+    <PropertyDef name="discountAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">优惠价</Property>
+    </PropertyDef>
+    <PropertyDef name="orderAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">特殊加收费用金额</Property>
+    </PropertyDef>
+    <PropertyDef name="premiumsAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">保险费</Property>
+    </PropertyDef>
+    <PropertyDef name="returnAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">返回金额</Property>
+    </PropertyDef>
+    <PropertyDef name="overdueAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">超期费</Property>
+    </PropertyDef>
+    <PropertyDef name="dbAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">代办费</Property>
+    </PropertyDef>
+    <PropertyDef name="managerAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">仓储管理费用</Property>
+    </PropertyDef>
+    <PropertyDef name="tranAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">运费</Property>
+    </PropertyDef>
+    <PropertyDef name="taxAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">税额</Property>
+    </PropertyDef>
+    <PropertyDef name="kk">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">扣款</Property>
+    </PropertyDef>
+    <PropertyDef name="startLine">
+      <Property></Property>
+      <Property name="label">起点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="endStation">
+      <Property></Property>
+      <Property name="label">终点</Property>
+    </PropertyDef>
+    <PropertyDef name="lb">
+      <Property></Property>
+      <Property name="label">类别（ZY 自营，JY 经营）</Property>
+    </PropertyDef>
+    <PropertyDef name="sjtz">
+      <Property></Property>
+      <Property name="label">销账时间备用</Property>
+    </PropertyDef>
+    <PropertyDef name="startStation">
+      <Property></Property>
+      <Property name="label">起点</Property>
+    </PropertyDef>
+    <PropertyDef name="endLine">
+      <Property></Property>
+      <Property name="label">终点专用线</Property>
+    </PropertyDef>
+    <PropertyDef name="zcqrEmp">
+      <Property></Property>
+      <Property name="label">装船确认人</Property>
+    </PropertyDef>
+    <PropertyDef name="zcqrTime">
+      <Property></Property>
+      <Property name="label">装船确认时间</Property>
+    </PropertyDef>
+    <PropertyDef name="desp">
+      <Property></Property>
+      <Property name="label">备注说明</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">VERSION</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih30">
+    <Property name="creationType">com.jghz.ih.entity.Tbih30</Property>
+    <PropertyDef name="ih30Id">
+      <Property></Property>
+      <Property name="label">记录ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="labelNo">
+      <Property></Property>
+      <Property name="label">标签号</Property>
+    </PropertyDef>
+    <PropertyDef name="wareQwCode">
+      <Property></Property>
+      <Property name="label">库位</Property>
+    </PropertyDef>
+    <PropertyDef name="layerCode">
+      <Property></Property>
+      <Property name="label">层数</Property>
+    </PropertyDef>
+    <PropertyDef name="prodType">
+      <Property></Property>
+      <Property name="label">产品大类</Property>
+    </PropertyDef>
+    <PropertyDef name="prodTypeName">
+      <Property></Property>
+      <Property name="label">产品大类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productNo">
+      <Property></Property>
+      <Property name="label">产品编码</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property></Property>
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="productDetail">
+      <Property></Property>
+      <Property name="label">产品描述</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property></Property>
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="steelNo">
+      <Property></Property>
+      <Property name="label">钢种</Property>
+    </PropertyDef>
+    <PropertyDef name="qb">
+      <Property></Property>
+      <Property name="label">切边</Property>
+    </PropertyDef>
+    <PropertyDef name="dc">
+      <Property></Property>
+      <Property name="label">定尺信息</Property>
+    </PropertyDef>
+    <PropertyDef name="thick">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">厚度</Property>
+    </PropertyDef>
+    <PropertyDef name="width">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">宽度</Property>
+    </PropertyDef>
+    <PropertyDef name="length">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">长度</Property>
+    </PropertyDef>
+    <PropertyDef name="size">
+      <Property></Property>
+      <Property name="label">尺寸信息</Property>
+    </PropertyDef>
+    <PropertyDef name="pieceNum">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">件数</Property>
+    </PropertyDef>
+    <PropertyDef name="num">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">数量</Property>
+    </PropertyDef>
+    <PropertyDef name="wgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">重量</Property>
+    </PropertyDef>
+    <PropertyDef name="volume">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">体积</Property>
+    </PropertyDef>
+    <PropertyDef name="unitWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">单重</Property>
+    </PropertyDef>
+    <PropertyDef name="inUnitWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">入库单重</Property>
+    </PropertyDef>
+    <PropertyDef name="inWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">入库重量</Property>
+    </PropertyDef>
+    <PropertyDef name="outWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">出库重量</Property>
+    </PropertyDef>
+    <PropertyDef name="maxWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">可开单总量</Property>
+    </PropertyDef>
+    <PropertyDef name="differenceWgt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">磅差</Property>
+    </PropertyDef>
+    <PropertyDef name="cargoPrice">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">货值单价</Property>
+    </PropertyDef>
+    <PropertyDef name="cargoAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">货值金额</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户名称</Property>
+    </PropertyDef>
+    <PropertyDef name="ownnerCompNo">
+      <Property></Property>
+      <Property name="label">货主单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="ownnerCompName">
+      <Property></Property>
+      <Property name="label">货主单位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierNo">
+      <Property></Property>
+      <Property name="label">承运商编号</Property>
+    </PropertyDef>
+    <PropertyDef name="carrierName">
+      <Property></Property>
+      <Property name="label">承运商名称</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompNo">
+      <Property></Property>
+      <Property name="label">收货单位编号</Property>
+    </PropertyDef>
+    <PropertyDef name="receiptCompName">
+      <Property></Property>
+      <Property name="label">收货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompNo">
+      <Property></Property>
+      <Property name="label">订货单位</Property>
+    </PropertyDef>
+    <PropertyDef name="orderCompName">
+      <Property></Property>
+      <Property name="label">订货单位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="contNo">
+      <Property></Property>
+      <Property name="label">合同协议号</Property>
+    </PropertyDef>
+    <PropertyDef name="contractNo">
+      <Property></Property>
+      <Property name="label">采购合同号</Property>
+    </PropertyDef>
+    <PropertyDef name="tranOrderNo">
+      <Property></Property>
+      <Property name="label">运输订单号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderNo">
+      <Property></Property>
+      <Property name="label">出厂订单号</Property>
+    </PropertyDef>
+    <PropertyDef name="orderItem">
+      <Property></Property>
+      <Property name="label">出厂订单项次号</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryNo">
+      <Property></Property>
+      <Property name="label">来函流水号</Property>
+    </PropertyDef>
+    <PropertyDef name="ladingNo">
+      <Property></Property>
+      <Property name="label">提货号</Property>
+    </PropertyDef>
+    <PropertyDef name="settleNo">
+      <Property></Property>
+      <Property name="label">结算号</Property>
+    </PropertyDef>
+    <PropertyDef name="invoice">
+      <Property></Property>
+      <Property name="label">发票号</Property>
+    </PropertyDef>
+    <PropertyDef name="fwlx">
+      <Property></Property>
+      <Property name="label">服务类型</Property>
+    </PropertyDef>
+    <PropertyDef name="settleType">
+      <Property></Property>
+      <Property name="label">结算方式</Property>
+    </PropertyDef>
+    <PropertyDef name="syhch">
+      <Property></Property>
+      <Property name="label">水运航次号</Property>
+    </PropertyDef>
+    <PropertyDef name="fno">
+      <Property></Property>
+      <Property name="label">方案号</Property>
+    </PropertyDef>
+    <PropertyDef name="transNo">
+      <Property></Property>
+      <Property name="label">运输单号</Property>
+    </PropertyDef>
+    <PropertyDef name="priceSno">
+      <Property></Property>
+      <Property name="label">价格编号</Property>
+    </PropertyDef>
+    <PropertyDef name="zkdNo">
+      <Property></Property>
+      <Property name="label">转库单ID</Property>
+    </PropertyDef>
+    <PropertyDef name="inNo">
+      <Property></Property>
+      <Property name="label">入库单ID</Property>
+    </PropertyDef>
+    <PropertyDef name="inDate">
+      <Property></Property>
+      <Property name="label">入库时间</Property>
+    </PropertyDef>
+    <PropertyDef name="inEmp">
+      <Property></Property>
+      <Property name="label">入库人</Property>
+    </PropertyDef>
+    <PropertyDef name="inLiftingTeam">
+      <Property></Property>
+      <Property name="label">入库装卸班组</Property>
+    </PropertyDef>
+    <PropertyDef name="inLiftingEmp">
+      <Property></Property>
+      <Property name="label">入库理货员</Property>
+    </PropertyDef>
+    <PropertyDef name="inCraneDriver">
+      <Property></Property>
+      <Property name="label">入库行车工</Property>
+    </PropertyDef>
+    <PropertyDef name="outNo">
+      <Property></Property>
+      <Property name="label">出库单ID</Property>
+    </PropertyDef>
+    <PropertyDef name="outDate">
+      <Property></Property>
+      <Property name="label">出库时间</Property>
+    </PropertyDef>
+    <PropertyDef name="outEmp">
+      <Property></Property>
+      <Property name="label">出库人</Property>
+    </PropertyDef>
+    <PropertyDef name="outLiftingTeam">
+      <Property></Property>
+      <Property name="label">出库装卸班组</Property>
+    </PropertyDef>
+    <PropertyDef name="outLiftingEmp">
+      <Property></Property>
+      <Property name="label">出库理货员</Property>
+    </PropertyDef>
+    <PropertyDef name="outCraneDriver">
+      <Property></Property>
+      <Property name="label">出库行车工</Property>
+    </PropertyDef>
+    <PropertyDef name="phEmp">
+      <Property></Property>
+      <Property name="label">配货人</Property>
+    </PropertyDef>
+    <PropertyDef name="phIp">
+      <Property></Property>
+      <Property name="label">配货IP</Property>
+    </PropertyDef>
+    <PropertyDef name="zcr">
+      <Property></Property>
+      <Property name="label">装车人</Property>
+    </PropertyDef>
+    <PropertyDef name="zcTime">
+      <Property></Property>
+      <Property name="label">装车时间</Property>
+    </PropertyDef>
+    <PropertyDef name="jfr">
+      <Property></Property>
+      <Property name="label">计费日</Property>
+    </PropertyDef>
+    <PropertyDef name="lb">
+      <Property></Property>
+      <Property name="label">类别(JY-经营/ZY-自营)</Property>
+    </PropertyDef>
+    <PropertyDef name="kb">
+      <Property></Property>
+      <Property name="label">库别</Property>
+    </PropertyDef>
+    <PropertyDef name="area">
+      <Property></Property>
+      <Property name="label">区域</Property>
+    </PropertyDef>
+    <PropertyDef name="sfe">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">收费额</Property>
+    </PropertyDef>
+    <PropertyDef name="jkqrtjFy">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">缴款确认提交费用</Property>
+    </PropertyDef>
+    <PropertyDef name="qrphFy">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">确认配货费用</Property>
+    </PropertyDef>
+    <PropertyDef name="isOverdue">
+      <Property></Property>
+      <Property name="label">超期费结算状态</Property>
+    </PropertyDef>
+    <PropertyDef name="isStorage">
+      <Property></Property>
+      <Property name="label">仓储费结算状态</Property>
+    </PropertyDef>
+    <PropertyDef name="isManager">
+      <Property></Property>
+      <Property name="label">仓储管理费结算状态</Property>
+    </PropertyDef>
+    <PropertyDef name="isOrder">
+      <Property></Property>
+      <Property name="label">特殊价格费结算状态</Property>
+    </PropertyDef>
+    <PropertyDef name="isTurning">
+      <Property></Property>
+      <Property name="label">翻堆费结算状态</Property>
+    </PropertyDef>
+    <PropertyDef name="managerTs">
+      <Property></Property>
+      <Property name="label">仓储管理天数</Property>
+    </PropertyDef>
+    <PropertyDef name="jsdr">
+      <Property></Property>
+      <Property name="label">结算导入标示(已导=1，否则=0)</Property>
+    </PropertyDef>
+    <PropertyDef name="chr">
+      <Property></Property>
+      <Property name="label">冲红日</Property>
+    </PropertyDef>
+    <PropertyDef name="age">
+      <Property></Property>
+      <Property name="label">天数</Property>
+    </PropertyDef>
+    <PropertyDef name="hpZt">
+      <Property></Property>
+      <Property name="label">货品状态</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态(1确认配货2接受确认3打印六联单)</Property>
+    </PropertyDef>
+    <PropertyDef name="deadLine">
+      <Property></Property>
+      <Property name="label">交期时间</Property>
+    </PropertyDef>
+    <PropertyDef name="sfzd">
+      <Property></Property>
+      <Property name="label">是否为重点合同</Property>
+    </PropertyDef>
+    <PropertyDef name="ifImport">
+      <Property></Property>
+      <Property name="label">是否导入(A转库入库B货权转授)</Property>
+    </PropertyDef>
+    <PropertyDef name="ifzdbj">
+      <Property></Property>
+      <Property name="label">转单次数标记</Property>
+    </PropertyDef>
+    <PropertyDef name="isCq">
+      <Property></Property>
+      <Property name="label">是否超期</Property>
+    </PropertyDef>
+    <PropertyDef name="sfxcbj">
+      <Property></Property>
+      <Property name="label">是否项次标记</Property>
+    </PropertyDef>
+    <PropertyDef name="sfzq">
+      <Property></Property>
+      <Property name="label">是否直取标记</Property>
+    </PropertyDef>
+    <PropertyDef name="bjyybz">
+      <Property></Property>
+      <Property name="label">标记原因备注</Property>
+    </PropertyDef>
+    <PropertyDef name="lineCode">
+      <Property></Property>
+      <Property name="label">专线</Property>
+    </PropertyDef>
+    <PropertyDef name="stationCode">
+      <Property></Property>
+      <Property name="label">当前到站</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建者</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改者</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">VERSION</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseIhCondition">
+    <PropertyDef name="wareQwCode">
+      <Property name="label">库位</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property name="label">客户</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property name="label">客户编码</Property>
+    </PropertyDef>
+    <PropertyDef name="dateS">
+      <Property name="label">开始日期</Property>
+    </PropertyDef>
+    <PropertyDef name="dateE">
+      <Property name="label">截至日期</Property>
+    </PropertyDef>
+    <PropertyDef name="productName">
+      <Property name="label">产品名称</Property>
+    </PropertyDef>
+    <PropertyDef name="gradeNo">
+      <Property name="label">牌号</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryDate">
+      <Property name="label">委托函日期</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryNo">
+      <Property name="label">委托函号</Property>
+    </PropertyDef>
+    <PropertyDef name="carNo">
+      <Property name="label">车号</Property>
+    </PropertyDef>
+    <PropertyDef name="deliveryStatus">
+      <Property name="label">委托函状态</Property>
+    </PropertyDef>
+    <PropertyDef name="inStatus">
+      <Property name="label">入库状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadInStatus&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="outStatus">
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadOutStatus&quot;).getResult()}</Property>
+      </Property>
+      <Property name="label">出库状态</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property name="label">库存状态</Property>
+      <Property name="mapping">
+        <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadStatus&quot;).getResult()}</Property>
+      </Property>
+    </PropertyDef>
+    <PropertyDef name="inDateS">
+      <Property name="label">入库日期从</Property>
+    </PropertyDef>
+    <PropertyDef name="inDateE">
+      <Property name="label">到</Property>
+    </PropertyDef>
+    <PropertyDef name="outDateS">
+      <Property name="label">出库日期从</Property>
+    </PropertyDef>
+    <PropertyDef name="outDateE">
+      <Property name="label">到</Property>
+    </PropertyDef>
+    <PropertyDef name="ladingNo">
+      <Property name="label">提单号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih03e">
+    <Property name="creationType">com.jghz.ih.entity.Tbih03e</Property>
+    <PropertyDef name="ih03eId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="date">
+      <Property></Property>
+      <Property name="label">日期</Property>
+    </PropertyDef>
+    <PropertyDef name="holiName">
+      <Property></Property>
+      <Property name="label">节假日名称</Property>
+    </PropertyDef>
+    <PropertyDef name="weekDay">
+      <Property></Property>
+      <Property name="label">周几</Property>
+    </PropertyDef>
+    <PropertyDef name="addMoney">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">增补费用</Property>
+    </PropertyDef>
+    <PropertyDef name="type">
+      <Property></Property>
+      <Property name="label">特殊周末及法定假日区分</Property>
+    </PropertyDef>
+    <PropertyDef name="startDate">
+      <Property></Property>
+      <Property name="label">启用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="startEmp">
+      <Property></Property>
+      <Property name="label">启用人</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property></Property>
+      <Property name="label">停用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="endEmp">
+      <Property></Property>
+      <Property name="label">停用人</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="state">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih03f">
+    <Property name="creationType">com.jghz.ih.entity.Tbih03f</Property>
+    <PropertyDef name="ih03fId">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="startTime">
+      <Property></Property>
+      <Property name="label">时段起始时间</Property>
+    </PropertyDef>
+    <PropertyDef name="endTime">
+      <Property></Property>
+      <Property name="label">时段截止时间</Property>
+    </PropertyDef>
+    <PropertyDef name="weekDay">
+      <Property></Property>
+      <Property name="label">周几</Property>
+    </PropertyDef>
+    <PropertyDef name="addMoney">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">增补费用</Property>
+    </PropertyDef>
+    <PropertyDef name="startDate">
+      <Property></Property>
+      <Property name="label">启用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="startEmp">
+      <Property></Property>
+      <Property name="label">启用人</Property>
+    </PropertyDef>
+    <PropertyDef name="endDate">
+      <Property></Property>
+      <Property name="label">停用时间</Property>
+    </PropertyDef>
+    <PropertyDef name="endEmp">
+      <Property></Property>
+      <Property name="label">停用人</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="state">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbih43">
+    <Property name="creationType">com.jghz.ih.entity.Tbih43</Property>
+    <Property name="tags">发票维护</Property>
+    <PropertyDef name="ih43Id">
+      <Property></Property>
+      <Property name="label">主键</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="billCompNo">
+      <Property></Property>
+      <Property name="label">开票单位编码</Property>
+    </PropertyDef>
+    <PropertyDef name="billCompName">
+      <Property></Property>
+      <Property name="label">开票单位</Property>
+    </PropertyDef>
+    <PropertyDef name="getCompNo">
+      <Property></Property>
+      <Property name="label">收票单位编码</Property>
+    </PropertyDef>
+    <PropertyDef name="getCompName">
+      <Property></Property>
+      <Property name="label">收票单位名称</Property>
+    </PropertyDef>
+    <PropertyDef name="billNo">
+      <Property></Property>
+      <Property name="label">开票编号</Property>
+    </PropertyDef>
+    <PropertyDef name="billDate">
+      <Property></Property>
+      <Property name="label">开票日期</Property>
+    </PropertyDef>
+    <PropertyDef name="getDate">
+      <Property></Property>
+      <Property name="label">收票日期</Property>
+    </PropertyDef>
+    <PropertyDef name="amt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">开票金额</Property>
+    </PropertyDef>
+    <PropertyDef name="noTaxAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">不含税金额</Property>
+    </PropertyDef>
+    <PropertyDef name="taxAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">税额</Property>
+    </PropertyDef>
+    <PropertyDef name="tax">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">税率</Property>
+    </PropertyDef>
+    <PropertyDef name="discontAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">扣款金额</Property>
+    </PropertyDef>
+    <PropertyDef name="orderAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">特殊金额</Property>
+    </PropertyDef>
+    <PropertyDef name="delayAmt">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">延付金额</Property>
+    </PropertyDef>
+    <PropertyDef name="by1">
+      <Property></Property>
+      <Property name="label">备用1</Property>
+    </PropertyDef>
+    <PropertyDef name="by2">
+      <Property></Property>
+      <Property name="label">备用2</Property>
+    </PropertyDef>
+    <PropertyDef name="by3">
+      <Property></Property>
+      <Property name="label">备用3</Property>
+    </PropertyDef>
+    <PropertyDef name="by4">
+      <Property></Property>
+      <Property name="label">备用4</Property>
+    </PropertyDef>
+    <PropertyDef name="by5">
+      <Property></Property>
+      <Property name="label">备用5</Property>
+    </PropertyDef>
+    <PropertyDef name="by6">
+      <Property></Property>
+      <Property name="label">备用6</Property>
+    </PropertyDef>
+    <PropertyDef name="by7">
+      <Property></Property>
+      <Property name="label">备用7</Property>
+    </PropertyDef>
+    <PropertyDef name="by8">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用8</Property>
+    </PropertyDef>
+    <PropertyDef name="by9">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用9</Property>
+    </PropertyDef>
+    <PropertyDef name="by10">
+      <Property name="dataType">BigDecimal</Property>
+      <Property name="label">备用10</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">创建人</Property>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">创建时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateDate">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+</Model>

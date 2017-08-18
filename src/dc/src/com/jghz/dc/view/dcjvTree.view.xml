@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="root">
+      <PropertyDef name="treeName"/>
+      <Reference name="areas">
+        <Property name="activeOnNewEntity">true</Property>
+        <Property name="dataProvider">dcjcTreeService#queryTbdctree</Property>
+        <Property name="dataType">[myTbdcTree]</Property>
+        <Property name="parameter">
+          <Entity>
+            <Property name="treeType">A</Property>
+            <Property name="fatherId"></Property>
+            <Property name="compId"></Property>
+          </Entity>
+        </Property>
+      </Reference>
+    </DataType>
+    <DataType name="myTbdcTree" meta="x:1393;y:10">
+      <Property name="creationType">com.jghz.dc.entity.Tbdctree</Property>
+      <Property name="autoCreatePropertyDefs">false</Property>
+      <PropertyDef name="dctreeId">
+        <Property></Property>
+        <Property name="label">系统ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="fatherId">
+        <Property></Property>
+        <Property name="label">父节点ID</Property>
+      </PropertyDef>
+      <PropertyDef name="treeType">
+        <Property></Property>
+        <Property name="label">节点类型</Property>
+      </PropertyDef>
+      <PropertyDef name="treeNo">
+        <Property></Property>
+        <Property name="label">节点编码</Property>
+      </PropertyDef>
+      <PropertyDef name="treeName">
+        <Property></Property>
+        <Property name="label">节点编名称</Property>
+      </PropertyDef>
+      <PropertyDef name="memo">
+        <Property></Property>
+        <Property name="label">备注</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property></Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <Reference name="areas">
+        <Property name="dataType">[SELF]</Property>
+        <Property name="activeOnNewEntity">false</Property>
+        <Property>
+          <Entity>
+            <Property name="ID">$${this.id}</Property>
+            <Property name="TYPE">A</Property>
+          </Entity>
+        </Property>
+      </Reference>
+      <Reference name="treeNodeB">
+        <Property name="dataProvider">dcjcTreeService#queryByFatherId</Property>
+        <Property name="dataType">[myTbdcTree]</Property>
+        <Property name="parameter">
+          <Entity>
+            <Property name="treeType">$${this.treeType}</Property>
+            <Property name="fatherId">$${this.dctreeId}</Property>
+            <Property name="compId"></Property>
+          </Entity>
+        </Property>
+      </Reference>
+    </DataType>
+  </Model>
+  <View>
+    <ClientEvent name="onCreate">window.openUrlInFrameTab=function(url,caption,icon,double){&#xD;
+	if(!url){&#xD;
+		dorado.MessageBox.alert(&quot;Url不能空&quot;);&#xD;
+		return;&#xD;
+	}&#xD;
+	if(!caption){&#xD;
+		dorado.MessageBox.alert(&quot;caption不能空&quot;);&#xD;
+		return;&#xD;
+	}&#xD;
+	if(!icon){&#xD;
+		icon=&quot;url(skin>common/icons.gif) -40px -120px&quot;;&#xD;
+	}&#xD;
+	var tabControl=view.id(&quot;tabControlWorkarea&quot;);&#xD;
+	var tab=tabControl.getTab(url);&#xD;
+	if(!tab){&#xD;
+		tab=new dorado.widget.tab.IFrameTab({&#xD;
+			name:url,&#xD;
+			path:url,&#xD;
+			caption:caption,&#xD;
+			icon:icon,&#xD;
+			closeable:true,&#xD;
+		});&#xD;
+		tabControl.addTab(tab);&#xD;
+	}else if(double){&#xD;
+		tab.set(&quot;path&quot;,url);&#xD;
+	}&#xD;
+	tabControl.set(&quot;currentTab&quot;,tab);&#xD;
+}&#xD;
+</ClientEvent>
+    <Property name="packages">tree</Property>
+    <DataSet id="dsTbdcTree">
+      <ClientEvent name="onReady">self.insert({&#xD;
+	treeName: &quot;地区列表&quot;&#xD;
+});</ClientEvent>
+      <Property name="dataType">[root]</Property>
+      <Property name="loadMode">lazy</Property>
+    </DataSet>
+    <DataTree id="AreaTree">
+      <Property name="dataSet">dsTbdcTree</Property>
+      <Property name="height">400</Property>
+      <Property name="width">300</Property>
+      <Property name="scrollMode">lazyRender</Property>
+      <BindingConfigs>
+        <BindingConfig>
+          <Property name="labelProperty">treeName</Property>
+          <Property name="iconClass">fa fa-star</Property>
+          <Property name="expandLevel">1</Property>
+          <BindingConfig>
+            <Property name="labelProperty">treeName</Property>
+            <Property name="childrenProperty">areas</Property>
+            <Property name="hasChild">false</Property>
+            <BindingConfig>
+              <Property name="labelProperty">treeName</Property>
+              <Property name="childrenProperty">treeNodeB</Property>
+              <BindingConfig>
+                <Property name="labelProperty">treeName</Property>
+                <Property name="childrenProperty">treeNodeB</Property>
+              </BindingConfig>
+            </BindingConfig>
+          </BindingConfig>
+        </BindingConfig>
+      </BindingConfigs>
+    </DataTree>
+  </View>
+</ViewConfig>

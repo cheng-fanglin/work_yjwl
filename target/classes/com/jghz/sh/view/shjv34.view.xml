@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh34">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh34</Property>
+      <PropertyDef name="sh34Id">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算单号</Property>
+      </PropertyDef>
+      <PropertyDef name="sendEmp">
+        <Property></Property>
+        <Property name="label">送审人</Property>
+      </PropertyDef>
+      <PropertyDef name="sendTime">
+        <Property></Property>
+        <Property name="label">送审时间</Property>
+      </PropertyDef>
+      <PropertyDef name="sendMemo">
+        <Property></Property>
+        <Property name="label">送审说明</Property>
+      </PropertyDef>
+      <PropertyDef name="approveEmp">
+        <Property></Property>
+        <Property name="label">审批人</Property>
+      </PropertyDef>
+      <PropertyDef name="approveTime">
+        <Property></Property>
+        <Property name="label">审批时间</Property>
+      </PropertyDef>
+      <PropertyDef name="approveMemo">
+        <Property></Property>
+        <Property name="label">审批意见</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadSh34Type&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="type">
+        <Property></Property>
+        <Property name="label">类别</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh34">
+      <ClientEvent name="onReady">var settleNo=${request.getParameter(&quot;settleNo&quot;)}+&quot;&quot;;&#xD;
+var compId=${request.getParameter(&quot;compId&quot;)}+&quot;&quot;;&#xD;
+var sendEmp=${request.getParameter(&quot;sendEmp&quot;)}+&quot;&quot;;&#xD;
+var sendTime=${request.getParameter(&quot;sendTime&quot;)}+&quot;&quot;;&#xD;
+var sendMemo=${request.getParameter(&quot;sendMemo&quot;)}+&quot;&quot;;&#xD;
+alert(settleNo);&#xD;
+view.get(&quot;#dsSh34&quot;).set(&quot;parameter&quot;,{settleNo:settleNo,compId:compId,sendEmp:sendEmp,sendTime:sendTime,sendMemo:sendMemo});&#xD;
+view.get(&quot;#dsSh34&quot;).flush();</ClientEvent>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtSh34]</Property>
+      <Property name="dataProvider">shjc34Service#loadSh34</Property>
+    </DataSet>
+    <UpdateAction id="uaSh34">
+      <Property name="dataResolver">shjc34Service#saveSh34</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh34</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dsSh23&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="label">送审时间</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="label">审批人</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="label">类别</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="sh34">
+        <Property name="dataSet">dsSh34</Property>
+        <Property name="itemCodes">pages,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="action">uaSh34</Property>
+        <Property name="caption">提交上级</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="action">uaSh34</Property>
+        <Property name="caption">审核确认</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="action">uaSh34</Property>
+        <Property name="caption">退回</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dsSh34</Property>
+      <Property name="dataType">dtSh34</Property>
+      <DataColumn name="settleNo">
+        <Property name="property">settleNo</Property>
+      </DataColumn>
+      <DataColumn name="sendEmp">
+        <Property name="property">sendEmp</Property>
+      </DataColumn>
+      <DataColumn name="sendTime">
+        <Property name="property">sendTime</Property>
+      </DataColumn>
+      <DataColumn name="sendMemo">
+        <Property name="property">sendMemo</Property>
+      </DataColumn>
+      <DataColumn name="approveEmp">
+        <Property name="property">approveEmp</Property>
+      </DataColumn>
+      <DataColumn name="approveTime">
+        <Property name="property">approveTime</Property>
+      </DataColumn>
+      <DataColumn name="approveMemo">
+        <Property name="property">approveMemo</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">type</Property>
+        <Property name="name">type</Property>
+      </DataColumn>
+      <DataColumn name="status">
+        <Property name="property">status</Property>
+      </DataColumn>
+    </DataGrid>
+  </View>
+</ViewConfig>

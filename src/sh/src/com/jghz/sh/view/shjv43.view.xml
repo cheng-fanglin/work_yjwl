@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtTbsh33">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh33</Property>
+      <PropertyDef name="sh33Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">业务单号</Property>
+      </PropertyDef>
+      <PropertyDef name="type">
+        <Property></Property>
+        <Property name="label">业务类别</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommDao#loadSh33Type&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="payAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">付款金额</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="billNo">
+        <Property></Property>
+        <Property name="label">发票号</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">重量</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommDao#loadShStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="memo">
+        <Property></Property>
+        <Property name="label">备注</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="billDate">
+        <Property></Property>
+        <Property name="label">发票日期</Property>
+      </PropertyDef>
+      <PropertyDef name="upload">
+        <Property></Property>
+        <Property name="label">图片上传</Property>
+      </PropertyDef>
+      <PropertyDef name="uploadShow">
+        <Property></Property>
+        <Property name="label">图片上传</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbsh34">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh34</Property>
+      <PropertyDef name="sh34Id">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算单号</Property>
+      </PropertyDef>
+      <PropertyDef name="sendEmp">
+        <Property></Property>
+        <Property name="label">送审人</Property>
+        <Property name="defaultValue">${loginUser.getUsername()}</Property>
+      </PropertyDef>
+      <PropertyDef name="sendTime">
+        <Property></Property>
+        <Property name="label">送审时间</Property>
+      </PropertyDef>
+      <PropertyDef name="sendMemo">
+        <Property></Property>
+        <Property name="label">送审说明</Property>
+      </PropertyDef>
+      <PropertyDef name="approveEmp">
+        <Property></Property>
+        <Property name="label">审批人</Property>
+      </PropertyDef>
+      <PropertyDef name="approveTime">
+        <Property></Property>
+        <Property name="label">审批时间</Property>
+      </PropertyDef>
+      <PropertyDef name="approveMemo">
+        <Property></Property>
+        <Property name="label">审批意见</Property>
+      </PropertyDef>
+      <PropertyDef name="type">
+        <Property></Property>
+        <Property name="label">类别</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="id">
+        <Property/>
+        <Property name="label">ID_</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsTbsh33">
+      <Property name="dataProvider">shjc43Service#loadsh33</Property>
+      <Property name="dataType">[dtTbsh33]</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsTbsh34">
+      <Property name="dataProvider">shjc43Service#loadsh34</Property>
+      <Property name="dataType">[dtTbsh34]</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaSh33">
+      <Property name="dataResolver">shjc43Service#saveTbsh33</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbsh33</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh34">
+      <Property name="dataResolver">shjc43Service#saveTbsh34</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbsh34</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh">
+      <Property name="dataResolver">shjc43Service#saveMessage</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbsh34</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UploadAction id="ulaImg1">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dsTbsh33&quot;).getData(&quot;#&quot;).get(&quot;upload&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dsTbsh33&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;upload&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#uploadImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <AjaxAction id="aaGetCompressUrl">
+      <Property name="service">getSystemContants#getCompressUrl</Property>
+    </AjaxAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*</Property>
+      <AutoFormElement id="transNo" layoutConstraint="colSpan:2">
+        <Property name="property">transNo</Property>
+        <Property name="label">业务单号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="billNo" layoutConstraint="colSpan:2">
+        <Property name="label">发票号</Property>
+        <Property name="property">billNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="date" layoutConstraint="colSpan:2">
+        <Property name="label">日期</Property>
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsTbsh33&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dsTbsh33&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var data33=view.get(&quot;#dsTbsh33&quot;).getData();&#xD;
+var action = view.get(&quot;#uaSh33&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		data33.insert();&#xD;
+        var entity = this.get(&quot;#dsTbsh33&quot;).getData(&quot;#&quot;);&#xD;
+        entity.set(&quot;status&quot;,&quot;01&quot;);&#xD;
+		entity.set(&quot;uploadShow&quot;,&quot;/jghz/html_qt/images/no_imgage.jpg&quot;);&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			data33.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dsTbsh33</Property>
+        <Property name="itemCodes">pages,+,-</Property>
+      </DataPilot>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="action">uaSh33</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dsTbsh33.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogUpload&quot;).show();&#xD;
+	view.get(&quot;#uploadImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;uploadShow&quot;));&#xD;
+		if(data.current.get(&quot;uploadShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">上传图片</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dsTbsh33.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogSend&quot;).show();&#xD;
+	view.get(&quot;#dsTbsh34&quot;).set(&quot;parameter&quot;,{&#xD;
+			       &quot;id&quot;:data.get(&quot;#sh33Id&quot;)&#xD;
+		     });&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">送审</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">确认</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid id="dgTbsh33">
+      <Property name="dataSet">dsTbsh33</Property>
+      <Property name="dataType">dtTbsh33</Property>
+      <DataColumn name="transNo">
+        <Property name="property">transNo</Property>
+        <Property name="caption">业务单号</Property>
+        <Property name="trigger">customDropDownTransNo</Property>
+      </DataColumn>
+      <DataColumn name="type">
+        <Property name="property">type</Property>
+        <Property name="caption">报销类别</Property>
+      </DataColumn>
+      <DataColumn name="payAmt">
+        <Property name="property">payAmt</Property>
+        <Property name="caption">报销金额</Property>
+      </DataColumn>
+      <DataColumn name="billNo">
+        <Property name="property">billNo</Property>
+        <Property name="caption">发票号</Property>
+      </DataColumn>
+      <DataColumn name="billDate">
+        <Property name="property">billDate</Property>
+        <Property name="caption">发票日期</Property>
+        <Property name="trigger">dateDropDown1</Property>
+      </DataColumn>
+      <DataColumn name="uploadShow">
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;uploadShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;uploadShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">uploadShow</Property>
+        <Property name="caption">图片上传</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="status">
+        <Property name="property">status</Property>
+        <Property name="caption">状态</Property>
+        <Property name="readOnly">true</Property>
+      </DataColumn>
+      <DataColumn name="memo">
+        <Property name="property">memo</Property>
+        <Property name="caption">备注</Property>
+        <Property name="editorType">TextArea</Property>
+      </DataColumn>
+    </DataGrid>
+    <CustomDropDown id="customDropDownTransNo">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsTbsh33&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个数据!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogSh33&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:800,&#xD;
+		height:500,&#xD;
+		callback:function(transNos){&#xD;
+			alert(transNos)&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;transNo&quot;,transNos[&quot;transNos&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+      <Import src="com.jghz.sh.view.select.cdpSh33TransNo#$dialogSh33"/>
+    </CustomDropDown>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+    <Dialog id="dialogUpload">
+      <Property name="width">600</Property>
+      <Property name="height">350</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogUpload&quot;);&#xD;
+var action=view.get(&quot;#uaSh33&quot;);&#xD;
+var entity = this.get(&quot;#dsTbsh33&quot;).getData(&quot;#&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		view.get(&quot;#uploadImgA&quot;).set(&quot;image&quot;,null);&#xD;
+				&#xD;
+				if(entity.get(&quot;upload&quot;)!=null){&#xD;
+					view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+				}else{&#xD;
+					view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;开始上传&quot;);&#xD;
+				}&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dsTbsh33&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogUpload&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="cols">*,*,*</Property>
+          <Panel id="uploadImg" layoutConstraint="align:center;padding:50;vAlign:center;colSpan:2">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">图片上传</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg1</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="uploadImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Button id="btMsg" layoutConstraint="colSpan:1">
+            <Property name="width">150</Property>
+            <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+            <Property name="caption">等待上传！</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogSend">
+      <Property name="width">700</Property>
+      <Property name="height">350</Property>
+      <Buttons/>
+      <Children>
+        <ToolBar>
+          <DataPilot>
+            <ClientEvent name="onSubControlAction">var data34 = view.get(&quot;#dsTbsh34.data&quot;);&#xD;
+var data33=view.get(&quot;#dsTbsh33&quot;).getData();&#xD;
+var action = view.get(&quot;#uaSh34&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		data34.insert();&#xD;
+		var entity = this.get(&quot;#dsTbsh34&quot;).getData(&quot;#&quot;);&#xD;
+        entity.set(&quot;status&quot;,&quot;01&quot;);&#xD;
+		entity.set(&quot;id&quot;,data33.current.get(&quot;sh33Id&quot;));&#xD;
+		entity.set(&quot;sendTime&quot;,new Date().formatDate (&quot;Ymd&quot;));&#xD;
+        entity.set(&quot;settleNo&quot;,data33.current.get(&quot;transNo&quot;));&#xD;
+		entity.set(&quot;type&quot;,data33.current.get(&quot;type&quot;));&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			data34.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+            <Property name="dataSet">dsTbsh34</Property>
+            <Property name="itemCodes">pages,+,-</Property>
+          </DataPilot>
+          <Button id="btSave">
+            <Property name="caption">保存</Property>
+            <Property name="action">uaSh34</Property>
+          </Button>
+          <Button id="btSend">
+            <ClientEvent name="onClick">var data=this.get(&quot;#dsTbsh34&quot;).getData(&quot;#&quot;);&#xD;
+alert(&quot;1&quot;)&#xD;
+data.set(&quot;status&quot;,&quot;02&quot;);&#xD;
+alert(&quot;2&quot;)&#xD;
+dorado.MessageBox.confirm(&quot;是否确认送审所有勾选的数据？&quot;,function(){&#xD;
+			var action = view.get(&quot;#uaSh&quot;);&#xD;
+			action.execute();&#xD;
+		});</ClientEvent>
+            <Property name="caption">送审</Property>
+          </Button>
+        </ToolBar>
+        <DataGrid id="dgTbsh34">
+          <Property name="dataSet">dsTbsh34</Property>
+          <Property name="dataType">dtTbsh34</Property>
+          <DataColumn name="settleNo">
+            <Property name="property">settleNo</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="sendEmp">
+            <Property name="property">sendEmp</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="sendTime">
+            <Property name="property">sendTime</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="approveEmp">
+            <Property name="property">approveEmp</Property>
+          </DataColumn>
+          <DataColumn name="approveTime">
+            <Property name="property">approveTime</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="approveMemo">
+            <Property name="property">approveMemo</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="type">
+            <Property name="property">type</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+          <DataColumn name="status">
+            <Property name="property">status</Property>
+            <Property name="readOnly">true</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

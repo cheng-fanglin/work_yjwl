@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Property name="title">查询</Property>
+    <Dialog id="$dialogProdNoSh10c">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Property name="shadowMode">drop</Property>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsTbdcc1aSh10c">
+          <Property name="dataProvider">dcjcc1Service#loadProdNoByCriteria</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbdcc1a]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsTbdcd1</Property>
+            <Property name="itemCodes">pages</Property>
+          </DataPilot>
+        </ToolBar>
+        <DataGrid id="$dgTbdcc1aSh10c">
+          <ClientEvent name="onDataRowDoubleClick">&#xD;
+var data = view.get(&quot;#$dsTbdcc1aSh10c&quot;).getData(&quot;#&quot;);&#xD;
+//var result=[];&#xD;
+//result.push(data.toJSON());&#xD;
+view.id(&quot;$dialogProdNoSh10c&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsTbdcc1aSh10c</Property>
+          <Property name="readOnly">true</Property>
+          <Property name="showFilterBar">true</Property>
+          <Property name="filterMode">serverSide</Property>
+          <DataColumn name="typeId">
+            <Property name="property">typeId</Property>
+          </DataColumn>
+          <DataColumn name="typeName">
+            <Property name="property">typeName</Property>
+          </DataColumn>
+          <DataColumn name="id">
+            <Property name="property">id</Property>
+          </DataColumn>
+          <DataColumn name="name">
+            <Property name="property">name</Property>
+          </DataColumn>
+          <DataColumn name="searchName">
+            <Property name="property">searchName</Property>
+          </DataColumn>
+          <DataColumn name="size">
+            <Property name="property">size</Property>
+          </DataColumn>
+          <DataColumn name="model">
+            <Property name="property">model</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

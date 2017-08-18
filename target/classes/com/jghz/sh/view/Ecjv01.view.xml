@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbwd01">
+      <Property name="creationType">com.jghz.sh.entity.Tbwd01</Property>
+      <PropertyDef name="wd01Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property></Property>
+        <Property name="label">会员ID</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="userType">
+        <Property></Property>
+        <Property name="label">会员类别</Property>
+        <Property name="mapping">
+          <Property name="mapValues"/>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="identityNo">
+        <Property></Property>
+        <Property name="label">身份证号码</Property>
+      </PropertyDef>
+      <PropertyDef name="identityCard">
+        <Property></Property>
+        <Property name="label">身份证正面照</Property>
+      </PropertyDef>
+      <PropertyDef name="identityCardBack">
+        <Property></Property>
+        <Property name="label">身份证反面照</Property>
+      </PropertyDef>
+      <PropertyDef name="companyRegistrstion">
+        <Property></Property>
+        <Property name="label">税物登记号</Property>
+      </PropertyDef>
+      <PropertyDef name="companyCertificate">
+        <Property></Property>
+        <Property name="label">税务登记证</Property>
+      </PropertyDef>
+      <PropertyDef name="companyLicense">
+        <Property></Property>
+        <Property name="label">营业执照(图)</Property>
+      </PropertyDef>
+      <PropertyDef name="roadImg">
+        <Property></Property>
+        <Property name="label">道路运输许可证</Property>
+      </PropertyDef>
+      <PropertyDef name="companyCode">
+        <Property></Property>
+        <Property name="label">组织机构代码证</Property>
+      </PropertyDef>
+      <PropertyDef name="authorizationImg">
+        <Property></Property>
+        <Property name="label">公司委托个人授权书(图)</Property>
+      </PropertyDef>
+      <PropertyDef name="bank">
+        <Property></Property>
+        <Property name="label">结算开户行</Property>
+      </PropertyDef>
+      <PropertyDef name="bankNo">
+        <Property></Property>
+        <Property name="label">结算账号</Property>
+      </PropertyDef>
+      <PropertyDef name="companyAdderss">
+        <Property></Property>
+        <Property name="label">公司地址</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="contract">
+        <Property></Property>
+        <Property name="label">紧急联系人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="contractPhone">
+        <Property></Property>
+        <Property name="label">紧急联系人手机</Property>
+      </PropertyDef>
+      <PropertyDef name="examineNo">
+        <Property></Property>
+        <Property name="label">审核单号</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">更新人</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="companyCertificatePath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="companyLicensePath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="roadImgPath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="companyCodePath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="authorizationImgPath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="identityCardPath">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="identityCardBackPath">
+        <Property/>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbwd01信息维护</Property>
+    <DataSet id="dataSetTbwd01">
+      <Property name="dataProvider">ecjc01Service#loadwd01</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbwd01]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ecjc01Service#saveTbwd01</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd01</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateActionSH">
+      <Property name="dataResolver">ecjc01Service#saveSh</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd01</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*</Property>
+      <Property name="dataSet">dataSet1</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">phoneNo</Property>
+        <Property name="label">联系方式</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">userType</Property>
+        <Property name="label">会员类别</Property>
+        <Property name="trigger">listDDUserType</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">carrierNo</Property>
+        <Property name="label">承运商编号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">carrierName</Property>
+        <Property name="label">承运商名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">state</Property>
+        <Property name="label">状态</Property>
+        <Property name="trigger">listDDStatus</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dataSetTbwd01&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dataSetTbwd01&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});&#xD;
+</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbwd01.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch (arg.code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+        datas.insert();&#xD;
+        var dataList = view.get(&quot;#dataSetTbwd01&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        dataList.each(function(entity){&#xD;
+            if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
+                selectedItems.push(entity);&#xD;
+				view.get(&quot;#dataSetTbwd01.data&quot;).setCurrent(entity);&#xD;
+            }&#xD;
+        });&#xD;
+        view.set((&quot;#dgTbwd01.selection&quot;), selectedItems);&#xD;
+        view.get(&quot;#dialogTbwd01&quot;).show();&#xD;
+        view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#clImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#idImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;,null);&#xD;
+        &#xD;
+		// 添加时给对话框初始化显示状态&#xD;
+        view.get(&quot;#ccfUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt1Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#clUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt2Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#bcUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt4Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#azgUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt5Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#idUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt6Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        view.get(&quot;#id2Upload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#bt7Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+		&#xD;
+        &#xD;
+      &#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+        var dataGrid = view.get(&quot;#dgTbwd01&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        if (selEntitys.length > 0) {&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selEntitys.each(function(select){&#xD;
+                    select.remove();&#xD;
+                })&#xD;
+                action.execute(function(){&#xD;
+                    view.get(&quot;#actionUpdate&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                });&#xD;
+            });&#xD;
+        }&#xD;
+        if (selEntitys.length &lt; 1) {&#xD;
+            view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+            &#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="dataSet">dataSetTbwd01</Property>
+        <Property name="itemCodes">pages,pageSize,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data = view.get(&quot;#dataSetTbwd01&quot;).getData();&#xD;
+var select = view.get(&quot;#dgTbwd01&quot;).get('selection');&#xD;
+if (select.length == 1) {&#xD;
+    select.each(function(dataSelection){&#xD;
+        view.get(&quot;#dataSetTbwd01.data&quot;).setCurrent(dataSelection);&#xD;
+    });&#xD;
+	&#xD;
+    &#xD;
+    if (data.current.get(&quot;companyCertificate&quot;) != null) {&#xD;
+		view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,  data.current.get(&quot;companyCertificatePath&quot;));&#xD;
+        view.get(&quot;#ccfUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#ccfUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+	if (data.current.get(&quot;companyLicense&quot;) != null) {&#xD;
+		view.get(&quot;#clImgA&quot;).set(&quot;image&quot;,  data.current.get(&quot;companyLicensePath&quot;));&#xD;
+        view.get(&quot;#clUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#clImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#clUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+    if (data.current.get(&quot;roadImg&quot;) != null) {&#xD;
+		view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,  data.current.get(&quot;roadImgPath&quot;));&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+    if (data.current.get(&quot;companyCode&quot;) != null) {&#xD;
+		view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;companyCodePath&quot;));&#xD;
+        view.get(&quot;#bcUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#bcUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+    if (data.current.get(&quot;authorizationImg&quot;) != null) {&#xD;
+		view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;authorizationImgPath&quot;));&#xD;
+        view.get(&quot;#azgUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#azgUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+    if (data.current.get(&quot;identityCard&quot;) != null) {&#xD;
+		view.get(&quot;#idImgA&quot;).set(&quot;image&quot;,  data.current.get(&quot;identityCardPath&quot;));&#xD;
+        view.get(&quot;#idUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#idImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#idUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    //&#xD;
+    if (data.current.get(&quot;identityCardBack&quot;) != null) {&#xD;
+		view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;identityCardBackPath&quot;));&#xD;
+        view.get(&quot;#id2Upload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+		view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#id2Upload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    &#xD;
+    view.get(&quot;#dialogTbwd01&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;请选择一条数据编辑!&quot;);&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selects = view.get(&quot;#dgTbwd01&quot;).get(&quot;selection&quot;);&#xD;
+var action = view.get(&quot;#updateActionSH&quot;);&#xD;
+	if(selects.length&lt;1){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条审核数据！&quot;);&#xD;
+	}&#xD;
+	if(selects.length>1){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请只勾选一条审核数据！&quot;);&#xD;
+	}&#xD;
+	if(selects.length==1){&#xD;
+		selects.each(function(select){&#xD;
+			if(select.get(&quot;state&quot;)==0||select.get(&quot;state&quot;)==null){&#xD;
+					dorado.MessageBox.confirm(&quot;您真的要审核吗?&quot;,function(){&#xD;
+						select.set(&quot;state&quot;,&quot;1&quot;);&#xD;
+				 			action.execute(function(returnValue){	&#xD;
+					    		 view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 审核成功！&quot;);&#xD;
+				    		});&#xD;
+					});&#xD;
+			}else{&#xD;
+				dorado.MessageBox.alert(&quot;只能审核未审核的数据&quot;);&#xD;
+			}			&#xD;
+		});&#xD;
+				&#xD;
+	}&#xD;
+/*&#xD;
+var dataGrid = view.get(&quot;#dgTbwd01&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条审核数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+if(selEntitys.length>1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请只勾选一条审核数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var count=0;&#xD;
+var wd01Ids;&#xD;
+var i=0;&#xD;
+for(i;i&lt;selEntitys.length-1;i++){&#xD;
+	if(1==selEntitys[i].get(&quot;state&quot;)){  // 已审核数量&#xD;
+		count++;&#xD;
+	}&#xD;
+	if(i==0){ &#xD;
+		wd01Ids=selEntitys[i].get(&quot;wd01Id&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		wd01Ids=receiveIds+&quot;,&quot;+selEntitys[i].get(&quot;wd01Id&quot;);&#xD;
+	}&#xD;
+}&#xD;
+if(count!=0){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：只能审核未审核的记录！&quot;);&#xD;
+	return false;&#xD;
+	&#xD;
+}&#xD;
+&#xD;
+dorado.MessageBox.confirm(&quot;是否确认删除所有勾选的数据？&quot;,function(){&#xD;
+			var action = view.get(&quot;#updateActionSH&quot;);&#xD;
+			  action.set(&quot;parameter&quot;,{&#xD;
+			       &quot;wd01Ids&quot;:wd01Ids&#xD;
+		     });&#xD;
+			action.execute(function(){&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 审核成功！&quot;);&#xD;
+                dialog.hide();&#xD;
+				var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+				view.get(&quot;#dataSetTbwd01&quot;).set(&quot;parameter&quot;,entity);&#xD;
+				view.get(&quot;#dataSetTbwd01&quot;).flushAsync();&#xD;
+			});&#xD;
+		});&#xD;
+*/&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">审核</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        <Property name="action">updateActionSH</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selects = view.get(&quot;#dgTbwd01&quot;).get(&quot;selection&quot;);&#xD;
+var action = view.get(&quot;#updateActionSH&quot;);&#xD;
+	if(selects.length&lt;1){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	}&#xD;
+	if(selects.length>1){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请只勾选一条数据！&quot;);&#xD;
+	}&#xD;
+	if(selects.length==1){&#xD;
+		selects.each(function(select){&#xD;
+			if(select.get(&quot;state&quot;)==0||select.get(&quot;state&quot;)==null){&#xD;
+					dorado.MessageBox.confirm(&quot;您真的要作废吗?&quot;,function(){&#xD;
+						select.set(&quot;state&quot;,&quot;2&quot;);&#xD;
+				 			action.execute(function(returnValue){	&#xD;
+					    		 view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 作废成功！&quot;);&#xD;
+				    		});&#xD;
+					});&#xD;
+			}else{&#xD;
+				dorado.MessageBox.alert(&quot;只能作废未审核的数据&quot;);&#xD;
+			}			&#xD;
+		});&#xD;
+				&#xD;
+	}&#xD;
+</ClientEvent>
+        <Property name="caption">作废</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+      </ToolBarButton>
+      <Label id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </Label>
+    </ToolBar>
+    <DataGrid id="dgTbwd01">
+      <ClientEvent name="onReady">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <ClientEvent name="onBlur">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <Property name="dataSet">dataSetTbwd01</Property>
+      <Property name="dataType">Tbwd01</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn id="selection"/>
+      <DataColumn name="carrierNo">
+        <Property name="property">carrierNo</Property>
+      </DataColumn>
+      <DataColumn name="carrierName">
+        <Property name="property">carrierName</Property>
+      </DataColumn>
+      <DataColumn name="companyRegistrstion">
+        <Property name="property">companyRegistrstion</Property>
+      </DataColumn>
+      <DataColumn name="companyCertificate">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;companyCertificatePath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;companyCertificatePath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;companyCertificatePath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">companyCertificate</Property>
+      </DataColumn>
+      <DataColumn name="companyLicense">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;companyLicensePath&quot;)!=null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;companyLicensePath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;companyLicensePath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">companyLicense</Property>
+      </DataColumn>
+      <DataColumn id="road" name="roadImg">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;roadImgPath&quot;)!= null) {&#xD;
+    $(arg.dom).empty().xCreate({&#xD;
+        tagName: &quot;IMG&quot;,&#xD;
+		&#xD;
+		&#xD;
+        src: $url(arg.data.get(&quot;roadImgPath&quot;)),&#xD;
+        //style : &quot;margin: 2px&quot;&#xD;
+        style: &quot;width: 50px; height: 20px;&quot;&#xD;
+    &#xD;
+    });&#xD;
+    dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+        content: {&#xD;
+            tagName: &quot;IMG&quot;,&#xD;
+            src: $url(arg.data.get(&quot;roadImgPath&quot;)),&#xD;
+            //style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+            style: &quot;width: 130px; height: 130px;&quot;&#xD;
+        },&#xD;
+        arrowDirection: &quot;top&quot;,&#xD;
+        arrowAlign: &quot;left&quot;&#xD;
+    });&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">roadImg</Property>
+      </DataColumn>
+      <DataColumn name="companyCode">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;companyCodePath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;companyCodePath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url( arg.data.get(&quot;companyCodePath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">companyCode</Property>
+      </DataColumn>
+      <DataColumn name="authorizationImg">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;authorizationImgPath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;authorizationImgPath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url( arg.data.get(&quot;authorizationImgPath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">authorizationImg</Property>
+      </DataColumn>
+      <DataColumn name="identityCard">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;identityCardPath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;identityCardPath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;identityCardPath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">identityCard</Property>
+      </DataColumn>
+      <DataColumn name="identityCardBack">
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;identityCardBackPath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;identityCardBackPath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url( arg.data.get(&quot;identityCardBackPath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	&#xD;
+	});&#xD;
+}</ClientEvent>
+        <Property name="property">identityCardBack</Property>
+      </DataColumn>
+      <DataColumn name="userType">
+        <Property name="property">userType</Property>
+      </DataColumn>
+      <DataColumn name="state">
+        <Property name="property">state</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbwd01">
+      <ClientEvent name="beforeClose">view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;开始上传&quot;);&#xD;
+//view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,&quot;&quot;);&#xD;
+var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);</ClientEvent>
+      <Property name="center">true</Property>
+      <Property name="width">800</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbwd01&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#clImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#idImgA&quot;).set(&quot;image&quot;,null);&#xD;
+		view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;,null);&#xD;
+				&#xD;
+				&#xD;
+		dialog.hide();&#xD;
+		view.get(&quot;#dataSetTbwd01&quot;).flushAsync();&#xD;
+	});&#xD;
+})&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd01&quot;).getData().cancel();&#xD;
+var dialog=view.get(&quot;#dialogTbwd01&quot;).hide();&#xD;
+&#xD;
+	&#xD;
+	&#xD;
+</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbwd01</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement name="carrierNo">
+            <Property name="name">carrierNo</Property>
+            <Property name="property">carrierNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="carrierName">
+            <Property name="name">carrierName</Property>
+            <Property name="property">carrierName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="userType">
+            <Property name="name">userType</Property>
+            <Property name="property">userType</Property>
+            <Property name="trigger">listDDUserType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">companyRegistrstion</Property>
+            <Property name="property">companyRegistrstion</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel id="companyCertificate" layoutConstraint="align:center;vAlign:center;padding:50">
+            <Property name="caption">税务登记</Property>
+            <Property name="border">none</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="ccfUpload">
+                <Property name="caption">开始上传</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">action1</Property>
+              </Button>
+              <Button id="bt1Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="ccfImgA">
+                <ClientEvent name="onClick">&#xD;
+var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;companyCertificatePath&quot;);&#xD;
+alert(image);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }&#xD;
+</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="companyLicense" layoutConstraint="align:center;vAlign:center;padding:50">
+            <Property name="caption">营业执照</Property>
+            <Property name="border">none</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="clUpload">
+                <Property name="caption">开始上传</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">action2</Property>
+              </Button>
+              <Button id="bt2Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="clImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;companyLicensePath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="roadImg" layoutConstraint="align:center;vAlign:center;padding:50">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">道路运输</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg</Property>
+              </Button>
+              <Button id="btMsg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="roadImgA" layoutConstraint="center ">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;roadImgPath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }&#xD;
+</ClientEvent>
+                <Property name="width">100%</Property>
+                <Property name="height">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="companyCode" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="caption">组织结构代码</Property>
+            <Property name="border">none</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="bcUpload">
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="caption">开始上传</Property>
+                <Property name="action">action4</Property>
+              </Button>
+              <Button id="bt4Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="bcImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;companyCodePath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }</ClientEvent>
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="azgImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="caption">公司委托个人授权</Property>
+            <Property name="border">none</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="azgUpload">
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="caption">开始上传</Property>
+                <Property name="action">action5</Property>
+              </Button>
+              <Button id="bt5Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="azgImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;authorizationImgPath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="idImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="caption">身份证正面</Property>
+            <Property name="border">none</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="idUpload">
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="caption">开始上传</Property>
+                <Property name="action">action6</Property>
+              </Button>
+              <Button id="bt6Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="idImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;identityCardPath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="id2Img" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="caption">身份证反面</Property>
+            <Property name="border">none</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="id2Upload">
+                <Property name="caption">开始上传</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">action7</Property>
+              </Button>
+              <Button id="bt7Msg">
+                <Property name="caption">等待上传</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="id2ImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;identityCardBackPath&quot;);&#xD;
+    if (image != null) {&#xD;
+        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
+       // if (image) {&#xD;
+         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
+       // }&#xD;
+	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="logImage">
+      <Property name="width">50%</Property>
+      <Property name="height">50%</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView1&quot;).zoomIn();</ClientEvent>
+          <Property name="caption">放大</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView1&quot;).zoomOut();</ClientEvent>
+          <Property name="caption">缩小</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView1&quot;).rotateLeft();&#xD;
+</ClientEvent>
+          <Property name="caption">左旋转</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var imageViewer = view.get(&quot;#imageView1&quot;);&#xD;
+imageViewer.rotateRight();&#xD;
+</ClientEvent>
+          <Property name="caption">右旋转</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <ImageViewer id="imageView1">
+          <Property name="showMagnifier">false</Property>
+          <Property name="width">100%</Property>
+          <Property name="height">100%</Property>
+          <Property name="rotation">deg0</Property>
+        </ImageViewer>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <AutoMappingDropDown id="userMappingDown"/>
+    <AutoMappingDropDown id="stateMappingDown"/>
+    <ListDropDown id="listDDUserType">
+      <ClientEvent name="onValueSelect">/*// 下拉框选中的显示值&#xD;
+var select = arg.selectedValue;&#xD;
+//  下拉框数据集合 map&#xD;
+var maps = self.get(&quot;items&quot;);&#xD;
+debugger;&#xD;
+maps.each(function(map){&#xD;
+	if(map.key==select){&#xD;
+		arg.selectedValue = map.lable;&#xD;
+	}&#xD;
+});*/&#xD;
+</ClientEvent>
+      <Property name="items">
+        <Collection>
+          <Entity/>
+          <Entity>
+            <Property name="key">C</Property>
+            <Property name="lable">承运商</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">R</Property>
+            <Property name="lable">承运人</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">J</Property>
+            <Property name="lable">经济人</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <ListDropDown id="listDDStatus">
+      <Property name="items">
+        <Collection>
+          <Entity/>
+          <Entity>
+            <Property name="key">0</Property>
+            <Property name="lable">未审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">1</Property>
+            <Property name="lable">已审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">2</Property>
+            <Property name="lable">作废</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">lable</Property>
+    </ListDropDown>
+    <UploadAction id="action1">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;companyCertificate&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt1Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt1Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt1Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;companyCertificate&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+console.log(arg);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+    view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;companyCertificatePath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#ccfUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Property name="selectionMode">multiFiles</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="action2">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;companyLicense&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt2Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt2Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt2Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;companyLicense&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#clImgA&quot;).set(&quot;image&quot;, returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;companyLicensePath&quot;, returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#clUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="ulaImg">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);&#xD;
+</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;roadImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;roadImg&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;roadImgPath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Property name="parameter"></Property>
+      <Property name="maxFileSize">10MB</Property>
+      <Property name="selectionMode">multiFiles</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="action4">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;companyCode&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt4Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt4Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt4Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;companyCode&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;companyCodePath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#bcUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="action5">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;authorizationImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt5Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt5Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt5Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;authorizationImg&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;authorizationImgPath&quot;, returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#azgUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="action6">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;identityCard&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt6Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt6Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt6Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;identityCard&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#idImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;identityCardPath&quot;, returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#idUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="action7">
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;identityCardBack&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#bt7Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#bt7Msg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}</ClientEvent>
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#bt7Msg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;identityCardBack&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+&#xD;
+    view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
+    entity.set(&quot;identityCardBackPath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
+    view.get(&quot;#id2Upload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+});</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <AjaxAction id="aaGetCompressUrl">
+      <Property name="service">getSystemContants#getCompressUrl</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

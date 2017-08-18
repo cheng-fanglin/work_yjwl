@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh10b">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh10b</Property>
+      <PropertyDef name="sh10bId">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="transItem">
+        <Property></Property>
+        <Property name="label">运单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">协议编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">司机手机</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property></Property>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="driverName">
+        <Property></Property>
+        <Property name="label">承运人名称</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">货物编号</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">货物名称</Property>
+      </PropertyDef>
+      <PropertyDef name="model">
+        <Property></Property>
+        <Property name="label">产品型号</Property>
+      </PropertyDef>
+      <PropertyDef name="height">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">高度</Property>
+      </PropertyDef>
+      <PropertyDef name="width">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">宽度</Property>
+      </PropertyDef>
+      <PropertyDef name="length">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">长度</Property>
+      </PropertyDef>
+      <PropertyDef name="labelNo">
+        <Property></Property>
+        <Property name="label">标签号</Property>
+      </PropertyDef>
+      <PropertyDef name="weight">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">载重</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">件数</Property>
+      </PropertyDef>
+      <PropertyDef name="batchNo">
+        <Property></Property>
+        <Property name="label">批号</Property>
+      </PropertyDef>
+      <PropertyDef name="loadingNoNg">
+        <Property></Property>
+        <Property name="label">南钢装车单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNoNg">
+        <Property></Property>
+        <Property name="label">南钢订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderItemNg">
+        <Property></Property>
+        <Property name="label">南钢订单项次</Property>
+      </PropertyDef>
+      <PropertyDef name="laddingNoNg">
+        <Property></Property>
+        <Property name="label">南钢发货通知单</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh10b">
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtSh10b]</Property>
+      <Property name="dataProvider">shjc10bService#loadSh10b</Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dsSh10b&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="label">送审时间</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="label">审批人</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="label">类别</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="sh10b">
+        <Property name="dataSet">dsSh10b</Property>
+        <Property name="itemCodes">pages</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var importExcelAction=view.get(&quot;#importExcelAction&quot;);&#xD;
+importExcelAction.set(&quot;excelModelId&quot;,&quot;A0003&quot;);&#xD;
+importExcelAction.execute(function(arg){&#xD;
+	dorado.MessageBox.alert(&quot;成功解析导入[&quot; + arg + &quot;]数据！&quot;);&#xD;
+});&#xD;
+</ClientEvent>
+        <Property name="caption">导入ERP装车作业单</Property>
+        <Property name="action">uaSh10a</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dsSh10b</Property>
+      <Property name="dataType">dtSh10b</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <DataColumn name="model">
+        <Property name="property">model</Property>
+      </DataColumn>
+      <DataColumn name="height">
+        <Property name="property">height</Property>
+      </DataColumn>
+      <DataColumn name="width">
+        <Property name="property">width</Property>
+      </DataColumn>
+      <DataColumn name="length">
+        <Property name="property">length</Property>
+      </DataColumn>
+      <DataColumn name="labelNo">
+        <Property name="property">labelNo</Property>
+      </DataColumn>
+      <DataColumn name="weight">
+        <Property name="property">weight</Property>
+      </DataColumn>
+      <DataColumn name="num">
+        <Property name="property">num</Property>
+      </DataColumn>
+      <DataColumn name="batchNo">
+        <Property name="property">batchNo</Property>
+      </DataColumn>
+      <DataColumn name="loadingNoNg">
+        <Property name="property">loadingNoNg</Property>
+      </DataColumn>
+      <DataColumn name="orderNoNg">
+        <Property name="property">orderNoNg</Property>
+      </DataColumn>
+      <DataColumn name="orderItemNg">
+        <Property name="property">orderItemNg</Property>
+      </DataColumn>
+      <DataColumn name="laddingNoNg">
+        <Property name="property">laddingNoNg</Property>
+      </DataColumn>
+    </DataGrid>
+    <ImportExcelAction id="importExcelAction">
+      <ClientEvent name="onSuccess">var entity=view.get(&quot;#dsSh10b&quot;).getData(&quot;#&quot;);&#xD;
+var ajaxActionLoadingNG = view.get(&quot;#ajaxActionLoadingNG&quot;);&#xD;
+//ajaxActionLoadingNG.set(&quot;parameter&quot;,{&#xD;
+//	'loadingNoNg' : entity.get(&quot;loadingNoNg&quot;),&#xD;
+//	'sh10aId' : entity.get(&quot;sh10aId&quot;),&#xD;
+//	'custNo' : entity.get(&quot;custNo&quot;),&#xD;
+//	'custName' : entity.get(&quot;custName&quot;)&#xD;
+//});&#xD;
+//ajaxActionLoadingNG.execute(function() {&#xD;
+	//view.get(&quot;#dsSh10b&quot;).set(&quot;parameter&quot;,{loadingNo:entity.get(&quot;loadingNo&quot;)});&#xD;
+	view.get(&quot;#dsSh10b&quot;).flushAsync();&#xD;
+//});&#xD;
+</ClientEvent>
+      <Property name="bigData">true</Property>
+      <Property name="startRow">1</Property>
+    </ImportExcelAction>
+  </View>
+</ViewConfig>

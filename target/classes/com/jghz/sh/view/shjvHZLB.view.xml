@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtCondition">
+      <PropertyDef name="startStation">
+        <Property name="label">启运地</Property>
+      </PropertyDef>
+      <PropertyDef name="endStation">
+        <Property name="label">目的地</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property></Property>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerCompName">
+        <Property></Property>
+        <Property name="label">货主单位</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="arPriceType">
+        <Property></Property>
+        <Property name="label">计价方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadArPriceType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="customNoHz">
+        <Property></Property>
+        <Property name="label">货主自定义编号</Property>
+      </PropertyDef>
+      <PropertyDef name="publishTimeS">
+        <Property></Property>
+        <Property name="label">发布时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="dealTimeS">
+        <Property></Property>
+        <Property name="label">成交时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="backTimeS">
+        <Property></Property>
+        <Property name="label">回单时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="loadTimeS">
+        <Property></Property>
+        <Property name="label">装车时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="publishTimeE">
+        <Property></Property>
+        <Property name="label">发布时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="dealTimeE">
+        <Property></Property>
+        <Property name="label">成交时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="backTimeE">
+        <Property></Property>
+        <Property name="label">回单时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="loadTimeE">
+        <Property></Property>
+        <Property name="label">装车时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadSh10Status&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbsh">
+      <PropertyDef name="sh10Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerCompNo">
+        <Property></Property>
+        <Property name="label">货主单位编码</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerCompName">
+        <Property></Property>
+        <Property name="label">货主单位</Property>
+      </PropertyDef>
+      <PropertyDef name="transContact">
+        <Property></Property>
+        <Property name="label">运单联系人</Property>
+      </PropertyDef>
+      <PropertyDef name="transPhone">
+        <Property></Property>
+        <Property name="label">运单联系电话</Property>
+      </PropertyDef>
+      <PropertyDef name="companyName">
+        <Property></Property>
+        <Property name="label">公司名称</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">货物编号</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="packDemand">
+        <Property></Property>
+        <Property name="label">包装要求</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoStyle">
+        <Property></Property>
+        <Property name="label">货物类型</Property>
+      </PropertyDef>
+      <PropertyDef name="buzType">
+        <Property></Property>
+        <Property name="label">业务类型</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property></Property>
+        <Property name="label">规格</Property>
+      </PropertyDef>
+      <PropertyDef name="title">
+        <Property></Property>
+        <Property name="label">标题 </Property>
+      </PropertyDef>
+      <PropertyDef name="memo">
+        <Property></Property>
+        <Property name="label">特别提示</Property>
+      </PropertyDef>
+      <PropertyDef name="tax">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">税率</Property>
+      </PropertyDef>
+      <PropertyDef name="distance">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">运距</Property>
+      </PropertyDef>
+      <PropertyDef name="carType">
+        <Property></Property>
+        <Property name="label">车型要求</Property>
+      </PropertyDef>
+      <PropertyDef name="carLength">
+        <Property></Property>
+        <Property name="label">车长要求</Property>
+      </PropertyDef>
+      <PropertyDef name="ladingWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">运单重量</Property>
+      </PropertyDef>
+      <PropertyDef name="transType">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="startStationCode">
+        <Property></Property>
+        <Property name="label">起点编码</Property>
+      </PropertyDef>
+      <PropertyDef name="startStation">
+        <Property></Property>
+        <Property name="label">起点</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchAddress">
+        <Property></Property>
+        <Property name="label">具体发货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchNo">
+        <Property></Property>
+        <Property name="label">发货人编号</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchName">
+        <Property></Property>
+        <Property name="label">发货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchPhone">
+        <Property></Property>
+        <Property name="label">发货人电话</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchStart">
+        <Property></Property>
+        <Property name="label">装货时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchEnd">
+        <Property></Property>
+        <Property name="label">装货时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="endStationCode">
+        <Property></Property>
+        <Property name="label">终点编码</Property>
+      </PropertyDef>
+      <PropertyDef name="endStation">
+        <Property></Property>
+        <Property name="label">终点</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptAddress">
+        <Property></Property>
+        <Property name="label">具体收货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptPhone">
+        <Property></Property>
+        <Property name="label">收货人电话</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptStart">
+        <Property></Property>
+        <Property name="label">收货开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptEnd">
+        <Property></Property>
+        <Property name="label">收货结束时间</Property>
+      </PropertyDef>
+      <PropertyDef name="destineCarrierNo">
+        <Property></Property>
+        <Property name="label">指定承运方编码</Property>
+      </PropertyDef>
+      <PropertyDef name="destineCarrier">
+        <Property></Property>
+        <Property name="label">指定承运商</Property>
+      </PropertyDef>
+      <PropertyDef name="isUrgent">
+        <Property></Property>
+        <Property name="label">是否加急</Property>
+      </PropertyDef>
+      <PropertyDef name="breachAddMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">违约追加运费</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveredWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已发货量</Property>
+      </PropertyDef>
+      <PropertyDef name="backWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已回单量</Property>
+      </PropertyDef>
+      <PropertyDef name="publishType">
+        <Property></Property>
+        <Property name="label">发布方式</Property>
+      </PropertyDef>
+      <PropertyDef name="arPriceType">
+        <Property></Property>
+        <Property name="label">计价方式</Property>
+      </PropertyDef>
+      <PropertyDef name="arPayUnit">
+        <Property></Property>
+        <Property name="label">货物单位</Property>
+      </PropertyDef>
+      <PropertyDef name="arUnitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货物单价</Property>
+      </PropertyDef>
+      <PropertyDef name="arMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货物金额</Property>
+      </PropertyDef>
+      <PropertyDef name="arSettleType">
+        <Property></Property>
+        <Property name="label">货物结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值</Property>
+      </PropertyDef>
+      <PropertyDef name="publishPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发布单价</Property>
+      </PropertyDef>
+      <PropertyDef name="bgPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">后台挂价</Property>
+      </PropertyDef>
+      <PropertyDef name="bgPriceEmp">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">后台挂价人</Property>
+      </PropertyDef>
+      <PropertyDef name="matchPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">撮合价</Property>
+      </PropertyDef>
+      <PropertyDef name="publishTime">
+        <Property></Property>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+      <PropertyDef name="quoteEndTime">
+        <Property></Property>
+        <Property name="label">报价结束时间</Property>
+      </PropertyDef>
+      <PropertyDef name="handTime">
+        <Property></Property>
+        <Property name="label">挂价时间</Property>
+      </PropertyDef>
+      <PropertyDef name="periodValidity">
+        <Property></Property>
+        <Property name="label">有效期</Property>
+      </PropertyDef>
+      <PropertyDef name="dealPriceHz">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">成交单价-货主-不带票</Property>
+      </PropertyDef>
+      <PropertyDef name="dealPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">成交单价-货主-带票</Property>
+      </PropertyDef>
+      <PropertyDef name="dealCarrierNo">
+        <Property></Property>
+        <Property name="label">成交承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="dealCarrier">
+        <Property></Property>
+        <Property name="label">成交承运商</Property>
+      </PropertyDef>
+      <PropertyDef name="dealCarrierPhone">
+        <Property></Property>
+        <Property name="label">成交承运商电话</Property>
+      </PropertyDef>
+      <PropertyDef name="dealTime">
+        <Property></Property>
+        <Property name="label">成交时间</Property>
+      </PropertyDef>
+      <PropertyDef name="depositVal">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">保证金费用</Property>
+      </PropertyDef>
+      <PropertyDef name="predictDays">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">预计天数</Property>
+      </PropertyDef>
+      <PropertyDef name="isInvoice">
+        <Property></Property>
+        <Property name="label">是否带票</Property>
+      </PropertyDef>
+      <PropertyDef name="ecStatus">
+        <Property></Property>
+        <Property name="label">EC运单状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isDeviate">
+        <Property></Property>
+        <Property name="label">是否偏离</Property>
+      </PropertyDef>
+      <PropertyDef name="deliSignIn">
+        <Property></Property>
+        <Property name="label">发货签到时间</Property>
+      </PropertyDef>
+      <PropertyDef name="deliTime">
+        <Property></Property>
+        <Property name="label">实际发货时间</Property>
+      </PropertyDef>
+      <PropertyDef name="loadTime">
+        <Property></Property>
+        <Property name="label">装车时间</Property>
+      </PropertyDef>
+      <PropertyDef name="unloadSignIn">
+        <Property></Property>
+        <Property name="label">卸货签到时间</Property>
+      </PropertyDef>
+      <PropertyDef name="unloadTime">
+        <Property></Property>
+        <Property name="label">卸货时间</Property>
+      </PropertyDef>
+      <PropertyDef name="backTime">
+        <Property></Property>
+        <Property name="label">回单时间</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isDisplay">
+        <Property></Property>
+        <Property name="label">是否前台显示</Property>
+      </PropertyDef>
+      <PropertyDef name="isDraft">
+        <Property></Property>
+        <Property name="label">是否草稿</Property>
+      </PropertyDef>
+      <PropertyDef name="draftNo">
+        <Property></Property>
+        <Property name="label">草稿号</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="manageType">
+        <Property></Property>
+        <Property name="label">管理费类别</Property>
+      </PropertyDef>
+      <PropertyDef name="manageCost">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">管理费</Property>
+      </PropertyDef>
+      <PropertyDef name="customNoHz">
+        <Property></Property>
+        <Property name="label">货主自定义编号</Property>
+      </PropertyDef>
+      <PropertyDef name="customNoHt">
+        <Property></Property>
+        <Property name="label">后台自定义编号</Property>
+      </PropertyDef>
+      <PropertyDef name="arPrePayments">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">预付款</Property>
+      </PropertyDef>
+      <PropertyDef name="apPrePayMemo">
+        <Property></Property>
+        <Property name="label">预付款说明</Property>
+      </PropertyDef>
+      <PropertyDef name="arMount">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">AR_MOUNT_</Property>
+      </PropertyDef>
+      <PropertyDef name="cfDealType">
+        <Property></Property>
+        <Property name="label">CF_DEAL_TYPE_</Property>
+      </PropertyDef>
+      <PropertyDef name="manageCostRate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">MANAGE_COST_RATE_</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算单号</Property>
+      </PropertyDef>
+      <PropertyDef name="settleBatchNo">
+        <Property></Property>
+        <Property name="label">结算批次单号</Property>
+      </PropertyDef>
+      <PropertyDef name="agentBusiness">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">代收代付</Property>
+      </PropertyDef>
+      <PropertyDef name="isAr">
+        <Property></Property>
+        <Property name="label">应收标记</Property>
+      </PropertyDef>
+      <PropertyDef name="isAp">
+        <Property></Property>
+        <Property name="label">应付标记</Property>
+      </PropertyDef>
+      <PropertyDef name="apPriceType">
+        <Property></Property>
+        <Property name="label">承运计价方式</Property>
+      </PropertyDef>
+      <PropertyDef name="apUnitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">成交单价-承运-不带票</Property>
+      </PropertyDef>
+      <PropertyDef name="apUnitPriceTax">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">成交单价-承运-带票</Property>
+      </PropertyDef>
+      <PropertyDef name="apMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运金额</Property>
+      </PropertyDef>
+      <PropertyDef name="billEmp">
+        <Property></Property>
+        <Property name="label">发单员</Property>
+      </PropertyDef>
+      <PropertyDef name="billPhone">
+        <Property></Property>
+        <Property name="label">发单员电话</Property>
+      </PropertyDef>
+      <PropertyDef name="isPutUp">
+        <Property></Property>
+        <Property name="label">是否自动挂价</Property>
+      </PropertyDef>
+      <PropertyDef name="dealUserType">
+        <Property></Property>
+        <Property name="label">成交会员类别</Property>
+      </PropertyDef>
+      <PropertyDef name="isBid">
+        <Property></Property>
+        <Property name="label">是否有报价</Property>
+      </PropertyDef>
+      <PropertyDef name="contact">
+        <Property></Property>
+        <Property name="label">contact</Property>
+      </PropertyDef>
+      <PropertyDef name="contactphone">
+        <Property></Property>
+        <Property name="label">contactPhone</Property>
+      </PropertyDef>
+      <PropertyDef name="enterprisename">
+        <Property></Property>
+        <Property name="label">enterpriseName</Property>
+      </PropertyDef>
+      <PropertyDef name="backWgtC">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已确认回单量</Property>
+      </PropertyDef>
+      <PropertyDef name="backTimeC">
+        <Property></Property>
+        <Property name="label">回单确认时间</Property>
+      </PropertyDef>
+      <PropertyDef name="startGrid">
+        <Property></Property>
+        <Property name="label">起点坐标</Property>
+      </PropertyDef>
+      <PropertyDef name="endGrid">
+        <Property></Property>
+        <Property name="label">终点坐标</Property>
+      </PropertyDef>
+      <PropertyDef name="cyBreachAddMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运方违约运费</Property>
+      </PropertyDef>
+      <PropertyDef name="sh10aId">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="transItem">
+        <Property></Property>
+        <Property name="label">运单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="contractName">
+        <Property></Property>
+        <Property name="label">紧急联系人</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="trailerNo">
+        <Property></Property>
+        <Property name="label">挂车号</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property></Property>
+        <Property name="label">会员ID</Property>
+      </PropertyDef>
+      <PropertyDef name="userType">
+        <Property></Property>
+        <Property name="label">会员类别</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">司机手机</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property></Property>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="bidPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">竞标价格</Property>
+      </PropertyDef>
+      <PropertyDef name="bidTime">
+        <Property></Property>
+        <Property name="label">竞标时间</Property>
+      </PropertyDef>
+      <PropertyDef name="settleTimeLimit">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结算宽限日</Property>
+      </PropertyDef>
+      <PropertyDef name="deliWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发货量</Property>
+      </PropertyDef>
+      <PropertyDef name="loadWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">装车量</Property>
+      </PropertyDef>
+      <PropertyDef name="unloadWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">卸货量</Property>
+      </PropertyDef>
+      <PropertyDef name="backEmpC">
+        <Property></Property>
+        <Property name="label">确认回单人</Property>
+      </PropertyDef>
+      <PropertyDef name="backBugFlag">
+        <Property></Property>
+        <Property name="label">异常标记(回单打回)</Property>
+      </PropertyDef>
+      <PropertyDef name="backBugEmp">
+        <Property></Property>
+        <Property name="label">回单打回人</Property>
+      </PropertyDef>
+      <PropertyDef name="backBugTime">
+        <Property></Property>
+        <Property name="label">回单打回时间</Property>
+      </PropertyDef>
+      <PropertyDef name="backBugMemo">
+        <Property></Property>
+        <Property name="label">回单打回说明</Property>
+      </PropertyDef>
+      <PropertyDef name="agentMemo">
+        <Property></Property>
+        <Property name="label">代收代付说明</Property>
+      </PropertyDef>
+      <PropertyDef name="agentImg">
+        <Property></Property>
+        <Property name="label">代收代付附件</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptNo">
+        <Property></Property>
+        <Property name="label">回执号</Property>
+      </PropertyDef>
+      <PropertyDef name="onWay">
+        <Property></Property>
+        <Property name="label">是否在途</Property>
+      </PropertyDef>
+      <PropertyDef name="apSettleType">
+        <Property></Property>
+        <Property name="label">承运结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="apSettleMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运结算金额</Property>
+      </PropertyDef>
+      <PropertyDef name="apTotleMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运结算总金额</Property>
+      </PropertyDef>
+      <PropertyDef name="apPayType">
+        <Property></Property>
+        <Property name="label">承运付款方式</Property>
+      </PropertyDef>
+      <PropertyDef name="apPrePayments">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">预付款</Property>
+      </PropertyDef>
+      <PropertyDef name="arSettleAgentBusiness">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货主结算代收代付</Property>
+      </PropertyDef>
+      <PropertyDef name="arSettleRemark">
+        <Property></Property>
+        <Property name="label">货主结算说明</Property>
+      </PropertyDef>
+      <PropertyDef name="arSettleMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货主结算金额</Property>
+      </PropertyDef>
+      <PropertyDef name="arTotalMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货主结算总金额</Property>
+      </PropertyDef>
+      <PropertyDef name="agentshow">
+        <Property></Property>
+        <Property name="label">agentShow</Property>
+      </PropertyDef>
+      <PropertyDef name="apMount">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">AP_MOUNT_</Property>
+      </PropertyDef>
+      <PropertyDef name="driverName">
+        <Property></Property>
+        <Property name="label">DRIVER_NAME_</Property>
+      </PropertyDef>
+      <PropertyDef name="money">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">MONEY_</Property>
+      </PropertyDef>
+      <PropertyDef name="payType">
+        <Property></Property>
+        <Property name="label">PAY_TYPE_</Property>
+      </PropertyDef>
+      <PropertyDef name="prePayments">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">PRE_PAYMENTS_</Property>
+      </PropertyDef>
+      <PropertyDef name="unitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">UNIT_PRICE_</Property>
+      </PropertyDef>
+      <PropertyDef name="driveDate">
+        <Property></Property>
+        <Property name="label">DRIVE_DATE_</Property>
+      </PropertyDef>
+      <PropertyDef name="timeNum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">趟数</Property>
+      </PropertyDef>
+      <PropertyDef name="apTaxUnitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运含税单价</Property>
+      </PropertyDef>
+      <PropertyDef name="apTaxMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运含税金额</Property>
+      </PropertyDef>
+      <PropertyDef name="isAssess">
+        <Property></Property>
+        <Property name="label">是否评价</Property>
+      </PropertyDef>
+      <PropertyDef name="isSync">
+        <Property></Property>
+        <Property name="label">是否同步</Property>
+      </PropertyDef>
+      <PropertyDef name="syncTime">
+        <Property></Property>
+        <Property name="label">同步时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endTime">
+        <Property></Property>
+        <Property name="label">END_TIME_</Property>
+      </PropertyDef>
+      <PropertyDef name="startTime">
+        <Property></Property>
+        <Property name="label">START_TIME_</Property>
+      </PropertyDef>
+      <PropertyDef name="agentShow">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">查询</Property>
+    <DataSet id="dsCondition">
+      <ClientEvent name="onReady">view.get(&quot;#dsCondition&quot;).insert();&#xD;
+</ClientEvent>
+      <Property name="dataType">[dtCondition]</Property>
+    </DataSet>
+    <AutoForm>
+      <Property name="cols">*,*,*,*</Property>
+      <Property name="dataSet">dsCondition</Property>
+      <AutoFormElement>
+        <Property name="name">transNo</Property>
+        <Property name="property">transNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">status</Property>
+        <Property name="property">status</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">userName</Property>
+        <Property name="property">userName</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">ownerCompName</Property>
+        <Property name="property">ownerCompName</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">productDetail</Property>
+        <Property name="property">productDetail</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">arPriceType</Property>
+        <Property name="property">arPriceType</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">customNoHz</Property>
+        <Property name="property">customNoHz</Property>
+        <Property name="label">自定义编号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Container layout="hbox">
+        <Button layoutConstraint="align:right">
+          <ClientEvent name="onClick">var dsCondition = view.get(&quot;#dsCondition&quot;).getData(&quot;#&quot;);&#xD;
+var contextPath = &quot;/sgwl/ureport?action=htmlpreview&amp;report=classpath:&quot;;&#xD;
+var classPath = &quot;com/jghz/sh/report/shjcHZLB&quot;; &#xD;
+var parameter = &quot;&amp;transNo=&quot;+dsCondition.get(&quot;transNo&quot;)&#xD;
++&quot;&amp;status=&quot;+dsCondition.get(&quot;status&quot;)&#xD;
++&quot;&amp;startStation=&quot;+dsCondition.get(&quot;startStation&quot;)&#xD;
++&quot;&amp;endStation=&quot;+dsCondition.get(&quot;endStation&quot;)&#xD;
++&quot;&amp;userName=&quot;+dsCondition.get(&quot;userName&quot;)&#xD;
++&quot;&amp;ownerCompName=&quot;+dsCondition.get(&quot;ownerCompName&quot;)&#xD;
++&quot;&amp;productDetail=&quot;+dsCondition.get(&quot;productDetail&quot;)&#xD;
++&quot;&amp;arPriceType=&quot;+dsCondition.get(&quot;arPriceType&quot;)&#xD;
++&quot;&amp;customNoHz=&quot;+dsCondition.get(&quot;customNoHz&quot;)&#xD;
++&quot;&amp;publishTimeS=&quot;+dsCondition.get(&quot;publishTimeS&quot;)&#xD;
++&quot;&amp;dealTimeS=&quot;+dsCondition.get(&quot;dealTimeS&quot;)&#xD;
++&quot;&amp;loadTimeS=&quot;+dsCondition.get(&quot;loadTimeS&quot;)&#xD;
++&quot;&amp;backTimeS=&quot;+dsCondition.get(&quot;backTimeS&quot;)&#xD;
++&quot;&amp;publishTimeE=&quot;+dsCondition.get(&quot;publishTimeE&quot;)&#xD;
++&quot;&amp;dealTimeE=&quot;+dsCondition.get(&quot;dealTimeE&quot;)&#xD;
++&quot;&amp;loadTimeE=&quot;+dsCondition.get(&quot;loadTimeE&quot;)&#xD;
++&quot;&amp;backTimeE=&quot;+dsCondition.get(&quot;backTimeE&quot;);&#xD;
+&#xD;
+var url = contextPath+classPath+parameter;&#xD;
+view.get(&quot;#iFrame1&quot;).set(&quot;path&quot;,url);&#xD;
+view.get(&quot;#iFrame1&quot;).reload();</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button layoutConstraint="align:center">
+          <ClientEvent name="onClick">view.get(&quot;#dsCondition&quot;).insert();&#xD;
+</ClientEvent>
+          <Property name="caption">重置</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+        </Button>
+        <Button layoutConstraint="align:left">
+          <ClientEvent name="onClick">view.get(&quot;#dialogCondition&quot;).show();</ClientEvent>
+          <Property name="caption">高级查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+      </Container>
+    </AutoForm>
+    <IFrame id="iFrame1">
+      <Property name="height">85%</Property>
+      <Property name="ignored">false</Property>
+      <Property name="path">/sgwl/ureport?action=htmlpreview&amp;report=classpath:com/jghz/sh/report/shjcHZLB</Property>
+    </IFrame>
+    <DataGrid id="dgTbsh10a">
+      <Property name="dataSet">dataSetTbsh10a</Property>
+      <Property name="dataType">dtTbsh</Property>
+      <Property name="height">85%</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <Property name="ignored">true</Property>
+      <DataColumn name="transNo">
+        <Property name="property">transNo</Property>
+      </DataColumn>
+      <DataColumn name="startStation">
+        <Property name="property">startStation</Property>
+      </DataColumn>
+      <DataColumn name="endStation">
+        <Property name="property">endStation</Property>
+      </DataColumn>
+      <DataColumn name="despatchAddress">
+        <Property name="property">despatchAddress</Property>
+      </DataColumn>
+      <DataColumn name="receiptAddress">
+        <Property name="property">receiptAddress</Property>
+      </DataColumn>
+      <DataColumn name="ownerCompName">
+        <Property name="property">ownerCompName</Property>
+      </DataColumn>
+      <DataColumn name="destineCarrier">
+        <Property name="property">destineCarrier</Property>
+      </DataColumn>
+      <DataColumn name="productDetail">
+        <Property name="property">productDetail</Property>
+      </DataColumn>
+      <DataColumn name="ladingWgt">
+        <Property name="property">ladingWgt</Property>
+      </DataColumn>
+      <DataColumn name="buzType">
+        <Property name="property">buzType</Property>
+      </DataColumn>
+      <DataColumn name="arPriceType">
+        <Property name="property">arPriceType</Property>
+      </DataColumn>
+      <DataColumn name="publishPrice">
+        <Property name="property">publishPrice</Property>
+      </DataColumn>
+      <DataColumn name="dealPrice">
+        <Property name="property">dealPrice</Property>
+      </DataColumn>
+      <DataColumn name="publishTime">
+        <Property name="property">publishTime</Property>
+      </DataColumn>
+      <DataColumn name="dealTime">
+        <Property name="property">dealTime</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">userName</Property>
+        <Property name="name">userName</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">carNo</Property>
+        <Property name="name">carNo</Property>
+      </DataColumn>
+      <DataColumn name="status">
+        <Property name="property">status</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">backWgtC</Property>
+        <Property name="name">backWgtC</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">arSettleMoney</Property>
+        <Property name="name">arSettleMoney</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">arTotalMoney</Property>
+        <Property name="name">arTotalMoney</Property>
+      </DataColumn>
+      <DataColumn name="agentBusiness">
+        <Property name="property">agentBusiness</Property>
+      </DataColumn>
+      <DataColumn name="breachAddMoney">
+        <Property name="property">breachAddMoney</Property>
+      </DataColumn>
+      <DataColumn name="loadTime">
+        <Property name="property">loadTime</Property>
+      </DataColumn>
+      <DataColumn name="backTime">
+        <Property name="property">backTime</Property>
+      </DataColumn>
+      <DataColumn name="customNoHz">
+        <Property name="property">customNoHz</Property>
+      </DataColumn>
+      <ColumnGroup/>
+    </DataGrid>
+    <Container>
+      <Property name="ignored">true</Property>
+      <DataPilot layoutConstraint="right">
+        <Property name="dataSet">dataSetTbsh10a</Property>
+        <Property name="itemCodes">pages,pageSize</Property>
+      </DataPilot>
+    </Container>
+    <Dialog id="dialogCondition">
+      <Property name="center">true</Property>
+      <Property name="width">900</Property>
+      <Property name="height">350</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">高级查询</Property>
+      <Property name="closeAction">hide</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dsCondition = view.get(&quot;#dsCondition&quot;).getData(&quot;#&quot;);&#xD;
+var contextPath = &quot;/wms/ureport?action=htmlpreview&amp;report=classpath:&quot;;&#xD;
+var classPath = &quot;com/jghz/sh/report/shjcHZLB&quot;; &#xD;
+var parameter = &quot;&amp;transNo=&quot;+dsCondition.get(&quot;transNo&quot;)&#xD;
++&quot;&amp;status=&quot;+dsCondition.get(&quot;status&quot;)&#xD;
++&quot;&amp;startStation=&quot;+dsCondition.get(&quot;startStation&quot;)&#xD;
++&quot;&amp;endStation=&quot;+dsCondition.get(&quot;endStation&quot;)&#xD;
++&quot;&amp;userName=&quot;+dsCondition.get(&quot;userName&quot;)&#xD;
++&quot;&amp;ownerCompName=&quot;+dsCondition.get(&quot;ownerCompName&quot;)&#xD;
++&quot;&amp;productDetail=&quot;+dsCondition.get(&quot;productDetail&quot;)&#xD;
++&quot;&amp;arPriceType=&quot;+dsCondition.get(&quot;arPriceType&quot;)&#xD;
++&quot;&amp;customNoHz=&quot;+dsCondition.get(&quot;customNoHz&quot;)&#xD;
++&quot;&amp;publishTimeS=&quot;+dsCondition.get(&quot;publishTimeS&quot;)&#xD;
++&quot;&amp;dealTimeS=&quot;+dsCondition.get(&quot;dealTimeS&quot;)&#xD;
++&quot;&amp;loadTimeS=&quot;+dsCondition.get(&quot;loadTimeS&quot;)&#xD;
++&quot;&amp;backTimeS=&quot;+dsCondition.get(&quot;backTimeS&quot;)&#xD;
++&quot;&amp;publishTimeE=&quot;+dsCondition.get(&quot;publishTimeE&quot;)&#xD;
++&quot;&amp;dealTimeE=&quot;+dsCondition.get(&quot;dealTimeE&quot;)&#xD;
++&quot;&amp;loadTimeE=&quot;+dsCondition.get(&quot;loadTimeE&quot;)&#xD;
++&quot;&amp;backTimeE=&quot;+dsCondition.get(&quot;backTimeE&quot;);&#xD;
+var url = contextPath+classPath+parameter;&#xD;
+view.get(&quot;#iFrame1&quot;).set(&quot;path&quot;,url);&#xD;
+view.get(&quot;#iFrame1&quot;).reload();&#xD;
+view.get(&quot;#dialogCondition&quot;).hide();</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#dialogCondition&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">关闭</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dsCondition</Property>
+          <Property name="cols">*,*,*,*</Property>
+          <AutoFormElement>
+            <Property name="name">startStation</Property>
+            <Property name="property">startStation</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">endStation</Property>
+            <Property name="property">endStation</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">transNo</Property>
+            <Property name="property">transNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">status</Property>
+            <Property name="property">status</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="property">userName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">ownerCompName</Property>
+            <Property name="property">ownerCompName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">productDetail</Property>
+            <Property name="property">productDetail</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">arPriceType</Property>
+            <Property name="property">arPriceType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">publishTimeS</Property>
+            <Property name="property">publishTimeS</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">publishTimeE</Property>
+            <Property name="property">publishTimeE</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">dealTimeS</Property>
+            <Property name="property">dealTimeS</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">dealTimeE</Property>
+            <Property name="property">dealTimeE</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">backTimeS</Property>
+            <Property name="property">backTimeS</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">backTimeE</Property>
+            <Property name="property">backTimeE</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">loadTimeS</Property>
+            <Property name="property">loadTimeS</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">loadTimeE</Property>
+            <Property name="property">loadTimeE</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">customNoHz</Property>
+            <Property name="property">customNoHz</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Y/m/d&quot;);</ClientEvent>
+    </DateDropDown>
+  </View>
+</ViewConfig>

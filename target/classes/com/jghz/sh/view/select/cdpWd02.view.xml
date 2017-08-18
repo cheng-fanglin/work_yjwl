@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Dialog id="$dialogWd02">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	//if(config.carrierNo!=null){ &#xD;
+	//	var carrierNo = config.carrierNo;&#xD;
+	//}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsWd02">
+          <Property name="dataProvider">shjcCommService#queryWdsh02</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbwd02]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsWd02</Property>
+            <Property name="itemCodes">pages</Property>
+          </DataPilot>
+          <Separator/>
+          <ToolBarButton>
+            <ClientEvent name="onClick">var data = view.get(&quot;#$formTbwd02.entity&quot;);&#xD;
+with(view.get(&quot;#$dsWd02&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </ToolBarButton>
+        </ToolBar>
+        <AutoForm id="$formTbwd02">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="name">phoneNo</Property>
+            <Property name="label">联系方式</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carrierNo</Property>
+            <Property name="label">承运商</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="label">司机姓名</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+        <DataGrid id="$dgTbwd02">
+          <ClientEvent name="onDataRowDoubleClick">&#xD;
+var data = view.get(&quot;#$dsWd02&quot;).getData(&quot;#&quot;);&#xD;
+//var result=[];&#xD;
+//result.push(data.toJSON());&#xD;
+view.id(&quot;$dialogWd02&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsWd02</Property>
+          <Property name="readOnly">true</Property>
+          <DataColumn>
+            <Property name="property">phoneNo</Property>
+            <Property name="name">phoneNo</Property>
+          </DataColumn>
+          <DataColumn>
+            <Property name="property">userName</Property>
+            <Property name="name">userName</Property>
+          </DataColumn>
+          <DataColumn>
+            <Property name="property">carrierNo</Property>
+            <Property name="name">carrierNo</Property>
+          </DataColumn>
+          <DataColumn>
+            <Property name="property">carrierName</Property>
+            <Property name="name">carrierName</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

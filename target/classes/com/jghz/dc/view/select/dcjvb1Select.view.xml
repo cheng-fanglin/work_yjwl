@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Property name="title">查询</Property>
+    <Dialog id="$dialogDcb1">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsTbdcb1">
+          <Property name="dataProvider">dcjcb1Service#queryTbdcb1</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbdcb1]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsTbdcb1</Property>
+            <Property name="itemCodes">pages</Property>
+          </DataPilot>
+          <Separator/>
+          <ToolBarButton>
+            <ClientEvent name="onClick">var data = view.get(&quot;#$formTbdcb1.entity&quot;);&#xD;
+with(view.get(&quot;#$dsTbdcb1&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </ToolBarButton>
+        </ToolBar>
+        <AutoForm id="$formTbdcb1">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="name">templateId</Property>
+            <Property name="label">模板ID</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">template</Property>
+            <Property name="label">模板内容</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">tempDesc</Property>
+            <Property name="label">模板描述</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+        <DataGrid id="$dgTbdcb1">
+          <ClientEvent name="onDataRowDoubleClick">&#xD;
+var data = view.get(&quot;#$dsTbdcb1&quot;).getData(&quot;#&quot;);&#xD;
+//var result=[];&#xD;
+//result.push(data.toJSON());&#xD;
+view.id(&quot;$dialogDcb1&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsTbdcb1</Property>
+          <Property name="readOnly">true</Property>
+          <DataColumn name="templateId">
+            <Property name="property">templateId</Property>
+          </DataColumn>
+          <DataColumn name="template">
+            <Property name="property">template</Property>
+          </DataColumn>
+          <DataColumn name="tempDesc">
+            <Property name="property">tempDesc</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

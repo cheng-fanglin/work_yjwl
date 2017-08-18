@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="myTbdcc1a" parent="global:BaseTbdcc1a">
+      <Property name="tags">产品维护</Property>
+      <PropertyDef name="typeId">
+        <Property></Property>
+        <Property name="label">分类编号</Property>
+        <Property name="required">true</Property>
+        <Property name="readOnly">true</Property>
+      </PropertyDef>
+      <PropertyDef name="typeName">
+        <Property></Property>
+        <Property name="label">分类名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property></Property>
+        <Property name="label">产品全称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="id">
+        <Property></Property>
+        <Property name="label">产品编号</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="shortName">
+        <Property></Property>
+        <Property name="label">产品简称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="searchName">
+        <Property></Property>
+        <Property name="label">搜索名</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="printName">
+        <Property></Property>
+        <Property name="label">产品常用名</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="myTbdcc1" parent="global:BaseTbdcc1"/>
+  </Model>
+  <View>
+    <Property name="title">Tbdcc1a信息维护</Property>
+    <DataSet id="dataSetTbdcc1a">
+      <Property name="dataProvider">dcjcc1Service#queryTbdcc1a</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[myTbdcc1a]</Property>
+    </DataSet>
+    <DataSet id="dsTbdcc1">
+      <Property name="dataType">[myTbdcc1]</Property>
+      <Property name="dataProvider">dcjcc1Service#queryTbdcc1</Property>
+      <Property name="pageSize">10</Property>
+    </DataSet>
+    <DataSetDropDown id="ddTbdcc1">
+      <Property name="assignmentMap">typeId,typeName</Property>
+      <Property name="editable">false</Property>
+      <Property name="displayProperty">typeName</Property>
+      <Property name="dataSet">dsTbdcc1</Property>
+      <Property name="property">typeName</Property>
+    </DataSetDropDown>
+    <UpdateAction id="actionUpdate">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">dcjcc1Service#saveTbdcc1a</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbdcc1a</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*,*,*,*,*,*</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">typeId</Property>
+            <Property name="label">分类编号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">typeName</Property>
+            <Property name="label">分类名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">id</Property>
+            <Property name="label">物料编号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">name</Property>
+            <Property name="label">物料全称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">shortName</Property>
+            <Property name="label">物料简称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">searchName</Property>
+            <Property name="label">搜索名</Property>
+            <Editor/>
+          </AutoFormElement>
+          <DataLabel/>
+          <DataLabel/>
+          <Button id="btnQuery">
+            <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbdcc1a&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </Button>
+          <Button id="btnReset">
+            <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+            <Property name="caption">重置</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbdcc1a.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.get(&quot;#dialogTbdcc1a&quot;).show();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			datas.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dataSetTbdcc1a</Property>
+        <Property name="itemCodes">pages,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbdcc1a.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogTbdcc1a&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbdcc1a</Property>
+      <Property name="readOnly">true</Property>
+      <DataColumn name="typeId">
+        <Property name="property">typeId</Property>
+      </DataColumn>
+      <DataColumn name="typeName">
+        <Property name="property">typeName</Property>
+      </DataColumn>
+      <DataColumn name="id">
+        <Property name="property">id</Property>
+      </DataColumn>
+      <DataColumn name="name">
+        <Property name="property">name</Property>
+      </DataColumn>
+      <DataColumn name="shortName">
+        <Property name="property">shortName</Property>
+      </DataColumn>
+      <DataColumn name="printName">
+        <Property name="property">printName</Property>
+      </DataColumn>
+      <DataColumn name="searchName">
+        <Property name="property">searchName</Property>
+      </DataColumn>
+      <DataColumn name="remarks">
+        <Property name="property">remarks</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbdcc1a">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbdcc1a&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbdcc1a&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogTbdcc1a&quot;);&#xD;
+//dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+//});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbdcc1a</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement name="typeId">
+            <Property name="name">typeId</Property>
+            <Property name="property">typeId</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="typeName">
+            <Property name="name">typeName</Property>
+            <Property name="property">typeName</Property>
+            <Property name="trigger">ddTbdcc1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="id">
+            <Property name="name">id</Property>
+            <Property name="property">id</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="name">
+            <Property name="name">name</Property>
+            <Property name="property">name</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="shortName">
+            <Property name="name">shortName</Property>
+            <Property name="property">shortName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="printName">
+            <Property name="name">printName</Property>
+            <Property name="property">printName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="searchName">
+            <Property name="name">searchName</Property>
+            <Property name="property">searchName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="size">
+            <Property name="name">size</Property>
+            <Property name="property">size</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="model">
+            <Property name="name">model</Property>
+            <Property name="property">model</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="figureNum">
+            <Property name="name">figureNum</Property>
+            <Property name="property">figureNum</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="brand">
+            <Property name="name">brand</Property>
+            <Property name="property">brand</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="pieces">
+            <Property name="name">pieces</Property>
+            <Property name="property">pieces</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="country">
+            <Property name="name">country</Property>
+            <Property name="property">country</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="remarks">
+            <Property name="name">remarks</Property>
+            <Property name="property">remarks</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

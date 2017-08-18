@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ureport left-margin="19.1" right-margin="19.1" top-margin="25.4" bottom-margin="25.4">
+  <paper type="A4_PAPER" width="210.0" height="297.0" landscape="false"/>
+  <cell name="A1" font-family="宋体" bold="true" editable="false" font-size="20" align="center" valign="middle" wrap-compute="false" row="0" col="0" col-span="5" expand="none">
+    <content><![CDATA[员工信息]]></content>
+  </cell>
+  <cell name="A2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="0" expand="down">
+    <dataset-content dataset-name="employee" datasource-name="oracle" field="EMPLOYEE_CODE" aggregate="select"/>
+  </cell>
+  <cell name="B2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="1" expand="down">
+    <dataset-content dataset-name="employee" datasource-name="oracle" field="EMPLOYEE_NAME" aggregate="select"/>
+  </cell>
+  <cell name="C2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="2" expand="down">
+    <dataset-content dataset-name="employee" datasource-name="oracle" field="USER_NAME" aggregate="select"/>
+  </cell>
+  <cell name="D2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="3" expand="down">
+    <dataset-content dataset-name="employee" datasource-name="oracle" field="DEGREE" aggregate="select"/>
+  </cell>
+  <cell name="E2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="4" expand="down">
+    <dataset-content dataset-name="employee" datasource-name="oracle" field="EMAIL" aggregate="select"/>
+  </cell>
+  <row h="40" num="0"/>
+  <row h="20" num="1"/>
+  <col w="80" num="0"/>
+  <col w="80" num="1"/>
+  <col w="80" num="2"/>
+  <col w="80" num="3"/>
+  <col w="80" num="4"/>
+  <datasource name="oracle" username="dorado7" password="dorado7" driver="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@172.168.10.253:1521:testdb">
+    <dataset name="employee" datasource-name="oracle">
+      <sql><![CDATA[select * from sl_employee]]></sql>
+    </dataset>
+  </datasource>
+</ureport>

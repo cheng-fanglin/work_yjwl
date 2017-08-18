@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbwd03">
+      <Property name="creationType">com.jghz.sh.entity.Tbwd03</Property>
+      <PropertyDef name="wd03Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="carType">
+        <Property></Property>
+        <Property name="label">车辆类型</Property>
+      </PropertyDef>
+      <PropertyDef name="heavy">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">车辆载重</Property>
+      </PropertyDef>
+      <PropertyDef name="trailerAxle">
+        <Property></Property>
+        <Property name="label">拖挂轮轴</Property>
+      </PropertyDef>
+      <PropertyDef name="carWidth">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">车辆宽</Property>
+      </PropertyDef>
+      <PropertyDef name="carHeight">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">车辆高</Property>
+      </PropertyDef>
+      <PropertyDef name="carLenth">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">车辆长</Property>
+      </PropertyDef>
+      <PropertyDef name="carAge">
+        <Property name="dataType">int</Property>
+        <Property name="label">车龄</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">冻结状态</Property>
+      </PropertyDef>
+      <PropertyDef name="bizState">
+        <Property></Property>
+        <Property name="label">在途状态</Property>
+      </PropertyDef>
+      <PropertyDef name="realHeavy">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">实际承载量</Property>
+      </PropertyDef>
+      <PropertyDef name="engineerNo">
+        <Property></Property>
+        <Property name="label">发动机号</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">更新人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="carImg">
+        <Property/>
+      </PropertyDef>
+      <PropertyDef name="carShow">
+        <Property/>
+        <Property name="label">车辆图片</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbwd01信息维护</Property>
+    <DataSet id="dataSetTbwd03">
+      <Property name="dataProvider">ecjc03Service#loadwd03</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbwd03]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ecjc03Service#saveTbwd03</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd03</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateActionSH">
+      <Property name="dataResolver">ecjc03Service#saveSH</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd03</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">carNo</Property>
+        <Property name="label">车牌号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">carType</Property>
+        <Property name="label">车辆类别</Property>
+        <Property name="trigger">listDDUserType</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dataSetTbwd03&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dataSetTbwd03&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbwd03.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.get(&quot;#dialogTbwd03&quot;).show();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			datas.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dataSetTbwd03</Property>
+        <Property name="itemCodes">pages,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd03.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogTbwd03&quot;).show();&#xD;
+	view.get(&quot;#carImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;carShow&quot;));&#xD;
+		if(data.current.get(&quot;carShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+      <Label id="msg">
+        <ClientEvent name="onCreate">&#xD;
+</ClientEvent>
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </Label>
+    </ToolBar>
+    <DataGrid>
+      <ClientEvent name="onReady">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <ClientEvent name="onBlur">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <Property name="dataSet">dataSetTbwd03</Property>
+      <Property name="dataType">Tbwd03</Property>
+      <Property name="readOnly">true</Property>
+      <DataColumn name="carNo">
+        <Property name="property">carNo</Property>
+      </DataColumn>
+      <DataColumn name="carType">
+        <Property name="property">carType</Property>
+      </DataColumn>
+      <DataColumn name="heavy">
+        <Property name="property">heavy</Property>
+      </DataColumn>
+      <DataColumn name="trailerAxle">
+        <Property name="property">trailerAxle</Property>
+      </DataColumn>
+      <DataColumn name="carWidth">
+        <Property name="property">carWidth</Property>
+      </DataColumn>
+      <DataColumn name="carHeight">
+        <Property name="property">carHeight</Property>
+      </DataColumn>
+      <DataColumn name="carLenth">
+        <Property name="property">carLenth</Property>
+      </DataColumn>
+      <DataColumn name="carAge">
+        <Property name="property">carAge</Property>
+      </DataColumn>
+      <DataColumn name="realHeavy">
+        <Property name="property">realHeavy</Property>
+      </DataColumn>
+      <DataColumn name="engineerNo">
+        <Property name="property">engineerNo</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;carShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;carShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="dataType">Tbwd03</Property>
+        <Property name="property">carShow</Property>
+        <Property name="name">carShow</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbwd03">
+      <Property name="center">true</Property>
+      <Property name="width">800</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbwd03&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd03&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogTbwd03&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbwd03</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement>
+            <Property name="name">carNo</Property>
+            <Property name="property">carNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carType</Property>
+            <Property name="property">carType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">heavy</Property>
+            <Property name="property">heavy</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">trailerAxle</Property>
+            <Property name="property">trailerAxle</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carWidth</Property>
+            <Property name="property">carWidth</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carHeight</Property>
+            <Property name="property">carHeight</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carLenth</Property>
+            <Property name="property">carLenth</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carAge</Property>
+            <Property name="property">carAge</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">realHeavy</Property>
+            <Property name="property">realHeavy</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">engineerNo</Property>
+            <Property name="property">engineerNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel id="carImg" layoutConstraint="align:center;padding:60;vAlign:center">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">车辆图片</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="buttonAlign">center</Property>
+            <Buttons>
+              <Button id="btUpload" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="carImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Button id="btMsg" layoutConstraint="align:center">
+            <Property name="width">150</Property>
+            <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+            <Property name="caption">等待上传！</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <ListDropDown id="listDDUserType">
+      <Property name="items">
+        <Collection>
+          <Entity>
+            <Property name="key">C</Property>
+            <Property name="lable">承运商</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">R</Property>
+            <Property name="lable">承运人</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">J</Property>
+            <Property name="lable">经济人</Property>
+          </Entity>
+          <Entity/>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <ListDropDown id="listDDStatus">
+      <Property name="items">
+        <Collection>
+          <Entity>
+            <Property name="key">0</Property>
+            <Property name="lable">未审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">1</Property>
+            <Property name="lable">已审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">2</Property>
+            <Property name="lable">作废</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <UploadAction id="ulaImg">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd03&quot;).getData(&quot;#&quot;).get(&quot;carImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dataSetTbwd03&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;carImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#carImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <AjaxAction id="aaGetCompressUrl">
+      <Property name="service">getSystemContants#getCompressUrl</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

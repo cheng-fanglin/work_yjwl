@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ureport left-margin="19.100000381469727" right-margin="19.100000381469727" top-margin="25.399999618530273" bottom-margin="25.399999618530273">
+  <paper type="B1_PAPER" width="707.0" height="1000.0" landscape="true"></paper>
+  <paging type="fitpage"/>
+  <cell name="A1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="0" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[序号]]></content>
+  </cell>
+  <cell name="B1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="1" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[运单号]]></content>
+  </cell>
+  <cell name="C1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="2" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[启运地]]></content>
+  </cell>
+  <cell name="D1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="3" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[目的地]]></content>
+  </cell>
+  <cell name="E1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="4" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[企业名称]]></content>
+  </cell>
+  <cell name="F1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="5" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[货物名称]]></content>
+  </cell>
+  <cell name="G1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="6" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[计划量]]></content>
+  </cell>
+  <cell name="H1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="7" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[指定运输]]></content>
+  </cell>
+  <cell name="I1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="8" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[挂牌方式]]></content>
+  </cell>
+  <cell name="J1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="9" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[价格形式]]></content>
+  </cell>
+  <cell name="K1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="10" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[报价（元）]]></content>
+  </cell>
+  <cell name="L1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="11" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[成交价（元）]]></content>
+  </cell>
+  <cell name="M1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="12" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[发布时间]]></content>
+  </cell>
+  <cell name="N1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="13" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[成交时间]]></content>
+  </cell>
+  <cell name="O1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="14" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[承运人]]></content>
+  </cell>
+  <cell name="P1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="15" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[车辆]]></content>
+  </cell>
+  <cell name="Q1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="16" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[运单状态]]></content>
+  </cell>
+  <cell name="R1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="17" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[实际载重]]></content>
+  </cell>
+  <cell name="S1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="18" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[实际运费（元）]]></content>
+  </cell>
+  <cell name="T1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="19" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[实际总运费（元）]]></content>
+  </cell>
+  <cell name="U1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="20" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[代收代付]]></content>
+  </cell>
+  <cell name="V1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="21" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[违约费]]></content>
+  </cell>
+  <cell name="W1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="22" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[确认发货时间]]></content>
+  </cell>
+  <cell name="X1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="23" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[确认收货时间]]></content>
+  </cell>
+  <cell name="Y1" font-family="微软雅黑" bold="true" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="0" col="24" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[自定义编号]]></content>
+  </cell>
+  <cell name="A2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="0" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[=seq()]]></content>
+  </cell>
+  <cell name="B2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="1" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="TRANS_NO_" aggregate="group"/>
+  </cell>
+  <cell name="C2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="2" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="START_STATION_" aggregate="group"/>
+  </cell>
+  <cell name="D2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="3" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="END_STATION_" aggregate="group"/>
+  </cell>
+  <cell name="E2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="4" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="OWNER_COMP_NAME_" aggregate="group"/>
+  </cell>
+  <cell name="F2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="5" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="PRODUCT_DETAIL_" aggregate="group"/>
+  </cell>
+  <cell name="G2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="6" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="LADING_WGT_" aggregate="group"/>
+  </cell>
+  <cell name="H2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="7" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="DESTINE_CARRIER_" aggregate="group"/>
+    <event type="expr" content="cell.getValue()!=null?(cell.getValue().equals(&quot;Y&quot;)?&quot;指定&quot;:&quot;非指定&quot;):&quot;非指定&quot;"/>
+  </cell>
+  <cell name="I2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="8" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="BUZ_TYPE_" aggregate="group"/>
+    <event type="expr" content="cell.getValue().equals(&quot;A&quot;)?&quot;抢单&quot;:&quot;竞价&quot;"/>
+  </cell>
+  <cell name="J2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="9" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="AR_PRICE_TYPE_" aggregate="group"/>
+    <event type="expr" content="cell.getValue().equals(&quot;A&quot;)?&quot;单价&quot;:&quot;包车价&quot;"/>
+  </cell>
+  <cell name="K2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="10" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="PUBLISH_PRICE_" aggregate="group"/>
+  </cell>
+  <cell name="L2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="11" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="DEAL_PRICE_" aggregate="group"/>
+  </cell>
+  <cell name="M2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="12" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="PUBLISH_TIME_" aggregate="group"/>
+  </cell>
+  <cell name="N2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="13" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="DEAL_TIME_" aggregate="group"/>
+  </cell>
+  <cell name="O2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="14" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="USER_NAME_" aggregate="select"/>
+  </cell>
+  <cell name="P2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="15" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="CAR_NO_" aggregate="select"/>
+  </cell>
+  <cell name="Q2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="16" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="STATUS_" aggregate="select"/>
+  </cell>
+  <cell name="R2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="17" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="BACK_WGT_C_" aggregate="select"/>
+  </cell>
+  <cell name="S2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="18" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="AR_SETTLE_MONEY_" aggregate="select"/>
+  </cell>
+  <cell name="T2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="19" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="AR_TOTAL_MONEY_" aggregate="select"/>
+  </cell>
+  <cell name="U2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="20" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="AGENT_BUSINESS_" aggregate="select"/>
+  </cell>
+  <cell name="V2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" format="#,###.##" row="1" col="21" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="BREACH_ADD_MONEY_" aggregate="select"/>
+  </cell>
+  <cell name="W2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="22" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="LOAD_TIME_" aggregate="select"/>
+  </cell>
+  <cell name="X2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="23" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="BACK_TIME_" aggregate="select"/>
+  </cell>
+  <cell name="Y2" font-family="微软雅黑" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="24" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbsh10a" datasource-name="ujwc_test" field="CUSTOM_NO_HZ_" aggregate="select"/>
+  </cell>
+  <row h="20" num="0"/>
+  <row h="20" num="1"/>
+  <col w="50" num="0"/>
+  <col w="80" num="1"/>
+  <col w="130" num="2"/>
+  <col w="130" num="3"/>
+  <col w="130" num="4"/>
+  <col w="130" num="5"/>
+  <col w="50" num="6"/>
+  <col w="60" num="7"/>
+  <col w="60" num="8"/>
+  <col w="70" num="9"/>
+  <col w="70" num="10"/>
+  <col w="80" num="11"/>
+  <col w="100" num="12"/>
+  <col w="100" num="13"/>
+  <col w="100" num="14"/>
+  <col w="100" num="15"/>
+  <col w="100" num="16"/>
+  <col w="100" num="17"/>
+  <col w="100" num="18"/>
+  <col w="100" num="19"/>
+  <col w="100" num="20"/>
+  <col w="100" num="21"/>
+  <col w="100" num="22"/>
+  <col w="100" num="23"/>
+  <col w="100" num="24"/>
+  <datasource name="ujwc_test" username="sgwl_jghz" password="sgwl_jghz2017" driver='com.mysql.jdbc.Driver' url='jdbc:mysql://rm-bp179eo65356u7zygo.mysql.rds.aliyuncs.com:3306/sgwl_test?useUnicode=true&amp;amp;characterEncoding=UTF-8"/ '>
+    <dataset name="Tbsh10a" datasource-name="ujwc_test">
+      <sql><![CDATA[{
+	var transNo =param.get("transNo");
+	var status =param.get("status");
+	var startStation =param.get("startStation");
+	var endStation =param.get("endStation");
+	var userName =param.get("userName");
+	var ownerCompName =param.get("ownerCompName");
+	var productDetail =param.get("productDetail");
+	var arPriceType =param.get("arPriceType");
+	var customNoHz =param.get("customNoHz");
+	var publishTimeS =param.get("publishTimeS");
+	var dealTimeS =param.get("dealTimeS");
+	var loadTimeS =param.get("loadTimeS");
+	var backTimeS =param.get("backTimeS");
+	var publishTimeE =param.get("publishTimeE");
+	var dealTimeE =param.get("dealTimeE");
+	var loadTimeE =param.get("loadTimeE");
+	var backTimeE =param.get("backTimeE");
+ 	var condition = "";
+    if(transNo&&transNo!="undefined"&&transNo!=""){
+		condition = condition+"  and a.trans_No_ like '%"+transNo+"%'";
+	}
+   if(status&&status!="undefined"&&status!=""){
+		condition = condition+"  and a.status_ = '"+status+"'";
+	}
+	 if(startStation&&startStation!="undefined"&&startStation!=""){
+		condition =condition+ " and a.start_Station_ like '%"+startStation+"%'";
+	}
+	 if(endStation&&endStation!="undefined"&&endStation!=""){
+		condition = condition+" and a.end_Station_ like '%"+endStation+"%'";
+	}
+ 	if(userName&&userName!="undefined"&&userName!=""){
+		condition = condition+" and b.user_Name_ like '%"+userName+"%'";
+	}
+	if(ownerCompName&&ownerCompName!="undefined"&&ownerCompName!=""){
+		condition = condition+" and a.owner_Comp_Name_ like '%"+ownerCompName+"%'";
+	}
+	if(productDetail&&productDetail!="undefined"&&productDetail!=""){
+		condition = condition+" and a.product_Detail_ like '%"+productDetail+"%'";
+	}
+	if(arPriceType&&arPriceType!="undefined"&&arPriceType!=""){
+		condition = condition+" and a.ar_Price_Type_ = '"+arPriceType+"'";
+	}
+	if(customNoHz&&customNoHz!="undefined"&&customNoHz!=""){
+		condition = condition+" and a.custom_No_Hz_ like '%"+customNoHz+"%'";
+	}
+	if(publishTimeS&&publishTimeS!="undefined"&&publishTimeS!=""){
+		condition = condition+" and a.publish_Time_ >= '"+publishTimeS+" 00:00:00'";
+	}
+	if(publishTimeE&&publishTimeE!="undefined"&&publishTimeE!=""){
+		condition = condition+" and a.publish_Time_ <= '"+publishTimeE+" 24:00:00'";
+	}
+	if(dealTimeS&&dealTimeS!="undefined"&&dealTimeS!=""){
+		condition = condition+" and a.deal_Time_ >= '"+dealTimeS+" 00:00:00'";
+	}
+	if(dealTimeE&&dealTimeE!="undefined"&&dealTimeE!=""){
+		condition = condition+" and a.deal_Time_ <= '"+dealTimeE+" 24:00:00'";
+	}
+	if(loadTimeS&&loadTimeS!="undefined"&&loadTimeS!=""){
+		condition = condition+" and a.load_Time_ >= '"+loadTimeS+" 00:00:00'";
+	}
+	if(loadTimeE&&loadTimeE!="undefined"&&loadTimeE!=""){
+		condition = condition+" and a.load_Time_ <= '"+loadTimeE+" 24:00:00'";
+	}
+	if(backTimeS&&backTimeS!="undefined"&&backTimeS!=""){
+		condition = condition+" and a.back_Time_ >= '"+backTimeS+" 00:00:00'";
+	}
+	if(backTimeE&&backTimeE!="undefined"&&backTimeE!=""){
+		condition = condition+" and b.back_Time_ <= '"+backTimeE+" 24:00:00'";
+	}
+
+return "select a.TRANS_NO_,CONCAT(a.START_STATION_,a.DESPATCH_ADDRESS_) START_STATION_,CONCAT(a.END_STATION_,a.RECEIPT_ADDRESS_) END_STATION_,"
++" a.OWNER_COMP_NAME_,a.DESTINE_CARRIER_,a.PRODUCT_DETAIL_,a.LADING_WGT_,a.BUZ_TYPE_,a.AR_PRICE_TYPE_,"
++" a.PUBLISH_PRICE_,a.DEAL_PRICE_,a.PUBLISH_TIME_,a.DEAL_TIME_,b.USER_NAME_,b.CAR_NO_,a.STATUS_,"
++" b.BACK_WGT_C_,b.AR_SETTLE_MONEY_,b.AR_TOTAL_MONEY_,b.AGENT_BUSINESS_,a.BREACH_ADD_MONEY_,"
++" a.LOAD_TIME_,a.BACK_TIME_,b.CUSTOM_NO_HZ_"
++" from Tbsh10 a "
++" left join Tbsh10a b on a.TRANS_NO_ = b.TRANS_NO_ and a.COMP_ID_ = b.COMP_ID_"
++" where  1=1 "
++ condition;
+}]]></sql>
+      <parameter name="transNo" type="STRING" default-value=""></parameter>
+      <parameter name="status" type="STRING" default-value=""/>
+      <parameter name="startStation" type="STRING" default-value=""/>
+      <parameter name="endStation" type="STRING" default-value=""/>
+      <parameter name="userName" type="STRING" default-value=""/>
+      <parameter name="ownerCompName" type="STRING" default-value=""/>
+      <parameter name="productDetail" type="STRING" default-value=""/>
+      <parameter name="arPriceType" type="STRING" default-value=""/>
+      <parameter name="customNoHz" type="STRING" default-value=""/>
+      <parameter name="publishTimeS" type="STRING" default-value=""/>
+      <parameter name="dealTimeS" type="STRING" default-value=""/>
+      <parameter name="loadTimeS" type="STRING" default-value=""/>
+      <parameter name="backTimeS" type="STRING" default-value=""/>
+      <parameter name="publishTimeE" type="STRING" default-value=""/>
+      <parameter name="dealTimeE" type="STRING" default-value=""/>
+      <parameter name="loadTimeE" type="STRING" default-value=""/>
+      <parameter name="backTimeE" type="STRING" default-value=""/>
+    </dataset>
+  </datasource>
+</ureport>

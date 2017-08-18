@@ -1,0 +1,1841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtCondition">
+      <PropertyDef name="receiveNo">
+        <Property name="label">收款单号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiveState">
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">待审核</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">审核通过</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">3</Property>
+                <Property name="value">审核不通过</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="receiveType">
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">现金</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">网银/电汇</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">3</Property>
+                <Property name="value">支票</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">4</Property>
+                <Property name="value">银行承兑汇票</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">5</Property>
+                <Property name="value">其他</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property name="label">会员账号</Property>
+      </PropertyDef>
+      <PropertyDef name="realName">
+        <Property name="readOnly">false</Property>
+        <Property name="ignored">true</Property>
+      </PropertyDef>
+      <PropertyDef name="contactWay">
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="companyName">
+        <Property name="label">会员名称</Property>
+      </PropertyDef>
+      <PropertyDef name="dealTime">
+        <ClientEvent name="onSet">if(arg.value==&quot;E&quot;){&#xD;
+	var ele=view.get(&quot;#afCondition&quot;).getElement(&quot;startTime&quot;);&#xD;
+	ele.set(&quot;visible&quot;,true);&#xD;
+	var ele=view.get(&quot;#afCondition&quot;).getElement(&quot;endTime&quot;);&#xD;
+	ele.set(&quot;visible&quot;,true);&#xD;
+}else{&#xD;
+	var ele=view.get(&quot;#afCondition&quot;).getElement(&quot;startTime&quot;);&#xD;
+	ele.set(&quot;visible&quot;,false);&#xD;
+	var ele=view.get(&quot;#afCondition&quot;).getElement(&quot;endTime&quot;);&#xD;
+	ele.set(&quot;visible&quot;,false);&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">A</Property>
+                <Property name="value">今天</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">B</Property>
+                <Property name="value">最近7天</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">C</Property>
+                <Property name="value">最近30天</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">D</Property>
+                <Property name="value">最近90天</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">E</Property>
+                <Property name="value">自定义时间</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="keyProperty">key</Property>
+          <Property name="valueProperty">value</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="startTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="endTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property name="ignored">false</Property>
+        <Property name="visible">false</Property>
+      </PropertyDef>
+      <PropertyDef name="backPerson">
+        <Property name="label">实际回款人</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtFinanceReceiveList">
+      <Property name="creationType">com.ih.d7.domain.finance.ZczyFinanceReceiveT</Property>
+      <PropertyDef name="receiveId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property name="required">true</Property>
+        <Property name="label">会员账号</Property>
+      </PropertyDef>
+      <PropertyDef name="realName">
+        <Property name="required">true</Property>
+        <Property name="label">会员名称</Property>
+        <Property name="ignored">true</Property>
+      </PropertyDef>
+      <PropertyDef name="contactWay">
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="companyName">
+        <Property name="label">会员名称</Property>
+      </PropertyDef>
+      <PropertyDef name="userType">
+        <Property></Property>
+        <Property name="label">会员类型</Property>
+      </PropertyDef>
+      <PropertyDef name="receiveMoney">
+        <Property name="dataType">Double</Property>
+        <Property name="required">true</Property>
+        <Validator type="regExp">
+          <Property name="name">revMoney</Property>
+          <Property name="whiteRegExp">^0|((-?\d+)(\.\d+))?$</Property>
+          <Property name="resultMessage">请输入正数</Property>
+        </Validator>
+      </PropertyDef>
+      <PropertyDef name="receiveDate">
+        <Property></Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="receiveState">
+        <Property name="dataType">Long</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">待审核</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">审核通过</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">3</Property>
+                <Property name="value">审核不通过</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="receiveStateLabel"/>
+      <PropertyDef name="receiveType">
+        <Property name="dataType">Long</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">现金</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">2</Property>
+                <Property name="value">网银/电汇</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">3</Property>
+                <Property name="value">支票</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">4</Property>
+                <Property name="value">银行承兑汇票</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">5</Property>
+                <Property name="value">其他</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="keyProperty">key</Property>
+          <Property name="valueProperty">value</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="receiveTypeLabel">
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="backPerson">
+        <Property name="label">实际回款人</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="billNumber">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="billImg">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createByLabel"/>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="updateBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="updateByLabel"/>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="examBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="examByLabel"/>
+      <PropertyDef name="examTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="remark">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="receiveNo">
+        <Property></Property>
+        <Property name="label">收款单号</Property>
+      </PropertyDef>
+      <PropertyDef name="billImgShow"/>
+    </DataType>
+    <DataType name="dtFinanceRpExamList">
+      <Property name="creationType">com.ih.d7.domain.finance.ZczyFinanceRpExamT</Property>
+      <PropertyDef name="examId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="rapId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="examType">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="examTypeLabel"/>
+      <PropertyDef name="examRemark">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="createBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createByLabel"/>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="examTable">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtFinanceRpModifyList">
+      <Property name="creationType">com.ih.d7.domain.finance.ZczyFinanceRpModifyT</Property>
+      <PropertyDef name="modifyId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="rapId">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="updateBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="updateByLabel"/>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="createBy">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="remark">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="modifyTable">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property name="dataType">Long</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtUser">
+      <PropertyDef name="userId"/>
+      <PropertyDef name="userName"/>
+      <PropertyDef name="realName"/>
+      <PropertyDef name="contactWay"/>
+      <PropertyDef name="companyName"/>
+      <PropertyDef name="userType"/>
+    </DataType>
+    <DataType name="dtRapWay">
+      <PropertyDef name="rapWay"/>
+      <PropertyDef name="rapWayLabel"/>
+    </DataType>
+    <DataType name="dtRapState">
+      <PropertyDef name="rapState"/>
+      <PropertyDef name="rapStateLabel"/>
+    </DataType>
+    <DataType name="dtUserLabel">
+      <PropertyDef name="userId"/>
+      <PropertyDef name="userName"/>
+      <PropertyDef name="realName"/>
+      <PropertyDef name="contactWay"/>
+      <PropertyDef name="userType"/>
+      <PropertyDef name="companyName"/>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsFinanceReceiveList">
+      <Property name="pageSize">15</Property>
+      <Property name="dataType">[dtFinanceReceiveList]</Property>
+      <Property name="dataProvider">financeReceiveService#queryFinanceReceiveList</Property>
+    </DataSet>
+    <DataSet id="dsFinanceRpModifyList">
+      <Property name="dataProvider">receivePayCommon#queryFinanceRpModifyList</Property>
+      <Property name="dataType">[dtFinanceRpModifyList]</Property>
+      <Property name="pageSize">5</Property>
+    </DataSet>
+    <DataSet id="dsFinanceRpExamList">
+      <Property name="dataProvider">receivePayCommon#queryFinanceRpExamList</Property>
+      <Property name="pageSize">5</Property>
+      <Property name="dataType">[dtFinanceRpExamList]</Property>
+    </DataSet>
+    <DataSet id="dsUser">
+      <Property name="dataType">[dtUser]</Property>
+      <Property name="dataProvider">userInfo#getAllMembersInfoByUserName</Property>
+      <Property name="loadMode">lazy</Property>
+    </DataSet>
+    <DataSet id="dsUserLabel">
+      <Property name="dataType">[dtUserLabel]</Property>
+      <Property name="dataProvider">userInfo#getAllMembersInfoByRealName</Property>
+    </DataSet>
+    <DataSet id="dsUserContactWay">
+      <Property name="dataProvider">userInfo#getAllMembersInfoByContactWay</Property>
+      <Property name="dataType">[dtUser]</Property>
+    </DataSet>
+    <DataSet id="dsUserCompany">
+      <Property name="dataProvider">userInfo#getAllMembersInfoByCompanyName</Property>
+      <Property name="dataType">[dtUser]</Property>
+    </DataSet>
+    <DataSet id="dsRapWay">
+      <Property name="dataType">[dtRapWay]</Property>
+      <Property name="dataProvider">viewUtils#getRapWayMap</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="key">R</Property>
+        </Entity>
+      </Property>
+    </DataSet>
+    <DataSet id="dsRapState">
+      <Property name="dataType">[dtRapState]</Property>
+      <Property name="dataProvider">viewUtils#getRapStateMap</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="key">R</Property>
+        </Entity>
+      </Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Property name="width">100%</Property>
+      <Buttons>
+        <Button id="btQuery">
+          <ClientEvent name="onClick">var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+&#xD;
+if (entity.get(&quot;dealTime&quot;) == &quot;E&quot;) {&#xD;
+    if (entity.get(&quot;startTime&quot;) == null||entity.get(&quot;startTime&quot;) ==&quot;&quot;) {&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 请输入开始日期!&quot;);&#xD;
+		return false;&#xD;
+    }&#xD;
+	if (entity.get(&quot;endTime&quot;) == null||entity.get(&quot;endTime&quot;) ==&quot;&quot;) {&#xD;
+		&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 请输入结束日期!&quot;);&#xD;
+		return false;&#xD;
+    }&#xD;
+	if (entity.get(&quot;startTime&quot;) >entity.get(&quot;endTime&quot;)) {&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 开始日期必须大于结束日期!&quot;);&#xD;
+		return false;&#xD;
+    }&#xD;
+}&#xD;
+var dealTime=entity.get(&quot;dealTime&quot;);&#xD;
+var startTime=entity.get(&quot;startTime&quot;);&#xD;
+var endTime=entity.get(&quot;endTime&quot;);&#xD;
+entity.set(&quot;flag&quot;,&quot;0&quot;);&#xD;
+if(dealTime!=null&amp;&amp;dealTime!=&quot;E&quot;){ &#xD;
+     var ajaxGetDate=view.get(&quot;#ajaxActionGetDate&quot;);&#xD;
+     ajaxGetDate.set(&quot;parameter&quot;,{&#xD;
+	       &quot;dealTime&quot;:dealTime,&#xD;
+	       &quot;startTime&quot;:startTime,&#xD;
+	       &quot;endTime&quot;:endTime&#xD;
+     });&#xD;
+     ajaxGetDate.execute(function(returnValue){&#xD;
+	    startTime=returnValue[&quot;startDate&quot;];&#xD;
+        endTime=returnValue[&quot;endDate&quot;];&#xD;
+		entity.set(&quot;startTime&quot;,startTime);&#xD;
+		entity.set(&quot;endTime&quot;,endTime);&#xD;
+		&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync(function(entityList){&#xD;
+			if(entityList.isEmpty()){&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查无资料!&quot;);&#xD;
+			}else{&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查询成功！&quot;);&#xD;
+			}&#xD;
+	});&#xD;
+	 });&#xD;
+}else{&#xD;
+	&#xD;
+	view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+	view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync(function(entityList){&#xD;
+		if(entityList.isEmpty()){&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查无资料!&quot;);&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：查询成功！&quot;);&#xD;
+		}&#xD;
+		&#xD;
+	});&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="icon"> url(>skin>common/icons.gif) -20px -40px</Property>
+          <Property name="caption">查询</Property>
+          <Property name="width">80</Property>
+        </Button>
+        <Button id="btReset">
+          <ClientEvent name="onClick">view.get(&quot;#afCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,{});</ClientEvent>
+          <Property name="icon"> url(>skin>common/icons.gif) -280px -220px</Property>
+          <Property name="caption">重置</Property>
+          <Property name="width">80</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afCondition">
+          <Property name="autoCreateElements">true</Property>
+          <Property name="dataType">dtCondition</Property>
+          <Property name="cols">*,*,*</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <Property name="labelWidth">80</Property>
+          <Property name="labelAlign">right</Property>
+          <Property name="labelSpacing">1</Property>
+          <Property name="ignored">false</Property>
+          <Property name="stretchWidth">true</Property>
+          <Property name="editorWidth">180</Property>
+          <AutoFormElement>
+            <Property name="name">receiveNo</Property>
+            <Property name="property">receiveNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="property">receiveType</Property>
+            <Property name="label">收款类型</Property>
+            <Property name="name">receiveType</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveState</Property>
+            <Property name="property">receiveState</Property>
+            <Property name="label">状态</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userId</Property>
+            <Property name="property">userId</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="property">userName</Property>
+            <Property name="label">会员账号</Property>
+            <Property name="readOnly">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">realName</Property>
+            <Property name="property">realName</Property>
+            <Property name="label">会员名称</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">contactWay</Property>
+            <Property name="property">contactWay</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">companyName</Property>
+            <Property name="property">companyName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">dealTime</Property>
+            <Property name="property">dealTime</Property>
+            <Property name="label">收款日期</Property>
+            <Property name="trigger">autoMappingDropDown2</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">startTime</Property>
+            <Property name="property">startTime</Property>
+            <Property name="label">开始日期</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">endTime</Property>
+            <Property name="property">endTime</Property>
+            <Property name="label">结束日期</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="property">backPerson</Property>
+            <Property name="name">backPerson</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="dpFinanceReceiveList">
+        <Property name="dataSet">dsFinanceReceiveList</Property>
+        <Property name="itemCodes">pages,pageSize</Property>
+      </DataPilot>
+      <Button id="btAdd">
+        <ClientEvent name="onClick">view.get(&quot;#dlAddUpdate&quot;).show();&#xD;
+// 获取dtFinanceReceiveList数据类型&#xD;
+var dtFinanceReceiveList=view.get(&quot;#dtFinanceReceiveList&quot;);&#xD;
+//创建一个空的、类型为dtFinanceReceiveList的实体对象。&#xD;
+var entity=new dorado.Entity(null,&quot;before&quot;,dtFinanceReceiveList);&#xD;
+//设置实体对象的默认值&#xD;
+entity.set(&quot;receiveState&quot;, &quot;1&quot;);&#xD;
+entity.set(&quot;receiveStateLabel&quot;, &quot;待审核&quot;);&#xD;
+entity.set(&quot;receiveType&quot;, &quot;1&quot;);&#xD;
+entity.set(&quot;receiveTypeLabel&quot;, &quot;现金&quot;);&#xD;
+//DataSet中插入该实体对象&#xD;
+view.get(&quot;#dsFinanceReceiveList&quot;).insert(entity);&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">新增</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -280px -100px</Property>
+      </Button>
+      <Button id="btUpdate">
+        <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgFinanceReceiveList&quot;);//获取数据表格控件&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+if(selEntitys.length>1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请最多勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}else if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var id=selEntitys[0].get(&quot;receiveId&quot;);&#xD;
+if(3!=selEntitys[0].get(&quot;receiveState&quot;)){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：只能修改审核不通过的收款记录！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var ajaxGetLoginUserId=view.get(&quot;#ajaxActionGetLoginUserId&quot;);&#xD;
+ajaxGetLoginUserId.execute(function(returnValue){&#xD;
+	//判断审核人与录入人是否同一个人&#xD;
+    var loginUserId=returnValue[&quot;userId&quot;];&#xD;
+	var createBy=selEntitys[0].get(&quot;createBy&quot;);&#xD;
+	var examBy=selEntitys[0].get(&quot;examBy&quot;);&#xD;
+	if(examBy!=null&amp;&amp;loginUserId==examBy){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：此次收款修改人与上次收款审核人不能是同一个人！&quot;);&#xD;
+		return false;	&#xD;
+	}else{&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,{receiveId:id});&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync();&#xD;
+		view.get(&quot;#billImgA&quot;).set(&quot;image&quot;,selEntitys[0].get(&quot;billImgShow&quot;));&#xD;
+		if(selEntitys[0].get(&quot;billImgShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+&#xD;
+		view.get(&quot;#afAddUpdate&quot;).getElement(&quot;userName&quot;).set(&quot;readOnly&quot;,true);&#xD;
+		view.get(&quot;#afAddUpdate&quot;).getElement(&quot;companyName&quot;).set(&quot;readOnly&quot;,true);&#xD;
+		view.get(&quot;#afAddUpdate&quot;).getElement(&quot;contactWay&quot;).set(&quot;readOnly&quot;,true);&#xD;
+		view.get(&quot;#dlAddUpdate&quot;).show();&#xD;
+		&#xD;
+	}&#xD;
+  &#xD;
+ });&#xD;
+	&#xD;
+</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -0px -120px</Property>
+      </Button>
+      <Button id="btDelete">
+        <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgFinanceReceiveList&quot;);//获取数据表格控件&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var count=0;&#xD;
+var receiveIds;&#xD;
+var i=0;&#xD;
+for(i;i&lt;selEntitys.length;i++){&#xD;
+	if(3!=selEntitys[i].get(&quot;receiveState&quot;)){&#xD;
+		count++;&#xD;
+	}&#xD;
+	if(i==0){&#xD;
+		receiveIds=selEntitys[i].get(&quot;receiveId&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		receiveIds=receiveIds+&quot;,&quot;+selEntitys[i].get(&quot;receiveId&quot;);&#xD;
+	}&#xD;
+}&#xD;
+if(count!=0){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：只能删除审核不通过的收款记录！&quot;);&#xD;
+	return false;&#xD;
+	&#xD;
+}&#xD;
+&#xD;
+&#xD;
+var ajaxGetLoginUserId=view.get(&quot;#ajaxActionGetLoginUserId&quot;);&#xD;
+ajaxGetLoginUserId.execute(function(returnValue){&#xD;
+	//判断审核人与录入人是否同一个人&#xD;
+    var loginUserId=returnValue[&quot;userId&quot;];&#xD;
+	var createBy=selEntitys[0].get(&quot;createBy&quot;);&#xD;
+	var examBy=selEntitys[0].get(&quot;examBy&quot;);&#xD;
+	if(examBy!=null&amp;&amp;loginUserId==examBy){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：此次收款删除人与上次收款审核人不能是同一个人！&quot;);&#xD;
+		return false;	&#xD;
+	}else{&#xD;
+		dorado.MessageBox.confirm(&quot;是否确认删除所有勾选的数据？&quot;,function(){&#xD;
+			var deleteAction=view.get(&quot;#aaDeleteSelects&quot;);&#xD;
+			  deleteAction.set(&quot;parameter&quot;,{&#xD;
+			       &quot;receiveIds&quot;:receiveIds&#xD;
+		     });&#xD;
+			deleteAction.execute(function(returnValue){&#xD;
+				&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：&quot;+returnValue[&quot;msg&quot;]);&#xD;
+				var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+				view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+				view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync();&#xD;
+			});&#xD;
+		});&#xD;
+	}&#xD;
+  &#xD;
+ });&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">删除</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -140px -0px</Property>
+      </Button>
+      <Button id="btConform">
+        <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgFinanceReceiveList&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条审核数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+if(selEntitys.length>1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请只勾选一条审核数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var count=0;&#xD;
+selEntitys.each(function(entity){&#xD;
+	if(entity.get(&quot;receiveState&quot;)!=1){&#xD;
+		count++;&#xD;
+	}&#xD;
+});&#xD;
+if(count!=0){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请只勾选待审核的数据审核！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var ajaxGetLoginUserId=view.get(&quot;#ajaxActionGetLoginUserId&quot;);&#xD;
+ajaxGetLoginUserId.execute(function(returnValue){&#xD;
+	//判断审核人与录入人是否同一个人&#xD;
+    var loginUserId=returnValue[&quot;userId&quot;];&#xD;
+	var createBy=selEntitys[0].get(&quot;createBy&quot;);&#xD;
+	var updateBy=selEntitys[0].get(&quot;updateBy&quot;);&#xD;
+	if(updateBy!=null&amp;&amp;loginUserId==updateBy){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：此次收款审核人与上次收款修改人不能是同一个人！&quot;);&#xD;
+		return false;	&#xD;
+	}else if(updateBy==null&amp;&amp;loginUserId==createBy){&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：此次收款审核人与上次收款录入人不能是同一个人！&quot;);&#xD;
+	}else{&#xD;
+		//带入主表Id&#xD;
+		var entity=new dorado.Entity();&#xD;
+		var id=selEntitys[0].get(&quot;receiveId&quot;);&#xD;
+		entity.set(&quot;rapId&quot;, id);&#xD;
+		entity.set(&quot;examType&quot;, 2);&#xD;
+		view.get(&quot;#dsFinanceRpExamList&quot;).insert(entity);&#xD;
+		view.get(&quot;#dlExam&quot;).show();&#xD;
+	}&#xD;
+  &#xD;
+ });&#xD;
+		&#xD;
+&#xD;
+	&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">审核</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -60px -0px</Property>
+      </Button>
+      <Button id="btExcel">
+        <ClientEvent name="onClick">var current=view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;);&#xD;
+if(current==undefined||null==current){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：没有可以导出的数据!&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+entity.set(&quot;flag&quot;,&quot;1&quot;);&#xD;
+&#xD;
+view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+var action=view.get(&quot;#export2ReportActionExcel&quot;);&#xD;
+action.execute();</ClientEvent>
+        <Property name="caption">Excel导出</Property>
+        <Property name="icon"> url(>skin>common/icons.gif) -240px -240px</Property>
+      </Button>
+      <Label id="msg">
+        <ClientEvent name="onCreate">&#xD;
+</ClientEvent>
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </Label>
+    </ToolBar>
+    <DataSetDropDown id="dsddUserInfo">
+      <Property name="dataSet">dsUser</Property>
+      <Property name="filterMode">serverSide</Property>
+      <Property name="useEmptyItem">false</Property>
+      <Property name="assignmentMap">userId,userName,realName,contactWay,userType,companyName</Property>
+      <Property name="displayProperty">userName</Property>
+      <Property name="property">userName</Property>
+      <Property name="filterOnTyping">true</Property>
+      <Property name="dynaFilter">true</Property>
+      <Property name="filterOnOpen">true</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="dsddUserInfoLabel">
+      <Property name="dataSet">dsUserLabel</Property>
+      <Property name="displayProperty">realName</Property>
+      <Property name="filterMode">serverSide</Property>
+      <Property name="useEmptyItem">false</Property>
+      <Property name="assignmentMap">userId,userName,realName,contactWay,userType,companyName</Property>
+      <Property name="property">realName</Property>
+      <Property name="filterOnTyping">true</Property>
+      <Property name="filterOnOpen">true</Property>
+      <Property name="dynaFilter">true</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="dsddUserContactWay">
+      <Property name="dataSet">dsUserContactWay</Property>
+      <Property name="displayProperty">contactWay</Property>
+      <Property name="filterMode">serverSide</Property>
+      <Property name="dynaFilter">true</Property>
+      <Property name="useEmptyItem">false</Property>
+      <Property name="assignmentMap">userId,userName,realName,contactWay,userType,companyName</Property>
+      <Property name="property">contactWay</Property>
+      <Property name="filterOnTyping">true</Property>
+      <Property name="filterOnOpen">true</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="dsddUserCompany">
+      <Property name="dataSet">dsUserCompany</Property>
+      <Property name="displayProperty">companyName</Property>
+      <Property name="filterMode">serverSide</Property>
+      <Property name="dynaFilter">true</Property>
+      <Property name="useEmptyItem">false</Property>
+      <Property name="assignmentMap">userId,userName,realName,contactWay,userType,companyName</Property>
+      <Property name="property">companyName</Property>
+      <Property name="filterOnTyping">true</Property>
+      <Property name="filterOnOpen">true</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="dsddRapWayLabel">
+      <Property name="dataSet">dsRapWay</Property>
+      <Property name="assignmentMap">receiveType=rapWay,receiveTypeLabel=rapWayLabel</Property>
+      <Property name="displayProperty">rapWayLabel</Property>
+      <Property name="property">rapWayLabel</Property>
+      <Property name="autoOpen">true</Property>
+      <Property name="editable">false</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="dsddRapStateLabel">
+      <Property name="assignmentMap">receiveState=rapState,receiveStateLabel=rapStateLabel</Property>
+      <Property name="dataSet">dsRapState</Property>
+      <Property name="displayProperty">rapStateLabel</Property>
+      <Property name="property">rapStateLabel</Property>
+      <Property name="autoOpen">true</Property>
+      <Property name="filterOnTyping">true</Property>
+    </DataSetDropDown>
+    <DataGrid id="dgFinanceReceiveList">
+      <ClientEvent name="onDataRowDoubleClick">var entity=view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;);&#xD;
+view.get(&quot;#receiveNoLabel&quot;).set(&quot;text&quot;,&quot;收款编号：&quot;+entity.get(&quot;receiveNo&quot;));&#xD;
+view.get(&quot;#receiveStateLabel&quot;).set(&quot;text&quot;,&quot;收款状态：&quot;+entity.get(&quot;receiveStateLabel&quot;));&#xD;
+view.get(&quot;#userNameLabel&quot;).set(&quot;text&quot;,&quot;会员账号：&quot;+entity.get(&quot;userName&quot;));&#xD;
+&#xD;
+if(entity.get(&quot;companyName&quot;)!=null&amp;&amp;entity.get(&quot;companyName&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#companyNameLabel&quot;).set(&quot;text&quot;,&quot;会员名称：&quot;+entity.get(&quot;companyName&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#companyNameLabel&quot;).set(&quot;text&quot;,&quot;会员名称：&quot;);&#xD;
+}&#xD;
+if(entity.get(&quot;contactWay&quot;)!=null&amp;&amp;entity.get(&quot;contactWay&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#contactWayLabel&quot;).set(&quot;text&quot;,&quot;联系方式：&quot;+entity.get(&quot;contactWay&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#contactWayLabel&quot;).set(&quot;text&quot;,&quot;联系方式：&quot;);&#xD;
+}&#xD;
+view.get(&quot;#userTypeLabel&quot;).set(&quot;text&quot;,&quot;会员类项：&quot;+entity.get(&quot;userType&quot;));&#xD;
+&#xD;
+view.get(&quot;#receiveTypeLabel&quot;).set(&quot;text&quot;,&quot;收款类型：&quot;+entity.get(&quot;receiveTypeLabel&quot;));&#xD;
+if(entity.get(&quot;backPerson&quot;)!=null&amp;&amp;entity.get(&quot;backPerson&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#backPersonLabel&quot;).set(&quot;text&quot;,&quot;实际回款人：&quot;+entity.get(&quot;backPerson&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#backPersonLabel&quot;).set(&quot;text&quot;,&quot;实际回款人：&quot;);&#xD;
+}&#xD;
+view.get(&quot;#receiveMoneyLabel&quot;).set(&quot;text&quot;,&quot;收款金额：&quot;+entity.get(&quot;receiveMoney&quot;)+&quot;元&quot;);&#xD;
+if(entity.get(&quot;billNumber&quot;)!=null&amp;&amp;entity.get(&quot;billNumber&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#billNumberLabel&quot;).set(&quot;text&quot;,&quot;票据号码：&quot;+entity.get(&quot;billNumber&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#billNumberLabel&quot;).set(&quot;text&quot;,&quot;票据号码：&quot;);&#xD;
+	&#xD;
+}&#xD;
+view.get(&quot;#billImgD&quot;).set(&quot;image&quot;,entity.get(&quot;billImgShow&quot;));&#xD;
+if(entity.get(&quot;receiveDate&quot;)!=null&amp;&amp;entity.get(&quot;receiveDate&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#receiveDateLabel&quot;).set(&quot;text&quot;,&quot;收款日期：&quot;+entity.get(&quot;receiveDate&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#receiveDateLabel&quot;).set(&quot;text&quot;,&quot;收款日期：&quot;);&#xD;
+}&#xD;
+if(entity.get(&quot;remark&quot;)!=null&amp;&amp;entity.get(&quot;remark&quot;)!=&quot;&quot;){&#xD;
+	view.get(&quot;#remarkLabel&quot;).set(&quot;text&quot;,&quot;备注：&quot;+entity.get(&quot;remark&quot;));&#xD;
+}else{&#xD;
+	view.get(&quot;#remarkLabel&quot;).set(&quot;text&quot;,&quot;备注：&quot;);&#xD;
+}&#xD;
+view.get(&quot;#createByLabel&quot;).set(&quot;text&quot;,&quot;录入人：&quot;+entity.get(&quot;createByLabel&quot;));&#xD;
+var date = new Date(entity.get(&quot;createTime&quot;));&#xD;
+var createTime= date.formatDate (&quot;Y-m-d&quot;);&#xD;
+view.get(&quot;#createTimeLabel&quot;).set(&quot;text&quot;,&quot;录入时间：&quot;+createTime);&#xD;
+&#xD;
+&#xD;
+view.get(&quot;#dsFinanceRpModifyList&quot;).set(&quot;parameter&quot;,{rapId:entity.get(&quot;receiveId&quot;),queryType:&quot;R&quot;});&#xD;
+view.get(&quot;#dsFinanceRpModifyList&quot;).flushAsync();&#xD;
+&#xD;
+view.get(&quot;#dsFinanceRpExamList&quot;).set(&quot;parameter&quot;,{rapId:entity.get(&quot;receiveId&quot;),queryType:&quot;R&quot;});&#xD;
+view.get(&quot;#dsFinanceRpExamList&quot;).flushAsync();&#xD;
+view.get(&quot;#dgDetails&quot;).show();&#xD;
+</ClientEvent>
+      <ClientEvent name="onReady">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <ClientEvent name="onBlur">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <Property name="dataSet">dsFinanceReceiveList</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <Property name="width">100%</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <Property name="highlightSelectedRow">false</Property>
+      <Property name="highlightCurrentRow">false</Property>
+      <Property name="tip">双击记录查看详情</Property>
+      <Property name="showFooter">true</Property>
+      <RowSelectorColumn id="select"/>
+      <RowNumColumn>
+        <ClientEvent name="onRenderFooterCell">arg.dom.innerText=&quot;合计&quot;;&#xD;
+arg.dom.style= &quot;font-weight:bold;color:red&quot;;//加粗字体,红色</ClientEvent>
+      </RowNumColumn>
+      <DataColumn name="receiveId">
+        <Property name="property">receiveId</Property>
+        <Property name="visible">false</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="receiveNo">
+        <Property name="property">receiveNo</Property>
+        <Property name="width">120</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="userId">
+        <Property name="property">userId</Property>
+        <Property name="caption">会员账号</Property>
+        <Property name="trigger">dsdpUserInfo</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="userName">
+        <Property name="property">userName</Property>
+        <Property name="caption">会员账号</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="realName">
+        <Property name="property">realName</Property>
+        <Property name="align">center</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="companyName">
+        <Property name="property">companyName</Property>
+        <Property name="width">100</Property>
+      </DataColumn>
+      <DataColumn name="userType">
+        <Property name="property">userType</Property>
+        <Property name="caption">会员类型</Property>
+        <Property name="ignored">false</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="contactWay">
+        <Property name="property">contactWay</Property>
+        <Property name="caption">联系方式</Property>
+        <Property name="width">80</Property>
+      </DataColumn>
+      <DataColumn name="receiveMoney">
+        <ClientEvent name="onRenderFooterCell">var title=&quot;收款金额&quot;;//标题	&#xD;
+var subtotal=arg.data.get(&quot;receiveMoney&quot;);//小计&#xD;
+&#xD;
+if(null==subtotal||&quot;&quot;==subtotal){&#xD;
+	subtotal=0.00;&#xD;
+}else{&#xD;
+	 subtotal=$formatFloat(dorado.util.Common.parseFloat(subtotal+&quot;&quot;),&quot;0.00&quot;);&#xD;
+}&#xD;
+&#xD;
+arg.dom.innerHTML= &quot;&lt;div style=\&quot;width:100%;float:right;\&quot;>&quot;+title+&quot;&lt;div style=\&quot;width:100%;float:right;\&quot;>&quot;+subtotal+&quot;&lt;/div>&quot;;&#xD;
+arg.dom.style= &quot;font-weight:bold;color:red&quot;;//加粗字体,红色</ClientEvent>
+        <Property name="property">receiveMoney</Property>
+        <Property name="caption">收款金额</Property>
+        <Property name="align">center</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="receiveDate">
+        <Property name="property">receiveDate</Property>
+        <Property name="caption">收款日期</Property>
+        <Property name="displayFormat">yyyy-MM-dd</Property>
+        <Property name="align">center</Property>
+        <Property name="width">80</Property>
+      </DataColumn>
+      <DataColumn name="receiveState">
+        <Property name="property">receiveState</Property>
+        <Property name="caption">状态</Property>
+        <Property name="trigger">autoMappingDropDown1</Property>
+        <Property name="ignored">true</Property>
+        <Editor/>
+      </DataColumn>
+      <DataColumn name="receiveStateLabel">
+        <Property name="property">receiveStateLabel</Property>
+        <Property name="caption">状态</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="receiveType">
+        <Property name="property">receiveType</Property>
+        <Property name="caption">收款类型</Property>
+        <Property name="trigger">autoMappingDropDown1</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="receiveTypeLabel">
+        <Property name="property">receiveTypeLabel</Property>
+        <Property name="caption">收款类型</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn id="backPerson">
+        <Property name="property">backPerson</Property>
+        <Editor/>
+      </DataColumn>
+      <DataColumn name="billNumber">
+        <Property name="property">billNumber</Property>
+        <Property name="caption">票据号码</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn id="billImg">
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;billImgShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;billImgShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;,&#xD;
+		&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">billImgShow</Property>
+        <Property name="caption">票据图片</Property>
+        <Property name="name">billImg</Property>
+      </DataColumn>
+      <DataColumn name="createTime">
+        <Property name="property">createTime</Property>
+        <Property name="caption">录入时间</Property>
+        <Property name="width">80</Property>
+      </DataColumn>
+      <DataColumn name="createBy">
+        <Property name="property">createBy</Property>
+        <Property name="caption">提交人员</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="createByLabel">
+        <Property name="property">createByLabel</Property>
+        <Property name="caption">提交人员</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="updateBy">
+        <Property name="property">updateBy</Property>
+        <Property name="caption">修改人员</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="updateByLabel">
+        <Property name="property">updateByLabel</Property>
+        <Property name="caption">修改人员</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="updateTime">
+        <Property name="property">updateTime</Property>
+        <Property name="caption">修改时间</Property>
+      </DataColumn>
+      <DataColumn name="examBy">
+        <Property name="property">examBy</Property>
+        <Property name="caption">审核人员</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+      <DataColumn name="examByLabel">
+        <Property name="property">examByLabel</Property>
+        <Property name="caption">审核人员</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="examTime">
+        <Property name="property">examTime</Property>
+        <Property name="caption">审核时间</Property>
+      </DataColumn>
+      <DataColumn name="remark">
+        <Property name="property">remark</Property>
+        <Property name="caption">备注</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="deleteFlag">
+        <Property name="property">deleteFlag</Property>
+        <Property name="ignored">true</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dlAddUpdate">
+      <ClientEvent name="beforeClose">view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;).cancel();&#xD;
+var current=view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;);&#xD;
+if(null!=current){&#xD;
+	var entity=view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+	view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+	view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync();&#xD;
+}&#xD;
+view.get(&quot;#afAddUpdate&quot;).getElement(&quot;userName&quot;).set(&quot;readOnly&quot;,false);&#xD;
+view.get(&quot;#afAddUpdate&quot;).getElement(&quot;companyName&quot;).set(&quot;readOnly&quot;,false);&#xD;
+view.get(&quot;#afAddUpdate&quot;).getElement(&quot;contactWay&quot;).set(&quot;readOnly&quot;,false);&#xD;
+view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;开始上传&quot;);&#xD;
+view.get(&quot;#billImgA&quot;).set(&quot;image&quot;,&quot;&quot;);&#xD;
+var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);</ClientEvent>
+      <Property name="width">800</Property>
+      <Property name="height">500</Property>
+      <Property name="caption">收款新增或修改</Property>
+      <Property name="showCaptionBar">true</Property>
+      <Property name="resizeable">false</Property>
+      <Property name="closeable">false</Property>
+      <Buttons>
+        <Button id="btSave">
+          <ClientEvent name="onClick">var entity=view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;);&#xD;
+if(entity.get(&quot;userName&quot;)==null||&quot;&quot;==entity.get(&quot;userName&quot;)){&#xD;
+	dorado.MessageBox.alert(&quot;请选择收款会员&quot;);&#xD;
+	return false;&#xD;
+}else{&#xD;
+	if(entity.get(&quot;userId&quot;)==null||&quot;&quot;==entity.get(&quot;userId&quot;)){&#xD;
+		dorado.MessageBox.alert(&quot;该收款会员不存在！&quot;);&#xD;
+		return false;&#xD;
+	}&#xD;
+}&#xD;
+if(entity.get(&quot;receiveMoney&quot;)==null){&#xD;
+	dorado.MessageBox.alert(&quot;请录入收款金额&quot;);&#xD;
+	return false;&#xD;
+}else{&#xD;
+	var RegExp=/^0|((-?\d+)(\.\d+))?$/;&#xD;
+	if(!RegExp.test(entity.get(&quot;receiveMoney&quot;))){&#xD;
+		dorado.MessageBox.alert(&quot;收款金额的数值格式不正确：请输入数字&quot;);&#xD;
+		return false;&#xD;
+	}&#xD;
+}&#xD;
+if(entity.get(&quot;receiveDate&quot;)==null||&quot;&quot;==entity.get(&quot;receiveDate&quot;)){&#xD;
+	dorado.MessageBox.alert(&quot;请录入收款日期&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+if(entity.get(&quot;receiveType&quot;)==null||&quot;&quot;==entity.get(&quot;receiveType&quot;)){&#xD;
+	dorado.MessageBox.alert(&quot;请选择收款类型&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+if(entity.get(&quot;backPerson&quot;)==null||&quot;&quot;==entity.get(&quot;backPerson&quot;)){&#xD;
+	dorado.MessageBox.alert(&quot;请填写实际回款人&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+&#xD;
+var entityState=entity.state;&#xD;
+var action=view.get(&quot;#uaSaveUpdate&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+	view.get(&quot;#afAddUpdate&quot;).getElement(&quot;userName&quot;).set(&quot;readOnly&quot;,false);&#xD;
+	view.get(&quot;#afAddUpdate&quot;).getElement(&quot;companyName&quot;).set(&quot;readOnly&quot;,false);&#xD;
+	view.get(&quot;#afAddUpdate&quot;).getElement(&quot;contactWay&quot;).set(&quot;readOnly&quot;,false);&#xD;
+&#xD;
+	if(entityState==2){&#xD;
+		view.get(&quot;#dlAddUpdate&quot;).close();&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+	}else if(entityState==1){&#xD;
+		dorado.MessageBox.alert(&quot;保存成功！您可以继续添加信息！&quot;,function(){&#xD;
+&#xD;
+				// 获取dtFinanceReceiveList数据类型&#xD;
+				var dtFinanceReceiveList = view.get(&quot;#dtFinanceReceiveList&quot;);&#xD;
+				//创建一个空的、类型为dtFinanceReceiveList的实体对象。&#xD;
+				var entity = new dorado.Entity(null,&quot;before&quot;,dtFinanceReceiveList);&#xD;
+				//设置实体对象的默认值&#xD;
+				entity.set(&quot;receiveState&quot;,&quot;1&quot;);&#xD;
+				entity.set(&quot;receiveStateLabel&quot;,&quot;待审核&quot;);&#xD;
+				entity.set(&quot;receiveType&quot;,&quot;1&quot;);&#xD;
+				entity.set(&quot;receiveTypeLabel&quot;,&quot;现金&quot;);&#xD;
+				view.get(&quot;#billImgA&quot;).set(&quot;image&quot;,null);&#xD;
+				&#xD;
+				if(entity.get(&quot;billImg&quot;)!=null){&#xD;
+					view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+				}else{&#xD;
+					view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;开始上传&quot;);&#xD;
+				}&#xD;
+				&#xD;
+				var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+				btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+				btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	&#xD;
+				//DataSet中插入该实体对象&#xD;
+				view.get(&quot;#dsFinanceReceiveList&quot;).insert(entity);&#xD;
+				view.get(&quot;#dsUser&quot;).clear();&#xD;
+				view.get(&quot;#dsUserLabel&quot;).clear();&#xD;
+				view.get(&quot;#dsUserContactWay&quot;).clear();&#xD;
+				view.get(&quot;#dsddUserCompany&quot;).clear();&#xD;
+		});&#xD;
+		var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).flush();&#xD;
+			&#xD;
+	}&#xD;
+	&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="caption">保存</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button id="btCancel">
+          <ClientEvent name="onClick">view.get(&quot;#dlAddUpdate&quot;).close();&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -300px -100px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afAddUpdate">
+          <Property name="width">100%</Property>
+          <Property name="editorWidth">250</Property>
+          <Property name="dataSet">dsFinanceReceiveList</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <AutoFormElement>
+            <Property name="name">receiveId</Property>
+            <Property name="property">receiveId</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveNo</Property>
+            <Property name="property">receiveNo</Property>
+            <Property name="readOnly">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveType</Property>
+            <Property name="property">receiveType</Property>
+            <Property name="trigger">autoOpenMappingDropDown1</Property>
+            <Property name="label">收款类型</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userId</Property>
+            <Property name="property">userId</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="label">会员账号</Property>
+            <Property name="ignored">true</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="property">userName</Property>
+            <Property name="label">会员账号</Property>
+            <Property name="readOnly">false</Property>
+            <Property name="trigger">dsddUserInfo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">realName</Property>
+            <Property name="property">realName</Property>
+            <Property name="trigger">dsddUserInfoLabel</Property>
+            <Property name="label">会员名称</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">contactWay</Property>
+            <Property name="property">contactWay</Property>
+            <Property name="trigger">dsddUserContactWay</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">companyName</Property>
+            <Property name="property">companyName</Property>
+            <Property name="trigger">dsddUserCompany</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userType</Property>
+            <Property name="property">userType</Property>
+            <Property name="ignored">false</Property>
+            <Property name="readOnly">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <ClientEvent name="onReady">self.set(&quot;value&quot;, &quot;待审核&quot;);</ClientEvent>
+            <Property name="name">receiveState</Property>
+            <Property name="property">receiveState</Property>
+            <Property name="label">收款状态</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="trigger">autoMappingDropDown1</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <ClientEvent name="onReady">self.set(&quot;value&quot;, &quot;待审核&quot;);</ClientEvent>
+            <Property name="name">receiveStateLabel</Property>
+            <Property name="property">receiveStateLabel</Property>
+            <Property name="label">收款状态</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="trigger">autoMappingDropDown1</Property>
+            <Property name="editable">false</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveTypeLabel</Property>
+            <Property name="trigger">dsddRapWayLabel</Property>
+            <Property name="label">收款类型</Property>
+            <Property name="property">receiveTypeLabel</Property>
+            <Property name="ignored">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="property">backPerson</Property>
+            <Property name="name">backPerson</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveMoney</Property>
+            <Property name="property">receiveMoney</Property>
+            <Property name="label">收款金额</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiveDate</Property>
+            <Property name="property">receiveDate</Property>
+            <Property name="trigger">dddReceiveDate</Property>
+            <Property name="label">收款日期</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">remark</Property>
+            <Property name="property">remark</Property>
+            <Property name="label">备注</Property>
+            <Property name="editorType">TextArea</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">billNumber</Property>
+            <Property name="property">billNumber</Property>
+            <Property name="label">票据编号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">billImg</Property>
+            <Property name="property">billImg</Property>
+            <Property name="label">票据图片</Property>
+            <Property name="visible">false</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">deleteFlag</Property>
+            <Property name="property">deleteFlag</Property>
+            <Property name="ignored">false</Property>
+            <Property name="visible">false</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel id="plBillImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">票据图片</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="billImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Button id="btMsg">
+            <Property name="width">150</Property>
+            <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+            <Property name="caption">等待上传！</Property>
+          </Button>
+          <AutoFormElement>
+            <Property name="name">createBy</Property>
+            <Property name="property">createBy</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createTime</Property>
+            <Property name="property">createTime</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">updateBy</Property>
+            <Property name="property">updateBy</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">updateTime</Property>
+            <Property name="property">updateTime</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">examBy</Property>
+            <Property name="property">examBy</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">examTime</Property>
+            <Property name="property">examTime</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createByLabel</Property>
+            <Property name="property">createByLabel</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">updateByLabel</Property>
+            <Property name="property">updateByLabel</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">examByLabel</Property>
+            <Property name="property">examByLabel</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dlExam">
+      <ClientEvent name="beforeClose">view.get(&quot;#dsFinanceRpExamList.data:#&quot;).cancel();</ClientEvent>
+      <Property name="caption">收款审核</Property>
+      <Property name="width">600</Property>
+      <Property name="closeable">false</Property>
+      <Buttons>
+        <Button id="btConfirm">
+          <ClientEvent name="onClick">var confirmAction=view.get(&quot;#uaExam&quot;);&#xD;
+confirmAction.execute(function(returnValue){&#xD;
+	console.log(returnValue);&#xD;
+		view.get(&quot;#dlExam&quot;).close();&#xD;
+		var entity = view.get(&quot;#afCondition&quot;).get(&quot;entity&quot;);&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).set(&quot;parameter&quot;,entity);&#xD;
+		view.get(&quot;#dsFinanceReceiveList&quot;).flushAsync();&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：&quot;+returnValue[&quot;msg&quot;]);&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">确认</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -20px -0px</Property>
+        </Button>
+        <Button id="btCancelCon">
+          <ClientEvent name="onClick">view.get(&quot;#dlExam&quot;).close();</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -300px -100px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afExam">
+          <Property name="dataSet">dsFinanceRpExamList</Property>
+          <Property name="cols">*</Property>
+          <Property name="width">600</Property>
+          <Property name="editorWidth">300</Property>
+          <Property name="labelAlign">right</Property>
+          <AutoFormElement>
+            <Property name="name">examId</Property>
+            <Property name="property">examId</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">rapId</Property>
+            <Property name="property">rapId</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement id="examType">
+            <Property name="name">examType</Property>
+            <Property name="property">examType</Property>
+            <Property name="editorType">RadioGroup</Property>
+            <Property name="label">审核类型</Property>
+            <Editor>
+              <RadioGroup id="rgExamType">
+                <RadioButton>
+                  <Property name="text">通过</Property>
+                  <Property name="value">2</Property>
+                </RadioButton>
+                <RadioButton>
+                  <Property name="text">不通过</Property>
+                  <Property name="value">3</Property>
+                </RadioButton>
+              </RadioGroup>
+            </Editor>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">examRemark</Property>
+            <Property name="property">examRemark</Property>
+            <Property name="label">备注</Property>
+            <Property name="editorType">TextArea</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createBy</Property>
+            <Property name="property">createBy</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">createTime</Property>
+            <Property name="property">createTime</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">examTable</Property>
+            <Property name="property">examTable</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">deleteFlag</Property>
+            <Property name="property">deleteFlag</Property>
+            <Property name="ignored">true</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <DateDropDown id="dddReceiveDate">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Y-m-d&quot;);&#xD;
+</ClientEvent>
+      <Property name="selectionMode">singleDate</Property>
+      <Property name="showTimeSpinner">false</Property>
+      <Property name="editable">false</Property>
+      <Property name="autoOpen">true</Property>
+    </DateDropDown>
+    <AjaxAction id="ajaxActionGetDate">
+      <Property name="service">getFormatDateTime#getSEDateOrTime</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxActionGetLoginUserId">
+      <Property name="service">loginUserInfo#getLoginUserId</Property>
+    </AjaxAction>
+    <UpdateAction id="uaSaveUpdate">
+      <Property name="confirmMessage">是否确认保存？</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="hotkey">ctrl+s</Property>
+      <Property name="dataResolver">financeReceiveService#saveFinanceReceive</Property>
+      <Property name="parameter"></Property>
+      <UpdateItem>
+        <Property name="dataSet">dsFinanceReceiveList</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="aaDeleteSelects">
+      <Property name="service">financeReceiveService#deleteFinanceReceives</Property>
+    </AjaxAction>
+    <UpdateAction id="uaExam">
+      <Property name="dataResolver">financeReceiveService#examFinanceReceive</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsFinanceRpExamList</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <Dialog id="dgDetails">
+      <Property name="caption">收款详情</Property>
+      <Property name="width">60%</Property>
+      <Property name="height">98%</Property>
+      <Property name="closeable">false</Property>
+      <Buttons>
+        <Button id="btBack">
+          <ClientEvent name="onClick">view.get(&quot;#dgDetails&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">返回</Property>
+          <Property name="icon"> url(>skin>common/icons.gif) -220px -240px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <FieldSet id="fsReceiveDetail">
+          <Property name="caption">收款基本信息</Property>
+          <Property name="width">98%</Property>
+          <Property name="height">40%</Property>
+          <Property name="collapseable">true</Property>
+          <Property name="contentOverflow">auto</Property>
+          <Property name="containerUi">default</Property>
+          <Buttons/>
+          <Children>
+            <AutoForm id="afReceiveDetail">
+              <Property name="cols">*,*</Property>
+              <Property name="colPadding">6</Property>
+              <Label id="receiveNoLabel">
+                <Property name="text">收款编号：</Property>
+              </Label>
+              <Label id="receiveStateLabel">
+                <Property name="text">收款状态：</Property>
+              </Label>
+              <Label id="userNameLabel"/>
+              <Label id="realNameLabel">
+                <Property name="text">会员名称：</Property>
+                <Property name="ignored">true</Property>
+              </Label>
+              <Label id="contactWayLabel">
+                <Property name="text">联系方式：</Property>
+              </Label>
+              <Label id="companyNameLabel"/>
+              <Label id="userTypeLabel">
+                <Property name="text">会员类型：</Property>
+              </Label>
+              <Label id="receiveDateLabel">
+                <Property name="text">收款日期：</Property>
+              </Label>
+              <Label id="receiveTypeLabel">
+                <Property name="text">收款类型：</Property>
+              </Label>
+              <Label id="backPersonLabel">
+                <Property name="text">实际回款人：</Property>
+              </Label>
+              <Label id="receiveMoneyLabel">
+                <Property name="text">收款金额：</Property>
+              </Label>
+              <Label id="billNumberLabel">
+                <Property name="text">票据号码：</Property>
+              </Label>
+              <Label id="remarkLabel">
+                <Property name="text">备注：</Property>
+              </Label>
+              <Label id="billImgLabel">
+                <Property name="text">票据图片：</Property>
+                <Property name="visible">false</Property>
+                <Property name="ignored">true</Property>
+              </Label>
+              <Panel id="plBillImgD">
+                <Property name="caption">票据图片</Property>
+                <Property name="height">200</Property>
+                <Property name="visible">true</Property>
+                <Property name="width">100%</Property>
+                <Buttons/>
+                <Children>
+                  <Image id="billImgD" layoutConstraint="center ">
+                    <Property name="width">100%</Property>
+                    <Property name="height">100%</Property>
+                  </Image>
+                </Children>
+                <Tools/>
+              </Panel>
+              <Label>
+                <Property name="visible">false</Property>
+              </Label>
+              <Label id="createByLabel">
+                <Property name="text">录入人：</Property>
+              </Label>
+              <Label id="createTimeLabel">
+                <Property name="text">录入时间：</Property>
+              </Label>
+            </AutoForm>
+          </Children>
+        </FieldSet>
+        <FieldSet id="fsModify">
+          <Property name="caption">收款修改详情</Property>
+          <Property name="width">98%</Property>
+          <Property name="height">30%</Property>
+          <Buttons/>
+          <Children>
+            <DataPilot id="dpFinanceRpModifyList">
+              <Property name="dataSet">dsFinanceRpModifyList</Property>
+              <Property name="itemCodes">pages,pageSize</Property>
+            </DataPilot>
+            <DataGrid id="dgFinanceRpModifyList">
+              <ClientEvent name="onRenderRow">$(&quot;.data-table tr:odd&quot;).css(&quot;background-color&quot;,&quot;#B0E0E6&quot;);</ClientEvent>
+              <Property name="dataSet">dsFinanceRpModifyList</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="highlightCurrentRow">false</Property>
+              <Property name="highlightSelectedRow">false</Property>
+              <DataColumn name="modifyId">
+                <Property name="property">modifyId</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="rapId">
+                <Property name="property">rapId</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="updateBy">
+                <Property name="property">updateBy</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="updateByLabel">
+                <Property name="property">updateByLabel</Property>
+                <Property name="caption">修改人</Property>
+                <Property name="width">80</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="updateTime">
+                <Property name="property">updateTime</Property>
+                <Property name="caption">修改时间</Property>
+                <Property name="width">80</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="createBy">
+                <Property name="property">createBy</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="createTime">
+                <Property name="property">createTime</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="remark">
+                <Property name="property">remark</Property>
+                <Property name="caption">备注</Property>
+                <Property name="editorType">TextArea</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="modifyTable">
+                <Property name="property">modifyTable</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="deleteFlag">
+                <Property name="property">deleteFlag</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+            </DataGrid>
+          </Children>
+        </FieldSet>
+        <FieldSet id="fsExam">
+          <Property name="caption">收款审核详情</Property>
+          <Property name="width">98%</Property>
+          <Property name="height">30%</Property>
+          <Buttons/>
+          <Children>
+            <DataPilot id="dpFinanceRpExamList">
+              <Property name="itemCodes">pages,pageSize</Property>
+              <Property name="dataSet">dsFinanceRpExamList</Property>
+            </DataPilot>
+            <DataGrid id="dgFinanceRpExamList">
+              <ClientEvent name="onRenderRow">$(&quot;.data-table tr:odd&quot;).css(&quot;background-color&quot;,&quot;#B0E0E6&quot;);</ClientEvent>
+              <Property name="dataSet">dsFinanceRpExamList</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="highlightSelectedRow">false</Property>
+              <Property name="highlightCurrentRow">false</Property>
+              <DataColumn name="examId">
+                <Property name="property">examId</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="rapId">
+                <Property name="property">rapId</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="examType">
+                <Property name="property">examType</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="examTypeLabel">
+                <Property name="property">examTypeLabel</Property>
+                <Property name="caption">审核类型</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="createBy">
+                <Property name="property">createBy</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="createByLabel">
+                <Property name="property">createByLabel</Property>
+                <Property name="caption">审核人</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="createTime">
+                <Property name="property">createTime</Property>
+                <Property name="caption">审核时间</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="examRemark">
+                <Property name="property">examRemark</Property>
+                <Property name="caption">备注</Property>
+                <Property name="editorType">TextArea</Property>
+                <Property name="align">center</Property>
+              </DataColumn>
+              <DataColumn name="examTable">
+                <Property name="property">examTable</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+              <DataColumn name="deleteFlag">
+                <Property name="property">deleteFlag</Property>
+                <Property name="ignored">true</Property>
+              </DataColumn>
+            </DataGrid>
+          </Children>
+        </FieldSet>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <UploadAction id="ulaImg">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;).get(&quot;billImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dsFinanceReceiveList&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;billImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#billImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="vvvvv">no</Property>
+        </Entity>
+      </Property>
+      <Filters/>
+    </UploadAction>
+    <AjaxAction id="aaGetCompressUrl">
+      <Property name="service">getSystemContants#getCompressUrl</Property>
+    </AjaxAction>
+    <Export2ReportAction id="export2ReportActionExcel">
+      <Property name="executingMessage">正在导出Excel...</Property>
+      <Property name="template">dgFinanceReceiveList</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="maxSize">1000000</Property>
+      <Property name="showTitle">true</Property>
+      <Property name="titleName">收款统计</Property>
+      <Property name="fileName">收款统计</Property>
+    </Export2ReportAction>
+  </View>
+</ViewConfig>

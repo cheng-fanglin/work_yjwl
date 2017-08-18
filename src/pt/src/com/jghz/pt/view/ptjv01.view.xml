@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbpt01">
+      <Property name="creationType">com.jghz.pt.entity.Tbpt01</Property>
+      <PropertyDef name="pt01Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="titleName">
+        <Property></Property>
+        <Property name="label">标题</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="newsContent">
+        <Property></Property>
+        <Property name="label">内容</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="newsType">
+        <Property></Property>
+        <Property name="label">类型</Property>
+      </PropertyDef>
+      <PropertyDef name="newsClass">
+        <Property></Property>
+        <Property name="label">信息发布类型</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">0</Property>
+                <Property name="value">未发布</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">1</Property>
+                <Property name="value">已发布</Property>
+              </Entity>
+            </Collection>
+          </Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="auditor">
+        <Property></Property>
+        <Property name="label">发布人</Property>
+      </PropertyDef>
+      <PropertyDef name="opinion">
+        <Property></Property>
+        <Property name="label">审核意见</Property>
+      </PropertyDef>
+      <PropertyDef name="releaseTime">
+        <Property></Property>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+      <PropertyDef name="remark">
+        <Property></Property>
+        <Property name="label">备注</Property>
+      </PropertyDef>
+      <PropertyDef name="allPeople">
+        <Property></Property>
+        <Property name="label">所有人</Property>
+      </PropertyDef>
+      <PropertyDef name="deptId">
+        <Property></Property>
+        <Property name="label">部门ID</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property></Property>
+        <Property name="label">人员ID</Property>
+      </PropertyDef>
+      <PropertyDef name="startTime">
+        <Property></Property>
+        <Property name="label">开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endTime">
+        <Property></Property>
+        <Property name="label">结束时间</Property>
+      </PropertyDef>
+      <PropertyDef name="uploadAddress">
+        <Property></Property>
+        <Property name="label">附件地址</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">更新人</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition">
+      <PropertyDef name="titleName">
+        <Property></Property>
+        <Property name="label">标题</Property>
+      </PropertyDef>
+      <PropertyDef name="auditor">
+        <Property></Property>
+        <Property name="label">发布人</Property>
+      </PropertyDef>
+      <PropertyDef name="releaseTime">
+        <Property></Property>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSetCondition">
+      <ClientEvent name="onReady">view.get(&quot;#dataSetCondition.data&quot;).insert();</ClientEvent>
+      <Property name="dataType">[dtCondition]</Property>
+    </DataSet>
+    <DataSet id="dataSetTbpt01">
+      <Property name="dataType">[Tbpt01]</Property>
+      <Property name="dataProvider">ptjc01Service#loadTbpt01</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="afCondition">
+          <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+          <Property name="labelWidth">90</Property>
+          <Property name="dataSet">dataSetCondition</Property>
+          <Property name="dataType">dtCondition</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">titleName</Property>
+            <Property name="property">titleName</Property>
+            <Property name="label">标题</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="property">auditor</Property>
+            <Property name="name">auditor</Property>
+            <Property name="label">发布人</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="property">releaseTimeF</Property>
+            <Property name="name">releaseTimeF</Property>
+            <Property name="label">发布时间起</Property>
+            <Property name="trigger">dddDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">releaseTimeT</Property>
+            <Property name="property">releaseTimeT</Property>
+            <Property name="label">发布时间止</Property>
+            <Property name="trigger">dddDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Button id="btnQuery">
+            <ClientEvent name="onClick">var data = view.get(&quot;#afCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbpt01&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+}</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </Button>
+          <Button id="btnReset">
+            <ClientEvent name="onClick">view.get(&quot;#dataSetCondition.data&quot;).insert();</ClientEvent>
+            <Property name="caption">重置</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+ var dsTbpt01 = view.get(&quot;#dataSetTbpt01&quot;);  &#xD;
+   switch(code){&#xD;
+     case &quot;+&quot;:&#xD;
+     //根据得到的数据集向其中插入一条对象，注意的是：这里的deptId不是数据库中的字段，而是实体类的属性&#xD;
+     dsTbpt01.insert();&#xD;
+	 view.get(&quot;#btnSure&quot;).set(&quot;visible&quot;,true);&#xD;
+     view.get(&quot;#dialog1&quot;).show();&#xD;
+     //防止系统自动的添加一行&#xD;
+     arg.processDefault = false;&#xD;
+     break;&#xD;
+	 case &quot;-&quot;:{&#xD;
+        var dgTbpt01 = view.get(&quot;#dgTbpt01&quot;);&#xD;
+		var updateActionPt01 = view.get(&quot;#updateActionPt01&quot;);&#xD;
+		var selection = dgTbpt01.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			var bo = true;&#xD;
+			//判断是否有勾选已经发布的资料&#xD;
+			for(var i=0;i&lt;selection.length;i++){&#xD;
+				if(selection[i].get(&quot;state&quot;)==&quot;1&quot;){&#xD;
+					bo = false;&#xD;
+				}&#xD;
+			}&#xD;
+			if(bo){&#xD;
+				dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+					selection.each(function(entity){&#xD;
+						entity.remove();&#xD;
+					});&#xD;
+					updateActionPt01.execute();&#xD;
+					view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;删除成功！&quot;);&#xD;
+				});&#xD;
+			}else{&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 勾选资料中有已发布资料，请先取消发布才能删除！&quot;);&#xD;
+			}&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        &#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+    }&#xD;
+&#xD;
+   }</ClientEvent>
+        <Property name="dataSet">dataSetTbpt01</Property>
+        <Property name="itemCodes">pages,pageSize,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var entity = view.get(&quot;#dataSetTbpt01&quot;);&#xD;
+var dataGrid = view.get(&quot;#dgTbpt01&quot;);&#xD;
+var selEntitys = dataGrid.get('selection');//获取所有勾选的数据&#xD;
+&#xD;
+if(selEntitys.length>0){&#xD;
+	var bo = true;&#xD;
+	//判断是否有勾选已经发布的资料&#xD;
+	for(var i=0;i&lt;selEntitys.length;i++){&#xD;
+		if(selEntitys[i].get(&quot;state&quot;)==&quot;1&quot;){&#xD;
+			bo = false;&#xD;
+		}&#xD;
+	}&#xD;
+	&#xD;
+	if(bo){//如果没有已发布的资料则执行后台发布功能&#xD;
+		var uaPt01Publish = view.get(&quot;#uaPt01Publish&quot;); &#xD;
+		uaPt01Publish.execute(function(returnValue){&#xD;
+		    var flag = returnValue[&quot;flag&quot;];&#xD;
+		    var msg = returnValue[&quot;msg&quot;];&#xD;
+			if(flag){&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+			}else{&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+			}&#xD;
+		});&#xD;
+	}else{//否则提示不能重复发布&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 勾选资料中有已发布资料，请勿反复发布！&quot;);&#xD;
+	}&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 请勾选要发布的资料！&quot;);&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;消息提示： 请勾选要发布的资料！&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">发布</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -60px -120px</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var entity = view.get(&quot;#dataSetTbpt01&quot;);&#xD;
+var dataGrid = view.get(&quot;#dgTbpt01&quot;);&#xD;
+var selEntitys = dataGrid.get('selection');//获取所有勾选的数据&#xD;
+&#xD;
+if(selEntitys.length>0){&#xD;
+	var bo = true;&#xD;
+	//判断是否有勾选未发布的资料&#xD;
+	for(var i=0;i&lt;selEntitys.length;i++){&#xD;
+		if(selEntitys[i].get(&quot;state&quot;)==&quot;0&quot;){&#xD;
+			bo = false;&#xD;
+		}&#xD;
+	}&#xD;
+	&#xD;
+	if(bo){//如果没有未发布的资料则执行后台发布功能&#xD;
+		var uaPt01Publish = view.get(&quot;#uaPt01Publish&quot;); &#xD;
+		uaPt01Publish.execute(function(returnValue){&#xD;
+		    var flag = returnValue[&quot;flag&quot;];&#xD;
+		    var msg = returnValue[&quot;msg&quot;];&#xD;
+			if(flag){&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+			}else{&#xD;
+				view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+			}&#xD;
+		});&#xD;
+	}else{//否则提示不能重复发布&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 勾选资料中有未发布资料，不能取消发布！&quot;);&#xD;
+	}&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 请勾选要取消发布的资料！&quot;);&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;消息提示：请勾选要取消发布的资料！&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">取消发布</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -80px -120px</Property>
+      </ToolBarButton>
+      <ToolBarLabel id="msg">
+        <Property name="ui">default</Property>
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </ToolBarLabel>
+    </ToolBar>
+    <DataGrid id="dgTbpt01">
+      <ClientEvent name="onDataRowDoubleClick">var pt01Entity = view.get(&quot;#dataSetTbpt01&quot;).getData(&quot;#&quot;);&#xD;
+var state = pt01Entity.get(&quot;state&quot;);&#xD;
+if(state ==&quot;1&quot;){&#xD;
+	view.get(&quot;#btnSure&quot;).set(&quot;visible&quot;,false);&#xD;
+	view.get(&quot;#dialog1&quot;).show();&#xD;
+}else{&#xD;
+	view.get(&quot;#btnSure&quot;).set(&quot;visible&quot;,true);&#xD;
+	view.get(&quot;#dialog1&quot;).show();&#xD;
+}&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="dataSet">dataSetTbpt01</Property>
+      <Property name="dataType">Tbpt01</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <Property name="readOnly">true</Property>
+      <RowSelectorColumn id="select"/>
+      <DataColumn>
+        <Property name="property">titleName</Property>
+        <Property name="name">titleName</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">auditor</Property>
+        <Property name="name">auditor</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">releaseTime</Property>
+        <Property name="name">releaseTime</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="name">state</Property>
+        <Property name="property">state</Property>
+        <Editor/>
+      </DataColumn>
+    </DataGrid>
+    <UpdateAction id="updateActionPt01">
+      <Property name="dataResolver">ptjc01Service#saveTbpt01</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbpt01</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaPt01Publish">
+      <ClientEvent name="onGetUpdateData">var dataGrid = view.get(&quot;#dgTbpt01&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+arg.data=selEntitys;</ClientEvent>
+      <Property name="dataResolver">ptjc01Service#executePublish</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbpt01</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <Dialog id="dialog1">
+      <Property name="caption">新闻公告信息</Property>
+      <Property name="width">1000</Property>
+      <Property name="height">500</Property>
+      <Buttons>
+        <Button id="btnSure">
+          <ClientEvent name="onClick">var action=view.get(&quot;#updateActionPt01&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#dialog1&quot;).hide();&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 保存成功&quot;);&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="action">updateActionPt01</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var entityTbpt01=view.get(&quot;#dataSetTbpt01&quot;).getData(&quot;#&quot;);&#xD;
+if(entityTbpt01.get(&quot;pt01Id&quot;)){&#xD;
+	&#xD;
+}else{&#xD;
+	entityTbpt01.remove();&#xD;
+}&#xD;
+view.get(&quot;#dialog1&quot;).hide();</ClientEvent>
+          <Property name="caption">关闭</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afTbpt01">
+          <Property name="dataSet">dataSetTbpt01</Property>
+          <Property name="dataType">Tbpt01</Property>
+          <Property name="cols">220,220,220</Property>
+          <Property name="width">900</Property>
+          <Property name="labelWidth">50</Property>
+          <Property name="padding">0</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">titleName</Property>
+            <Property name="property">titleName</Property>
+            <Property name="width">950</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="label">内容</Property>
+            <Property name="name">newsContent</Property>
+            <Property name="width">950</Property>
+            <Editor>
+              <UEditor layoutConstraint="colSpan:2">
+                <Property name="dataSet">dataSetTbpt01</Property>
+                <Property name="property">newsContent</Property>
+                <Property name="height">350</Property>
+                <Property name="mode">full</Property>
+              </UEditor>
+            </Editor>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <DateDropDown id="dateDropDown">
+      <Property name="showTimeSpinner">true</Property>
+    </DateDropDown>
+    <DateDropDown id="dddDate">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;)</ClientEvent>
+    </DateDropDown>
+  </View>
+</ViewConfig>

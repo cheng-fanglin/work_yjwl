@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbwd02">
+      <Property name="creationType">com.jghz.sh.entity.Tbwd02</Property>
+      <PropertyDef name="wd02Id">
+        <Property/>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="userId">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">会员ID</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="driverType">
+        <Property/>
+        <Property name="label">司机类别</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property/>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property/>
+        <Property name="label">承运人名称</Property>
+      </PropertyDef>
+      <PropertyDef name="driverHead">
+        <Property/>
+        <Property name="label">司机头像(图)</Property>
+      </PropertyDef>
+      <PropertyDef name="driverLisence">
+        <Property/>
+        <Property name="label">驾驶证号</Property>
+      </PropertyDef>
+      <PropertyDef name="driverLisenceImg">
+        <Property/>
+        <Property name="label">驾驶证(图)1</Property>
+      </PropertyDef>
+      <PropertyDef name="driverLisenceImg2">
+        <Property/>
+        <Property name="label">驾驶证(图)2</Property>
+      </PropertyDef>
+      <PropertyDef name="driverLisenceImg3">
+        <Property/>
+        <Property name="label">驾驶证(图)3</Property>
+      </PropertyDef>
+      <PropertyDef name="identityNo">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">身份证号码</Property>
+      </PropertyDef>
+      <PropertyDef name="identifyImg">
+        <Property/>
+        <Property name="label">身份证正面照</Property>
+      </PropertyDef>
+      <PropertyDef name="identifyBackImg">
+        <Property/>
+        <Property name="label">身份证反面照</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property/>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property/>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="contractName">
+        <Property/>
+        <Property name="label">紧急联系人</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property/>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property/>
+        <Property name="label">更新人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="driverShow">
+        <Property/>
+        <Property name="label">驾驶员头像</Property>
+      </PropertyDef>
+      <PropertyDef name="driverLisenceShow">
+        <Property/>
+        <Property name="label">驾驶证图片</Property>
+      </PropertyDef>
+      <PropertyDef name="identifyShow">
+        <Property/>
+        <Property name="label">身份证图片</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbwd01信息维护</Property>
+    <DataSet id="dataSetTbwd02">
+      <Property name="dataProvider">ecjc02Service#loadwd02</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbwd02]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ecjc02Service#saveTbwd02</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd02</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="updateActionSH">
+      <Property name="dataResolver">ecjc02Service#saveSH</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbwd01</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">phoneNo</Property>
+        <Property name="label">联系方式</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">userType</Property>
+        <Property name="label">司机类别</Property>
+        <Property name="trigger">listDDUserType</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">carrierName</Property>
+        <Property name="label">承运商名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">state</Property>
+        <Property name="label">状态</Property>
+        <Property name="trigger">listDDStatus</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dataSetTbwd02&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dataSetTbwd02&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbwd02.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			datas.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dataSetTbwd02</Property>
+        <Property name="itemCodes">pages,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd02.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
+	view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverShow&quot;));&#xD;
+		if(data.current.get(&quot;driverShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+	view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverLisenceShow&quot;));&#xD;
+		if(data.current.get(&quot;driverLisenceShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+	view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverLisenceShow&quot;));&#xD;
+		if(data.current.get(&quot;identifyShow&quot;)!=null){&#xD;
+			view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+		}&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+      <Label id="msg">
+        <ClientEvent name="onCreate">&#xD;
+</ClientEvent>
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </Label>
+    </ToolBar>
+    <DataGrid id="dgTbwd02">
+      <ClientEvent name="onClick">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <ClientEvent name="onBlur">dorado.TipManager.initTip(self.getDom(), {&#xD;
+	text : self.get(&quot;tip&quot;),&#xD;
+	icon: &quot;INFO&quot;,&#xD;
+	trackMouse: true&#xD;
+});</ClientEvent>
+      <Property name="dataSet">dataSetTbwd02</Property>
+      <Property name="dataType">Tbwd02</Property>
+      <Property name="readOnly">true</Property>
+      <DataColumn name="userName">
+        <Property name="property">userName</Property>
+      </DataColumn>
+      <DataColumn name="phoneNo">
+        <Property name="property">phoneNo</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">driverShow</Property>
+        <Property name="name">driverShow</Property>
+      </DataColumn>
+      <DataColumn name="driverLisence">
+        <Property name="property">driverLisence</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">driverLisenceShow</Property>
+        <Property name="name">driverLisenceShow</Property>
+      </DataColumn>
+      <DataColumn name="identityNo">
+        <Property name="property">identityNo</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
+    tagName: &quot;IMG&quot;,&#xD;
+    src: $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
+    //style : &quot;margin: 2px&quot;&#xD;
+    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+});&#xD;
+dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content : {&#xD;
+			tagName : &quot;IMG&quot;,&#xD;
+			src : $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style : &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection : &quot;top&quot;,&#xD;
+		arrowAlign : &quot;left&quot;&#xD;
+	});&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">identifyShow</Property>
+        <Property name="name">identifyShow</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbwd02">
+      <Property name="center">true</Property>
+      <Property name="width">800</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbwd02&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd02&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogTbwd02&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbwd02</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="property">userName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">phoneNo</Property>
+            <Property name="property">phoneNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">driverLisence</Property>
+            <Property name="property">driverLisence</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">identityNo</Property>
+            <Property name="property">identityNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel id="driverImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">驾驶员头像</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg1</Property>
+              </Button>
+              <Button id="btMsg">
+                <Property name="width">150</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+                <Property name="caption">等待上传！</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="driverImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="driverLicenceImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">驾驶员证件</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload2" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg2</Property>
+              </Button>
+              <Button id="btMsg2">
+                <Property name="width">150</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+                <Property name="caption">等待上传！</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="driverLisenceImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="identifyImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Property name="caption">驾驶员证件</Property>
+            <Property name="border">none</Property>
+            <Property name="collapseable">false</Property>
+            <Property name="draggable">false</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Buttons>
+              <Button id="btUpload3" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg3</Property>
+              </Button>
+              <Button id="btMsg3">
+                <Property name="width">150</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+                <Property name="caption">等待上传！</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="identifyImgA" layoutConstraint="center ">
+                <Property name="width">100%</Property>
+                <Property name="height">160</Property>
+                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <ListDropDown id="listDDUserType">
+      <Property name="items">
+        <Collection>
+          <Entity>
+            <Property name="key">C</Property>
+            <Property name="lable">承运商</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">R</Property>
+            <Property name="lable">承运人</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">J</Property>
+            <Property name="lable">经济人</Property>
+          </Entity>
+          <Entity/>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <ListDropDown id="listDDStatus">
+      <Property name="items">
+        <Collection>
+          <Entity>
+            <Property name="key">0</Property>
+            <Property name="lable">未审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">1</Property>
+            <Property name="lable">已审核</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">2</Property>
+            <Property name="lable">作废</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="displayProperty">lable</Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <UploadAction id="ulaImg1">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;).get(&quot;driverHead&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;driverHead&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="ulaImg2">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg2&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;).get(&quot;driverLisenceImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg2&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg2&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;driverLisenceImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="ulaImg3">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg3&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;).get(&quot;identifyImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg3&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg3&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;identifyImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <AjaxAction id="aaGetCompressUrl">
+      <Property name="service">getSystemContants#getCompressUrl</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

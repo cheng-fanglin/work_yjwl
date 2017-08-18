@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ureport left-margin="12.0" right-margin="12.0" top-margin="12.0" bottom-margin="12.0">
+  <paper type="A4_PAPER" width="210.0" height="297.0" landscape="false"/>
+  <paging type="fitpage"/>
+  <cell name="A1" font-family="微软雅黑" bold="true" editable="false" font-size="18" align="center" valign="middle" wrap-compute="false" row="0" col="0" col-span="6" expand="none">
+    <content><![CDATA[客户资料报表]]></content>
+  </cell>
+  <cell name="A3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="0" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="CUST_NO_" aggregate="select"/>
+  </cell>
+  <cell name="B3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="1" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="CUST_NAME_" aggregate="select"/>
+  </cell>
+  <cell name="C3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="2" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="CUST_SNAME_" aggregate="select"/>
+  </cell>
+  <cell name="D3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="3" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="OPENED_BANK_" aggregate="select"/>
+  </cell>
+  <cell name="E3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="4" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="TAX_NO_" aggregate="select"/>
+  </cell>
+  <cell name="F3" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="2" col="5" expand="down">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <dataset-content dataset-name="Tbdcd1" datasource-name="datasource" field="MEMO_" aggregate="select"/>
+  </cell>
+  <cell name="A2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="0" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[客户编码]]></content>
+  </cell>
+  <cell name="B2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="1" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[客户名称]]></content>
+  </cell>
+  <cell name="C2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="2" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[客户简称]]></content>
+  </cell>
+  <cell name="D2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="3" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[开户银行]]></content>
+  </cell>
+  <cell name="E2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="4" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[企业税号]]></content>
+  </cell>
+  <cell name="F2" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="1" col="5" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[备注]]></content>
+  </cell>
+  <cell name="A4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="0" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[合计数：]]></content>
+  </cell>
+  <cell name="B4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="1" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[]]></content>
+  </cell>
+  <cell name="C4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="2" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[]]></content>
+  </cell>
+  <cell name="D4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="3" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[]]></content>
+  </cell>
+  <cell name="E4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="4" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[]]></content>
+  </cell>
+  <cell name="F4" font-family="宋体" editable="false" font-size="10" align="center" valign="middle" wrap-compute="false" row="3" col="5" expand="none">
+    <left-border width="1" color="0,0,0" style="solid"/>
+    <right-border width="1" color="0,0,0" style="solid"/>
+    <top-border width="1" color="0,0,0" style="solid"/>
+    <bottom-border width="1" color="0,0,0" style="solid"/>
+    <content><![CDATA[]]></content>
+  </cell>
+  <row h="35" num="0"/>
+  <row h="22" num="2"/>
+  <row h="22" num="1"/>
+  <row h="22" num="3" band="footer"/>
+  <col w="80" num="0"/>
+  <col w="170" num="1"/>
+  <col w="120" num="2"/>
+  <col w="110" num="3"/>
+  <col w="110" num="4"/>
+  <col w="110" num="5"/>
+  <datasource name="datasource" username="root" password="123456" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://192.168.1.2:3306/ccwl?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8">
+    <dataset name="Tbdcd1" datasource-name="datasource">
+      <sql><![CDATA[select * from Tbdcd1]]></sql>
+    </dataset>
+  </datasource>
+</ureport>

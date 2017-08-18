@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model>
+  <DataType name="BaseTbdca1" meta="x:8;y:10">
+    <Property name="creationType">com.jghz.dc.entity.Tbdca1</Property>
+    <Property name="tags">公用代码档主档</Property>
+    <PropertyDef name="dca1Id">
+      <Property></Property>
+      <Property name="label">系统ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="sysType">
+      <Property></Property>
+      <Property name="label">系统类别</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="compTabCode">
+      <Property></Property>
+      <Property name="label">对照表代码</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="owner">
+      <Property></Property>
+      <Property name="label">拥有者</Property>
+    </PropertyDef>
+    <PropertyDef name="authori">
+      <Property></Property>
+      <Property name="label">授权群组</Property>
+    </PropertyDef>
+    <PropertyDef name="funcPower">
+      <Property></Property>
+      <Property name="label">功能管制</Property>
+    </PropertyDef>
+    <PropertyDef name="compTabExpln">
+      <Property></Property>
+      <Property name="label">对照表说明</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbdca1a" meta="x:152;y:10">
+    <Property name="creationType">com.jghz.dc.entity.Tbdca1a</Property>
+    <Property name="tags">公用代码子档</Property>
+    <PropertyDef name="dca1aId">
+      <Property></Property>
+      <Property name="label">系统ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="seqNo">
+      <Property></Property>
+      <Property name="label">序号</Property>
+    </PropertyDef>
+    <PropertyDef name="dca1Id">
+      <Property></Property>
+      <Property name="label">通用性代码主档ID</Property>
+    </PropertyDef>
+    <PropertyDef name="sysType">
+      <Property></Property>
+      <Property name="label">系统类别</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="compTabCode">
+      <Property></Property>
+      <Property name="label">对照表代码</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="itemNo">
+      <Property></Property>
+      <Property name="label">项次</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="despOne">
+      <Property></Property>
+      <Property name="label">描述内容一</Property>
+      <Property name="required">true</Property>
+    </PropertyDef>
+    <PropertyDef name="despTwo">
+      <Property></Property>
+      <Property name="label">描述内容二</Property>
+    </PropertyDef>
+    <PropertyDef name="despThree">
+      <Property></Property>
+      <Property name="label">描述内容三</Property>
+    </PropertyDef>
+    <PropertyDef name="despFour">
+      <Property></Property>
+      <Property name="label">描述内容四</Property>
+    </PropertyDef>
+    <PropertyDef name="despFive">
+      <Property></Property>
+      <Property name="label">描述内容五</Property>
+    </PropertyDef>
+    <PropertyDef name="despSix">
+      <Property></Property>
+      <Property name="label">描述内容六</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="deleteFlag">
+      <Property></Property>
+      <Property name="label">删除标记</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+    <PropertyDef name="memo">
+      <Property></Property>
+      <Property name="label">说明</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbdcc1" meta="x:294;y:10">
+    <Property name="creationType">com.jghz.dc.entity.Tbdcc1</Property>
+    <Property name="tags">产品分类</Property>
+    <PropertyDef name="dcc1Id">
+      <Property></Property>
+      <Property name="label">流水号</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="typeId">
+      <Property></Property>
+      <Property name="label">分类编号</Property>
+    </PropertyDef>
+    <PropertyDef name="typeName">
+      <Property></Property>
+      <Property name="label">分类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="memo">
+      <Property></Property>
+      <Property name="label">说明</Property>
+    </PropertyDef>
+    <PropertyDef name="fatherId">
+      <Property></Property>
+      <Property name="label">上级分类</Property>
+    </PropertyDef>
+    <PropertyDef name="fatherName">
+      <Property></Property>
+      <Property name="label">上级分类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态(0)=停用1=启用)</Property>
+    </PropertyDef>
+    <PropertyDef name="allFatherId">
+      <Property></Property>
+      <Property name="label">所有上级分类编号</Property>
+    </PropertyDef>
+    <PropertyDef name="allFatherName">
+      <Property></Property>
+      <Property name="label">所有上级分类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人员</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人员</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbdcc1a" meta="x:437;y:10">
+    <Property name="creationType">com.jghz.dc.entity.Tbdcc1a</Property>
+    <Property name="tags">产品编码</Property>
+    <PropertyDef name="dcc1aId">
+      <Property></Property>
+      <Property name="label">流水号</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="typeId">
+      <Property></Property>
+      <Property name="label">分类编号</Property>
+    </PropertyDef>
+    <PropertyDef name="typeName">
+      <Property></Property>
+      <Property name="label">分类名称</Property>
+    </PropertyDef>
+    <PropertyDef name="id">
+      <Property></Property>
+      <Property name="label">物料编号</Property>
+    </PropertyDef>
+    <PropertyDef name="name">
+      <Property></Property>
+      <Property name="label">物料全称</Property>
+    </PropertyDef>
+    <PropertyDef name="shortName">
+      <Property></Property>
+      <Property name="label">物料简称</Property>
+    </PropertyDef>
+    <PropertyDef name="printName">
+      <Property></Property>
+      <Property name="label">物料常用名</Property>
+    </PropertyDef>
+    <PropertyDef name="searchName">
+      <Property></Property>
+      <Property name="label">搜索名</Property>
+    </PropertyDef>
+    <PropertyDef name="size">
+      <Property></Property>
+      <Property name="label">规格</Property>
+    </PropertyDef>
+    <PropertyDef name="model">
+      <Property></Property>
+      <Property name="label">型号</Property>
+    </PropertyDef>
+    <PropertyDef name="figureNum">
+      <Property></Property>
+      <Property name="label">图号</Property>
+    </PropertyDef>
+    <PropertyDef name="brand">
+      <Property></Property>
+      <Property name="label">品牌</Property>
+    </PropertyDef>
+    <PropertyDef name="pieces">
+      <Property></Property>
+      <Property name="label">计量单位</Property>
+    </PropertyDef>
+    <PropertyDef name="country">
+      <Property></Property>
+      <Property name="label">产地</Property>
+    </PropertyDef>
+    <PropertyDef name="remarks">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态(0=停用1=启用)</Property>
+    </PropertyDef>
+    <PropertyDef name="isFlag">
+      <Property></Property>
+      <Property name="label">备用状态</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人员</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人员</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbdcd1" meta="x:569;y:10">
+    <Property name="creationType">com.jghz.dc.entity.Tbdcd1</Property>
+    <Property name="tags">客户编码</Property>
+    <PropertyDef name="dcd1Id">
+      <Property></Property>
+      <Property name="label">系统ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司编号</Property>
+    </PropertyDef>
+    <PropertyDef name="custNo">
+      <Property></Property>
+      <Property name="label">客户编码</Property>
+    </PropertyDef>
+    <PropertyDef name="custName">
+      <Property></Property>
+      <Property name="label">客户全称</Property>
+    </PropertyDef>
+    <PropertyDef name="custSname">
+      <Property></Property>
+      <Property name="label">客户简称</Property>
+    </PropertyDef>
+    <PropertyDef name="custAttr">
+      <Property></Property>
+      <Property name="label">客户属性</Property>
+    </PropertyDef>
+    <PropertyDef name="searchName">
+      <Property></Property>
+      <Property name="label">搜索名</Property>
+    </PropertyDef>
+    <PropertyDef name="address">
+      <Property></Property>
+      <Property name="label">客户地址</Property>
+    </PropertyDef>
+    <PropertyDef name="lawMan">
+      <Property></Property>
+      <Property name="label">法人代表</Property>
+    </PropertyDef>
+    <PropertyDef name="postNo">
+      <Property></Property>
+      <Property name="label">邮政编码</Property>
+    </PropertyDef>
+    <PropertyDef name="country">
+      <Property></Property>
+      <Property name="label">国家</Property>
+    </PropertyDef>
+    <PropertyDef name="province">
+      <Property></Property>
+      <Property name="label">省份</Property>
+    </PropertyDef>
+    <PropertyDef name="taxNo">
+      <Property></Property>
+      <Property name="label">企业税号</Property>
+    </PropertyDef>
+    <PropertyDef name="openedBank">
+      <Property></Property>
+      <Property name="label">开户银行</Property>
+    </PropertyDef>
+    <PropertyDef name="bankAcct">
+      <Property></Property>
+      <Property name="label">开户行账号</Property>
+    </PropertyDef>
+    <PropertyDef name="invCustNo">
+      <Property></Property>
+      <Property name="label">开票单位号</Property>
+    </PropertyDef>
+    <PropertyDef name="invCustName">
+      <Property></Property>
+      <Property name="label">开票单位名</Property>
+    </PropertyDef>
+    <PropertyDef name="telNum">
+      <Property></Property>
+      <Property name="label">联系电话</Property>
+    </PropertyDef>
+    <PropertyDef name="telNum2">
+      <Property></Property>
+      <Property name="label">联系电话2</Property>
+    </PropertyDef>
+    <PropertyDef name="status">
+      <Property></Property>
+      <Property name="label">状态</Property>
+    </PropertyDef>
+    <PropertyDef name="memo">
+      <Property></Property>
+      <Property name="label">备注</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人员</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人员</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="deleteFlag">
+      <Property></Property>
+      <Property name="label">删除标记</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+    <PropertyDef name="area">
+      <Property></Property>
+      <Property name="label">地区</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseTbdcb1">
+    <Property name="creationType">com.jghz.dc.entity.Tbdcb1</Property>
+    <PropertyDef name="dcb1Id">
+      <Property></Property>
+      <Property name="label">系统ID</Property>
+    </PropertyDef>
+    <PropertyDef name="compId">
+      <Property></Property>
+      <Property name="label">公司别</Property>
+    </PropertyDef>
+    <PropertyDef name="templateId">
+      <Property></Property>
+      <Property name="label">模板ID</Property>
+    </PropertyDef>
+    <PropertyDef name="template">
+      <Property></Property>
+      <Property name="label">模板内容</Property>
+    </PropertyDef>
+    <PropertyDef name="tempDesc">
+      <Property></Property>
+      <Property name="label">模板描述</Property>
+    </PropertyDef>
+    <PropertyDef name="createEmp">
+      <Property></Property>
+      <Property name="label">新增人</Property>
+    </PropertyDef>
+    <PropertyDef name="createTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">新增时间</Property>
+    </PropertyDef>
+    <PropertyDef name="updateEmp">
+      <Property></Property>
+      <Property name="label">修改人</Property>
+    </PropertyDef>
+    <PropertyDef name="updateTime">
+      <Property name="dataType">Date</Property>
+      <Property name="label">修改时间</Property>
+    </PropertyDef>
+    <PropertyDef name="deleteFlag">
+      <Property></Property>
+      <Property name="label">删除标记</Property>
+    </PropertyDef>
+    <PropertyDef name="version">
+      <Property name="dataType">int</Property>
+      <Property name="label">版本号</Property>
+    </PropertyDef>
+  </DataType>
+  <DataType name="BaseUser">
+    <Property name="creationType">com.bstek.bdf2.core.model.DefaultUser</Property>
+    <PropertyDef name="username">
+      <Property/>
+      <Property name="label">用户名</Property>
+    </PropertyDef>
+    <PropertyDef name="password">
+      <Property/>
+    </PropertyDef>
+    <PropertyDef name="salt">
+      <Property/>
+    </PropertyDef>
+    <PropertyDef name="cname">
+      <Property/>
+      <Property name="label">中文名</Property>
+    </PropertyDef>
+    <PropertyDef name="ename">
+      <Property/>
+    </PropertyDef>
+    <PropertyDef name="male">
+      <Property name="dataType">boolean</Property>
+    </PropertyDef>
+    <PropertyDef name="enabled">
+      <Property name="dataType">boolean</Property>
+    </PropertyDef>
+    <PropertyDef name="administrator">
+      <Property name="dataType">boolean</Property>
+    </PropertyDef>
+    <PropertyDef name="birthday">
+      <Property name="dataType">Date</Property>
+    </PropertyDef>
+    <PropertyDef name="mobile">
+      <Property/>
+      <Property name="label">手机</Property>
+    </PropertyDef>
+    <PropertyDef name="address">
+      <Property/>
+    </PropertyDef>
+    <PropertyDef name="email">
+      <Property/>
+      <Property name="label">邮箱</Property>
+    </PropertyDef>
+    <PropertyDef name="companyId">
+      <Property/>
+    </PropertyDef>
+    <PropertyDef name="createDate">
+      <Property name="dataType">Date</Property>
+    </PropertyDef>
+  </DataType>
+</Model>

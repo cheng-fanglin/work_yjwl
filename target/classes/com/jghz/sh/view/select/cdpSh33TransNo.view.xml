@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Dialog id="$dialogSh33">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	//if(config.carrierNo!=null){ &#xD;
+	//	var carrierNo = config.carrierNo;&#xD;
+	//}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsSh10">
+          <Property name="dataProvider">shjcCommService#querySh10</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbsh10]</Property>
+        </DataSet>
+        <DataSet id="$dsSh22">
+          <Property name="dataProvider">shjcCommService#querySh22</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbsh22]</Property>
+        </DataSet>
+        <TabControl>
+          <ControlTab>
+            <Property name="caption">挑选运单</Property>
+            <Container>
+              <Container>
+                <ToolBar>
+                  <DataPilot>
+                    <Property name="dataSet">$dsSh10</Property>
+                    <Property name="itemCodes">pages</Property>
+                  </DataPilot>
+                  <Separator/>
+                  <ToolBarButton>
+                    <ClientEvent name="onClick">with(view.get(&quot;#$dsSh10&quot;)){&#xD;
+	flushAsync();&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                    <Property name="caption">查询</Property>
+                    <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+                  </ToolBarButton>
+                  <ToolBarButton>
+                    <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgTbsh10&quot;);&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);&#xD;
+if(selEntitys.length&lt;1){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+var transNos=&quot;&quot;;&#xD;
+var i=0;&#xD;
+for(i;i&lt;selEntitys.length;i++){&#xD;
+	if(i==0){&#xD;
+		transNos=selEntitys[i].get(&quot;transNo&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		transNos=transNos+&quot;,&quot;+selEntitys[i].get(&quot;transNo&quot;);&#xD;
+	}&#xD;
+}&#xD;
+view.id(&quot;$dialogSh33&quot;).callback({transNos:transNos});&#xD;
+</ClientEvent>
+                    <Property name="caption">保存</Property>
+                  </ToolBarButton>
+                  <ToolBarLabel id="msg"/>
+                </ToolBar>
+                <DataGrid id="dgTbsh10">
+                  <Property name="dataSet">$dsSh10</Property>
+                  <Property name="selectionMode">multiRows</Property>
+                  <RowSelectorColumn id="selection"/>
+                  <DataColumn name="contNo">
+                    <Property name="property">contNo</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">transNo</Property>
+                    <Property name="name">transNo</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">custName</Property>
+                    <Property name="name">custName</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="name">receiptCompName</Property>
+                    <Property name="property">receiptCompName</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">prodType</Property>
+                    <Property name="name">prodType</Property>
+                  </DataColumn>
+                  <DataColumn name="productName">
+                    <Property name="property">productName</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="name">arUnitPrice</Property>
+                    <Property name="property">arUnitPrice</Property>
+                  </DataColumn>
+                  <DataColumn name="orderWgt">
+                    <Property name="property">orderWgt</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">ladingWgt</Property>
+                    <Property name="caption">运单重量</Property>
+                    <Property name="name">ladingWgt</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">backWgt</Property>
+                    <Property name="name">backWgt</Property>
+                  </DataColumn>
+                  <DataColumn name="startStation">
+                    <Property name="property">startStation</Property>
+                  </DataColumn>
+                  <DataColumn name="endStation">
+                    <Property name="property">endStation</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">despatchStart</Property>
+                    <Property name="name">despatchStart</Property>
+                  </DataColumn>
+                  <DataColumn name="receiptCompName">
+                    <Property name="property">receiptCompName</Property>
+                  </DataColumn>
+                  <DataColumn name="carrierName">
+                    <Property name="property">carrierName</Property>
+                  </DataColumn>
+                  <DataColumn>
+                    <Property name="property">status</Property>
+                    <Property name="name">status</Property>
+                  </DataColumn>
+                </DataGrid>
+              </Container>
+            </Container>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">挑选水单</Property>
+            <Container>
+              <DataGrid id="dgTbsh22">
+                <Property name="dataSet">$dsSh22</Property>
+                <DataColumn name="transNo">
+                  <Property name="property">transNo</Property>
+                  <Property name="readOnly">true</Property>
+                </DataColumn>
+                <DataColumn name="shipListNo">
+                  <Property name="property">shipListNo</Property>
+                </DataColumn>
+                <DataColumn name="hc">
+                  <Property name="property">hc</Property>
+                </DataColumn>
+                <DataColumn name="carrierNo">
+                  <Property name="property">carrierNo</Property>
+                </DataColumn>
+                <DataColumn name="carrierName">
+                  <Property name="property">carrierName</Property>
+                </DataColumn>
+                <DataColumn name="shipNo">
+                  <Property name="property">shipNo</Property>
+                </DataColumn>
+                <DataColumn name="phoneNo">
+                  <Property name="property">phoneNo</Property>
+                </DataColumn>
+                <DataColumn name="ysKzl">
+                  <Property name="property">ysKzl</Property>
+                </DataColumn>
+                <DataColumn name="xyKzl">
+                  <Property name="property">xyKzl</Property>
+                </DataColumn>
+                <DataColumn name="lx1">
+                  <Property name="property">lx1</Property>
+                </DataColumn>
+                <DataColumn name="lx2">
+                  <Property name="property">lx2</Property>
+                </DataColumn>
+                <DataColumn name="lx3">
+                  <Property name="property">lx3</Property>
+                </DataColumn>
+                <DataColumn name="lx4">
+                  <Property name="property">lx4</Property>
+                </DataColumn>
+                <DataColumn name="flag">
+                  <Property name="property">flag</Property>
+                </DataColumn>
+                <DataColumn name="dock">
+                  <Property name="property">dock</Property>
+                </DataColumn>
+                <DataColumn name="qsr">
+                  <Property name="property">qsr</Property>
+                </DataColumn>
+                <DataColumn name="lgr">
+                  <Property name="property">lgr</Property>
+                </DataColumn>
+                <DataColumn name="zdr">
+                  <Property name="property">zdr</Property>
+                </DataColumn>
+              </DataGrid>
+            </Container>
+          </ControlTab>
+        </TabControl>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

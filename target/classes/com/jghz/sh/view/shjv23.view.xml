@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh23">
+      <Property name="creationType">com.wisco.sh.domain.Tbsh23</Property>
+      <PropertyDef name="sh23Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcodeF">
+        <Property></Property>
+        <Property name="label">发站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linecodeF">
+        <Property></Property>
+        <Property name="label">发站专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linenameF">
+        <Property></Property>
+        <Property name="label">发站专用线名称</Property>
+      </PropertyDef>
+      <PropertyDef name="fullnameF">
+        <Property></Property>
+        <Property name="label">发站全称</Property>
+      </PropertyDef>
+      <PropertyDef name="shortnameF">
+        <Property></Property>
+        <Property name="label">发站简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcodeD">
+        <Property></Property>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linecodeD">
+        <Property></Property>
+        <Property name="label">到站专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linenameD">
+        <Property></Property>
+        <Property name="label">到站专用线名称</Property>
+      </PropertyDef>
+      <PropertyDef name="fullnameD">
+        <Property></Property>
+        <Property name="label">到站全称</Property>
+      </PropertyDef>
+      <PropertyDef name="shortnameD">
+        <Property></Property>
+        <Property name="label">到站简称</Property>
+      </PropertyDef>
+      <PropertyDef name="trainType">
+        <Property></Property>
+        <Property name="label">车种</Property>
+      </PropertyDef>
+      <PropertyDef name="trainNo">
+        <Property></Property>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="standardWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货车标重</Property>
+      </PropertyDef>
+      <PropertyDef name="closeNo">
+        <Property></Property>
+        <Property name="label">货车施封号码</Property>
+      </PropertyDef>
+      <PropertyDef name="panlinNo">
+        <Property></Property>
+        <Property name="label">货车篷布号码</Property>
+      </PropertyDef>
+      <PropertyDef name="severType">
+        <Property></Property>
+        <Property name="label">服务类别</Property>
+      </PropertyDef>
+      <PropertyDef name="supportValue">
+        <Property></Property>
+        <Property name="label">保价运输</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh23">
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtSh23]</Property>
+      <Property name="dataProvider">shjc23Service#loadSh23</Property>
+    </DataSet>
+    <UpdateAction id="uaSh23">
+      <Property name="dataResolver">shjc23Service#saveSh23</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh23</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dsSh23&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <AutoFormElement>
+            <Property name="name">pyname</Property>
+            <Property name="label">拼音简称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">stationname</Property>
+            <Property name="label">到站名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">transport</Property>
+            <Property name="label">运输方式</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="sh23">
+        <Property name="dataSet">dsSh23</Property>
+        <Property name="itemCodes">pages,+,-,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="action">uaSh23</Property>
+        <Property name="caption">保存</Property>
+      </ToolBarButton>
+      <DataGrid>
+        <Property name="dataSet">dsSh23</Property>
+        <Property name="dataType">dtSh23</Property>
+        <DataColumn name="compId">
+          <Property name="property">compId</Property>
+        </DataColumn>
+        <DataColumn name="compCode">
+          <Property name="property">compCode</Property>
+        </DataColumn>
+        <DataColumn name="stationcodeF">
+          <Property name="property">stationcodeF</Property>
+        </DataColumn>
+        <DataColumn name="linecodeF">
+          <Property name="property">linecodeF</Property>
+        </DataColumn>
+        <DataColumn name="linenameF">
+          <Property name="property">linenameF</Property>
+        </DataColumn>
+        <DataColumn name="fullnameF">
+          <Property name="property">fullnameF</Property>
+        </DataColumn>
+        <DataColumn name="shortnameF">
+          <Property name="property">shortnameF</Property>
+        </DataColumn>
+        <DataColumn name="stationcodeD">
+          <Property name="property">stationcodeD</Property>
+        </DataColumn>
+        <DataColumn name="linecodeD">
+          <Property name="property">linecodeD</Property>
+        </DataColumn>
+        <DataColumn name="linenameD">
+          <Property name="property">linenameD</Property>
+        </DataColumn>
+        <DataColumn name="fullnameD">
+          <Property name="property">fullnameD</Property>
+        </DataColumn>
+        <DataColumn name="shortnameD">
+          <Property name="property">shortnameD</Property>
+        </DataColumn>
+        <DataColumn name="trainType">
+          <Property name="property">trainType</Property>
+        </DataColumn>
+        <DataColumn name="trainNo">
+          <Property name="property">trainNo</Property>
+        </DataColumn>
+        <DataColumn name="standardWgt">
+          <Property name="property">standardWgt</Property>
+        </DataColumn>
+        <DataColumn name="closeNo">
+          <Property name="property">closeNo</Property>
+        </DataColumn>
+        <DataColumn name="panlinNo">
+          <Property name="property">panlinNo</Property>
+        </DataColumn>
+        <DataColumn name="severType">
+          <Property name="property">severType</Property>
+        </DataColumn>
+        <DataColumn name="supportValue">
+          <Property name="property">supportValue</Property>
+        </DataColumn>
+        <DataColumn name="createEmp">
+          <Property name="property">createEmp</Property>
+        </DataColumn>
+        <DataColumn name="createDate">
+          <Property name="property">createDate</Property>
+        </DataColumn>
+        <DataColumn name="updateEmp">
+          <Property name="property">updateEmp</Property>
+        </DataColumn>
+        <DataColumn name="updateDate">
+          <Property name="property">updateDate</Property>
+        </DataColumn>
+        <DataColumn name="version">
+          <Property name="property">version</Property>
+        </DataColumn>
+      </DataGrid>
+    </ToolBar>
+  </View>
+</ViewConfig>

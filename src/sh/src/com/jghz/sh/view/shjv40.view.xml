@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtWd07">
+      <Property name="creationType">com.jghz.sh.entity.Tbwd07</Property>
+      <PropertyDef name="wd07Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车船号</Property>
+      </PropertyDef>
+      <PropertyDef name="date">
+        <Property></Property>
+        <Property name="label">日期</Property>
+      </PropertyDef>
+      <PropertyDef name="addOil">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">加油费</Property>
+      </PropertyDef>
+      <PropertyDef name="upkeep">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">维修费</Property>
+      </PropertyDef>
+      <PropertyDef name="annualFee">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">年审费</Property>
+      </PropertyDef>
+      <PropertyDef name="addGass">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">加油费</Property>
+      </PropertyDef>
+      <PropertyDef name="insurance">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">保险费</Property>
+      </PropertyDef>
+      <PropertyDef name="parts">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">配件</Property>
+      </PropertyDef>
+      <PropertyDef name="fine">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">罚款</Property>
+      </PropertyDef>
+      <PropertyDef name="payFor">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">赔偿</Property>
+      </PropertyDef>
+      <PropertyDef name="roadFee">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">路桥费</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人员</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">更新人员</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">更新时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsWd07">
+      <Property name="dataType">[dtWd07]</Property>
+      <Property name="dataProvider">shjc40Service#loadwd07</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsCarNo">
+      <Property name="dataType">[BaseCarNo]</Property>
+      <Property name="dataProvider">shjc40Service#findCarNo</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaWd07">
+      <Property name="dataResolver">shjc40Service#saveTbwd07</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsWd07</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*</Property>
+      <AutoFormElement id="carNo" layoutConstraint="colSpan:2">
+        <Property name="label">车号</Property>
+        <Property name="property">carNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement id="date" layoutConstraint="colSpan:2">
+        <Property name="label">日期</Property>
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button layoutConstraint="colSpan:1;align:right">
+        <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsWd07&quot;).set(&quot;parameter&quot;,entity);&#xD;
+view.get(&quot;#dsWd07&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button layoutConstraint="colSpan:1">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot id="sh31">
+        <Property name="itemCodes">pages,+,-</Property>
+        <Property name="dataSet">dsWd07</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="action">uaWd07</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">确认</Property>
+      </ToolBarButton>
+      <ToolBarLabel id="msg"/>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dsWd07</Property>
+      <Property name="dataType">dtWd07</Property>
+      <DataColumn name="carNo">
+        <Property name="property">carNo</Property>
+        <Property name="trigger">ddCarNo</Property>
+      </DataColumn>
+      <DataColumn name="date">
+        <Property name="property">date</Property>
+        <Property name="trigger">dateDropDown1</Property>
+      </DataColumn>
+      <DataColumn name="addOil">
+        <Property name="property">addOil</Property>
+      </DataColumn>
+      <DataColumn name="upkeep">
+        <Property name="property">upkeep</Property>
+      </DataColumn>
+      <DataColumn name="annualFee">
+        <Property name="property">annualFee</Property>
+      </DataColumn>
+      <DataColumn name="addGass">
+        <Property name="property">addGass</Property>
+      </DataColumn>
+      <DataColumn name="insurance">
+        <Property name="property">insurance</Property>
+      </DataColumn>
+      <DataColumn name="parts">
+        <Property name="property">parts</Property>
+      </DataColumn>
+      <DataColumn name="fine">
+        <Property name="property">fine</Property>
+      </DataColumn>
+      <DataColumn name="payFor">
+        <Property name="property">payFor</Property>
+      </DataColumn>
+      <DataColumn name="roadFee">
+        <Property name="property">roadFee</Property>
+      </DataColumn>
+    </DataGrid>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+    <DataSetDropDown id="ddCarNo" dynaFilter="true">
+      <Property name="dataSet">dsCarNo</Property>
+      <Property name="autoOpen">true</Property>
+      <Property name="displayProperty">carNo</Property>
+      <Property name="property">carNo</Property>
+    </DataSetDropDown>
+  </View>
+</ViewConfig>

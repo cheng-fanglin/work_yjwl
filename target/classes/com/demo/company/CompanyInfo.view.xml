@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Company">
+      <Property name="creationType">com.bstek.bdf2.core.model.DefaultCompany</Property>
+      <PropertyDef name="id">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="desc">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsCompany">
+      <Property name="dataType">[Company]</Property>
+      <Property name="dataProvider">companyService#getAll</Property>
+    </DataSet>
+    <ToolBar>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var importExcelAction=view.get(&quot;#importExcelActionDemo&quot;);&#xD;
+importExcelAction.set(&quot;excelModelId&quot;,&quot;0001&quot;);&#xD;
+importExcelAction.execute(function(arg){&#xD;
+    dorado.MessageBox.alert(&quot;成功解析导入[&quot; + arg + &quot;]数据！&quot;);&#xD;
+});&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">导入公司信息</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">导出公司信息</Property>
+        <Property name="action">export2ReportAction1</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">导出公司表单信息</Property>
+        <Property name="action">export2ReportAction2</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">view.get(&quot;#dataGridProfileAction1&quot;).execute();&#xD;
+</ClientEvent>
+        <Property name="caption">保存表格配置</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">view.get(&quot;#dataGridProfileAction1&quot;).resetConfig();</ClientEvent>
+        <Property name="caption">重置表格配置</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <AutoForm id="afCompany">
+      <Property name="dataSet">dsCompany</Property>
+      <AutoFormElement>
+        <Property name="name">id</Property>
+        <Property name="property">id</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">name</Property>
+        <Property name="property">name</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">desc</Property>
+        <Property name="property">desc</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
+    <DataGrid id="dgCompany">
+      <Property name="dataSet">dsCompany</Property>
+      <DataColumn name="id">
+        <Property name="property">id</Property>
+      </DataColumn>
+      <DataColumn name="name">
+        <Property name="property">name</Property>
+      </DataColumn>
+      <DataColumn name="desc">
+        <Property name="property">desc</Property>
+      </DataColumn>
+    </DataGrid>
+    <ImportExcelAction id="importExcelActionDemo">
+      <ClientEvent name="onSuccess">view.get(&quot;#dsCompany&quot;).flushAsync();</ClientEvent>
+      <Property name="startRow">2</Property>
+    </ImportExcelAction>
+    <Export2ReportAction id="export2ReportAction1">
+      <Property name="template">dgCompany</Property>
+      <Property name="fileName">公司信息表</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="titleName">公司信息</Property>
+    </Export2ReportAction>
+    <Export2ReportAction id="export2ReportAction2">
+      <Property name="template">afCompany</Property>
+      <Property name="fileName">公司表单信息</Property>
+      <Property name="titleName">公司表单信息</Property>
+    </Export2ReportAction>
+    <DataGridProfileAction id="dataGridProfileAction1">
+      <Property name="dataGrid">dgCompany</Property>
+      <Property name="executingMessage">正在保存表格配置...</Property>
+      <Property name="successMessage">表格配置保存成功！</Property>
+    </DataGridProfileAction>
+  </View>
+</ViewConfig>

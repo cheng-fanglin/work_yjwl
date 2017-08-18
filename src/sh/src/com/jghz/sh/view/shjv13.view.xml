@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh10">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh10</Property>
+      <PropertyDef name="sh10Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">协议号</Property>
+      </PropertyDef>
+      <PropertyDef name="carType">
+        <Property></Property>
+        <Property name="label">车型要求</Property>
+      </PropertyDef>
+      <PropertyDef name="carLength">
+        <Property></Property>
+        <Property name="label">车长要求</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">货物编号</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">货物名称</Property>
+      </PropertyDef>
+      <PropertyDef name="steel">
+        <Property></Property>
+        <Property name="label">钢质</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNum">
+        <Property></Property>
+        <Property name="label">件数</Property>
+      </PropertyDef>
+      <PropertyDef name="orderWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">协议重量</Property>
+      </PropertyDef>
+      <PropertyDef name="ladingWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">提单重量</Property>
+      </PropertyDef>
+      <PropertyDef name="billCompNo">
+        <Property></Property>
+        <Property name="label">开票单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="billCompName">
+        <Property></Property>
+        <Property name="label">开票单位</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property></Property>
+        <Property name="label">规格</Property>
+      </PropertyDef>
+      <PropertyDef name="title">
+        <Property></Property>
+        <Property name="label">标题</Property>
+      </PropertyDef>
+      <PropertyDef name="memo">
+        <Property></Property>
+        <Property name="label">特别提示</Property>
+      </PropertyDef>
+      <PropertyDef name="distance">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">运距</Property>
+      </PropertyDef>
+      <PropertyDef name="startStationCode">
+        <Property></Property>
+        <Property name="label">起点编码</Property>
+      </PropertyDef>
+      <PropertyDef name="startStation">
+        <Property></Property>
+        <Property name="label">起点</Property>
+      </PropertyDef>
+      <PropertyDef name="startLineCode">
+        <Property></Property>
+        <Property name="label">起点专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="startLine">
+        <Property></Property>
+        <Property name="label">起点专用线</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchAddress">
+        <Property></Property>
+        <Property name="label">具体发货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchNo">
+        <Property></Property>
+        <Property name="label">发货人编号</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchName">
+        <Property></Property>
+        <Property name="label">发货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchMobile">
+        <Property></Property>
+        <Property name="label">发货人电话</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchStart">
+        <Property></Property>
+        <Property name="label">装货时间起</Property>
+      </PropertyDef>
+      <PropertyDef name="despatchEnd">
+        <Property></Property>
+        <Property name="label">装货时间止</Property>
+      </PropertyDef>
+      <PropertyDef name="endStationCode">
+        <Property></Property>
+        <Property name="label">终点编码</Property>
+      </PropertyDef>
+      <PropertyDef name="endStation">
+        <Property></Property>
+        <Property name="label">终点</Property>
+      </PropertyDef>
+      <PropertyDef name="endLineCode">
+        <Property></Property>
+        <Property name="label">终点专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="endLine">
+        <Property></Property>
+        <Property name="label">终点专用线</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveryAddress">
+        <Property></Property>
+        <Property name="label">具体收货地址</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货人姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptPhone">
+        <Property></Property>
+        <Property name="label">收货人电话</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptStart">
+        <Property></Property>
+        <Property name="label">收货开始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptEnd">
+        <Property></Property>
+        <Property name="label">收货结束时间</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="payEmpNo">
+        <Property></Property>
+        <Property name="label">付款单位</Property>
+      </PropertyDef>
+      <PropertyDef name="payEmpName">
+        <Property></Property>
+        <Property name="label">付款单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="quote">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发布价格</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值</Property>
+      </PropertyDef>
+      <PropertyDef name="realQuote">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">实际发布价格</Property>
+      </PropertyDef>
+      <PropertyDef name="unitFreight">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发布单价</Property>
+      </PropertyDef>
+      <PropertyDef name="publishTime">
+        <Property></Property>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+      <PropertyDef name="breachAddMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">违约追加运费</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveredWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已发货量</Property>
+      </PropertyDef>
+      <PropertyDef name="backWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已回单量</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="transContNo">
+        <Property/>
+        <Property name="label">承运协议号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property/>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property/>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerCompNo">
+        <Property/>
+        <Property name="label">货主单位编码</Property>
+      </PropertyDef>
+      <PropertyDef name="ownerCompName">
+        <Property/>
+        <Property name="label">货主单位</Property>
+      </PropertyDef>
+      <PropertyDef name="mutiProd">
+        <Property/>
+        <Property name="label">多产品标记</Property>
+      </PropertyDef>
+      <PropertyDef name="tax">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">税率</Property>
+      </PropertyDef>
+      <PropertyDef name="transType">
+        <Property/>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="payCompNo">
+        <Property/>
+        <Property name="label">付款单位</Property>
+      </PropertyDef>
+      <PropertyDef name="payCompName">
+        <Property/>
+        <Property name="label">付款单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="idDestineOrder">
+        <Property/>
+        <Property name="label">是否指定承运方</Property>
+      </PropertyDef>
+      <PropertyDef name="publishedWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已发布运单量</Property>
+      </PropertyDef>
+      <PropertyDef name="ecWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发布接单量</Property>
+      </PropertyDef>
+      <PropertyDef name="payType">
+        <Property/>
+        <Property name="label">计价方式（1包车价2重量）</Property>
+      </PropertyDef>
+      <PropertyDef name="unitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">单价</Property>
+      </PropertyDef>
+      <PropertyDef name="settleType">
+        <Property/>
+        <Property name="label">结算方式(1日结2月结3自定义日期)</Property>
+      </PropertyDef>
+      <PropertyDef name="settleTimeLimit">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结算宽限日</Property>
+      </PropertyDef>
+      <PropertyDef name="prePayments">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">预付款</Property>
+      </PropertyDef>
+      <PropertyDef name="prePayType">
+        <Property/>
+        <Property name="label">预付款类型</Property>
+      </PropertyDef>
+      <PropertyDef name="apPayType">
+        <Property/>
+        <Property name="label">承运计价方式</Property>
+      </PropertyDef>
+      <PropertyDef name="apPrePayments">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运预付款</Property>
+      </PropertyDef>
+      <PropertyDef name="cfDealType">
+        <Property/>
+        <Property name="label">是否带票</Property>
+      </PropertyDef>
+      <PropertyDef name="packDemand">
+        <Property/>
+        <Property name="label">包装要求</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoStyle">
+        <Property/>
+        <Property name="label">货物类型</Property>
+      </PropertyDef>
+      <PropertyDef name="releaseTime">
+        <Property/>
+        <Property name="label">发布时间</Property>
+      </PropertyDef>
+      <PropertyDef name="handTime">
+        <Property/>
+        <Property name="label">挂价时间</Property>
+      </PropertyDef>
+      <PropertyDef name="periodValidity">
+        <Property name="dataType">Date</Property>
+        <Property name="label">有效期</Property>
+      </PropertyDef>
+      <PropertyDef name="ecStatus">
+        <Property/>
+        <Property name="label">EC运单状态</Property>
+      </PropertyDef>
+      <PropertyDef name="apSettleType">
+        <Property/>
+        <Property name="label">承运结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="apUnitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">承运单价</Property>
+      </PropertyDef>
+      <PropertyDef name="arPayType">
+        <Property/>
+        <Property name="label">货主计价方式</Property>
+      </PropertyDef>
+      <PropertyDef name="arSettleType">
+        <Property/>
+        <Property name="label">货主结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="arUnitPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货主单价</Property>
+      </PropertyDef>
+      <PropertyDef name="loadingDock">
+        <Property/>
+        <Property name="label">装货码头</Property>
+      </PropertyDef>
+      <PropertyDef name="settleTimeLimit2">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">SETTLE_TIME_LIMIT_2</Property>
+      </PropertyDef>
+      <PropertyDef name="transferDock">
+        <Property/>
+        <Property name="label">中转码头</Property>
+      </PropertyDef>
+      <PropertyDef name="unloadingDock">
+        <Property/>
+        <Property name="label">卸货码头</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh13a">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh13a</Property>
+      <PropertyDef name="sh13aId">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="sh13Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="transItem">
+        <Property></Property>
+        <Property name="label">运单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="money">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">挂价</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">司机手机</Property>
+      </PropertyDef>
+      <PropertyDef name="userName">
+        <Property></Property>
+        <Property name="label">司机姓名</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="driverName">
+        <Property></Property>
+        <Property name="label">承运人名称</Property>
+      </PropertyDef>
+      <PropertyDef name="bidPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">竞标价格</Property>
+      </PropertyDef>
+      <PropertyDef name="bidTime">
+        <Property></Property>
+        <Property name="label">竞标时间</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadSh13aStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="deliverCarNo">
+        <Property></Property>
+        <Property name="label">发货车号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh10Condition"/>
+    <DataType name="dtStartStation">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh01</Property>
+      <PropertyDef name="stationcode"/>
+      <PropertyDef name="stationname"/>
+    </DataType>
+    <DataType name="dtEndStation">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh01</Property>
+      <PropertyDef name="stationcode"/>
+      <PropertyDef name="stationname"/>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh13a">
+      <Property name="dataType">[dtSh13a]</Property>
+      <Property name="dataProvider">shjc13aService#loadSh13a</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsSh10Condition">
+      <ClientEvent name="onReady">var data = view.get(&quot;#dsSh10Condition.data&quot;);&#xD;
+data.insert();&#xD;
+</ClientEvent>
+      <Property name="dataType">[dtSh10Condition]</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsSh10Ec">
+      <ClientEvent name="onReady">with(view.get(&quot;#dsSh10Ec&quot;)){&#xD;
+	set(&quot;parameter&quot;, {status:&quot;3&quot;});&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+      <Property name="dataProvider">shjc13Service#loadSh10Ec</Property>
+      <Property name="dataType">[dtSh10]</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsStartStation">
+      <Property name="dataType">[dtStartStation]</Property>
+      <Property name="dataProvider">shjc10Service#queryStation</Property>
+      <Property name="pageSize">10</Property>
+    </DataSet>
+    <DataSet id="dsEndStation">
+      <Property name="dataType">[dtEndStation]</Property>
+      <Property name="dataProvider">shjc10Service#queryStation</Property>
+      <Property name="pageSize">10</Property>
+    </DataSet>
+    <UpdateAction id="uaSh10">
+      <Property name="dataResolver">shjc10Service#saveSh10</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh10Ec</Property>
+        <Property name="dataPath">!DIRTY_TREE</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh13a">
+      <Property name="dataResolver">shjc13aService#saveSh13a</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh13a</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh13Publish">
+      <Property name="dataResolver">shjc13Service#executePublish</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh13</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh13aPublish">
+      <Property name="dataResolver">shjc13aService#executePublish</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh13a</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#dsSh13Condition&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsSh13&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <AutoFormElement>
+            <Property name="name">despatchName</Property>
+            <Property name="property">despatchName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">despatchAddress</Property>
+            <Property name="property">despatchAddress</Property>
+            <Property name="label">发货地址</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">startStation</Property>
+            <Property name="property">startStation</Property>
+            <Property name="trigger">ddpStartStation</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">endStation</Property>
+            <Property name="property">endStation</Property>
+            <Property name="trigger">ddpStartStation</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">status</Property>
+            <Property name="property">status</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <SplitPanel>
+      <Property name="direction">bottom</Property>
+      <Property name="position">200</Property>
+      <MainControl>
+        <Container>
+          <ToolBar>
+            <DataPilot id="sh10Ec">
+              <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+   switch(code){&#xD;
+     case &quot;-&quot;:&#xD;
+     //得到主表的数据集对象&#xD;
+     var entitySh13aList = view.get(&quot;#dsSh13a.data&quot;);&#xD;
+	 var i=0;&#xD;
+	 entitySh13aList.each(function(entity){&#xD;
+		var statusa=entity.get(&quot;status&quot;);&#xD;
+		var phoneNo=entity.get(&quot;phoneNo&quot;);&#xD;
+	 	if(statusa==&quot;1&quot;){&#xD;
+	 		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：司机&quot;+phoneNo+&quot;已挂价，不能删除 &quot;);&#xD;
+			return false;&#xD;
+	 	}&#xD;
+	});&#xD;
+   }</ClientEvent>
+              <Property name="itemCodes">pages,+,-,x</Property>
+              <Property name="dataSet">dsSh10Ec</Property>
+            </DataPilot>
+            <Separator/>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">uaSh13</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var sh13Entity = view.get(&quot;#dsSh13&quot;).getData(&quot;#&quot;);&#xD;
+var status = sh13Entity.get(&quot;status&quot;);&#xD;
+if(status ==&quot;1&quot;){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 勿反复发布&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+sh13Entity.set(&quot;status&quot;,&quot;1&quot;);&#xD;
+var uaSh13Publish = view.get(&quot;#uaSh13Publish&quot;); &#xD;
+uaSh13Publish.execute(function(returnValue){&#xD;
+    var flag = returnValue[&quot;flag&quot;];&#xD;
+    var msg = returnValue[&quot;msg&quot;];&#xD;
+	if(flag){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}&#xD;
+});</ClientEvent>
+              <Property name="caption">发布</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var sh13Entity = view.get(&quot;#dsSh13&quot;).getData(&quot;#&quot;);&#xD;
+if(status ==&quot;0&quot;){&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 勿反复取消&quot;);&#xD;
+	return false;&#xD;
+}&#xD;
+ var entitySh13aList = view.get(&quot;#dsSh13a.data&quot;);&#xD;
+ var i=0;&#xD;
+ entitySh13aList.each(function(entity){&#xD;
+	var statusa=entity.get(&quot;status&quot;);&#xD;
+	var phoneNo=entity.get(&quot;phoneNo&quot;);&#xD;
+ 	if(statusa==&quot;1&quot;){&#xD;
+ 		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：司机&quot;+phoneNo+&quot;已挂价，不能取消 &quot;);&#xD;
+		return false;&#xD;
+ 	}&#xD;
+});&#xD;
+sh13Entity.set(&quot;status&quot;,&quot;0&quot;);&#xD;
+var uaSh13Publish = view.get(&quot;#uaSh13Publish&quot;); &#xD;
+uaSh13Publish.execute(function(returnValue){&#xD;
+    var flag = returnValue[&quot;flag&quot;];&#xD;
+    var msg = returnValue[&quot;msg&quot;];&#xD;
+	if(flag){&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}&#xD;
+});</ClientEvent>
+              <Property name="caption">取消发布</Property>
+            </ToolBarButton>
+            <ToolBarLabel id="msg"/>
+          </ToolBar>
+          <DataGrid id="dgSh10Ec">
+            <ClientEvent name="onDataRowDoubleClick">&#xD;
+var dsSh13 = view.get(&quot;#dsSh13&quot;).getData(&quot;#&quot;);&#xD;
+var transNo=dsSh13.get(&quot;transNo&quot;);&#xD;
+view.get(&quot;#dsSh13a&quot;).set(&quot;parameter&quot;,{transNo: transNo}).flushAsync();&#xD;
+</ClientEvent>
+            <Property name="dataSet">dsSh10Ec</Property>
+            <Property name="dataType">dtSh10</Property>
+            <Property name="stretchColumnsMode">off</Property>
+            <DataColumn name="transNo">
+              <Property name="property">transNo</Property>
+              <Property name="trigger">cdpTransNo</Property>
+            </DataColumn>
+            <DataColumn name="carType">
+              <Property name="property">carType</Property>
+            </DataColumn>
+            <DataColumn name="carLength">
+              <Property name="property">carLength</Property>
+            </DataColumn>
+            <DataColumn name="prodTypeName">
+              <Property name="property">prodTypeName</Property>
+            </DataColumn>
+            <DataColumn name="productName">
+              <Property name="property">productName</Property>
+            </DataColumn>
+            <DataColumn name="productDetail">
+              <Property name="property">productDetail</Property>
+            </DataColumn>
+            <DataColumn name="quote">
+              <Property name="property">quote</Property>
+            </DataColumn>
+            <DataColumn name="size">
+              <Property name="property">size</Property>
+            </DataColumn>
+            <DataColumn name="title">
+              <Property name="property">title</Property>
+            </DataColumn>
+            <DataColumn name="memo">
+              <Property name="property">memo</Property>
+            </DataColumn>
+            <DataColumn name="packDemand">
+              <Property name="property">packDemand</Property>
+            </DataColumn>
+            <DataColumn name="cargoStyle">
+              <Property name="property">cargoStyle</Property>
+            </DataColumn>
+            <DataColumn name="despatchAddress">
+              <Property name="property">despatchAddress</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="despatchName">
+              <Property name="property">despatchName</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="despatchMobile">
+              <Property name="property">despatchMobile</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="deliveryAddress">
+              <Property name="property">deliveryAddress</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="receiptCompName">
+              <Property name="property">receiptCompName</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="receiptPhone">
+              <Property name="property">receiptPhone</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </MainControl>
+      <SideControl>
+        <Container>
+          <ToolBar>
+            <DataPilot id="sh13a">
+              <Property name="itemCodes">pages</Property>
+              <Property name="dataSet">dsSh13a</Property>
+            </DataPilot>
+            <Separator/>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var sh13aEntity = view.get(&quot;#dsSh13a&quot;).getData(&quot;#&quot;);&#xD;
+sh13aEntity.set(&quot;status&quot;,&quot;1&quot;);&#xD;
+var uaSh13aPublish = view.get(&quot;#uaSh13aPublish&quot;); &#xD;
+uaSh13aPublish.execute(function(returnValue){&#xD;
+    var flag = returnValue[&quot;flag&quot;];&#xD;
+    var msg = returnValue[&quot;msg&quot;];&#xD;
+	if(flag){&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}&#xD;
+});</ClientEvent>
+              <Property name="caption">选定挂价</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var sh13aEntity = view.get(&quot;#dsSh13a&quot;).getData(&quot;#&quot;);&#xD;
+sh13aEntity.set(&quot;status&quot;,&quot;0&quot;);&#xD;
+var uaSh13aPublish = view.get(&quot;#uaSh13aPublish&quot;); &#xD;
+uaSh13aPublish.execute(function(returnValue){&#xD;
+    var flag = returnValue[&quot;flag&quot;];&#xD;
+    var msg = returnValue[&quot;msg&quot;];&#xD;
+	if(flag){&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msga&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+msg);&#xD;
+	}&#xD;
+});</ClientEvent>
+              <Property name="caption">取消挂价</Property>
+            </ToolBarButton>
+            <ToolBarLabel id="msga"/>
+          </ToolBar>
+          <DataGrid id="dgSh13a">
+            <Property name="dataSet">dsSh13a</Property>
+            <Property name="dataType">dtSh13a</Property>
+            <Property name="readOnly">true</Property>
+            <DataColumn name="money">
+              <Property name="property">money</Property>
+            </DataColumn>
+            <DataColumn name="phoneNo">
+              <Property name="property">phoneNo</Property>
+            </DataColumn>
+            <DataColumn name="userName">
+              <Property name="property">userName</Property>
+            </DataColumn>
+            <DataColumn name="carrierNo">
+              <Property name="property">carrierNo</Property>
+            </DataColumn>
+            <DataColumn name="carrierName">
+              <Property name="property">carrierName</Property>
+            </DataColumn>
+            <DataColumn name="driverName">
+              <Property name="property">driverName</Property>
+            </DataColumn>
+            <DataColumn name="bidPrice">
+              <Property name="property">bidPrice</Property>
+            </DataColumn>
+            <DataColumn name="bidTime">
+              <Property name="property">bidTime</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </SideControl>
+    </SplitPanel>
+    <CustomDropDown id="cdpTransNo">
+      <Container>
+        <Property name="width">800</Property>
+        <Property name="height">400</Property>
+        <FieldSet>
+          <Property name="caption">查询</Property>
+          <Buttons>
+            <Button>
+              <ClientEvent name="onClick">var data = view.get(&quot;#fcSh10.entity&quot;);&#xD;
+		with(view.get(&quot;#dsSh10&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+            </Button>
+            <Button>
+              <ClientEvent name="onClick">view.get(&quot;#fcSh10&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+              <Property name="caption">重置</Property>
+            </Button>
+          </Buttons>
+          <Children>
+            <AutoForm id="fcSh10">
+              <Property name="cols">*,*,*</Property>
+              <Property name="createPrivateDataSet">true</Property>
+              <Property name="dataType">dtSh10</Property>
+            </AutoForm>
+          </Children>
+        </FieldSet>
+        <ToolBar>
+          <DataPilot id="sh10">
+            <Property name="itemCodes">pages </Property>
+            <Property name="dataSet">dsSh10</Property>
+          </DataPilot>
+        </ToolBar>
+        <DataGrid id="dgSh10">
+          <ClientEvent name="onDataRowDoubleClick">var entity = view.get(&quot;#dsSh10&quot;).getData(&quot;#&quot;);&#xD;
+var dsSh13=view.get(&quot;#dsSh13&quot;).getData(&quot;#&quot;);&#xD;
+var carType = entity.get(&quot;carType&quot;);&#xD;
+var prodTypeName = entity.get(&quot;prodTypeName&quot;);&#xD;
+var carLength = entity.get(&quot;carLength&quot;);&#xD;
+var productName = entity.get(&quot;productName&quot;);&#xD;
+var productDetail = entity.get(&quot;productDetail&quot;);  &#xD;
+var despatchAddress = entity.get(&quot;despatchAddress&quot;);&#xD;
+var despatchName = entity.get(&quot;despatchName&quot;);  &#xD;
+var despatchMobile = entity.get(&quot;despatchMobile&quot;);  &#xD;
+var deliveryAddress = entity.get(&quot;deliveryAddress&quot;);  &#xD;
+var receiptCompName = entity.get(&quot;receiptCompName&quot;);  &#xD;
+var receiptPhone = entity.get(&quot;receiptPhone&quot;);  &#xD;
+dsSh13.set(&quot;carType&quot;,carType);&#xD;
+dsSh13.set(&quot;prodTypeName&quot;,prodTypeName);&#xD;
+dsSh13.set(&quot;carLength&quot;,carLength);&#xD;
+dsSh13.set(&quot;productName&quot;,productName);&#xD;
+alert(despatchAddress);&#xD;
+dsSh13.set(&quot;productDetail&quot;,productDetail);  &#xD;
+dsSh13.set(&quot;despatchAddress&quot;,despatchAddress);  &#xD;
+dsSh13.set(&quot;despatchName&quot;,despatchName);  &#xD;
+dsSh13.set(&quot;despatchMobile&quot;,despatchMobile);  &#xD;
+dsSh13.set(&quot;deliveryAddress&quot;,deliveryAddress);  &#xD;
+dsSh13.set(&quot;receiptCompName&quot;,receiptCompName);  &#xD;
+dsSh13.set(&quot;receiptPhone&quot;,receiptPhone);  &#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">dsSh10</Property>
+          <Property name="dataType">dtSh10</Property>
+          <Property name="readOnly">true</Property>
+          <DataColumn name="contNo">
+            <Property name="property">contNo</Property>
+          </DataColumn>
+          <DataColumn name="prodTypeName">
+            <Property name="property">prodTypeName</Property>
+          </DataColumn>
+          <DataColumn name="productName">
+            <Property name="property">productName</Property>
+          </DataColumn>
+          <DataColumn name="productDetail">
+            <Property name="property">productDetail</Property>
+          </DataColumn>
+          <DataColumn name="orderNum">
+            <Property name="property">orderNum</Property>
+          </DataColumn>
+          <DataColumn name="orderWgt">
+            <Property name="property">orderWgt</Property>
+          </DataColumn>
+          <DataColumn name="ladingWgt">
+            <Property name="property">ladingWgt</Property>
+          </DataColumn>
+          <DataColumn name="startStation">
+            <Property name="property">startStation</Property>
+          </DataColumn>
+          <DataColumn name="startLine">
+            <Property name="property">startLine</Property>
+          </DataColumn>
+          <DataColumn name="endStation">
+            <Property name="property">endStation</Property>
+          </DataColumn>
+          <DataColumn name="endLine">
+            <Property name="property">endLine</Property>
+          </DataColumn>
+          <DataColumn name="realQuote">
+            <Property name="property">realQuote</Property>
+          </DataColumn>
+        </DataGrid>
+      </Container>
+    </CustomDropDown>
+    <Dialog id="dlSh13">
+      <Property name="width">500</Property>
+      <Property name="height">500</Property>
+      <Property name="contentOverflowY">scroll</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm>
+          <AutoFormElement>
+            <Property name="name">carType</Property>
+            <Property name="property">carType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carLength</Property>
+            <Property name="property">carLength</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">publishWgt</Property>
+            <Property name="property">publishWgt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">quote</Property>
+            <Property name="property">quote</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">size</Property>
+            <Property name="property">size</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">title</Property>
+            <Property name="property">title</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">memo</Property>
+            <Property name="property">memo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">packDemand</Property>
+            <Property name="property">packDemand</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">cargoStyle</Property>
+            <Property name="property">cargoStyle</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiptTime</Property>
+            <Property name="property">receiptTime</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <DataSetDropDown id="ddpStartStation">
+      <Property name="dataSet">dsStartStation</Property>
+      <Property name="assignmentMap">startStationCode=stationcode,startStation=stationname</Property>
+      <Property name="displayProperty">stationname</Property>
+      <Property name="dynaFilter">true</Property>
+      <Property name="property">stationcode</Property>
+    </DataSetDropDown>
+    <DataSetDropDown id="ddpEndStation">
+      <Property name="dataSet">dsEndStation</Property>
+      <Property name="assignmentMap">endStationCode=stationcode,endStation=stationname</Property>
+      <Property name="displayProperty">stationname</Property>
+      <Property name="dynaFilter">true</Property>
+      <Property name="property">stationcode</Property>
+    </DataSetDropDown>
+  </View>
+</ViewConfig>

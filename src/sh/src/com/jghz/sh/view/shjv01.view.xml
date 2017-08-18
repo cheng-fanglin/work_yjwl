@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtSh01">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh01</Property>
+      <PropertyDef name="sh01Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property></Property>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="pyname">
+        <Property></Property>
+        <Property name="label">拼音简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationname">
+        <Property></Property>
+        <Property name="label">到站名称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property></Property>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property></Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh01b">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh01b</Property>
+      <PropertyDef name="sh01bId">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property></Property>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linecode">
+        <Property></Property>
+        <Property name="label">专用线编码</Property>
+      </PropertyDef>
+      <PropertyDef name="linename">
+        <Property></Property>
+        <Property name="label">专用线名称</Property>
+      </PropertyDef>
+      <PropertyDef name="fullname">
+        <Property></Property>
+        <Property name="label">全称</Property>
+      </PropertyDef>
+      <PropertyDef name="shortname">
+        <Property></Property>
+        <Property name="label">简称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="warehouse">
+        <Property></Property>
+        <Property name="label">仓库</Property>
+      </PropertyDef>
+      <PropertyDef name="line">
+        <Property></Property>
+        <Property name="label">线路</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtSh01Condition">
+      <Property name="creationType">com.jghz.sh.entity.Tbsh01</Property>
+      <PropertyDef name="sh01Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="compCode">
+        <Property></Property>
+        <Property name="label">分公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="stationcode">
+        <Property></Property>
+        <Property name="label">到站编码</Property>
+      </PropertyDef>
+      <PropertyDef name="pyname">
+        <Property></Property>
+        <Property name="label">拼音简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationname">
+        <Property></Property>
+        <Property name="label">到站名称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property></Property>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property></Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsSh01">
+      <Property name="dataType">[dtSh01]</Property>
+      <Property name="dataProvider">shjc01Service#loadSh01</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="parameter"/>
+    </DataSet>
+    <DataSet id="dsSh01b">
+      <Property name="dataType">[dtSh01b]</Property>
+      <Property name="dataProvider">shjc01Service#loadSh01b</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <UpdateAction id="uaSh01">
+      <Property name="dataResolver">shjc01Service#saveSh01</Property>
+      <Property name="executingMessage">正在保存……</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh01</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <UpdateAction id="uaSh01b">
+      <Property name="dataResolver">shjc01Service#saveSh01b</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsSh01b</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <ListDropDown id="dpStatus">
+      <Property>0,1,2</Property>
+      <Property name="items">
+        <Collection>
+          <Entity/>
+          <Entity>
+            <Property name="key">0</Property>
+            <Property name="label">新增</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">1</Property>
+            <Property name="label">审核</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="property">key</Property>
+      <Property name="displayProperty">label</Property>
+    </ListDropDown>
+    <ListDropDown id="dpTransport">
+      <Property name="displayProperty">label</Property>
+      <Property name="items">
+        <Collection>
+          <Entity/>
+          <Entity>
+            <Property name="key">0</Property>
+            <Property name="label">汽运</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">1</Property>
+            <Property name="label">铁运</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">2</Property>
+            <Property name="label">船运</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="property">key</Property>
+    </ListDropDown>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+view.get(&quot;#dsSh01&quot;).set(&quot;parameter&quot;,data);&#xD;
+view.get(&quot;#dsSh01&quot;).flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*</Property>
+          <Property name="createPrivateDataSet">false</Property>
+          <AutoFormElement>
+            <Property name="name">pyname</Property>
+            <Property name="label">拼音简称</Property>
+            <Property name="property">pyname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">stationname</Property>
+            <Property name="label">到站名称</Property>
+            <Property name="property">stationname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">transport</Property>
+            <Property name="label">运输方式</Property>
+            <Property name="property">transport</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <SplitPanel>
+      <Property name="direction">top</Property>
+      <Property name="position">200</Property>
+      <MainControl>
+        <Container>
+          <ToolBar>
+            <DataPilot id="sh01b">
+              <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+   &#xD;
+   switch(code){&#xD;
+     case &quot;+&quot;:{&#xD;
+	 view.get(&quot;#dlSh01b&quot;).show(); &#xD;
+	&#xD;
+	 view.set((&quot;#dgSh01b.selection&quot;),view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
+     //得到主表的数据集对象&#xD;
+     var sh01Entity = this.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
+	 &#xD;
+     //根据主表的数据集得到其中的那个reference对应的数据集&#xD;
+     var dsTbsh01b = this.get(&quot;#dsSh01b&quot;);&#xD;
+     &#xD;
+     //根据得到的数据集向其中插入一条对象，注意的是：这里的deptId不是数据库中的字段，而是实体类的属性&#xD;
+     dsTbsh01b.insert({sh01bId:sh01Entity.get(&quot;sh01Id&quot;),compId:sh01Entity.get(&quot;compId&quot;),compCode:sh01Entity.get(&quot;compCode&quot;)&#xD;
+	 ,stationcode:sh01Entity.get(&quot;stationcode&quot;),transport:sh01Entity.get(&quot;transport&quot;)});&#xD;
+     view.set((&quot;#dgSh01b.selection&quot;),view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
+     //防止系统自动的添加一行&#xD;
+     arg.processDefault = false;&#xD;
+     break;&#xD;
+	 }&#xD;
+   	 case &quot;-&quot; :{&#xD;
+	 	var dataGrid = view.get(&quot;#dgSh01b&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        var action = view.get(&quot;#uaSh01b&quot;)&#xD;
+        if(selEntitys.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			selEntitys.each(function(select){&#xD;
+				select.remove();&#xD;
+			})&#xD;
+				action.execute(function(){&#xD;
+					view.get(&quot;#uaSh01b&quot;).set(&quot;successMessage&quot;,&quot;删除成功!&quot;);&#xD;
+				});&#xD;
+			});&#xD;
+		}&#xD;
+        if(selEntitys.length&lt;1){&#xD;
+	         view.get(&quot;#msgb&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	        &#xD;
+         }&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	 	&#xD;
+	 }&#xD;
+   }</ClientEvent>
+              <Property name="itemCodes">pages,+,-,x</Property>
+              <Property name="dataSet">dsSh01b</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgSh01b&quot;);//获取数据表格控件&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+selEntitys.each(function(dataSelection){&#xD;
+		view.get(&quot;#dsSh01b.data&quot;).setCurrent(dataSelection);&#xD;
+	});&#xD;
+if(selEntitys.length==1){&#xD;
+	view.get(&quot;#dlSh01b&quot;).show(); &#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;请只选择一条数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">修改</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msgb">
+              <Property name="style">
+                <Property name="color">red</Property>
+              </Property>
+            </ToolBarLabel>
+          </ToolBar>
+          <DataGrid id="dgSh01b">
+            <Property name="dataSet">dsSh01b</Property>
+            <Property name="dataType">dtSh01b</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn id="selectSh01b"/>
+            <DataColumn name="stationcode">
+              <Property name="property">stationcode</Property>
+            </DataColumn>
+            <DataColumn name="linecode">
+              <Property name="property">linecode</Property>
+            </DataColumn>
+            <DataColumn name="linename">
+              <Property name="property">linename</Property>
+            </DataColumn>
+            <DataColumn name="fullname">
+              <Property name="property">fullname</Property>
+            </DataColumn>
+            <DataColumn name="shortname">
+              <Property name="property">shortname</Property>
+            </DataColumn>
+            <DataColumn name="transport">
+              <Property name="property">transport</Property>
+            </DataColumn>
+            <DataColumn name="warehouse">
+              <Property name="property">warehouse</Property>
+            </DataColumn>
+            <DataColumn name="line">
+              <Property name="property">line</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </MainControl>
+      <SideControl>
+        <Container>
+          <Property name="height">300</Property>
+          <ToolBar>
+            <DataPilot id="sh01">
+              <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsSh01.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.set((&quot;#dgSh01.selection&quot;),view.get(&quot;#dgSh01&quot;).getCurrentItem());&#xD;
+		view.get(&quot;#dlSh01&quot;).show();&#xD;
+		&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		var dataGrid = view.get(&quot;#dgSh01&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        var action = view.get(&quot;#uaSh01&quot;);&#xD;
+        if(selEntitys.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			selEntitys.each(function(select){&#xD;
+				select.remove();&#xD;
+			})&#xD;
+				action.execute(function(){&#xD;
+					view.get(&quot;#uaSh01&quot;).set(&quot;successMessage&quot;,&quot;删除成功!&quot;);&#xD;
+				});&#xD;
+			});&#xD;
+		}&#xD;
+        if(selEntitys.length&lt;1){&#xD;
+	         view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+	        &#xD;
+         }&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+              <Property name="dataSet">dsSh01</Property>
+              <Property name="itemCodes">pages,+,-,x</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dataGrid = view.get(&quot;#dgSh01&quot;);//获取数据表格控件&#xD;
+var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+selEntitys.each(function(dataSelection){&#xD;
+		view.get(&quot;#dsSh01.data&quot;).setCurrent(dataSelection);&#xD;
+	});&#xD;
+if(selEntitys.length==1){&#xD;
+	view.get(&quot;#dlSh01&quot;).show(); &#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;请只选择一条数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">修改</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msg"/>
+          </ToolBar>
+          <DataGrid id="dgSh01">
+            <ClientEvent name="onDataRowClick">var dsSh01 = view.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
+var sh01Id=dsSh01.get(&quot;sh01Id&quot;);&#xD;
+view.get(&quot;#dsSh01b&quot;).set(&quot;parameter&quot;,{sh01Id: sh01Id}).flushAsync();&#xD;
+&#xD;
+&#xD;
+//var entity=view.get(&quot;#dsTbih01&quot;).getData(&quot;#&quot;);&#xD;
+//view.get(&quot;#dsTbih01a&quot;).set(&quot;parameter&quot;,{ih01Id:entity.get(&quot;ih01Id&quot;),wareCode:entity.get(&quot;wareCode&quot;)});&#xD;
+//view.get(&quot;#dsTbih01a&quot;).flushAsync();</ClientEvent>
+            <Property name="dataSet">dsSh01</Property>
+            <Property name="dataType">dtSh01</Property>
+            <Property name="readOnly">true</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn id="selectSh01"/>
+            <DataColumn name="stationcode">
+              <Property name="property">stationcode</Property>
+            </DataColumn>
+            <DataColumn name="pyname">
+              <Property name="property">pyname</Property>
+            </DataColumn>
+            <DataColumn name="stationname">
+              <Property name="property">stationname</Property>
+            </DataColumn>
+            <DataColumn name="transport">
+              <Property name="property">transport</Property>
+            </DataColumn>
+            <DataColumn name="area">
+              <Property name="property">area</Property>
+            </DataColumn>
+            <DataColumn name="createEmp">
+              <Property name="property">createEmp</Property>
+            </DataColumn>
+            <DataColumn name="createDate">
+              <Property name="property">createDate</Property>
+            </DataColumn>
+            <DataColumn name="updateEmp">
+              <Property name="property">updateEmp</Property>
+            </DataColumn>
+            <DataColumn name="updateDate">
+              <Property name="property">updateDate</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </SideControl>
+    </SplitPanel>
+    <Dialog id="dlSh01">
+      <Property name="caption">到站维护</Property>
+      <Property name="contentOverflowY">scroll</Property>
+      <Property name="width">800</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var action=view.get(&quot;#uaSh01&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+		view.get(&quot;#dlSh01&quot;).hide();&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">确定</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var entitySh01=view.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
+entitySh01.cancel();&#xD;
+view.get(&quot;#dlSh01&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">关闭</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afSh01">
+          <Property name="dataSet">dsSh01</Property>
+          <Property name="dataType">dtSh01</Property>
+          <Property name="cols">240,240,240</Property>
+          <Property name="labelWidth">90</Property>
+          <Property name="padding">0</Property>
+          <AutoFormElement>
+            <Property name="name">stationcode</Property>
+            <Property name="property">stationcode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">pyname</Property>
+            <Property name="property">pyname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">stationname</Property>
+            <Property name="property">stationname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">transport</Property>
+            <Property name="property">transport</Property>
+            <Property name="trigger">dpTransport</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">area</Property>
+            <Property name="property">area</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dlSh01b">
+      <Property name="caption">专用线维护</Property>
+      <Property name="contentOverflowY">scroll</Property>
+      <Property name="width">800</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var action=view.get(&quot;#uaSh01b&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#msgb&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+		view.get(&quot;#dlSh01b&quot;).hide();&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">确定</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var entitySh01b=view.get(&quot;#dsSh01b&quot;).getData(&quot;#&quot;);&#xD;
+entitySh01b.cancel();&#xD;
+view.get(&quot;#dlSh01b&quot;).hide();&#xD;
+</ClientEvent>
+          <Property name="caption">关闭</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afSh01b">
+          <Property name="dataSet">dsSh01b</Property>
+          <Property name="dataType">dtSh01b</Property>
+          <Property name="cols">240,240,240</Property>
+          <Property name="labelWidth">90</Property>
+          <Property name="padding">0</Property>
+          <AutoFormElement>
+            <Property name="name">linecode</Property>
+            <Property name="property">linecode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">linename</Property>
+            <Property name="property">linename</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">fullname</Property>
+            <Property name="property">fullname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">shortname</Property>
+            <Property name="property">shortname</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">transport</Property>
+            <Property name="property">transport</Property>
+            <Property name="trigger">dpTransport</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">warehouse</Property>
+            <Property name="property">warehouse</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">line</Property>
+            <Property name="property">line</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

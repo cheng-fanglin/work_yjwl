@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="myTbdcb1a">
+      <Property name="tags">消息记录</Property>
+      <Property name="creationType">com.jghz.dc.entity.Tbdcb1a</Property>
+      <PropertyDef name="dcb1aId">
+        <Property></Property>
+        <Property name="label">系统ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="templateId">
+        <Property></Property>
+        <Property name="label">模板ID</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">推送ID</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="pushDesc">
+        <Property></Property>
+        <Property name="label">推送内容</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="pushTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">推送时间</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;dcjcb1Service#loadTbdca1&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateTime">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="deleteFlag">
+        <Property></Property>
+        <Property name="label">删除标记</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbdcb1a信息维护</Property>
+    <DataSet id="dataSetTbdcb1">
+      <Property name="dataProvider">dcjcb1Service#queryTbdcb1</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[BaseTbdcb1]</Property>
+    </DataSet>
+    <DataSet id="dataSetTbdcb1a">
+      <Property name="dataProvider">dcjcb1Service#queryTbdcb1a</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[myTbdcb1a]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">dcjcb1Service#saveTbdcb1a</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbdcb1a</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*,*,*,*,*,*</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">para1</Property>
+            <Property name="label">推送ID</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">para2</Property>
+            <Property name="label">推送内容</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">para3</Property>
+            <Property name="label">推送模板</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Button id="btnQuery">
+            <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbdcb1a&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </Button>
+          <Button id="btnReset">
+            <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+            <Property name="caption">重置</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbdcb1a.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.get(&quot;#dialogTbdcb1a&quot;).show();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			datas.remove();&#xD;
+			action.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dataSetTbdcb1a</Property>
+        <Property name="itemCodes">pages,+,-</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbdcb1a.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogTbdcb1a&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbdcb1a</Property>
+      <Property name="readOnly">true</Property>
+      <DataColumn name="templateId">
+        <Property name="property">templateId</Property>
+      </DataColumn>
+      <DataColumn name="phoneNo">
+        <Property name="property">phoneNo</Property>
+      </DataColumn>
+      <DataColumn name="pushDesc">
+        <Property name="property">pushDesc</Property>
+      </DataColumn>
+      <DataColumn name="pushTime">
+        <Property name="property">pushTime</Property>
+      </DataColumn>
+      <DataColumn name="status">
+        <Property name="property">status</Property>
+      </DataColumn>
+      <DataColumn name="createEmp">
+        <Property name="property">createEmp</Property>
+      </DataColumn>
+      <DataColumn name="createTime">
+        <Property name="property">createTime</Property>
+      </DataColumn>
+      <DataColumn name="updateEmp">
+        <Property name="property">updateEmp</Property>
+      </DataColumn>
+      <DataColumn name="updateTime">
+        <Property name="property">updateTime</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbdcb1a">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbdcb1a&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbdcb1a&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogTbdcb1a&quot;);&#xD;
+//dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+//});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbdcb1a</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement>
+            <Property name="name">phoneNo</Property>
+            <Property name="property">phoneNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">pushDesc</Property>
+            <Property name="property">pushDesc</Property>
+            <Property name="editorType">TextArea</Property>
+            <Property name="height">80</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">templateId</Property>
+            <Property name="property">templateId</Property>
+            <Property name="trigger">dataSetDropDown</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">status</Property>
+            <Property name="property">status</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">pushTime</Property>
+            <Property name="property">pushTime</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <CustomDropDown id="customDropDown1">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbdcb1a&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogProdNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		para:11000,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;templateId&quot;,selectArray[&quot;templateId&quot;]);&#xD;
+			data.set(&quot;pushDesc&quot;,selectArray[&quot;template&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+      <Property name="userData"></Property>
+      <Import src="com.jghz.dc.view.select.prodNoSelect#$dialogProdNo"/>
+    </CustomDropDown>
+    <DataSetDropDown id="dataSetDropDown">
+      <Property name="dataSet">dataSetTbdcb1</Property>
+      <Property name="property">templateId</Property>
+      <Property name="editable">false</Property>
+    </DataSetDropDown>
+  </View>
+</ViewConfig>
