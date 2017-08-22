@@ -32,6 +32,9 @@
       <PropertyDef name="transport">
         <Property></Property>
         <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadTransport&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="area">
         <Property></Property>
@@ -103,6 +106,9 @@
       <PropertyDef name="transport">
         <Property></Property>
         <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadTransport&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="warehouse">
         <Property></Property>
@@ -166,6 +172,9 @@
       <PropertyDef name="transport">
         <Property></Property>
         <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadTransport&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="area">
         <Property></Property>
@@ -200,13 +209,30 @@
         <Property name="label">版本号</Property>
       </PropertyDef>
     </DataType>
+    <DataType name="tbSh01c">
+      <PropertyDef name="pyname">
+        <Property></Property>
+        <Property name="label">拼音简称</Property>
+      </PropertyDef>
+      <PropertyDef name="stationname">
+        <Property></Property>
+        <Property name="label">到站名称</Property>
+      </PropertyDef>
+      <PropertyDef name="transport">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadTransport&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
   </Model>
   <View>
     <DataSet id="dsSh01">
       <Property name="dataType">[dtSh01]</Property>
       <Property name="dataProvider">shjc01Service#loadSh01</Property>
       <Property name="pageSize">20</Property>
-      <Property name="parameter"/>
+      <Property name="parameter"></Property>
     </DataSet>
     <DataSet id="dsSh01b">
       <Property name="dataType">[dtSh01b]</Property>
@@ -289,7 +315,8 @@ view.get(&quot;#dsSh01&quot;).flushAsync(function(entityList){&#xD;
       <Children>
         <AutoForm id="formCondition">
           <Property name="cols">*,*,*</Property>
-          <Property name="createPrivateDataSet">false</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <Property name="dataType">tbSh01c</Property>
           <AutoFormElement>
             <Property name="name">pyname</Property>
             <Property name="label">拼音简称</Property>
@@ -571,7 +598,6 @@ view.get(&quot;#dlSh01&quot;).hide();&#xD;
           <AutoFormElement>
             <Property name="name">transport</Property>
             <Property name="property">transport</Property>
-            <Property name="trigger">dpTransport</Property>
             <Editor/>
           </AutoFormElement>
           <AutoFormElement>
@@ -635,7 +661,6 @@ view.get(&quot;#dlSh01b&quot;).hide();&#xD;
           <AutoFormElement>
             <Property name="name">transport</Property>
             <Property name="property">transport</Property>
-            <Property name="trigger">dpTransport</Property>
             <Editor/>
           </AutoFormElement>
           <AutoFormElement>

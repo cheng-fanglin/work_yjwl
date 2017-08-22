@@ -278,4 +278,22 @@ public class ShjcCommService {
 		parameter=shjcCommDao.loadApSettleType(parameter);
 		return parameter;
 	}
+	@DataProvider
+	public Map<String, Object> loadUserType() throws Exception{
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter = shjcCommDao.loadUserType(parameter);
+		return parameter;
+	}
+	@DataProvider
+	public Map<String, Object> loadStatusSH01() throws Exception{
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter = shjcCommDao.loadStatusSH01(parameter);
+		return parameter;
+	}
+	@DataProvider
+	public Map<String, Object> loadTransport() throws Exception{
+		Map<String, Object> parameter = new HashMap<String, Object>();
+		parameter = shjcCommDao.loadTransport(parameter);
+		return parameter;
+	}
 }

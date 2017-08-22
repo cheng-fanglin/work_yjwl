@@ -378,11 +378,6 @@ view.get(&quot;#dlTbsh06&quot;).hide();&#xD;
         <AutoForm>
           <Property name="dataSet">dsSh06</Property>
           <AutoFormElement>
-            <Property name="name">areacode</Property>
-            <Property name="property">areacode</Property>
-            <Editor/>
-          </AutoFormElement>
-          <AutoFormElement>
             <Property name="name">areaname</Property>
             <Property name="property">areaname</Property>
             <Editor/>

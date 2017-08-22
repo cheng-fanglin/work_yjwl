@@ -25,7 +25,7 @@
         <Property></Property>
         <Property name="label">会员类别</Property>
         <Property name="mapping">
-          <Property name="mapValues"/>
+          <Property name="mapValues"></Property>
         </Property>
       </PropertyDef>
       <PropertyDef name="carrierNo">
@@ -121,25 +121,53 @@
         <Property name="label">版本号</Property>
       </PropertyDef>
       <PropertyDef name="companyCertificatePath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="companyLicensePath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="roadImgPath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="companyCodePath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="authorizationImgPath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="identityCardPath">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
       <PropertyDef name="identityCardBackPath">
-        <Property/>
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Tbwd01a">
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="userType">
+        <Property></Property>
+        <Property name="label">会员类别</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadUserType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadStatusSH01&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
     </DataType>
   </Model>
@@ -166,44 +194,52 @@
     </UpdateAction>
     <AutoForm id="formCondition">
       <Property name="cols">*,*,*,*,*,*</Property>
-      <Property name="dataSet">dataSet1</Property>
+      <Property name="dataType">Tbwd01a</Property>
+      <Property name="createPrivateDataSet">true</Property>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">phoneNo</Property>
         <Property name="label">联系方式</Property>
+        <Property name="property">phoneNo</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">userType</Property>
         <Property name="label">会员类别</Property>
-        <Property name="trigger">listDDUserType</Property>
+        <Property name="property">userType</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">carrierNo</Property>
         <Property name="label">承运商编号</Property>
+        <Property name="property">carrierNo</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">carrierName</Property>
         <Property name="label">承运商名称</Property>
+        <Property name="property">carrierName</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">state</Property>
         <Property name="label">状态</Property>
-        <Property name="trigger">listDDStatus</Property>
+        <Property name="property">state</Property>
         <Editor/>
       </AutoFormElement>
       <Button layoutConstraint="colSpan:1;align:right">
         <ClientEvent name="onClick">var entity = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
-view.get(&quot;#dataSetTbwd01&quot;).set(&quot;parameter&quot;,entity);&#xD;
+&#xD;
+view.get(&quot;#dataSetTbwd01&quot;).set(&quot;parameter&quot;, entity);&#xD;
 view.get(&quot;#dataSetTbwd01&quot;).flushAsync(function(entityList){&#xD;
-	if(entityList.isEmpty()){&#xD;
-		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
-	}else{&#xD;
-		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
-	}&#xD;
+    if (entityList.isEmpty()) {&#xD;
+        view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示： 查询无数据&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+        view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示： 查询成功&quot;);&#xD;
+    }&#xD;
 });&#xD;
+&#xD;
+&#xD;
 </ClientEvent>
         <Property name="caption">查询</Property>
         <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
@@ -791,8 +827,9 @@ var dialog=view.get(&quot;#dialogTbwd01&quot;).hide();&#xD;
       </Buttons>
       <Children>
         <AutoForm>
-          <Property name="dataSet">dataSetTbwd01</Property>
           <Property name="cols">*,*</Property>
+          <Property name="dataType">Tbwd01a</Property>
+          <Property name="dataSet">dataSetTbwd01</Property>
           <AutoFormElement name="carrierNo">
             <Property name="name">carrierNo</Property>
             <Property name="property">carrierNo</Property>
@@ -803,10 +840,9 @@ var dialog=view.get(&quot;#dialogTbwd01&quot;).hide();&#xD;
             <Property name="property">carrierName</Property>
             <Editor/>
           </AutoFormElement>
-          <AutoFormElement name="userType">
+          <AutoFormElement id="userType2" name="userType">
             <Property name="name">userType</Property>
             <Property name="property">userType</Property>
-            <Property name="trigger">listDDUserType</Property>
             <Editor/>
           </AutoFormElement>
           <AutoFormElement>
@@ -1132,61 +1168,6 @@ imageViewer.rotateRight();&#xD;
       </Children>
       <Tools/>
     </Dialog>
-    <AutoMappingDropDown id="userMappingDown"/>
-    <AutoMappingDropDown id="stateMappingDown"/>
-    <ListDropDown id="listDDUserType">
-      <ClientEvent name="onValueSelect">/*// 下拉框选中的显示值&#xD;
-var select = arg.selectedValue;&#xD;
-//  下拉框数据集合 map&#xD;
-var maps = self.get(&quot;items&quot;);&#xD;
-debugger;&#xD;
-maps.each(function(map){&#xD;
-	if(map.key==select){&#xD;
-		arg.selectedValue = map.lable;&#xD;
-	}&#xD;
-});*/&#xD;
-</ClientEvent>
-      <Property name="items">
-        <Collection>
-          <Entity/>
-          <Entity>
-            <Property name="key">C</Property>
-            <Property name="lable">承运商</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">R</Property>
-            <Property name="lable">承运人</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">J</Property>
-            <Property name="lable">经济人</Property>
-          </Entity>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">key</Property>
-    </ListDropDown>
-    <ListDropDown id="listDDStatus">
-      <Property name="items">
-        <Collection>
-          <Entity/>
-          <Entity>
-            <Property name="key">0</Property>
-            <Property name="lable">未审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">1</Property>
-            <Property name="lable">已审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">2</Property>
-            <Property name="lable">作废</Property>
-          </Entity>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">lable</Property>
-    </ListDropDown>
     <UploadAction id="action1">
       <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;).get(&quot;companyCertificate&quot;)!=null){&#xD;
 		var btMsg=view.get(&quot;#bt1Msg&quot;);&#xD;
@@ -1203,7 +1184,6 @@ btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
 btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
       <ClientEvent name="onFileUploaded">var entity = view.get(&quot;#dataSetTbwd01&quot;).getData(&quot;#&quot;);&#xD;
 entity.set(&quot;companyCertificate&quot;, arg.returnValue[&quot;fileId&quot;]);&#xD;
-console.log(arg);&#xD;
 view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
     view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;])&#xD;
     entity.set(&quot;companyCertificatePath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;

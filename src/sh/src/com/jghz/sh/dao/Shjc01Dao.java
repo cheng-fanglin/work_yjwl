@@ -44,6 +44,18 @@ public class Shjc01Dao extends BaseDao {
 				sql += " and pyname='" + paramater.get("pyname") + "' ";
 			}
 		}
+		if (paramater != null) {
+			if (null != paramater.get("transport")
+					&& !"".equals(paramater.get("transport"))) {
+				sql += " and transport = '" + paramater.get("transport") + "' ";
+			}
+		}
+		if (paramater != null) {
+			if (null != paramater.get("stationname")
+					&& !"".equals(paramater.get("stationname"))) {
+				sql += " and stationname like '%" + paramater.get("stationname") + "%' ";
+			}
+		}
 		super.pagingQuery(page, sql, "select count(*) " + sql);
 	}
 	

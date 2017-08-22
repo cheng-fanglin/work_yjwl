@@ -547,4 +547,36 @@ public class ShjcCommDao extends BaseDao {
 		parameter=dcjcCommonDao.queryTbdca1aById("SH","STATUS_SH35");
 		return parameter;
 	}
+
+	/**
+	 * 会员类别查询
+	 * @param parameter
+	 * @return
+	 * @throws Exception 
+	 */
+	public Map<String, Object> loadUserType(Map<String, Object> parameter) throws Exception {
+		parameter = dcjcCommonDao.queryTbdca1aById("SH", "USER_TYPE_");
+		return parameter;
+	}
+
+	/**
+	 * 承运商状态查询
+	 * @param parameter
+	 * @return
+	 * @throws Exception 
+	 */
+	public Map<String, Object> loadStatusSH01(Map<String, Object> parameter) throws Exception {
+		parameter = dcjcCommonDao.queryTbdca1aById("SH", "STATUS_SH01");
+		return parameter;
+	}
+
+	/**
+	 * 运输方式查询
+	 * @param parameter
+	 * @return
+	 */
+	public Map<String, Object> loadTransport(Map<String, Object> parameter) throws Exception{
+		parameter = dcjcCommonDao.queryTbdca1aById("SH", "TRANSPORT_");
+		return parameter;
+	}
 }
