@@ -25,7 +25,7 @@
         <Property></Property>
         <Property name="label">会员类别</Property>
         <Property name="mapping">
-          <Property name="mapValues"></Property>
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadUserType&quot;).getResult()}</Property>
         </Property>
       </PropertyDef>
       <PropertyDef name="carrierNo">
@@ -87,6 +87,9 @@
       <PropertyDef name="state">
         <Property></Property>
         <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadStatusSH01&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="contract">
         <Property></Property>
@@ -263,50 +266,50 @@ switch (arg.code) {&#xD;
         dataList.each(function(entity){&#xD;
             if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
                 selectedItems.push(entity);&#xD;
-				view.get(&quot;#dataSetTbwd01.data&quot;).setCurrent(entity);&#xD;
+                view.get(&quot;#dataSetTbwd01.data&quot;).setCurrent(entity);&#xD;
             }&#xD;
         });&#xD;
         view.set((&quot;#dgTbwd01.selection&quot;), selectedItems);&#xD;
         view.get(&quot;#dialogTbwd01&quot;).show();&#xD;
-        view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#clImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#idImgA&quot;).set(&quot;image&quot;,null);&#xD;
-		view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;,null);&#xD;
+        view.get(&quot;#ccfImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#clImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#roadImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#bcImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#azgImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#idImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#id2ImgA&quot;).set(&quot;image&quot;, null);&#xD;
         &#xD;
-		// 添加时给对话框初始化显示状态&#xD;
+        // 添加时给对话框初始化显示状态&#xD;
         view.get(&quot;#ccfUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt1Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt1Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt1Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#clUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt2Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt2Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt2Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#bcUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt4Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt4Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt4Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#azgUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt5Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt5Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt5Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#idUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt6Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt6Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt6Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
         view.get(&quot;#id2Upload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
         view.get(&quot;#bt7Msg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
-		view.get(&quot;#bt7Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
-		&#xD;
+        view.get(&quot;#bt7Msg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
         &#xD;
-      &#xD;
+        &#xD;
+        &#xD;
         arg.processDefault = false;&#xD;
         break;&#xD;
     }&#xD;
@@ -314,13 +317,23 @@ switch (arg.code) {&#xD;
         var dataGrid = view.get(&quot;#dgTbwd01&quot;);//获取数据表格控件&#xD;
         var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
         if (selEntitys.length > 0) {&#xD;
+            var flag = false;&#xD;
             dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
                 selEntitys.each(function(select){&#xD;
-                    select.remove();&#xD;
+                    if (select.get(&quot;state&quot;) == 1) {&#xD;
+                        dorado.MessageBox.alert(&quot;不能删除已审核数据&quot;);&#xD;
+                    }&#xD;
+                    else {&#xD;
+                        select.remove();&#xD;
+                        flag = true;&#xD;
+                    }&#xD;
                 })&#xD;
-                action.execute(function(){&#xD;
-                    view.get(&quot;#actionUpdate&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
-                });&#xD;
+                if (flag) {&#xD;
+                    action.execute(function(){&#xD;
+                        view.get(&quot;#actionUpdate&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                    });&#xD;
+                }&#xD;
+                &#xD;
             });&#xD;
         }&#xD;
         if (selEntitys.length &lt; 1) {&#xD;
@@ -828,7 +841,6 @@ var dialog=view.get(&quot;#dialogTbwd01&quot;).hide();&#xD;
       <Children>
         <AutoForm>
           <Property name="cols">*,*</Property>
-          <Property name="dataType">Tbwd01a</Property>
           <Property name="dataSet">dataSetTbwd01</Property>
           <AutoFormElement name="carrierNo">
             <Property name="name">carrierNo</Property>
@@ -872,19 +884,14 @@ var dialog=view.get(&quot;#dialogTbwd01&quot;).hide();&#xD;
               <Image id="ccfImgA">
                 <ClientEvent name="onClick">&#xD;
 var image = view.get(&quot;#dataSetTbwd01.data:#&quot;).get(&quot;companyCertificatePath&quot;);&#xD;
-alert(image);&#xD;
-    if (image != null) {&#xD;
-        //console.log(&quot;&quot;+&quot;/&quot;)&#xD;
-       // if (image) {&#xD;
-         //   image = image.split('${request.getContextPath()}' + &quot;/&quot;);&#xD;
-       // }&#xD;
-	   view.get(&quot;#imageView1&quot;).set(&quot;image&quot;,self.get(&quot;image&quot;));&#xD;
-		view.get(&quot;#logImage&quot;).show();&#xD;
-       // view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, image[1])&#xD;
-    }&#xD;
-    else {&#xD;
-        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
-    }&#xD;
+if (image != null) {&#xD;
+&#xD;
+    view.get(&quot;#imageView1&quot;).set(&quot;image&quot;, self.get(&quot;image&quot;));&#xD;
+    view.get(&quot;#logImage&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+}&#xD;
 </ClientEvent>
                 <Property name="height">160</Property>
                 <Property name="width">100%</Property>

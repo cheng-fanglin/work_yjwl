@@ -43,20 +43,26 @@ public class Ecjc02Service  extends HibernateDao{
 			 String Id1 = wd02.getDriverHead();
 			 String Id2 = wd02.getDriverLisenceImg();
 			 String Id3 = wd02.getIdentifyImg();
+			 String Id4 = wd02.getIdentifyBackImg();
 			 if(Id1 != null){
 				 wd02.setDriverShow(SystemConstant.compressUrl+shjc02wdDao.getFilePath(Id1));
 			 }else{
-				 wd02.setDriverShow("/jghz/html_qt/images/no_imgage.jpg");
+				 wd02.setDriverShow(null);
 			 }
 			 if(Id2 != null){
 				 wd02.setDriverLisenceShow(SystemConstant.compressUrl+shjc02wdDao.getFilePath(Id2));
 			 }else{
-				 wd02.setDriverLisenceShow("/jghz/html_qt/images/no_imgage.jpg");
+				 wd02.setDriverLisenceShow(null);
 			 }
 			 if(Id3 != null){
 				 wd02.setIdentifyShow(SystemConstant.compressUrl+shjc02wdDao.getFilePath(Id3));
 			 }else{
-				 wd02.setIdentifyShow("/jghz/html_qt/images/no_imgage.jpg");
+				 wd02.setIdentifyShow(null);
+			 }
+			 if(Id4 != null){
+				 wd02.setIdentifyBackShow(SystemConstant.compressUrl+shjc02wdDao.getFilePath(Id4));
+			 }else{
+				 wd02.setIdentifyBackShow(null);
 			 }
 		 }
 		 page.setEntities(col);

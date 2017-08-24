@@ -6,7 +6,7 @@
     <DataType name="Tbwd02">
       <Property name="creationType">com.jghz.sh.entity.Tbwd02</Property>
       <PropertyDef name="wd02Id">
-        <Property/>
+        <Property></Property>
         <Property name="label">主键ID</Property>
       </PropertyDef>
       <PropertyDef name="userId">
@@ -18,35 +18,38 @@
         <Property name="label">联系方式</Property>
       </PropertyDef>
       <PropertyDef name="driverType">
-        <Property/>
+        <Property></Property>
         <Property name="label">司机类别</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadUserType&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="carrierNo">
-        <Property/>
+        <Property></Property>
         <Property name="label">承运商编号</Property>
       </PropertyDef>
       <PropertyDef name="carrierName">
-        <Property/>
+        <Property></Property>
         <Property name="label">承运人名称</Property>
       </PropertyDef>
       <PropertyDef name="driverHead">
-        <Property/>
+        <Property></Property>
         <Property name="label">司机头像(图)</Property>
       </PropertyDef>
       <PropertyDef name="driverLisence">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶证号</Property>
       </PropertyDef>
       <PropertyDef name="driverLisenceImg">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶证(图)1</Property>
       </PropertyDef>
       <PropertyDef name="driverLisenceImg2">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶证(图)2</Property>
       </PropertyDef>
       <PropertyDef name="driverLisenceImg3">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶证(图)3</Property>
       </PropertyDef>
       <PropertyDef name="identityNo">
@@ -54,27 +57,30 @@
         <Property name="label">身份证号码</Property>
       </PropertyDef>
       <PropertyDef name="identifyImg">
-        <Property/>
+        <Property></Property>
         <Property name="label">身份证正面照</Property>
       </PropertyDef>
       <PropertyDef name="identifyBackImg">
-        <Property/>
+        <Property></Property>
         <Property name="label">身份证反面照</Property>
       </PropertyDef>
       <PropertyDef name="state">
-        <Property/>
+        <Property></Property>
         <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadStatusSH01&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="userName">
-        <Property/>
+        <Property></Property>
         <Property name="label">司机姓名</Property>
       </PropertyDef>
       <PropertyDef name="contractName">
-        <Property/>
+        <Property></Property>
         <Property name="label">紧急联系人</Property>
       </PropertyDef>
       <PropertyDef name="createEmp">
-        <Property/>
+        <Property></Property>
         <Property name="label">创建人</Property>
       </PropertyDef>
       <PropertyDef name="createTime">
@@ -82,7 +88,7 @@
         <Property name="label">创建时间</Property>
       </PropertyDef>
       <PropertyDef name="updateEmp">
-        <Property/>
+        <Property></Property>
         <Property name="label">更新人</Property>
       </PropertyDef>
       <PropertyDef name="updateTime">
@@ -94,16 +100,44 @@
         <Property name="label">版本号</Property>
       </PropertyDef>
       <PropertyDef name="driverShow">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶员头像</Property>
       </PropertyDef>
       <PropertyDef name="driverLisenceShow">
-        <Property/>
+        <Property></Property>
         <Property name="label">驾驶证图片</Property>
       </PropertyDef>
       <PropertyDef name="identifyShow">
+        <Property></Property>
+        <Property name="label">身份证正面图片</Property>
+      </PropertyDef>
+      <PropertyDef name="identifyBackShow">
         <Property/>
-        <Property name="label">身份证图片</Property>
+        <Property name="label">身份证反面照片</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Tbwd02a">
+      <PropertyDef name="phoneNo">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">联系方式</Property>
+      </PropertyDef>
+      <PropertyDef name="driverType">
+        <Property></Property>
+        <Property name="label">司机类别</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadUserType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运人名称</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadStatusSH01&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
     </DataType>
   </Model>
@@ -130,26 +164,29 @@
     </UpdateAction>
     <AutoForm id="formCondition">
       <Property name="cols">*,*,*,*,*,*</Property>
+      <Property name="dataType">Tbwd02a</Property>
+      <Property name="createPrivateDataSet">true</Property>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">phoneNo</Property>
         <Property name="label">联系方式</Property>
+        <Property name="property">phoneNo</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
-        <Property name="name">userType</Property>
+        <Property name="name">driverType</Property>
         <Property name="label">司机类别</Property>
-        <Property name="trigger">listDDUserType</Property>
+        <Property name="property">driverType</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">carrierName</Property>
-        <Property name="label">承运商名称</Property>
+        <Property name="label">承运人名称</Property>
+        <Property name="property">carrierName</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">state</Property>
         <Property name="label">状态</Property>
-        <Property name="trigger">listDDStatus</Property>
         <Editor/>
       </AutoFormElement>
       <Button layoutConstraint="colSpan:1;align:right">
@@ -176,45 +213,139 @@ view.get(&quot;#dataSetTbwd02&quot;).flushAsync(function(entityList){&#xD;
       <DataPilot>
         <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbwd02.data&quot;);&#xD;
 var action = view.get(&quot;#actionUpdate&quot;);&#xD;
-switch(arg.code){&#xD;
-	case &quot;+&quot;:{&#xD;
-		datas.insert();&#xD;
-		view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
-		arg.processDefault=false;&#xD;
-		break;&#xD;
-	}&#xD;
-	case &quot;-&quot;:{&#xD;
-		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
-			datas.remove();&#xD;
-			action.execute();&#xD;
-		});&#xD;
-		arg.processDefault=false;&#xD;
-		break;&#xD;
-	}&#xD;
-}</ClientEvent>
+switch (arg.code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+        datas.insert();&#xD;
+        var dataList = view.get(&quot;#dataSetTbwd02&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        selectedItems.push(view.get(&quot;#dataSetTbwd02.data:#&quot;));&#xD;
+        /* dataList.each(function(entity){&#xD;
+         if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
+         selectedItems.push(entity);&#xD;
+         view.get(&quot;#dataSetTbwd02.data&quot;).setCurrent(entity);&#xD;
+         }&#xD;
+         });*/&#xD;
+        view.set((&quot;#dgTbwd02.selection&quot;), selectedItems);&#xD;
+        view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
+        view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        // 添加时给对话框初始化显示状态&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
+        view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        // 添加时给对话框初始化显示状态&#xD;
+        view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg2&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg2&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
+        view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        // 添加时给对话框初始化显示状态&#xD;
+        view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg3&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg3&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        &#xD;
+        view.get(&quot;#identifyBackImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        // 添加时给对话框初始化显示状态&#xD;
+        view.get(&quot;#btUpload4&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg4&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg4&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+        var dataGrid = view.get(&quot;#dgTbwd02&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        if (selEntitys.length > 0) {&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selEntitys.each(function(select){&#xD;
+                    select.remove();&#xD;
+                })&#xD;
+                action.execute(function(){&#xD;
+                    view.get(&quot;#actionUpdate&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                });&#xD;
+                &#xD;
+            });&#xD;
+        }&#xD;
+        if (selEntitys.length &lt; 1) {&#xD;
+            view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+            &#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
         <Property name="dataSet">dataSetTbwd02</Property>
-        <Property name="itemCodes">pages,+,-</Property>
+        <Property name="itemCodes">pages,+,-,x</Property>
       </DataPilot>
       <Separator/>
       <ToolBarButton>
-        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd02.data&quot;);&#xD;
-if(data.current){&#xD;
-	view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
-	view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverShow&quot;));&#xD;
-		if(data.current.get(&quot;driverShow&quot;)!=null){&#xD;
-			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
-		}&#xD;
-	view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverLisenceShow&quot;));&#xD;
-		if(data.current.get(&quot;driverLisenceShow&quot;)!=null){&#xD;
-			view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
-		}&#xD;
-	view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;driverLisenceShow&quot;));&#xD;
-		if(data.current.get(&quot;identifyShow&quot;)!=null){&#xD;
-			view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
-		}&#xD;
+        <ClientEvent name="onClick">var data = view.get(&quot;#dataSetTbwd02&quot;).getData();&#xD;
+var select = view.get(&quot;#dgTbwd02&quot;).get('selection');&#xD;
+if (select.length == 1) {&#xD;
+	select.each(function(dataSelection){&#xD;
+		view.get(&quot;#dataSetTbwd02.data&quot;).setCurrent(dataSelection);&#xD;
+	});&#xD;
+	&#xD;
+	&#xD;
+	if (data.current.get(&quot;driverShow&quot;) != null) {&#xD;
+		view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;driverShow&quot;));&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+	}&#xD;
+	else {&#xD;
+		view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;, null);&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+	//----------&#xD;
+	if (data.current.get(&quot;driverLisenceShow&quot;) != null) {&#xD;
+		view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;driverLisenceShow&quot;));&#xD;
+		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+		view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+	}&#xD;
+	else {&#xD;
+		view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;, null);&#xD;
+		view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+		view.get(&quot;#btMsg2&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#btMsg2&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+	//----------&#xD;
+	if (data.current.get(&quot;identifyShow&quot;) != null) {&#xD;
+		view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;identifyShow&quot;));&#xD;
+		view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+		view.get(&quot;#btMsg3&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+		view.get(&quot;#btMsg3&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+	}&#xD;
+	else {&#xD;
+		view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;, null);&#xD;
+		view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+		view.get(&quot;#btMsg3&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#btMsg3&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+	//----------&#xD;
+	if (data.current.get(&quot;identifyBackShow&quot;) != null) {&#xD;
+		view.get(&quot;#identifyBackImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;identifyBackShow&quot;));&#xD;
+		view.get(&quot;#btUpload4&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+		view.get(&quot;#btMsg4&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+		view.get(&quot;#btMsg4&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+	}&#xD;
+	else {&#xD;
+		view.get(&quot;#identifyBackImgA&quot;).set(&quot;image&quot;, null);&#xD;
+		view.get(&quot;#btUpload4&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+		view.get(&quot;#btMsg4&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+		view.get(&quot;#btMsg4&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+	&#xD;
+	 view.get(&quot;#dialogTbwd02&quot;).show();&#xD;
 }else{&#xD;
-	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
-}</ClientEvent>
+	dorado.MessageBox.alert(&quot;请只选择一条数据&quot;);&#xD;
+}&#xD;
+</ClientEvent>
         <Property name="caption">修改</Property>
         <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
       </ToolBarButton>
@@ -240,89 +371,137 @@ if(data.current){&#xD;
       <Property name="dataSet">dataSetTbwd02</Property>
       <Property name="dataType">Tbwd02</Property>
       <Property name="readOnly">true</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
       <DataColumn name="userName">
         <Property name="property">userName</Property>
+      </DataColumn>
+      <DataColumn name="carrierName">
+        <Property name="property">carrierName</Property>
       </DataColumn>
       <DataColumn name="phoneNo">
         <Property name="property">phoneNo</Property>
       </DataColumn>
-      <DataColumn>
-        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
-    tagName: &quot;IMG&quot;,&#xD;
-    src: $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
-    //style : &quot;margin: 2px&quot;&#xD;
-    style : &quot;width: 50px; height: 20px;&quot;&#xD;
-	&#xD;
-});&#xD;
-dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
-		content : {&#xD;
-			tagName : &quot;IMG&quot;,&#xD;
-			src : $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
-			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
-			style : &quot;width: 130px; height: 130px;&quot;&#xD;
-		},&#xD;
-		arrowDirection : &quot;top&quot;,&#xD;
-		arrowAlign : &quot;left&quot;&#xD;
-	});&#xD;
-&#xD;
-&#xD;
-</ClientEvent>
-        <Property name="property">driverShow</Property>
-        <Property name="name">driverShow</Property>
-      </DataColumn>
       <DataColumn name="driverLisence">
         <Property name="property">driverLisence</Property>
-      </DataColumn>
-      <DataColumn>
-        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
-    tagName: &quot;IMG&quot;,&#xD;
-    src: $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
-    //style : &quot;margin: 2px&quot;&#xD;
-    style : &quot;width: 50px; height: 20px;&quot;&#xD;
-	&#xD;
-});&#xD;
-dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
-		content : {&#xD;
-			tagName : &quot;IMG&quot;,&#xD;
-			src : $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
-			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
-			style : &quot;width: 130px; height: 130px;&quot;&#xD;
-		},&#xD;
-		arrowDirection : &quot;top&quot;,&#xD;
-		arrowAlign : &quot;left&quot;&#xD;
-	});&#xD;
-&#xD;
-&#xD;
-</ClientEvent>
-        <Property name="property">driverLisenceShow</Property>
-        <Property name="name">driverLisenceShow</Property>
       </DataColumn>
       <DataColumn name="identityNo">
         <Property name="property">identityNo</Property>
       </DataColumn>
       <DataColumn>
-        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
-    tagName: &quot;IMG&quot;,&#xD;
-    src: $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
-    //style : &quot;margin: 2px&quot;&#xD;
-    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;driverLisenceShow&quot;) != null) {&#xD;
+&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
 	&#xD;
-});&#xD;
-dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
-		content : {&#xD;
-			tagName : &quot;IMG&quot;,&#xD;
-			src : $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
-			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
-			style : &quot;width: 130px; height: 130px;&quot;&#xD;
-		},&#xD;
-		arrowDirection : &quot;top&quot;,&#xD;
-		arrowAlign : &quot;left&quot;&#xD;
 	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;driverLisenceShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}&#xD;
 &#xD;
+</ClientEvent>
+        <Property name="property">driverLisenceShow</Property>
+        <Property name="name">driverLisenceShow</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;driverShow&quot;) != null) {&#xD;
 &#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;driverShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">driverShow</Property>
+        <Property name="name">driverShow</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;identifyShow&quot;) != null) {&#xD;
+&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;identifyShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+	&#xD;
+}&#xD;
 </ClientEvent>
         <Property name="property">identifyShow</Property>
         <Property name="name">identifyShow</Property>
+      </DataColumn>
+      <DataColumn>
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;identifyBackShow&quot;) != null) {&#xD;
+&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;identifyBackShow&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
+	&#xD;
+	});&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;identifyBackShow&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+	&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="property">identifyBackShow</Property>
+        <Property name="name">identifyBackShow</Property>
+      </DataColumn>
+      <DataColumn name="driverType">
+        <Property name="property">driverType</Property>
+      </DataColumn>
+      <DataColumn name="state">
+        <Property name="property">state</Property>
       </DataColumn>
     </DataGrid>
     <Dialog id="dialogTbwd02">
@@ -330,7 +509,7 @@ dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
       <Property name="width">800</Property>
       <Property name="height">400</Property>
       <Property name="modal">true</Property>
-      <Property name="closeable">false</Property>
+      <Property name="closeable">true</Property>
       <Property name="caption">数据编辑</Property>
       <Buttons>
         <Button>
@@ -379,6 +558,26 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
             <Property name="property">identityNo</Property>
             <Editor/>
           </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">driverType</Property>
+            <Property name="property">driverType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carrierName</Property>
+            <Property name="property">carrierName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">state</Property>
+            <Property name="property">state</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel>
+            <Buttons/>
+            <Children/>
+            <Tools/>
+          </Panel>
           <Panel id="driverImg" layoutConstraint="align:center;padding:50;vAlign:center">
             <Property name="height">250</Property>
             <Property name="width">100%</Property>
@@ -404,9 +603,19 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
             </Buttons>
             <Children>
               <Image id="driverImgA" layoutConstraint="center ">
+                <ClientEvent name="onClick">&#xD;
+var image = view.get(&quot;#dataSetTbwd02.data:#&quot;).get(&quot;driverShow&quot;);&#xD;
+if (image != null) {&#xD;
+&#xD;
+    view.get(&quot;#imageView&quot;).set(&quot;image&quot;, self.get(&quot;image&quot;));&#xD;
+    view.get(&quot;#dialogImage&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+}&#xD;
+</ClientEvent>
                 <Property name="width">100%</Property>
                 <Property name="height">160</Property>
-                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
               </Image>
             </Children>
             <Tools/>
@@ -436,9 +645,19 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
             </Buttons>
             <Children>
               <Image id="driverLisenceImgA" layoutConstraint="center ">
+                <ClientEvent name="onClick">&#xD;
+var image = view.get(&quot;#dataSetTbwd02.data:#&quot;).get(&quot;driverLisenceShow&quot;);&#xD;
+if (image != null) {&#xD;
+&#xD;
+    view.get(&quot;#imageView&quot;).set(&quot;image&quot;, self.get(&quot;image&quot;));&#xD;
+    view.get(&quot;#dialogImage&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+}&#xD;
+</ClientEvent>
                 <Property name="width">100%</Property>
                 <Property name="height">160</Property>
-                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
               </Image>
             </Children>
             <Tools/>
@@ -446,7 +665,7 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
           <Panel id="identifyImg" layoutConstraint="align:center;padding:50;vAlign:center">
             <Property name="height">250</Property>
             <Property name="width">100%</Property>
-            <Property name="caption">驾驶员证件</Property>
+            <Property name="caption">身份证正面照</Property>
             <Property name="border">none</Property>
             <Property name="collapseable">false</Property>
             <Property name="draggable">false</Property>
@@ -468,9 +687,55 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
             </Buttons>
             <Children>
               <Image id="identifyImgA" layoutConstraint="center ">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd02.data:#&quot;).get(&quot;identifyShow&quot;);&#xD;
+if (image != null) {&#xD;
+&#xD;
+    view.get(&quot;#imageView&quot;).set(&quot;image&quot;, self.get(&quot;image&quot;));&#xD;
+    view.get(&quot;#dialogImage&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+}</ClientEvent>
                 <Property name="width">100%</Property>
                 <Property name="height">160</Property>
-                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
+              </Image>
+            </Children>
+            <Tools/>
+          </Panel>
+          <Panel id="identifyBackImg" layoutConstraint="align:center;padding:50;vAlign:center">
+            <Property name="border">none</Property>
+            <Property name="caption">身份证反面照</Property>
+            <Property name="contentOverflow">hidden</Property>
+            <Property name="contentOverflowX">scroll</Property>
+            <Property name="contentOverflowY">scroll</Property>
+            <Property name="height">250</Property>
+            <Property name="width">100%</Property>
+            <Buttons>
+              <Button id="btUpload4" layoutConstraint="center padding:300">
+                <Property name="caption">开始上传</Property>
+                <Property name="showTrigger">false</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -120px -240px</Property>
+                <Property name="action">ulaImg4</Property>
+              </Button>
+              <Button id="btMsg4">
+                <Property name="width">150</Property>
+                <Property name="icon"> url(>skin>common/icons.gif) -20px -220px</Property>
+                <Property name="caption">等待上传！</Property>
+              </Button>
+            </Buttons>
+            <Children>
+              <Image id="identifyBackImgA">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd02.data:#&quot;).get(&quot;identifyBackShow&quot;);&#xD;
+if (image != null) {&#xD;
+&#xD;
+    view.get(&quot;#imageView&quot;).set(&quot;image&quot;, self.get(&quot;image&quot;));&#xD;
+    view.get(&quot;#dialogImage&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+}</ClientEvent>
+                <Property name="height">160</Property>
+                <Property name="width">100%</Property>
               </Image>
             </Children>
             <Tools/>
@@ -479,47 +744,32 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
       </Children>
       <Tools/>
     </Dialog>
-    <ListDropDown id="listDDUserType">
-      <Property name="items">
-        <Collection>
-          <Entity>
-            <Property name="key">C</Property>
-            <Property name="lable">承运商</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">R</Property>
-            <Property name="lable">承运人</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">J</Property>
-            <Property name="lable">经济人</Property>
-          </Entity>
-          <Entity/>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">key</Property>
-    </ListDropDown>
-    <ListDropDown id="listDDStatus">
-      <Property name="items">
-        <Collection>
-          <Entity>
-            <Property name="key">0</Property>
-            <Property name="lable">未审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">1</Property>
-            <Property name="lable">已审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">2</Property>
-            <Property name="lable">作废</Property>
-          </Entity>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">key</Property>
-    </ListDropDown>
+    <Dialog id="dialogImage">
+      <Property name="height">50%</Property>
+      <Property name="width">50%</Property>
+      <Buttons>
+        <Button>
+          <Property name="caption">放大</Property>
+        </Button>
+        <Button>
+          <Property name="caption">缩小</Property>
+        </Button>
+        <Button>
+          <Property name="caption">左旋转</Property>
+        </Button>
+        <Button>
+          <Property name="caption">右旋转</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <ImageViewer id="imageView">
+          <Property name="height">100%</Property>
+          <Property name="width">100%</Property>
+          <Property name="minScale">0.1</Property>
+        </ImageViewer>
+      </Children>
+      <Tools/>
+    </Dialog>
     <UploadAction id="ulaImg1">
       <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
 btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
@@ -539,6 +789,7 @@ btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot
 entity.set(&quot;driverHead&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
 view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
 		view.get(&quot;#driverImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		entity.set(&quot;driverShow&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
 		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
 });&#xD;
 &#xD;
@@ -565,6 +816,7 @@ btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot
 entity.set(&quot;driverLisenceImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
 view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
 		view.get(&quot;#driverLisenceImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		entity.set(&quot;driverLisenceShow&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
 		view.get(&quot;#btUpload2&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
 });&#xD;
 &#xD;
@@ -591,9 +843,36 @@ btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot
 entity.set(&quot;identifyImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
 view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
 		view.get(&quot;#identifyImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		entity.set(&quot;identifyShow&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
 		view.get(&quot;#btUpload3&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
 });&#xD;
 &#xD;
+</ClientEvent>
+      <Property name="fileResolver">uploadProcessor#process</Property>
+      <Filters/>
+    </UploadAction>
+    <UploadAction id="ulaImg4">
+      <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg4&quot;);&#xD;
+btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
+btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot;);</ClientEvent>
+      <ClientEvent name="onStateChanged">	if(view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;).get(&quot;identifyBackImg&quot;)!=null){&#xD;
+		var btMsg=view.get(&quot;#btMsg4&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;上传成功！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+		&#xD;
+	}else{&#xD;
+		var btMsg=view.get(&quot;#btMsg4&quot;);&#xD;
+		btMsg.set(&quot;caption&quot;,&quot;等待上传！&quot;);&#xD;
+		btMsg.set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+	}&#xD;
+</ClientEvent>
+      <ClientEvent name="onFileUploaded">var entity=view.get(&quot;#dataSetTbwd02&quot;).getData(&quot;#&quot;);&#xD;
+entity.set(&quot;identifyBackImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
+view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
+		view.get(&quot;#identifyBackImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		entity.set(&quot;identifyBackShow&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		view.get(&quot;#btUpload4&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
+});&#xD;
 </ClientEvent>
       <Property name="fileResolver">uploadProcessor#process</Property>
       <Filters/>

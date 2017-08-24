@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Property name="title">查询</Property>
+    <Dialog id="$dialogBillNo">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Property name="shadowMode">drop</Property>
+      <Buttons/>
+      <Children>
+        <DataSet id="$dsTbih43">
+          <Property name="dataProvider">ihjc43Service#loadTbih43CustDrop</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbih43]</Property>
+        </DataSet>
+        <ToolBar>
+          <DataPilot>
+            <Property name="dataSet">$dsTbih43</Property>
+            <Property name="itemCodes">pages</Property>
+          </DataPilot>
+        </ToolBar>
+        <DataGrid id="$dgTbih43">
+          <ClientEvent name="onDataRowDoubleClick">var data = view.get(&quot;#$dsTbih43&quot;).getData(&quot;#&quot;);&#xD;
+view.id(&quot;$dialogBillNo&quot;).callback(data.toJSON());&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="dataSet">$dsTbih43</Property>
+          <Property name="readOnly">true</Property>
+          <Property name="showFilterBar">true</Property>
+          <Property name="filterMode">serverSide</Property>
+          <Property name="dataType">BaseTbih43</Property>
+          <DataColumn name="billCompName">
+            <Property name="property">billCompName</Property>
+          </DataColumn>
+          <DataColumn name="billNo">
+            <Property name="property">billNo</Property>
+          </DataColumn>
+          <DataColumn name="billDate">
+            <Property name="property">billDate</Property>
+          </DataColumn>
+          <DataColumn name="amt">
+            <Property name="property">amt</Property>
+          </DataColumn>
+          <DataColumn name="tax">
+            <Property name="property">tax</Property>
+          </DataColumn>
+          <DataColumn name="noTaxAmt">
+            <Property name="property">noTaxAmt</Property>
+          </DataColumn>
+          <DataColumn name="taxAmt">
+            <Property name="property">taxAmt</Property>
+          </DataColumn>
+          <DataColumn name="getCompName">
+            <Property name="property">getCompName</Property>
+          </DataColumn>
+          <DataColumn name="getDate">
+            <Property name="property">getDate</Property>
+          </DataColumn>
+        </DataGrid>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

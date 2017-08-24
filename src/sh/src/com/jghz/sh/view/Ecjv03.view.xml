@@ -24,6 +24,9 @@
       <PropertyDef name="carType">
         <Property></Property>
         <Property name="label">车辆类型</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadCarType&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="heavy">
         <Property name="dataType">BigDecimal</Property>
@@ -86,11 +89,24 @@
         <Property name="label">版本号</Property>
       </PropertyDef>
       <PropertyDef name="carImg">
-        <Property/>
+        <Property></Property>
       </PropertyDef>
-      <PropertyDef name="carShow">
-        <Property/>
+      <PropertyDef name="carImgPath">
+        <Property></Property>
         <Property name="label">车辆图片</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Tbwd03a">
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="carType">
+        <Property></Property>
+        <Property name="label">车辆类型</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadCarType&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
     </DataType>
   </Model>
@@ -117,15 +133,18 @@
     </UpdateAction>
     <AutoForm id="formCondition">
       <Property name="cols">*,*,*,*,*,*</Property>
+      <Property name="dataType">Tbwd03a</Property>
+      <Property name="createPrivateDataSet">true</Property>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">carNo</Property>
         <Property name="label">车牌号</Property>
+        <Property name="property">carNo</Property>
         <Editor/>
       </AutoFormElement>
       <AutoFormElement layoutConstraint="colSpan:2">
         <Property name="name">carType</Property>
         <Property name="label">车辆类别</Property>
-        <Property name="trigger">listDDUserType</Property>
+        <Property name="property">carType</Property>
         <Editor/>
       </AutoFormElement>
       <Button layoutConstraint="colSpan:1;align:right">
@@ -155,15 +174,37 @@ var action = view.get(&quot;#actionUpdate&quot;);&#xD;
 switch(arg.code){&#xD;
 	case &quot;+&quot;:{&#xD;
 		datas.insert();&#xD;
+        var dataList = view.get(&quot;#dataSetTbwd03&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        dataList.each(function(entity){&#xD;
+            if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
+                selectedItems.push(entity);&#xD;
+                view.get(&quot;#dataSetTbwd03.data&quot;).setCurrent(entity);&#xD;
+            }&#xD;
+        });&#xD;
+		&#xD;
+		view.set((&quot;#dgTbwd03.selection&quot;), selectedItems);&#xD;
 		view.get(&quot;#dialogTbwd03&quot;).show();&#xD;
+		view.get(&quot;#carImgA&quot;).set(&quot;image&quot;, null);&#xD;
+		 view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
 		arg.processDefault=false;&#xD;
 		break;&#xD;
 	}&#xD;
 	case &quot;-&quot;:{&#xD;
-		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
-			datas.remove();&#xD;
-			action.execute();&#xD;
-		});&#xD;
+		var selections = view.get(&quot;#dgTbwd03&quot;).get(&quot;selection&quot;);&#xD;
+		if(selections.length>0){&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selections.each(function(select){&#xD;
+            	    select.remove();&#xD;
+                });&#xD;
+                action.execute();&#xD;
+            });&#xD;
+			&#xD;
+		}else{&#xD;
+			alert(&quot;请至少选中一条数据&quot;);&#xD;
+		}&#xD;
 		arg.processDefault=false;&#xD;
 		break;&#xD;
 	}&#xD;
@@ -173,28 +214,41 @@ switch(arg.code){&#xD;
       </DataPilot>
       <Separator/>
       <ToolBarButton>
-        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbwd03.data&quot;);&#xD;
-if(data.current){&#xD;
-	view.get(&quot;#dialogTbwd03&quot;).show();&#xD;
-	view.get(&quot;#carImgA&quot;).set(&quot;image&quot;,data.current.get(&quot;carShow&quot;));&#xD;
-		if(data.current.get(&quot;carShow&quot;)!=null){&#xD;
-			view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
-		}&#xD;
-}else{&#xD;
-	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
-}</ClientEvent>
+        <ClientEvent name="onClick">var data = view.get(&quot;#dataSetTbwd03.data&quot;);&#xD;
+var selections = view.get(&quot;#dgTbwd03&quot;).get(&quot;selection&quot;);&#xD;
+if (selections.length == 1) {&#xD;
+    selections.each(function(select){&#xD;
+        view.get(&quot;#dataSetTbwd03.data&quot;).setCurrent(select);&#xD;
+    });&#xD;
+    if (data.current.get(&quot;carImg&quot;) != null) {&#xD;
+        view.get(&quot;#carImgA&quot;).set(&quot;image&quot;, data.current.get(&quot;carImgPath&quot;));&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;重新上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;上传成功&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot; url(>skin>common/icons.gif) -60px -0px&quot;);&#xD;
+    }&#xD;
+    else {&#xD;
+        view.get(&quot;#carImgA&quot;).set(&quot;image&quot;, null);&#xD;
+        view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;, &quot;开始上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;caption&quot;, &quot;等待上传&quot;);&#xD;
+        view.get(&quot;#btMsg&quot;).set(&quot;icon&quot;, &quot;  url(>skin>common/icons.gif) -20px -220px&quot;);&#xD;
+    }&#xD;
+    view.get(&quot;#dialogTbwd03&quot;).show();&#xD;
+}&#xD;
+else {&#xD;
+    alert(&quot;请只选着一条数据编辑&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
         <Property name="caption">修改</Property>
         <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
       </ToolBarButton>
       <Label id="msg">
-        <ClientEvent name="onCreate">&#xD;
-</ClientEvent>
         <Property name="style">
           <Property name="color">red</Property>
         </Property>
       </Label>
     </ToolBar>
-    <DataGrid>
+    <DataGrid id="dgTbwd03">
       <ClientEvent name="onReady">dorado.TipManager.initTip(self.getDom(), {&#xD;
 	text : self.get(&quot;tip&quot;),&#xD;
 	icon: &quot;INFO&quot;,&#xD;
@@ -204,10 +258,13 @@ if(data.current){&#xD;
 	text : self.get(&quot;tip&quot;),&#xD;
 	icon: &quot;INFO&quot;,&#xD;
 	trackMouse: true&#xD;
-});</ClientEvent>
+});&#xD;
+</ClientEvent>
       <Property name="dataSet">dataSetTbwd03</Property>
       <Property name="dataType">Tbwd03</Property>
       <Property name="readOnly">true</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn id="selection"/>
       <DataColumn name="carNo">
         <Property name="property">carNo</Property>
       </DataColumn>
@@ -239,29 +296,31 @@ if(data.current){&#xD;
         <Property name="property">engineerNo</Property>
       </DataColumn>
       <DataColumn>
-        <ClientEvent name="onRenderCell">$(arg.dom).empty().xCreate({&#xD;
-    tagName: &quot;IMG&quot;,&#xD;
-    src: $url(arg.data.get(&quot;carShow&quot;)),&#xD;
-    //style : &quot;margin: 2px&quot;&#xD;
-    style : &quot;width: 50px; height: 20px;&quot;&#xD;
+        <ClientEvent name="onRenderCell">var dataset = self.get(&quot;grid.dataSet&quot;);&#xD;
+if (dataset.getData(&quot;#&quot;) &amp;&amp; dataset.getData(&quot;#&quot;).state != dorado.Entity.STATE_NEW &amp;&amp; arg.data.get(&quot;carImgPath&quot;) != null) {&#xD;
+	$(arg.dom).empty().xCreate({&#xD;
+		tagName: &quot;IMG&quot;,&#xD;
+		src: $url(arg.data.get(&quot;carImgPath&quot;)),&#xD;
+		//style : &quot;margin: 2px&quot;&#xD;
+		style: &quot;width: 50px; height: 20px;&quot;&#xD;
 	&#xD;
-});&#xD;
-dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
-		content : {&#xD;
-			tagName : &quot;IMG&quot;,&#xD;
-			src : $url(arg.data.get(&quot;carShow&quot;)),&#xD;
-			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
-			style : &quot;width: 130px; height: 130px;&quot;&#xD;
-		},&#xD;
-		arrowDirection : &quot;top&quot;,&#xD;
-		arrowAlign : &quot;left&quot;&#xD;
 	});&#xD;
-&#xD;
-&#xD;
+	dorado.TipManager.initTip(arg.dom.parentNode, {&#xD;
+		content: {&#xD;
+			tagName: &quot;IMG&quot;,&#xD;
+			src: $url(arg.data.get(&quot;carImgPath&quot;)),&#xD;
+			//style : &quot;width: 128px; height: 128px; margin: 8px&quot;&#xD;
+			style: &quot;width: 130px; height: 130px;&quot;&#xD;
+		},&#xD;
+		arrowDirection: &quot;top&quot;,&#xD;
+		arrowAlign: &quot;left&quot;&#xD;
+	});&#xD;
+	&#xD;
+}&#xD;
 </ClientEvent>
         <Property name="dataType">Tbwd03</Property>
-        <Property name="property">carShow</Property>
-        <Property name="name">carShow</Property>
+        <Property name="property">carImgPath</Property>
+        <Property name="name">carImgPath</Property>
       </DataColumn>
     </DataGrid>
     <Dialog id="dialogTbwd03">
@@ -369,9 +428,17 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
             </Buttons>
             <Children>
               <Image id="carImgA" layoutConstraint="center ">
+                <ClientEvent name="onClick">var image = view.get(&quot;#dataSetTbwd03.data:#&quot;).get(&quot;carImgPath&quot;);&#xD;
+    if (image != null) {&#xD;
+	   view.get(&quot;#imageView&quot;).set(&quot;image&quot;,image);&#xD;
+		view.get(&quot;#logImage&quot;).show();&#xD;
+    }&#xD;
+    else {&#xD;
+        dorado.MessageBox.alert(&quot;没有图片可供显示&quot;);&#xD;
+    }&#xD;
+</ClientEvent>
                 <Property name="width">100%</Property>
                 <Property name="height">160</Property>
-                <Property name="blankImage">/jghz/html_qt/images/no_imgage.jpg</Property>
               </Image>
             </Children>
             <Tools/>
@@ -385,47 +452,37 @@ dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,funct
       </Children>
       <Tools/>
     </Dialog>
-    <ListDropDown id="listDDUserType">
-      <Property name="items">
-        <Collection>
-          <Entity>
-            <Property name="key">C</Property>
-            <Property name="lable">承运商</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">R</Property>
-            <Property name="lable">承运人</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">J</Property>
-            <Property name="lable">经济人</Property>
-          </Entity>
-          <Entity/>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">key</Property>
-    </ListDropDown>
-    <ListDropDown id="listDDStatus">
-      <Property name="items">
-        <Collection>
-          <Entity>
-            <Property name="key">0</Property>
-            <Property name="lable">未审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">1</Property>
-            <Property name="lable">已审核</Property>
-          </Entity>
-          <Entity>
-            <Property name="key">2</Property>
-            <Property name="lable">作废</Property>
-          </Entity>
-        </Collection>
-      </Property>
-      <Property name="displayProperty">lable</Property>
-      <Property name="property">key</Property>
-    </ListDropDown>
+    <Dialog id="logImage">
+      <Property name="height">50%</Property>
+      <Property name="width">50%</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView&quot;).zoomIn();</ClientEvent>
+          <Property name="caption">放大</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView&quot;).zoomOut();</ClientEvent>
+          <Property name="caption">缩小</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#imageView&quot;).rotateLeft();</ClientEvent>
+          <Property name="caption">左旋转</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var imageViewer = view.get(&quot;#imageView&quot;);&#xD;
+imageViewer.rotateRight();</ClientEvent>
+          <Property name="caption">右旋转</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <ImageViewer id="imageView">
+          <Property name="width">100%</Property>
+          <Property name="height">100%</Property>
+          <Property name="minScale">0.1</Property>
+        </ImageViewer>
+      </Children>
+      <Tools/>
+    </Dialog>
     <UploadAction id="ulaImg">
       <ClientEvent name="onUploadProgress">var btMsg=view.get(&quot;#btMsg&quot;);&#xD;
 btMsg.set(&quot;caption&quot;,&quot;上传中......&quot;);&#xD;
@@ -445,6 +502,7 @@ btMsg.set(&quot;icon&quot;, &quot;url(>skin>common/icons.gif) -260px -180px&quot
 entity.set(&quot;carImg&quot;,arg.returnValue[&quot;fileId&quot;]);&#xD;
 view.get(&quot;#aaGetCompressUrl&quot;).execute(function(returnValue){&#xD;
 		view.get(&quot;#carImgA&quot;).set(&quot;image&quot;,returnValue[&quot;compressUrl&quot;]+arg.returnValue[&quot;filePath&quot;]);&#xD;
+		entity.set(&quot;carImgPath&quot;,  returnValue[&quot;compressUrl&quot;] + arg.returnValue[&quot;filePath&quot;]);&#xD;
 		view.get(&quot;#btUpload&quot;).set(&quot;caption&quot;,&quot;重新上传&quot;);&#xD;
 });&#xD;
 &#xD;

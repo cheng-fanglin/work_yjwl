@@ -40,9 +40,9 @@ public class Ecjc03Service  extends HibernateDao{
 		 for(Tbwd03 wd03:col){
 			 String Id = wd03.getCarImg();
 			 if(Id != null){
-				 wd03.setCarShow(SystemConstant.compressUrl+shjc03wdDao.getFilePath(Id));
+				 wd03.setCarImgPath(SystemConstant.compressUrl+shjc03wdDao.getFilePath(Id));
 			 }else{
-				 wd03.setCarShow("/jghz/html_qt/images/no_imgage.jpg");
+				 wd03.setCarImgPath(null);
 			 }
 		 }
 		 page.setEntities(col);
