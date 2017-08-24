@@ -41,13 +41,13 @@ public class Shjc01Dao extends BaseDao {
 		if (paramater != null) {
 			if (null != paramater.get("pyname")
 					&& !"".equals(paramater.get("pyname"))) {
-				sql += " and pyname='" + paramater.get("pyname") + "' ";
+				sql += " and pyname like '%" + paramater.get("pyname") + "%' ";
 			}
 		}
 		if (paramater != null) {
 			if (null != paramater.get("transport")
 					&& !"".equals(paramater.get("transport"))) {
-				sql += " and transport = '" + paramater.get("transport") + "' ";
+				sql += " and transport like '%" + paramater.get("transport") + "%' ";
 			}
 		}
 		if (paramater != null) {
@@ -71,9 +71,9 @@ public class Shjc01Dao extends BaseDao {
 		String sql = " from Tbsh01b where 1=1 ";
 		
 		if (paramater != null) {
-			if (null != paramater.get("sh01Id")
+			if (null != paramater.get("stationcode")
 					&& !"".equals(paramater.get("sh01Id"))) {
-				sql += " and sh01bId='" + paramater.get("sh01Id") + "' ";
+				sql += " and stationcode='" + paramater.get("stationcode") + "' ";
 			} 
 		}
 		super.pagingQuery(page, sql, "select count(*) " + sql);

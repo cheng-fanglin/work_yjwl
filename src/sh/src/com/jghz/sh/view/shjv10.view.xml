@@ -1477,7 +1477,6 @@
     </DataType>
   </Model>
   <View>
-    <Import src="com.jghz.dc.view.select.prodNoSh10cSelect#$dialogProdNoSh10c"/>
     <DataSet id="dsSh10aCarrier">
       <Property name="dataType">[dtSh10aCarrier]</Property>
       <Property name="dataProvider">shjc10aService#loadSh10a</Property>

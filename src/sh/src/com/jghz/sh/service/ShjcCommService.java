@@ -296,4 +296,5 @@ public class ShjcCommService {
 		parameter = shjcCommDao.loadTransport(parameter);
 		return parameter;
 	}
+	
 }

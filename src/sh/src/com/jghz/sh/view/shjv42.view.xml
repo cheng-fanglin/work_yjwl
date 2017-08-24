@@ -6,11 +6,11 @@
     <DataType name="dtWd09">
       <Property name="creationType">com.jghz.sh.entity.Tbwd09</Property>
       <PropertyDef name="wd09Id">
-        <Property/>
+        <Property></Property>
         <Property name="label">主键ID</Property>
       </PropertyDef>
       <PropertyDef name="driverName">
-        <Property/>
+        <Property></Property>
         <Property name="label">司机名称</Property>
       </PropertyDef>
       <PropertyDef name="phoneNo">
@@ -18,11 +18,11 @@
         <Property name="label">手机号</Property>
       </PropertyDef>
       <PropertyDef name="carNo">
-        <Property/>
+        <Property></Property>
         <Property name="label">车号</Property>
       </PropertyDef>
       <PropertyDef name="date">
-        <Property/>
+        <Property></Property>
         <Property name="label">违章日期</Property>
       </PropertyDef>
       <PropertyDef name="amt">
@@ -30,11 +30,11 @@
         <Property name="label">违章金额</Property>
       </PropertyDef>
       <PropertyDef name="reason">
-        <Property/>
+        <Property></Property>
         <Property name="label">违章原因</Property>
       </PropertyDef>
       <PropertyDef name="createEmp">
-        <Property/>
+        <Property></Property>
         <Property name="label">新增人员</Property>
       </PropertyDef>
       <PropertyDef name="createTime">
@@ -42,7 +42,7 @@
         <Property name="label">新增时间</Property>
       </PropertyDef>
       <PropertyDef name="updateEmp">
-        <Property/>
+        <Property></Property>
         <Property name="label">更新人员</Property>
       </PropertyDef>
       <PropertyDef name="updateTime">
@@ -68,6 +68,8 @@
     </DataSet>
     <UpdateAction id="uaWd09">
       <Property name="dataResolver">shjc42Service#saveTbwd09</Property>
+      <Property name="successMessage">操作成功！</Property>
+      <Property name="executingMessage">任务执行中....</Property>
       <UpdateItem>
         <Property name="dataSet">dsWd09</Property>
       </UpdateItem>
@@ -112,22 +114,74 @@ view.get(&quot;#dsWd09&quot;).flushAsync(function(entityList){&#xD;
     </AutoForm>
     <ToolBar>
       <DataPilot id="wd09">
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsWd09.data&quot;);&#xD;
+var action = view.get(&quot;#uaWd09&quot;);&#xD;
+switch (arg.code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+        datas.insert();&#xD;
+       // var dataList = view.get(&quot;#dataSetTbwd02&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        selectedItems.push(view.get(&quot;#dsWd09.data:#&quot;));&#xD;
+		view.set((&quot;#dgWd09.selection&quot;),selectedItems);&#xD;
+		view.get(&quot;#dialogWd09&quot;).show();&#xD;
+    	arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+        var dataGrid = view.get(&quot;#dgWd09&quot;);//获取数据表格控件&#xD;
+        var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
+        if (selEntitys.length > 0) {&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selEntitys.each(function(select){&#xD;
+                    select.remove();&#xD;
+                })&#xD;
+                action.execute(function(){&#xD;
+                    view.get(&quot;#uaWd09&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                });&#xD;
+                &#xD;
+            });&#xD;
+        }&#xD;
+        if (selEntitys.length &lt; 1) {&#xD;
+            view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+            &#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
         <Property name="itemCodes">pages,+,-</Property>
         <Property name="dataSet">dsWd09</Property>
       </DataPilot>
-      <Separator/>
-      <ToolBarButton>
-        <Property name="caption">保存</Property>
-        <Property name="action">uaWd09</Property>
-      </ToolBarButton>
-      <ToolBarButton>
-        <Property name="caption">确认</Property>
-      </ToolBarButton>
-      <ToolBarLabel id="msg"/>
+      <Button>
+        <ClientEvent name="onClick">var data = view.get(&quot;#dsWd09&quot;).getData();&#xD;
+var select = view.get(&quot;#dgWd09&quot;).get('selection');&#xD;
+if (select.length == 1) {&#xD;
+	select.each(function(dataSelection){&#xD;
+		view.get(&quot;#dsWd09.data&quot;).setCurrent(dataSelection);&#xD;
+	});&#xD;
+	&#xD;
+	&#xD;
+	&#xD;
+	 view.get(&quot;#dialogWd09&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;请只选择一条数据&quot;);&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </Button>
+      <ToolBarLabel id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </ToolBarLabel>
     </ToolBar>
     <DataGrid id="dgWd09">
       <Property name="dataSet">dsWd09</Property>
       <Property name="dataType">dtWd09</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
       <DataColumn name="driverName">
         <Property name="property">driverName</Property>
         <Property name="trigger">cdpWd02</Property>
@@ -152,6 +206,76 @@ view.get(&quot;#dsWd09&quot;).flushAsync(function(entityList){&#xD;
         <Property name="editorType">TextArea</Property>
       </DataColumn>
     </DataGrid>
+    <Dialog id="dialogWd09">
+      <Property name="height">300</Property>
+      <Property name="width">600</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogWd09&quot;);&#xD;
+var action=view.get(&quot;#uaWd09&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确认</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dsWd09&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogWd09&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dsWd09</Property>
+          <Property name="dataType">dtWd09</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement>
+            <Property name="name">driverName</Property>
+            <Property name="property">driverName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">phoneNo</Property>
+            <Property name="property">phoneNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carNo</Property>
+            <Property name="property">carNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">date</Property>
+            <Property name="property">date</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">amt</Property>
+            <Property name="property">amt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Panel>
+            <Buttons/>
+            <Children/>
+            <Tools/>
+          </Panel>
+          <AutoFormElement>
+            <Property name="name">reason</Property>
+            <Property name="property">reason</Property>
+            <Property name="width">550</Property>
+            <Property name="height">100%</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
     <DateDropDown id="dateDropDown1">
       <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
 arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>

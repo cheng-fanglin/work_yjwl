@@ -19,16 +19,16 @@ public class Shjc01wdDao extends BaseDao {
 		String hql = " from "+Tbwd01.class.getName()+ " where 1=1 ";
 		if (paramater != null) {
 			if(paramater.get("phoneNo")!=null){
-				hql += " and phoneNo = '" +paramater.get("phoneNo")+"' ";
+				hql += " and phoneNo like '%" +paramater.get("phoneNo")+"%' ";
 			}
 			if(paramater.get("userType")!=null){
-				hql += " and userType = '" +paramater.get("userType")+"' ";
+				hql += " and userType like '%" +paramater.get("userType")+"%' ";
 			} 
 			if(paramater.get("carrierNo")!=null){
-				hql += " and carrierNo  = '" +paramater.get("carrierNo")+"' ";
+				hql += " and carrierNo  like '%" +paramater.get("carrierNo")+"%' ";
 			}
 			if(paramater.get("carrierName")!=null){
-				hql += " and carrierName  = '" +paramater.get("carrierName")+"' ";
+				hql += " and carrierName  like '%" +paramater.get("carrierName")+"%' ";
 			}
 			if(paramater.get("state")!=null){
 				hql += " and state  = '" +paramater.get("state")+"' ";

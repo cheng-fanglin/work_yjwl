@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih43">
+      <Property name="creationType">com.jghz.ih.entity.Tbih43</Property>
+      <Property name="creationType">com.jghz.ih.entity.Tbih43</Property>
+      <PropertyDef name="ih43Id">
+        <Property name="dataType">String</Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property name="dataType">String</Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="billCompNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">开票单位编码</Property>
+      </PropertyDef>
+      <PropertyDef name="billCompName">
+        <Property name="dataType">String</Property>
+        <Property name="label">开票单位</Property>
+      </PropertyDef>
+      <PropertyDef name="getCompNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">收票单位编码</Property>
+      </PropertyDef>
+      <PropertyDef name="getCompName">
+        <Property name="dataType">String</Property>
+        <Property name="label">收票单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="billNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">开票编号</Property>
+      </PropertyDef>
+      <PropertyDef name="billDate">
+        <Property name="dataType">String</Property>
+        <Property name="label">开票日期</Property>
+      </PropertyDef>
+      <PropertyDef name="getDate">
+        <Property name="dataType">String</Property>
+        <Property name="label">收票日期</Property>
+      </PropertyDef>
+      <PropertyDef name="amt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">开票金额</Property>
+      </PropertyDef>
+      <PropertyDef name="noTaxAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">不含税金额</Property>
+      </PropertyDef>
+      <PropertyDef name="taxAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">税额</Property>
+      </PropertyDef>
+      <PropertyDef name="discontAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">扣款金额</Property>
+      </PropertyDef>
+      <PropertyDef name="orderAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">特殊金额</Property>
+      </PropertyDef>
+      <PropertyDef name="delayAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">延付金额</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property name="dataType">String</Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property name="dataType">String</Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property name="dataType">String</Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="tax">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">税率</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbih43信息维护</Property>
+    <DataSet id="dataSetTbih43">
+      <Property name="dataProvider">ihjc43Service#loadTbih43</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbih43]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ihjc43Service#saveTbih43</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbih43</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <ImportExcelAction id="importExcelAction">
+      <ClientEvent name="onSuccess">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih43&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="bigData">true</Property>
+      <Property name="startRow">1</Property>
+    </ImportExcelAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">billCompName</Property>
+        <Property name="label">开票单位</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">getCompName</Property>
+        <Property name="label">收票单位</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">billDate</Property>
+        <Property name="label">开票日期</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">billNo</Property>
+        <Property name="label">开票编号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button id="btnQuery">
+        <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih43&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="width">80</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button id="btnReset">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="width">80</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <Property name="dataSet">dataSetTbih43</Property>
+        <Property name="itemCodes">pages,+,-,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        <Property name="action">actionUpdate</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var importExcelAction=view.get(&quot;#importExcelAction&quot;);&#xD;
+	importExcelAction.set(&quot;excelModelId&quot;,&quot;IH0006&quot;);&#xD;
+	importExcelAction.execute(function(arg){&#xD;
+	dorado.MessageBox.alert(&quot;成功解析导入[&quot; + arg + &quot;]数据！&quot;);&#xD;
+});&#xD;
+</ClientEvent>
+        <Property name="caption">上传导入</Property>
+        <Property name="icon">dorado/res/com/bstek/bdf2/importexcel/view/icons/page_excel.png</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbih43</Property>
+      <Property name="dataType">Tbih43</Property>
+      <DataColumn name="billCompName">
+        <Property name="property">billCompName</Property>
+      </DataColumn>
+      <DataColumn name="billNo">
+        <Property name="property">billNo</Property>
+      </DataColumn>
+      <DataColumn name="billDate">
+        <Property name="property">billDate</Property>
+      </DataColumn>
+      <DataColumn name="amt">
+        <Property name="property">amt</Property>
+      </DataColumn>
+      <DataColumn name="tax">
+        <Property name="property">tax</Property>
+      </DataColumn>
+      <DataColumn name="noTaxAmt">
+        <Property name="property">noTaxAmt</Property>
+      </DataColumn>
+      <DataColumn name="taxAmt">
+        <Property name="property">taxAmt</Property>
+      </DataColumn>
+      <DataColumn name="getCompName">
+        <Property name="property">getCompName</Property>
+      </DataColumn>
+      <DataColumn name="getDate">
+        <Property name="property">getDate</Property>
+      </DataColumn>
+    </DataGrid>
+  </View>
+</ViewConfig>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtIh04">
+      <Property name="creationType">com.jghz.ih.entity.Tbih04</Property>
+      <PropertyDef name="ih04Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">经销商</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptEmp">
+        <Property></Property>
+        <Property name="label">收货人</Property>
+      </PropertyDef>
+      <PropertyDef name="offsetMan">
+        <Property></Property>
+        <Property name="label">抵税人</Property>
+      </PropertyDef>
+      <PropertyDef name="impostNo">
+        <Property></Property>
+        <Property name="label">税号</Property>
+      </PropertyDef>
+      <PropertyDef name="lb">
+        <Property></Property>
+        <Property name="label">类别</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">新增人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">新增时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtIh04Condition">
+      <Property name="creationType">com.jghz.ih.entity.Tbih04</Property>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsIh04Condition">
+      <Property name="dataType">[dtIh04]</Property>
+    </DataSet>
+    <DataSet id="dsIh04">
+      <Property name="dataType">[dtIh04]</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataProvider">ihjc04Service#loadTbih04</Property>
+    </DataSet>
+    <UpdateAction id="uaIh04">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc04Service#saveIh04</Property>
+      <Property name="executingMessage">正在保存……</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsIh04</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <FieldSet>
+      <Property name="caption">查询</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with(view.get(&quot;#dsIh04&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+          <Property name="caption">查询</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+          <Property name="caption">重置</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*,*</Property>
+          <Property name="dataType">dtIh04</Property>
+          <Property name="createPrivateDataSet">true</Property>
+          <Property name="labelWidth">100</Property>
+          <AutoFormElement>
+            <Property name="name">custNo</Property>
+            <Property name="property">custNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiptCompName</Property>
+            <Property name="property">receiptCompName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">receiptEmp</Property>
+            <Property name="property">receiptEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">lb</Property>
+            <Property name="property">lb</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot id="ih04">
+        <Property name="dataSet">dsIh04</Property>
+        <Property name="itemCodes">pages,+,-,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="action">uaIh04</Property>
+        <Property name="caption">保存</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dsIh04</Property>
+      <DataColumn name="ih04Id">
+        <Property name="property">ih04Id</Property>
+      </DataColumn>
+      <DataColumn name="compId">
+        <Property name="property">compId</Property>
+      </DataColumn>
+      <DataColumn name="custNo">
+        <Property name="property">custNo</Property>
+      </DataColumn>
+      <DataColumn name="receiptCompNo">
+        <Property name="property">receiptCompNo</Property>
+      </DataColumn>
+      <DataColumn name="receiptCompName">
+        <Property name="property">receiptCompName</Property>
+      </DataColumn>
+      <DataColumn name="receiptEmp">
+        <Property name="property">receiptEmp</Property>
+      </DataColumn>
+      <DataColumn name="offsetMan">
+        <Property name="property">offsetMan</Property>
+      </DataColumn>
+      <DataColumn name="impostNo">
+        <Property name="property">impostNo</Property>
+      </DataColumn>
+      <DataColumn name="lb">
+        <Property name="property">lb</Property>
+      </DataColumn>
+      <DataColumn name="createEmp">
+        <Property name="property">createEmp</Property>
+      </DataColumn>
+      <DataColumn name="createDate">
+        <Property name="property">createDate</Property>
+      </DataColumn>
+      <DataColumn name="updateEmp">
+        <Property name="property">updateEmp</Property>
+      </DataColumn>
+      <DataColumn name="updateDate">
+        <Property name="property">updateDate</Property>
+      </DataColumn>
+      <DataColumn name="version">
+        <Property name="property">version</Property>
+      </DataColumn>
+    </DataGrid>
+  </View>
+</ViewConfig>

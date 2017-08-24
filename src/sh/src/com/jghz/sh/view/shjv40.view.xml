@@ -88,6 +88,8 @@
     </DataSet>
     <UpdateAction id="uaWd07">
       <Property name="dataResolver">shjc40Service#saveTbwd07</Property>
+      <Property name="successMessage">操作成功!</Property>
+      <Property name="executingMessage">任务正在执行....</Property>
       <UpdateItem>
         <Property name="dataSet">dsWd07</Property>
       </UpdateItem>
@@ -127,22 +129,76 @@ view.get(&quot;#dsWd07&quot;).flushAsync(function(entityList){&#xD;
     </AutoForm>
     <ToolBar>
       <DataPilot id="sh31">
-        <Property name="itemCodes">pages,+,-</Property>
+        <ClientEvent name="onSubControlAction">var code = arg.code;&#xD;
+var datas = view.get(&quot;#dsWd07.data&quot;);&#xD;
+var action = view.get(&quot;#uaWd07&quot;);&#xD;
+switch (code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+      datas.insert();&#xD;
+        var dataList = view.get(&quot;#dsWd07&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        dataList.each(function(entity){&#xD;
+            if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
+                selectedItems.push(entity);&#xD;
+                view.get(&quot;#dsWd07.data&quot;).setCurrent(entity);&#xD;
+            }&#xD;
+        });&#xD;
+		&#xD;
+		view.set((&quot;#dgWd07.selection&quot;), selectedItems);&#xD;
+		view.get(&quot;#dialogWd07&quot;).show();&#xD;
+		&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+      var selections = view.get(&quot;#dgWd07&quot;).get(&quot;selection&quot;);&#xD;
+		if(selections.length>0){&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selections.each(function(select){&#xD;
+            	    select.remove();&#xD;
+                });&#xD;
+                action.execute();&#xD;
+            });&#xD;
+			&#xD;
+		}else{&#xD;
+			alert(&quot;请至少选中一条数据&quot;);&#xD;
+		}&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="itemCodes">pages,+,-,x</Property>
         <Property name="dataSet">dsWd07</Property>
       </DataPilot>
       <Separator/>
-      <ToolBarButton>
-        <Property name="caption">保存</Property>
-        <Property name="action">uaWd07</Property>
-      </ToolBarButton>
-      <ToolBarButton>
-        <Property name="caption">确认</Property>
-      </ToolBarButton>
-      <ToolBarLabel id="msg"/>
+      <Button>
+        <ClientEvent name="onClick">var data = view.get(&quot;#dsWd07.data&quot;);&#xD;
+var selections = view.get(&quot;#dgWd07&quot;).get(&quot;selection&quot;);&#xD;
+if(selections.length == 1){&#xD;
+	selections.each(function(selection){&#xD;
+		data.setCurrent(selection);&#xD;
+	});&#xD;
+	view.get(&quot;#dialogWd07&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;请只选择一条数据&quot;);&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </Button>
+      <ToolBarLabel id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </ToolBarLabel>
     </ToolBar>
-    <DataGrid>
+    <DataGrid id="dgWd07">
       <Property name="dataSet">dsWd07</Property>
       <Property name="dataType">dtWd07</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
       <DataColumn name="carNo">
         <Property name="property">carNo</Property>
         <Property name="trigger">ddCarNo</Property>
@@ -189,5 +245,88 @@ arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
       <Property name="displayProperty">carNo</Property>
       <Property name="property">carNo</Property>
     </DataSetDropDown>
+    <Dialog id="dialogWd07">
+      <Property name="height">400</Property>
+      <Property name="width">700</Property>
+      <Buttons>
+        <Button>
+          <Property name="caption">确认</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dsWd07&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogWd07&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dsWd07</Property>
+          <Property name="dataType">dtWd07</Property>
+          <Property name="height">100%</Property>
+          <Property name="width">100%</Property>
+          <AutoFormElement>
+            <Property name="name">carNo</Property>
+            <Property name="property">carNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">date</Property>
+            <Property name="property">date</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">addOil</Property>
+            <Property name="property">addOil</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">upkeep</Property>
+            <Property name="property">upkeep</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">annualFee</Property>
+            <Property name="property">annualFee</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">addGass</Property>
+            <Property name="property">addGass</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">insurance</Property>
+            <Property name="property">insurance</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">parts</Property>
+            <Property name="property">parts</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">fine</Property>
+            <Property name="property">fine</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">payFor</Property>
+            <Property name="property">payFor</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">roadFee</Property>
+            <Property name="property">roadFee</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
   </View>
 </ViewConfig>

@@ -1,7 +1,11 @@
 package com.jghz.sh.service;
 
 import java.rmi.dgc.VMID;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
 
@@ -10,6 +14,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.base.util.AppUtils;
 import com.bstek.dorado.annotation.DataProvider;
 import com.bstek.dorado.annotation.DataResolver;
 import com.bstek.dorado.data.entity.EntityState;
@@ -70,20 +75,23 @@ public class Shjc01Service {
 	* @param name  
 	* @param @return 设定文件  
 	* @return String DOM对象  
+	 * @throws ParseException 
 	* @Exception 异常对象  
 	* @since  CodingExample　Ver(编码范例查看) 1.1  
 	*/  
 	@SuppressWarnings("unchecked")
 	@DataResolver
-	public Properties saveSh01(Collection<Tbsh01> sh01s){
+	public Properties saveSh01(Collection<Tbsh01> sh01s) throws ParseException{
 		Properties prop = new Properties();
 		boolean boo = true;
 		StringBuffer msg = new StringBuffer();
 		for (Tbsh01 sh01 : sh01s) {
 			EntityState state = EntityUtils.getState(sh01);
 			if (state.equals(EntityState.NEW)) {
-				sh01.setSh01Id(new VMID().toString());
+				sh01.setSh01Id(AppUtils.generateUniqueKey());
 				sh01.setStatus("0");
+				sh01.setCreateDate(new Date());
+				sh01.setCreateEmp(AppUtils.getUserName());
 				boo=shjc01Dao.save(sh01);
 				if(boo == false){
 					msg.append("无新增数据");
@@ -134,6 +142,7 @@ public class Shjc01Service {
 			EntityState state = EntityUtils.getState(sh01b);
 			if (state.equals(EntityState.NEW)) {
 				sh01b.setStatus("0");
+				sh01b.setSh01bId(AppUtils.generateUniqueKey());
 				boo=shjc01Dao.save(sh01b);
 				if(boo == false){
 					msg.append("无新增数据");

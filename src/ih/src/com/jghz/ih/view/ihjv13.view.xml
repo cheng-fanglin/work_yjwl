@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih30">
+      <Property name="creationType">com.jghz.ih.entity.Tbih30</Property>
+      <Property name="creationType">com.jghz.ih.entity.Tbih30</Property>
+      <PropertyDef name="ih30Id">
+        <Property></Property>
+        <Property name="label">记录ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="labelNo">
+        <Property></Property>
+        <Property name="label">标签号</Property>
+      </PropertyDef>
+      <PropertyDef name="wareQwCode">
+        <Property></Property>
+        <Property name="label">库位</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCode">
+        <Property></Property>
+        <Property name="label">层数</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">产品编码</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="gradeNo">
+        <Property></Property>
+        <Property name="label">牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="steelNo">
+        <Property></Property>
+        <Property name="label">钢种</Property>
+      </PropertyDef>
+      <PropertyDef name="qb">
+        <Property></Property>
+        <Property name="label">切边</Property>
+      </PropertyDef>
+      <PropertyDef name="dc">
+        <Property></Property>
+        <Property name="label">定尺信息</Property>
+      </PropertyDef>
+      <PropertyDef name="thick">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">厚度</Property>
+      </PropertyDef>
+      <PropertyDef name="width">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">宽度</Property>
+      </PropertyDef>
+      <PropertyDef name="length">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">长度</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property></Property>
+        <Property name="label">尺寸信息</Property>
+      </PropertyDef>
+      <PropertyDef name="pieceNum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">件数</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">数量</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">重量</Property>
+      </PropertyDef>
+      <PropertyDef name="volume">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">体积</Property>
+      </PropertyDef>
+      <PropertyDef name="unitWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">单重</Property>
+      </PropertyDef>
+      <PropertyDef name="inUnitWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库单重</Property>
+      </PropertyDef>
+      <PropertyDef name="inWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库重量</Property>
+      </PropertyDef>
+      <PropertyDef name="outWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">出库重量</Property>
+      </PropertyDef>
+      <PropertyDef name="maxWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">可开单总量</Property>
+      </PropertyDef>
+      <PropertyDef name="differenceWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">磅差</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值单价</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值金额</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="ownnerCompNo">
+        <Property></Property>
+        <Property name="label">货主单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="ownnerCompName">
+        <Property></Property>
+        <Property name="label">货主单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货单位</Property>
+      </PropertyDef>
+      <PropertyDef name="orderCompNo">
+        <Property></Property>
+        <Property name="label">订货单位</Property>
+      </PropertyDef>
+      <PropertyDef name="orderCompName">
+        <Property></Property>
+        <Property name="label">订货单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同协议号</Property>
+      </PropertyDef>
+      <PropertyDef name="contractNo">
+        <Property></Property>
+        <Property name="label">采购合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="tranOrderNo">
+        <Property></Property>
+        <Property name="label">运输订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNo">
+        <Property></Property>
+        <Property name="label">出厂订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderItem">
+        <Property></Property>
+        <Property name="label">出厂订单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveryNo">
+        <Property></Property>
+        <Property name="label">来函流水号</Property>
+      </PropertyDef>
+      <PropertyDef name="ladingNo">
+        <Property></Property>
+        <Property name="label">提货号</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算号</Property>
+      </PropertyDef>
+      <PropertyDef name="invoice">
+        <Property></Property>
+        <Property name="label">发票号</Property>
+      </PropertyDef>
+      <PropertyDef name="fwlx">
+        <Property></Property>
+        <Property name="label">服务类型</Property>
+      </PropertyDef>
+      <PropertyDef name="settleType">
+        <Property></Property>
+        <Property name="label">结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="syhch">
+        <Property></Property>
+        <Property name="label">水运航次号</Property>
+      </PropertyDef>
+      <PropertyDef name="fno">
+        <Property></Property>
+        <Property name="label">方案号</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运输单号</Property>
+      </PropertyDef>
+      <PropertyDef name="priceSno">
+        <Property></Property>
+        <Property name="label">价格编号</Property>
+      </PropertyDef>
+      <PropertyDef name="zkdNo">
+        <Property></Property>
+        <Property name="label">转库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="inNo">
+        <Property></Property>
+        <Property name="label">入库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="inDate">
+        <Property></Property>
+        <Property name="label">入库时间</Property>
+      </PropertyDef>
+      <PropertyDef name="inEmp">
+        <Property></Property>
+        <Property name="label">入库人</Property>
+      </PropertyDef>
+      <PropertyDef name="inLiftingTeam">
+        <Property></Property>
+        <Property name="label">入库装卸班组</Property>
+      </PropertyDef>
+      <PropertyDef name="inLiftingEmp">
+        <Property></Property>
+        <Property name="label">入库理货员</Property>
+      </PropertyDef>
+      <PropertyDef name="inCraneDriver">
+        <Property></Property>
+        <Property name="label">入库行车工</Property>
+      </PropertyDef>
+      <PropertyDef name="outNo">
+        <Property></Property>
+        <Property name="label">出库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="outDate">
+        <Property></Property>
+        <Property name="label">出库时间</Property>
+      </PropertyDef>
+      <PropertyDef name="outEmp">
+        <Property></Property>
+        <Property name="label">出库人</Property>
+      </PropertyDef>
+      <PropertyDef name="outLiftingTeam">
+        <Property></Property>
+        <Property name="label">出库装卸班组</Property>
+      </PropertyDef>
+      <PropertyDef name="outLiftingEmp">
+        <Property></Property>
+        <Property name="label">出库理货员</Property>
+      </PropertyDef>
+      <PropertyDef name="outCraneDriver">
+        <Property></Property>
+        <Property name="label">出库行车工</Property>
+      </PropertyDef>
+      <PropertyDef name="phEmp">
+        <Property></Property>
+        <Property name="label">配货人</Property>
+      </PropertyDef>
+      <PropertyDef name="phIp">
+        <Property></Property>
+        <Property name="label">配货IP</Property>
+      </PropertyDef>
+      <PropertyDef name="zcr">
+        <Property></Property>
+        <Property name="label">装车人</Property>
+      </PropertyDef>
+      <PropertyDef name="zcTime">
+        <Property></Property>
+        <Property name="label">装车时间</Property>
+      </PropertyDef>
+      <PropertyDef name="jfr">
+        <Property></Property>
+        <Property name="label">计费日</Property>
+      </PropertyDef>
+      <PropertyDef name="lb">
+        <Property></Property>
+        <Property name="label">类别(JY-经营/ZY-自营)</Property>
+      </PropertyDef>
+      <PropertyDef name="kb">
+        <Property></Property>
+        <Property name="label">库别</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property></Property>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="sfe">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">收费额</Property>
+      </PropertyDef>
+      <PropertyDef name="jkqrtjFy">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">缴款确认提交费用</Property>
+      </PropertyDef>
+      <PropertyDef name="qrphFy">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">确认配货费用</Property>
+      </PropertyDef>
+      <PropertyDef name="isOverdue">
+        <Property></Property>
+        <Property name="label">超期费结算状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isStorage">
+        <Property></Property>
+        <Property name="label">仓储费结算状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isManager">
+        <Property></Property>
+        <Property name="label">仓储管理费结算状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isOrder">
+        <Property></Property>
+        <Property name="label">特殊价格费结算状态</Property>
+      </PropertyDef>
+      <PropertyDef name="isTurning">
+        <Property></Property>
+        <Property name="label">翻堆费结算状态</Property>
+      </PropertyDef>
+      <PropertyDef name="managerTs">
+        <Property></Property>
+        <Property name="label">仓储管理天数</Property>
+      </PropertyDef>
+      <PropertyDef name="jsdr">
+        <Property></Property>
+        <Property name="label">结算导入标示(已导=1，否则=0)</Property>
+      </PropertyDef>
+      <PropertyDef name="chr">
+        <Property></Property>
+        <Property name="label">冲红日</Property>
+      </PropertyDef>
+      <PropertyDef name="age">
+        <Property></Property>
+        <Property name="label">天数</Property>
+      </PropertyDef>
+      <PropertyDef name="hpZt">
+        <Property></Property>
+        <Property name="label">货品状态</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态(1确认配货2接受确认3打印六联单)</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="deadLine">
+        <Property></Property>
+        <Property name="label">交期时间</Property>
+      </PropertyDef>
+      <PropertyDef name="sfzd">
+        <Property></Property>
+        <Property name="label">是否为重点合同</Property>
+      </PropertyDef>
+      <PropertyDef name="ifImport">
+        <Property></Property>
+        <Property name="label">是否导入(A转库入库B货权转授)</Property>
+      </PropertyDef>
+      <PropertyDef name="ifzdbj">
+        <Property></Property>
+        <Property name="label">转单次数标记</Property>
+      </PropertyDef>
+      <PropertyDef name="isCq">
+        <Property></Property>
+        <Property name="label">是否超期</Property>
+      </PropertyDef>
+      <PropertyDef name="sfxcbj">
+        <Property></Property>
+        <Property name="label">是否项次标记</Property>
+      </PropertyDef>
+      <PropertyDef name="sfzq">
+        <Property></Property>
+        <Property name="label">是否直取标记</Property>
+      </PropertyDef>
+      <PropertyDef name="bjyybz">
+        <Property></Property>
+        <Property name="label">标记原因备注</Property>
+      </PropertyDef>
+      <PropertyDef name="lineCode">
+        <Property></Property>
+        <Property name="label">专线</Property>
+      </PropertyDef>
+      <PropertyDef name="stationCode">
+        <Property></Property>
+        <Property name="label">当前到站</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建者</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改者</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">VERSION</Property>
+      </PropertyDef>
+      <PropertyDef name="wareQwCodeOld">
+        <Property></Property>
+        <Property name="label">原储位</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCodeOld">
+        <Property></Property>
+        <Property name="label">原层数</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Tbih13">
+      <Property name="creationType">com.jghz.ih.entity.Tbih13</Property>
+      <Property name="creationType">com.jghz.ih.entity.Tbih30</Property>
+      <PropertyDef name="ih13Id">
+        <Property></Property>
+        <Property name="label">记录ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="rkdId">
+        <Property></Property>
+        <Property name="label">入库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="labelNo">
+        <Property></Property>
+        <Property name="label">标签号</Property>
+      </PropertyDef>
+      <PropertyDef name="wareQwCodeOld">
+        <Property></Property>
+        <Property name="label">原储位</Property>
+      </PropertyDef>
+      <PropertyDef name="wareQwCode">
+        <Property></Property>
+        <Property name="label">新储位</Property>
+      </PropertyDef>
+      <PropertyDef name="orderItem">
+        <Property></Property>
+        <Property name="label">项次</Property>
+      </PropertyDef>
+      <PropertyDef name="ladingNo">
+        <Property></Property>
+        <Property name="label">提单号</Property>
+      </PropertyDef>
+      <PropertyDef name="gradeNo">
+        <Property></Property>
+        <Property name="label">牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="steelNo">
+        <Property></Property>
+        <Property name="label">钢种</Property>
+      </PropertyDef>
+      <PropertyDef name="thick">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">厚度</Property>
+      </PropertyDef>
+      <PropertyDef name="width">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">宽度</Property>
+      </PropertyDef>
+      <PropertyDef name="length">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">长度</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property></Property>
+        <Property name="label">尺寸信息</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">数量</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">重量</Property>
+      </PropertyDef>
+      <PropertyDef name="inWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库重量</Property>
+      </PropertyDef>
+      <PropertyDef name="inNo">
+        <Property></Property>
+        <Property name="label">入库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="inDate">
+        <Property></Property>
+        <Property name="label">入库时间</Property>
+      </PropertyDef>
+      <PropertyDef name="zkDate">
+        <Property></Property>
+        <Property name="label">转库时间</Property>
+      </PropertyDef>
+      <PropertyDef name="zkEmp">
+        <Property></Property>
+        <Property name="label">转库人</Property>
+      </PropertyDef>
+      <PropertyDef name="zkLiftingTeam">
+        <Property></Property>
+        <Property name="label">转库装卸班组</Property>
+      </PropertyDef>
+      <PropertyDef name="zkLiftingEmp">
+        <Property></Property>
+        <Property name="label">转库理货员</Property>
+      </PropertyDef>
+      <PropertyDef name="zkCraneDriver">
+        <Property></Property>
+        <Property name="label">转库行车工</Property>
+      </PropertyDef>
+      <PropertyDef name="outNo">
+        <Property></Property>
+        <Property name="label">出库单ID</Property>
+      </PropertyDef>
+      <PropertyDef name="outDate">
+        <Property></Property>
+        <Property name="label">出库时间</Property>
+      </PropertyDef>
+      <PropertyDef name="outEmp">
+        <Property></Property>
+        <Property name="label">出库人</Property>
+      </PropertyDef>
+      <PropertyDef name="ifCk">
+        <Property></Property>
+        <Property name="label">是否跨区移储标记</Property>
+      </PropertyDef>
+      <PropertyDef name="lb">
+        <Property></Property>
+        <Property name="label">类别(JY-经营/ZY-自营)</Property>
+      </PropertyDef>
+      <PropertyDef name="hply">
+        <Property></Property>
+        <Property name="label">自营材货品来源</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建者</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改者</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">VERSION</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCodeOld">
+        <Property></Property>
+        <Property name="label">原层数</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCode">
+        <Property></Property>
+        <Property name="label">新层数</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbih30信息维护</Property>
+    <DataSet id="dataSetTbih30">
+      <Property name="dataProvider">ihjc13Service#loadTbih30</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbih30]</Property>
+    </DataSet>
+    <DataSet id="dataSetTbih13">
+      <Property name="dataProvider">ihjc13Service#loadTbih13</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbih13]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ihjc13Service#saveTbih30</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbih30</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionRefreshLayer">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc13Service#saveLayerCodeRefresh</Property>
+    </AjaxAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">wareQwCode</Property>
+        <Property name="label">库位</Property>
+        <Property name="trigger">customConditionWareNo</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">labelNo</Property>
+        <Property name="label">标签号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">gradeNo</Property>
+        <Property name="label">牌号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">productName</Property>
+        <Property name="label">产品名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">size</Property>
+        <Property name="label">型号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">custName</Property>
+        <Property name="label">客户名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button id="btnQuery">
+        <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+var tabControl1 = view.get(&quot;#tabControl1&quot;);&#xD;
+var curtab = tabControl1.get(&quot;currentTab&quot;);&#xD;
+if(curtab.get(&quot;name&quot;)=='tab1'){&#xD;
+	with (view.get(&quot;#dataSetTbih30&quot;)){&#xD;
+		set(&quot;parameter&quot;, data);&#xD;
+		flushAsync();&#xD;
+	}&#xD;
+}else if(curtab.get(&quot;name&quot;)=='tab2'){&#xD;
+	with (view.get(&quot;#dataSetTbih13&quot;)){&#xD;
+		set(&quot;parameter&quot;, data);&#xD;
+		flushAsync();&#xD;
+	}&#xD;
+}&#xD;
+</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="width">80</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+      <Button id="btnReset">
+        <ClientEvent name="onClick">view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="width">80</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+      </Button>
+    </AutoForm>
+    <TabControl id="tabControl1">
+      <ControlTab>
+        <Property name="caption">移库操作</Property>
+        <Property name="name">tab1</Property>
+        <Container>
+          <ToolBar>
+            <DataPilot>
+              <Property name="dataSet">dataSetTbih30</Property>
+              <Property name="itemCodes">pages,x</Property>
+            </DataPilot>
+            <Separator/>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+              <Property name="action">actionUpdate</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <Property name="caption">刷新层号</Property>
+              <Property name="action">ajaxActionRefreshLayer</Property>
+            </ToolBarButton>
+          </ToolBar>
+          <AutoForm id="formC">
+            <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+            <Property name="labelWidth">70</Property>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">wareQwNo</Property>
+              <Property name="label">库位</Property>
+              <Property name="trigger">customDropDownWareNo</Property>
+              <Property name="property">wareQwNo</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">zkLiftingEmp</Property>
+              <Property name="label">理货员</Property>
+              <Property name="property">zkLiftingEmp</Property>
+              <Property name="trigger">cDDLiftingEmp</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">zkCraneDriver</Property>
+              <Property name="label">行车员</Property>
+              <Property name="property">zkCraneDriver</Property>
+              <Property name="trigger">cDDCraneDriver</Property>
+              <Editor/>
+            </AutoFormElement>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">zkLiftingTeam</Property>
+              <Property name="label">装卸班组</Property>
+              <Property name="property">zkLiftingTeam</Property>
+              <Editor/>
+            </AutoFormElement>
+            <Button>
+              <ClientEvent name="onClick">var entityForm = view.get(&quot;#formC&quot;).get(&quot;entity&quot;);&#xD;
+var data = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+var dgTbih30 = view.get(&quot;#dgTbih30&quot;);&#xD;
+var selection = dgTbih30.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	selection.each(function(entity30){&#xD;
+		entity30.set(&quot;wareQwCodeOld&quot;,entityForm.wareQwNo);&#xD;
+	});&#xD;
+	var actionUpdate = view.get(&quot;#actionUpdate&quot;);&#xD;
+	actionUpdate.set(&quot;parameter&quot;,{&#xD;
+		'wareQwNo' : entityForm.wareQwNo,&#xD;
+		'zkLiftingEmp' : entityForm.zkLiftingEmp,&#xD;
+		'zkCraneDriver' : entityForm.zkCraneDriver,&#xD;
+		'zkLiftingTeam' : entityForm.zkLiftingTeam,&#xD;
+	});&#xD;
+	actionUpdate.execute(function(returnValue) {&#xD;
+		var flag = returnValue[&quot;flag&quot;];&#xD;
+	    var msg = returnValue[&quot;msg&quot;];&#xD;
+		if(flag){&#xD;
+			with (view.get(&quot;#dataSetTbih30&quot;)){&#xD;
+				set(&quot;parameter&quot;, data);&#xD;
+				view.get(&quot;#dataSetTbih30&quot;).flush();&#xD;
+			}&#xD;
+		}&#xD;
+	&#xD;
+	});	&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要批量设置的数据&quot;);&#xD;
+}</ClientEvent>
+              <Property name="caption">批量设置</Property>
+              <Property name="width">80</Property>
+            </Button>
+          </AutoForm>
+          <DataGrid id="dgTbih30">
+            <Property name="dataSet">dataSetTbih30</Property>
+            <Property name="dataType">Tbih30</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn/>
+            <RowNumColumn/>
+            <DataColumn name="labelNo">
+              <Property name="property">labelNo</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="width">90</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">wareQwCodeOld</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">wareQwCodeOld</Property>
+              <Property name="caption">新库位</Property>
+              <Property name="trigger">customFormWareNo</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">layerCodeOld</Property>
+              <Property name="name">layerCodeOld</Property>
+              <Property name="caption">新层号</Property>
+            </DataColumn>
+            <DataColumn name="wareQwCode">
+              <Property name="property">wareQwCode</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">layerCode</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">layerCode</Property>
+            </DataColumn>
+            <DataColumn name="productName">
+              <Property name="property">productName</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">gradeNo</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">gradeNo</Property>
+            </DataColumn>
+            <DataColumn name="wgt">
+              <Property name="property">wgt</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn name="num">
+              <Property name="property">num</Property>
+              <Property name="readOnly">true</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">size</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">size</Property>
+              <Property name="width">110</Property>
+            </DataColumn>
+            <DataColumn name="custName">
+              <Property name="property">custName</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="width">120</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">ladingNo</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">ladingNo</Property>
+              <Property name="width">90</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">orderItem</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="name">orderItem</Property>
+              <Property name="width">105</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+              <Property name="readOnly">true</Property>
+              <Property name="caption">状态</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab>
+        <Property name="caption">移库查询</Property>
+        <Property name="name">tab2</Property>
+        <Container>
+          <ToolBar>
+            <DataPilot>
+              <Property name="dataSet">dataSetTbih30</Property>
+              <Property name="itemCodes">pages</Property>
+            </DataPilot>
+          </ToolBar>
+        </Container>
+        <DataGrid>
+          <Property name="dataSet">dataSetTbih13</Property>
+          <Property name="dataType">Tbih13</Property>
+          <DataColumn name="labelNo">
+            <Property name="property">labelNo</Property>
+            <Property name="width">90</Property>
+          </DataColumn>
+          <DataColumn name="wareQwCodeOld">
+            <Property name="property">wareQwCodeOld</Property>
+          </DataColumn>
+          <DataColumn name="layerCodeOld">
+            <Property name="property">layerCodeOld</Property>
+          </DataColumn>
+          <DataColumn name="wareQwCode">
+            <Property name="property">wareQwCode</Property>
+          </DataColumn>
+          <DataColumn name="layerCode">
+            <Property name="property">layerCode</Property>
+          </DataColumn>
+          <DataColumn name="orderItem">
+            <Property name="property">orderItem</Property>
+          </DataColumn>
+          <DataColumn name="ladingNo">
+            <Property name="property">ladingNo</Property>
+          </DataColumn>
+          <DataColumn name="gradeNo">
+            <Property name="property">gradeNo</Property>
+          </DataColumn>
+          <DataColumn name="size">
+            <Property name="property">size</Property>
+          </DataColumn>
+          <DataColumn name="num">
+            <Property name="property">num</Property>
+          </DataColumn>
+          <DataColumn name="wgt">
+            <Property name="property">wgt</Property>
+          </DataColumn>
+          <DataColumn name="custName">
+            <Property name="property">custName</Property>
+          </DataColumn>
+          <DataColumn name="zkDate">
+            <Property name="property">zkDate</Property>
+          </DataColumn>
+          <DataColumn name="zkEmp">
+            <Property name="property">zkEmp</Property>
+          </DataColumn>
+          <DataColumn name="zkLiftingTeam">
+            <Property name="property">zkLiftingTeam</Property>
+          </DataColumn>
+          <DataColumn name="zkLiftingEmp">
+            <Property name="property">zkLiftingEmp</Property>
+          </DataColumn>
+          <DataColumn name="zkCraneDriver">
+            <Property name="property">zkCraneDriver</Property>
+          </DataColumn>
+        </DataGrid>
+      </ControlTab>
+    </TabControl>
+    <CustomDropDown id="customDropDownWareNo">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogWareNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			formC.set(&quot;entity&quot;,{'wareQwNo':selectArray[&quot;qwCode&quot;],&#xD;
+			'zkLiftingEmp':entity.zkLiftingEmp,&#xD;
+			'zkCraneDriver':entity.zkCraneDriver,&#xD;
+			'zkLiftingTeam':entity.zkLiftingTeam&#xD;
+			});&#xD;
+		}&#xD;
+		&#xD;
+		&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customConditionWareNo">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formCondition&quot;);&#xD;
+var dialog=view.id(&quot;$dialogWareNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			formC.set(&quot;entity&quot;,{'wareQwCode':selectArray[&quot;qwCode&quot;]});&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customFormWareNo">
+      <ClientEvent name="onOpen">var entity = view.id(&quot;dataSetTbih30&quot;).getData(&quot;#&quot;);&#xD;
+var dialog=view.id(&quot;$dialogWareNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			entity.set(&quot;wareQwNoOld&quot;,selectArray[&quot;qwCode&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.ih.view.select.wareNoSelect#$dialogWareNo"/>
+    <CustomDropDown id="cDDLiftingEmp">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogUser&quot;);&#xD;
+dialog.$show({&#xD;
+	width:600,&#xD;
+	height:400,&#xD;
+	callback:function(selectArray){&#xD;
+		dialog.hide();	&#xD;
+		formC.set(&quot;entity&quot;,{'wareQwNo':entity.wareQwNo,&#xD;
+		'zkLiftingEmp':selectArray[&quot;cname&quot;],&#xD;
+		'zkCraneDriver':entity.zkCraneDriver,&#xD;
+		'zkLiftingTeam':entity.zkLiftingTeam&#xD;
+		});&#xD;
+	}&#xD;
+});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="cDDCraneDriver">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogUser&quot;);&#xD;
+dialog.$show({&#xD;
+	width:600,&#xD;
+	height:400,&#xD;
+	callback:function(selectArray){&#xD;
+		dialog.hide();	&#xD;
+		formC.set(&quot;entity&quot;,{'wareQwNo':entity.wareQwNo,&#xD;
+		'zkLiftingEmp':entity.zkLiftingEmp,&#xD;
+		'zkCraneDriver':selectArray[&quot;cname&quot;],&#xD;
+		'zkLiftingTeam':entity.zkLiftingTeam&#xD;
+		});&#xD;
+	}&#xD;
+});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.userSelect#$dialogUser"/>
+  </View>
+</ViewConfig>

@@ -21,7 +21,7 @@ public class Shjc03wdDao extends BaseDao {
 				hql += " and carNo like '%" +paramater.get("carNo")+"%'";
 			}
 			if(paramater.get("carType")!=null){
-				hql += " and carType like '%" +paramater.get("carType")+"%'";
+				hql += " and carType like '" +paramater.get("carType")+"'";
 			} 
 		}	
 		this.pagingQuery(page, hql, "select count(*) " + hql);

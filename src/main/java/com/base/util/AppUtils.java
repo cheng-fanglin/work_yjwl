@@ -21,6 +21,9 @@ import org.hibernate.util.StringHelper;
 
 import com.bstek.bdf2.core.business.IUser;
 import com.bstek.bdf2.core.context.ContextHolder;
+import com.bstek.bdf2.core.model.DefaultUser;
+import com.bstek.bdf2.core.orm.IDao;
+import com.bstek.dorado.core.Configure;
 
 /**
  * @ClassName AppUtils
@@ -31,6 +34,64 @@ import com.bstek.bdf2.core.context.ContextHolder;
  */
 @SuppressWarnings("unchecked")
 public final class AppUtils {
+	
+	/** 
+     * 处理的最大数字达千万亿位 精确到分 
+     * @return 
+     */  
+    public static String digitUppercase(BigDecimal num) throws Exception{  
+        String fraction[] = {"角", "分"};  
+        String digit[] = { "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };  
+        String unit1[] = {"", "拾", "佰", "仟"};//把钱数分成段,每四个一段,实际上得到的是一个二维数组  
+        String unit2[] = {"元", "万", "亿","万亿"}; //把钱数分成段,每四个一段,实际上得到的是一个二维数组  
+        num=num.multiply(new BigDecimal(100));  
+//        Double bigDecimal = new Double(name*100);     存在精度问题 eg：145296.8  
+        String strVal = String.valueOf(num.toBigInteger());  
+        String head = strVal.substring(0,strVal.length()-2);         //整数部分  
+        String end = strVal.substring(strVal.length()-2);              //小数部分  
+        String endMoney="";  
+        String headMoney = "";  
+        if("00".equals(end)){  
+            endMoney = "整";  
+        }else{  
+            if(!end.substring(0,1).equals("0")){  
+                endMoney+=digit[Integer.valueOf(end.substring(0,1))]+"角";  
+            }else if(end.substring(0,1).equals("0") && !end.substring(1,2).equals("0")){  
+                endMoney+= "零";  
+            }  
+            if(!end.substring(1,2).equals("0")){  
+                endMoney+=digit[Integer.valueOf(end.substring(1,2))]+"分";  
+            }  
+        }  
+        char[] chars = head.toCharArray();  
+        Map<String,Boolean> map = new HashMap<String,Boolean>();//段位置是否已出现zero  
+        boolean zeroKeepFlag = false;//0连续出现标志  
+        int vidxtemp = 0;  
+        for(int i=0;i<chars.length;i++){  
+            int idx = (chars.length-1-i)%4;//段内位置  unit1  
+            int vidx = (chars.length-1-i)/4;//段位置 unit2  
+            String s = digit[Integer.valueOf(String.valueOf(chars[i]))];  
+            if(!"零".equals(s)){  
+                headMoney += s +unit1[idx]+unit2[vidx];  
+                zeroKeepFlag = false;  
+            }else if(i==chars.length-1 || map.get("zero"+vidx)!=null){  
+                headMoney += "" ;  
+            }else{  
+                headMoney += s;  
+                zeroKeepFlag = true;  
+                map.put("zero"+vidx,true);//该段位已经出现0；  
+            }  
+            if(vidxtemp!=vidx || i==chars.length-1){  
+                headMoney = headMoney.replaceAll(unit2[vidx],"");  
+                headMoney+=unit2[vidx];  
+            }  
+            if(zeroKeepFlag && (chars.length-1-i)%4==0){  
+                headMoney = headMoney.replaceAll("零","");  
+            }  
+        }  
+        return headMoney+endMoney;  
+    }  
+	
 	public static Date getCurrentDate() {
 		return new Date();
 	}
@@ -53,7 +114,12 @@ public final class AppUtils {
 	 * @return
 	 */
 	public static IUser getUserInfo(){ 
-		return ContextHolder.getLoginUser();
+		IUser iuser = ContextHolder.getLoginUser();
+		if(iuser==null){
+			DefaultUser user = new DefaultUser();
+			return (IUser)user;
+		}
+		return iuser;
 	}
 	
 	/**
@@ -70,8 +136,17 @@ public final class AppUtils {
 	 */
 	public static String getCompId() {
 		IUser userInfo = getUserInfo();
-		userInfo.getCompanyId();
-		return "JGHZ";// userInfo.getCompId();
+		String compId = Configure.getString(IDao.FIXED_COMPANY_ID);
+		if(null==userInfo){
+			return compId;
+		}else{
+			if(AppUtils.isEmpty(userInfo.getCompanyId())){
+				return compId;
+			}else{
+				return userInfo.getCompanyId();
+			}
+			
+		}
 	}
 	
 	/**
@@ -137,6 +212,26 @@ public final class AppUtils {
 		}
 		return s;
 	}
+	
+	/////////////////////////////////
+	
+	/**
+	 * @Description 判断字符串是否为空
+	 * @param s
+	 * @return
+	 */
+	public static boolean isNotEmpty(List list) {
+		return ((list != null) && (list.size() > 0));
+	} 
+	/**
+	 * @Description 判断字符串是否为空
+	 * @param s
+	 * @return
+	 */
+	public static boolean isEmpty(List list) {
+		return ((list == null) || (list.size() == 0));
+	}
+ 
 
 	@SuppressWarnings("rawtypes")
 	public static String[] split(String s, String separator) {
@@ -163,11 +258,47 @@ public final class AppUtils {
 		return o.toString();
 	}
 	
+	/** 
+	* @Description: 格式化字符串 主要是后台日期格式为yyyyMMddHHmm的数据
+	* @Title: formatDare 
+	* @param date
+	* @return
+	* @throws Exception 
+	* @time: 2017年4月5日下午3:03:59
+	* @author: wg
+	*/ 
+	public static String formatDare(String date) throws Exception{
+		if(AppUtils.isEmpty(date)){
+			return null;
+		}
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+		String a = date.replace("/", "");
+		String b = a.replace("-", "");
+		String c = b.replace(":", "");
+		String d = c.replace(" ", "");
+		int index = d.length();
+		String e ="";
+		if(8==index){
+			e = d+"000000";
+		}else if(12==index){
+			e = d+"00";
+		}else{
+			e = d;
+		}
+		Date dd = formatter.parse(e);
+		return ""+dd.getTime();
+	}
+	
+	
 	public static String toValidStringTrim(Object o) {
 		if (o == null) {
 			return "";
 		}
 		return o.toString().trim();
+	}
+	public static String toValidUtf8String(String str) throws Exception {
+		str =toValidString(str);
+		return new String(str.getBytes("iso-8859-1"), "utf-8");
 	}
 	/**
 	 * @Description 转为字符串，为空就返回0
@@ -263,7 +394,6 @@ public final class AppUtils {
 						PropertyUtils.setProperty(destObject, propertyName,
 								objectValue);
 					} catch (NoSuchMethodException e) {
-
 					}
 				}
 			}
@@ -364,5 +494,47 @@ public final class AppUtils {
     		return "0";
     	}
           
+    }
+    
+	/**
+	 * 生成6位数验证码
+	 * 
+	 * @return
+	 */
+	public static String createCode() {
+		Long xx = Math.round(Math.random() * 1000000);
+		while (xx < 100000) {
+			xx = Math.round(Math.random() * 1000000);
+		}
+		return String.valueOf(xx);
+	}
+	
+	 /**
+	 * 将时间类型转变为yyyyMMddHHmmss
+	 * */
+    public static String getCleanDateFormat(String date) {  
+    	String dateFormat = "";
+    	if(StringHelper.isNotEmpty(date)){
+    		if(date.contains("/")){
+    			date = date.replace("/", "");
+    		}
+    		if(date.contains("-")){
+    			date = date.replace("-", "");
+    		}
+    		if(date.contains(":")){
+    			date = date.replace(":", "");
+    		}
+    		if(date.contains(" ")){
+    			date = date.replace(" ", "");
+    		}
+    		if(date.length()<14){
+    			dateFormat = addZero(date, 14);
+    		}else if(date.length()>14){
+    			dateFormat = date.substring(0, 14);
+    		}else dateFormat = date;
+    	}else{
+    		dateFormat=AppUtils.getCurrentDateString("yyyyMMddHHmmss");
+    	}
+    	return dateFormat;
     }
 }

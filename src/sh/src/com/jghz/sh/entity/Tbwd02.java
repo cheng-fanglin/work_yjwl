@@ -433,4 +433,17 @@ public class Tbwd02 implements Serializable {
 	public void setIdentifyShow(String identifyShow) {
 		this.identifyShow = identifyShow;
 	}
+	
+	private String identifyBackShow;
+
+	@Transient
+	public String getIdentifyBackShow() {
+		return identifyBackShow;
+	}
+
+	public void setIdentifyBackShow(String identifyBackShow) {
+		this.identifyBackShow = identifyBackShow;
+	}
+	
+	
 }

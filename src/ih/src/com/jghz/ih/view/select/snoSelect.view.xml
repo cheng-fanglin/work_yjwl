@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Property name="title">查询</Property>
+    <Dialog id="$dialogSno">
+      <ClientEvent name="onCreate">self.$show=function(config){&#xD;
+	if(!config.callback){&#xD;
+		dorado.MessageBox.alert(&quot;当前方法需要定义一个callback函数&quot;);&#xD;
+		return;&#xD;
+	}else{&#xD;
+		self.callback=config.callback;&#xD;
+	}&#xD;
+	if(config.caption){&#xD;
+		self.set(&quot;caption&quot;,config.caption);&#xD;
+	}&#xD;
+	if(config.width){&#xD;
+		self.set(&quot;width&quot;,config.width);&#xD;
+	}&#xD;
+	if(config.height){&#xD;
+		self.set(&quot;height&quot;,config.height);&#xD;
+	}&#xD;
+	if(config.selected){&#xD;
+		self.selected=config.selected;&#xD;
+	}&#xD;
+	if(config.contNo){&#xD;
+		view.get(&quot;#dataSetTbih21&quot;).set(&quot;parameter&quot;,{contNo:config.contNo});&#xD;
+		view.get(&quot;#dataSetTbih21&quot;).flush();&#xD;
+		var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:config.contNo,Ih21:dataTbih21});&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).flush();&#xD;
+		view.get(&quot;#dataSetTbih03e&quot;).set(&quot;parameter&quot;,{contNo:config.contNo});&#xD;
+		view.get(&quot;#dataSetTbih03e&quot;).flush();&#xD;
+		view.get(&quot;#dataSetTbih03f&quot;).set(&quot;parameter&quot;,{contNo:config.contNo});&#xD;
+		view.get(&quot;#dataSetTbih03f&quot;).flush();&#xD;
+	}&#xD;
+	self.show();&#xD;
+}</ClientEvent>
+      <Property name="shadowMode">drop</Property>
+      <Buttons/>
+      <Children>
+        <DataSet id="dataSetTbih21">
+          <ClientEvent name="onReady">var contNo=${request.getParameter(&quot;contNo&quot;)}+&quot;&quot;;&#xD;
+var compId=${request.getParameter(&quot;compId&quot;)}+&quot;&quot;;&#xD;
+view.get(&quot;#dataSetTbih21&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+view.get(&quot;#dataSetTbih21&quot;).flush();&#xD;
+var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId,Ih21:dataTbih21});&#xD;
+view.get(&quot;#dataSetTbih21b&quot;).flush();&#xD;
+view.get(&quot;#dataSetTbih03e&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+view.get(&quot;#dataSetTbih03e&quot;).flush();&#xD;
+view.get(&quot;#dataSetTbih03f&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+view.get(&quot;#dataSetTbih03f&quot;).flush();</ClientEvent>
+          <Property name="dataProvider">ihjc21bService#loadTbih21</Property>
+          <Property name="dataType">[BaseTbih21]</Property>
+          <Property name="pageSize">1</Property>
+        </DataSet>
+        <DataSet id="dataSetTbih21b">
+          <Property name="dataProvider">ihjc21bService#loadTbih21b</Property>
+          <Property name="pageSize">20</Property>
+          <Property name="dataType">[BaseTbih21b]</Property>
+        </DataSet>
+        <DataSet id="dataSetTbih03e">
+          <Property name="dataProvider">ihjc21bService#loadTbih03e</Property>
+          <Property name="dataType">[BaseTbih03e]</Property>
+          <Property name="pageSize">100</Property>
+        </DataSet>
+        <DataSet id="dataSetTbih03f">
+          <Property name="dataProvider">ihjc21bService#loadTbih03f</Property>
+          <Property name="dataType">[BaseTbih03f]</Property>
+          <Property name="pageSize">100</Property>
+        </DataSet>
+        <AutoForm id="formConditionS">
+          <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+          <Property name="dataSet">dataSetTbih21</Property>
+          <Property name="dataType">BaseTbih21</Property>
+          <Property name="labelWidth">80</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">contNo</Property>
+            <Property name="label">协议号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:4">
+            <Property name="name">custName</Property>
+            <Property name="property">custName</Property>
+            <Property name="label">客户名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">fwfl</Property>
+            <Property name="property">fwfl</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">settleType</Property>
+            <Property name="property">settleType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">settleCompName</Property>
+            <Property name="property">settleCompName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">goodsSource</Property>
+            <Property name="property">goodsSource</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">productName</Property>
+            <Property name="property">productName</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+        <GroupBox>
+          <Property name="caption">仓储费协议价格</Property>
+          <Property name="height">50%</Property>
+          <Buttons/>
+          <Children>
+            <Container>
+              <ToolBar>
+                <DataPilot>
+                  <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+   &#xD;
+   switch(code){&#xD;
+     case &quot;+&quot;:&#xD;
+     //得到主表的数据集对象&#xD;
+     var ih21Entity = this.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+     //根据主表的数据集得到其中的那个reference对应的数据集&#xD;
+     var dsTbih21b = this.get(&quot;#dataSetTbih21b&quot;);  &#xD;
+     dsTbih21b.insert({ih21Id:ih21Entity.get(&quot;ih21Id&quot;),&#xD;
+	 				   contNo:ih21Entity.get(&quot;contNo&quot;),&#xD;
+					   custNo:ih21Entity.get(&quot;custNo&quot;),&#xD;
+					   custName:ih21Entity.get(&quot;custName&quot;)}); &#xD;
+     //防止系统自动的添加一行&#xD;
+     arg.processDefault = false;&#xD;
+     break;&#xD;
+	 &#xD;
+	 case &quot;-&quot;:{&#xD;
+	 	var dgTbih21b = view.get(&quot;#dataGridTbih21b&quot;);&#xD;
+		var selection = dgTbih21b.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				var ajaxActionIh21b = view.get(&quot;#ajaxActionIh21b&quot;);&#xD;
+				ajaxActionIh21b.set(&quot;parameter&quot;,{&#xD;
+					'ListIh21b' : selection,&#xD;
+					'deleteFlag' : &quot;Y&quot;&#xD;
+				});&#xD;
+				ajaxActionIh21b.execute(function() {&#xD;
+					dorado.widget.NotifyTipManager.notify(&quot;删除成功&quot;);&#xD;
+					var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+					var contNo=dataTbih21.get(&quot;contNo&quot;);&#xD;
+					var compId=dataTbih21.get(&quot;compId&quot;);&#xD;
+					view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+					view.get(&quot;#dataSetTbih21b&quot;).flushAsync();&#xD;
+				});&#xD;
+			});&#xD;
+		}else{&#xD;
+			dorado.widget.NotifyTipManager.notify(&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+    }&#xD;
+	 &#xD;
+   }</ClientEvent>
+                  <Property name="dataSet">dataSetTbih21b</Property>
+                  <Property name="itemCodes">pages,+,-,x</Property>
+                </DataPilot>
+                <Separator/>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih21b = view.get(&quot;#dataGridTbih21b&quot;);&#xD;
+var datasTbih03a = view.get(&quot;#dataSetTbih03a.data&quot;);&#xD;
+var datasTbih03c = view.get(&quot;#dataSetTbih03c.data&quot;);&#xD;
+var selection = dgTbih21b.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh21b = view.get(&quot;#ajaxActionIh21b&quot;);&#xD;
+	ajaxActionIh21b.set(&quot;parameter&quot;,{&#xD;
+		'ListIh21b' : selection,&#xD;
+		'ListIh03a' : datasTbih03a,&#xD;
+		'ListIh03c' : datasTbih03c,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh21b.execute(function() {&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;保存成功&quot;);&#xD;
+		var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+		var contNo=dataTbih21.get(&quot;contNo&quot;);&#xD;
+		var compId=dataTbih21.get(&quot;compId&quot;);&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).flushAsync();&#xD;
+	});&#xD;
+}else{&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;请先勾选需要保存的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                  <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+                  <Property name="caption">保存</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih21b = view.get(&quot;#dataGridTbih21b&quot;);&#xD;
+var datasTbih03a = view.get(&quot;#dataSetTbih03a.data&quot;);&#xD;
+var datasTbih03c = view.get(&quot;#dataSetTbih03c.data&quot;);&#xD;
+var selection = dgTbih21b.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var aActionCorC = view.get(&quot;#ajaxActionCommitOrCancle&quot;);&#xD;
+	aActionCorC.set(&quot;parameter&quot;,{&#xD;
+		'ListIh21b' : selection,&#xD;
+		'ListIh03a' : datasTbih03a,&#xD;
+		'ListIh03c' : datasTbih03c,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	aActionCorC.execute(function() {&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;启用成功&quot;);&#xD;
+		var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+		var contNo=dataTbih21.get(&quot;contNo&quot;);&#xD;
+		var compId=dataTbih21.get(&quot;compId&quot;);&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).flushAsync();&#xD;
+	});&#xD;
+}else{&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                  <Property name="caption">启用</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih21b = view.get(&quot;#dataGridTbih21b&quot;);&#xD;
+var datasTbih03a = view.get(&quot;#dataSetTbih03a.data&quot;);&#xD;
+var datasTbih03c = view.get(&quot;#dataSetTbih03c.data&quot;);&#xD;
+var selection = dgTbih21b.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var aActionCorC = view.get(&quot;#ajaxActionCommitOrCancle&quot;);&#xD;
+	aActionCorC.set(&quot;parameter&quot;,{&#xD;
+		'ListIh21b' : selection,&#xD;
+		'ListIh03a' : datasTbih03a,&#xD;
+		'ListIh03c' : datasTbih03c,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	aActionCorC.execute(function() {&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;启用成功&quot;);&#xD;
+		var dataTbih21 = view.get(&quot;#dataSetTbih21&quot;).getData(&quot;#&quot;);&#xD;
+		var contNo=dataTbih21.get(&quot;contNo&quot;);&#xD;
+		var compId=dataTbih21.get(&quot;compId&quot;);&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih21b&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03a&quot;).flushAsync();&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).set(&quot;parameter&quot;,{contNo:contNo,compId:compId});&#xD;
+		view.get(&quot;#dataSetTbih03c&quot;).flushAsync();&#xD;
+	});&#xD;
+}else{&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                  <Property name="caption">停用</Property>
+                </ToolBarButton>
+              </ToolBar>
+              <DataGrid id="dataGridTbih21b">
+                <ClientEvent name="onDataRowDoubleClick">var data = view.get(&quot;#dataSetTbih21b&quot;).getData(&quot;#&quot;);&#xD;
+view.id(&quot;$dialogSno&quot;).callback(data.toJSON());</ClientEvent>
+                <Property name="dataSet">dataSetTbih21b</Property>
+                <Property name="dataType">BaseTbih21b</Property>
+                <Property name="selectionMode">multiRows</Property>
+                <Property name="stretchColumnsMode">off</Property>
+                <RowSelectorColumn/>
+                <DataColumn name="sno">
+                  <Property name="property">sno</Property>
+                  <Property name="readOnly">true</Property>
+                </DataColumn>
+                <DataColumn name="contNo">
+                  <Property name="property">contNo</Property>
+                  <Property name="readOnly">true</Property>
+                </DataColumn>
+                <DataColumn name="settleType">
+                  <Property name="property">settleType</Property>
+                </DataColumn>
+                <DataColumn name="kb">
+                  <Property name="property">kb</Property>
+                </DataColumn>
+                <DataColumn name="productName">
+                  <Property name="property">productName</Property>
+                  <Property name="trigger">customDropDownPro</Property>
+                </DataColumn>
+                <DataColumn name="cycle">
+                  <Property name="property">cycle</Property>
+                </DataColumn>
+                <DataColumn name="startDate">
+                  <Property name="property">startDate</Property>
+                </DataColumn>
+                <DataColumn name="endDate">
+                  <Property name="property">endDate</Property>
+                </DataColumn>
+                <DataColumn name="overdueStdPrice">
+                  <Property name="property">overdueStdPrice</Property>
+                </DataColumn>
+                <DataColumn name="overdueType">
+                  <Property name="property">overdueType</Property>
+                </DataColumn>
+                <DataColumn name="storagePrice">
+                  <Property name="property">storagePrice</Property>
+                </DataColumn>
+                <DataColumn>
+                  <Property name="property">returnPrice</Property>
+                  <Property name="name">returnPrice</Property>
+                </DataColumn>
+                <DataColumn>
+                  <Property name="property">turnningPrice</Property>
+                  <Property name="name">turnningPrice</Property>
+                </DataColumn>
+                <DataColumn name="price">
+                  <Property name="property">price</Property>
+                </DataColumn>
+                <DataColumn name="isDiscount">
+                  <Property name="property">isDiscount</Property>
+                  <Property name="caption">是否优惠</Property>
+                </DataColumn>
+                <DataColumn>
+                  <Property name="property">isTurnning</Property>
+                  <Property name="name">isTurnning</Property>
+                  <Property name="caption">是否翻堆</Property>
+                </DataColumn>
+                <DataColumn>
+                  <Property name="property">isOrder</Property>
+                  <Property name="name">isOrder</Property>
+                  <Property name="caption">是否加班</Property>
+                </DataColumn>
+                <DataColumn name="isuse">
+                  <Property name="property">isuse</Property>
+                </DataColumn>
+                <DataColumn name="fwlx">
+                  <Property name="property">fwlx</Property>
+                </DataColumn>
+                <DataColumn name="useDate">
+                  <Property name="property">useDate</Property>
+                </DataColumn>
+                <DataColumn name="useEmp">
+                  <Property name="property">useEmp</Property>
+                </DataColumn>
+                <DataColumn name="stopDate">
+                  <Property name="property">stopDate</Property>
+                </DataColumn>
+                <DataColumn name="stopEmp">
+                  <Property name="property">stopEmp</Property>
+                </DataColumn>
+              </DataGrid>
+            </Container>
+          </Children>
+        </GroupBox>
+        <TabControl>
+          <ControlTab>
+            <Property name="caption">节假日设定</Property>
+            <Container>
+              <ToolBar>
+                <DataPilot>
+                  <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03e.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+        var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+	    var updateActione = view.get(&quot;#updateActione&quot;);&#xD;
+		var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActione.execute();&#xD;
+	        });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+                  <Property name="dataSet">dataSetTbih03e</Property>
+                  <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+                </DataPilot>
+                <ToolBarButton>
+                  <Property name="caption">保存</Property>
+                  <Property name="action">updateActionIh03e</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03e = view.get(&quot;#ajaxActionIh03e&quot;);&#xD;
+	ajaxActionIh03e.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03e' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03e.execute(function() {&#xD;
+		view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition6&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03e&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                  <Property name="caption">启用</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03e = view.get(&quot;#ajaxActionIh03e&quot;);&#xD;
+	ajaxActionIh03e.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03e' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03e.execute(function() {&#xD;
+		view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition6&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03e&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+                  <Property name="caption">停用</Property>
+                </ToolBarButton>
+              </ToolBar>
+              <DataGrid id="dgTbih03e">
+                <Property name="dataSet">dataSetTbih03e</Property>
+                <Property name="dataType">BaseTbih03e</Property>
+                <Property name="selectionMode">multiRows</Property>
+                <RowSelectorColumn/>
+                <DataColumn name="date">
+                  <Property name="property">date</Property>
+                  <Property name="trigger">dateDropDown1</Property>
+                </DataColumn>
+                <DataColumn name="holiName">
+                  <Property name="property">holiName</Property>
+                </DataColumn>
+                <DataColumn name="weekDay">
+                  <Property name="property">weekDay</Property>
+                </DataColumn>
+                <DataColumn name="addMoney">
+                  <Property name="property">addMoney</Property>
+                </DataColumn>
+                <DataColumn name="type">
+                  <Property name="property">type</Property>
+                </DataColumn>
+                <DataColumn name="startDate">
+                  <Property name="property">startDate</Property>
+                </DataColumn>
+                <DataColumn name="startEmp">
+                  <Property name="property">startEmp</Property>
+                </DataColumn>
+                <DataColumn name="endDate">
+                  <Property name="property">endDate</Property>
+                </DataColumn>
+                <DataColumn name="endEmp">
+                  <Property name="property">endEmp</Property>
+                </DataColumn>
+                <DataColumn name="state">
+                  <Property name="property">state</Property>
+                </DataColumn>
+              </DataGrid>
+            </Container>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">加班时间段设定</Property>
+            <Container>
+              <ToolBar>
+                <DataPilot>
+                  <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03f.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+        var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+	    var updateActionf = view.get(&quot;#updateActionf&quot;);&#xD;
+		var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActionf.execute();&#xD;
+	        });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg4&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+                  <Property name="dataSet">dataSetTbih03f</Property>
+                  <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+                </DataPilot>
+                <ToolBarButton>
+                  <Property name="caption">保存</Property>
+                  <Property name="action">updateActionIh03f</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03f = view.get(&quot;#ajaxActionIh03f&quot;);&#xD;
+	ajaxActionIh03f.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03f' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03f.execute(function() {&#xD;
+		view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition7&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03f&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+                  <Property name="caption">启用</Property>
+                </ToolBarButton>
+                <ToolBarButton>
+                  <ClientEvent name="onClick">var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03f = view.get(&quot;#ajaxActionIh03f&quot;);&#xD;
+	ajaxActionIh03f.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03f' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03f.execute(function() {&#xD;
+		view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition7&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03f&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+                  <Property name="caption">停用</Property>
+                </ToolBarButton>
+              </ToolBar>
+              <DataGrid id="dgTbih03f">
+                <Property name="dataSet">dataSetTbih03f</Property>
+                <Property name="dataType">BaseTbih03f</Property>
+                <Property name="selectionMode">multiRows</Property>
+                <RowSelectorColumn/>
+                <DataColumn name="startTime">
+                  <Property name="property">startTime</Property>
+                  <Property name="trigger">dateDropDownT</Property>
+                </DataColumn>
+                <DataColumn name="endTime">
+                  <Property name="property">endTime</Property>
+                  <Property name="trigger">dateDropDownT</Property>
+                </DataColumn>
+                <DataColumn name="weekDay">
+                  <Property name="property">weekDay</Property>
+                </DataColumn>
+                <DataColumn name="addMoney">
+                  <Property name="property">addMoney</Property>
+                </DataColumn>
+                <DataColumn name="startDate">
+                  <Property name="property">startDate</Property>
+                </DataColumn>
+                <DataColumn name="startEmp">
+                  <Property name="property">startEmp</Property>
+                </DataColumn>
+                <DataColumn name="endDate">
+                  <Property name="property">endDate</Property>
+                </DataColumn>
+                <DataColumn name="endEmp">
+                  <Property name="property">endEmp</Property>
+                </DataColumn>
+                <DataColumn name="state">
+                  <Property name="property">state</Property>
+                </DataColumn>
+              </DataGrid>
+            </Container>
+          </ControlTab>
+        </TabControl>
+        <UpdateAction id="updateActionIh03e">
+          <Property name="dataResolver">ihjc21bService#saveTbih03e</Property>
+          <UpdateItem>
+            <Property name="dataSet">dataSetTbih03e</Property>
+          </UpdateItem>
+        </UpdateAction>
+        <UpdateAction id="updateActionIh03f">
+          <Property name="dataResolver">ihjc21bService#saveTbih03f</Property>
+          <UpdateItem>
+            <Property name="dataSet">dataSetTbih03f</Property>
+          </UpdateItem>
+        </UpdateAction>
+        <AjaxAction id="ajaxActionCommitOrCancle">
+          <Property name="service">ihjc21bService#saveTbih21bCommitOrCancle</Property>
+        </AjaxAction>
+        <AjaxAction id="ajaxActionIh21b">
+          <Property name="service">ihjc21bService#saveTbih21b</Property>
+        </AjaxAction>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

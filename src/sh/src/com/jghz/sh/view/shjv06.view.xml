@@ -198,6 +198,8 @@
     </DataSet>
     <UpdateAction id="uaSave">
       <Property name="dataResolver">shjc06Service#saveSh06</Property>
+      <Property name="successMessage">操作成功！</Property>
+      <Property name="executingMessage">任务执行中.....</Property>
       <UpdateItem>
         <Property name="dataSet">dsSh06</Property>
       </UpdateItem>
@@ -209,46 +211,51 @@
           <Children>
             <ToolBar>
               <DataPilot>
-                <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
-   switch(code){&#xD;
-     case &quot;+&quot;:{&#xD;
-	 	//得到主表的数据集对象&#xD;
-			var dsSh06 = this.get(&quot;#dsSh06&quot;);&#xD;
-			var sh06Entity = this.get(&quot;#dsSh06&quot;).getData(&quot;#&quot;);&#xD;
-			dsSh06.insert({&#xD;
-				sh06Id: sh06Entity.get(&quot;sh06Id&quot;),&#xD;
-				compId: sh06Entity.get(&quot;compId&quot;),&#xD;
-				compCode: sh06Entity.get(&quot;compCode&quot;),&#xD;
-				parentId: sh06Entity.get(&quot;parentId&quot;)&#xD;
-			});&#xD;
-			view.set((&quot;#dgTbsh06.selection&quot;),view.get(&quot;#dgTbsh06&quot;).getCurrentItem());&#xD;
-			view.get(&quot;#dlTbsh06&quot;).show();&#xD;
-			arg.processDefault = false;&#xD;
-			break;&#xD;
-		}&#xD;
-		case &quot;-&quot; :{&#xD;
-			var dataGrid = view.get(&quot;#dgTbsh06&quot;);//获取数据表格控件&#xD;
+                <ClientEvent name="onSubControlAction">var code = arg.code;&#xD;
+switch (code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+        //得到主表的数据集对象&#xD;
+        var dsSh06 = this.get(&quot;#dsSh06&quot;);&#xD;
+        var sh06Entity = this.get(&quot;#dsSh06&quot;).getData(&quot;#&quot;);&#xD;
+        if (sh06Entity) {&#xD;
+            dsSh06.insert({&#xD;
+                sh06Id: sh06Entity.get(&quot;sh06Id&quot;),&#xD;
+                compId: sh06Entity.get(&quot;compId&quot;),&#xD;
+                compCode: sh06Entity.get(&quot;compCode&quot;),&#xD;
+                parentId: sh06Entity.get(&quot;parentId&quot;)&#xD;
+            });&#xD;
+            view.set((&quot;#dgTbsh06.selection&quot;), view.get(&quot;#dgTbsh06&quot;).getCurrentItem());&#xD;
+            view.get(&quot;#dlTbsh06&quot;).show();&#xD;
+        }&#xD;
+        else {&#xD;
+            alert(&quot;此节点不能添加数据&quot;);&#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+        var dataGrid = view.get(&quot;#dgTbsh06&quot;);//获取数据表格控件&#xD;
         var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
         var action = view.get(&quot;#uaSave&quot;);&#xD;
-        if(selEntitys.length>0){&#xD;
-			dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
-			selEntitys.each(function(select){&#xD;
-				select.remove();&#xD;
-			})&#xD;
-				action.execute(function(){&#xD;
-					view.get(&quot;#uaSave&quot;).set(&quot;successMessage&quot;,&quot;删除成功!&quot;);&#xD;
-				});&#xD;
-			});&#xD;
-		}&#xD;
-        if(selEntitys.length&lt;1){&#xD;
-	         view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
-	        &#xD;
-         }&#xD;
-		arg.processDefault=false;&#xD;
-		break;&#xD;
-		}&#xD;
-   }&#xD;
-   </ClientEvent>
+        if (selEntitys.length > 0) {&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selEntitys.each(function(select){&#xD;
+                    select.remove();&#xD;
+                })&#xD;
+                action.execute(function(){&#xD;
+                    view.get(&quot;#uaSave&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                });&#xD;
+            });&#xD;
+        }&#xD;
+        if (selEntitys.length &lt; 1) {&#xD;
+            view.get(&quot;#msg&quot;).set(&quot;text&quot;, &quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+            &#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
                 <Property name="dataSet">dsSh06</Property>
                 <Property name="itemCodes">pages,+,-,x</Property>
               </DataPilot>
@@ -304,22 +311,8 @@ if(selections.length==1){&#xD;
           <Buttons/>
           <Children>
             <DataTree id="dtArea">
-              <ClientEvent name="onDataRowClick">var currentNode = self.get(&quot;currentNode&quot;);&#xD;
-if(currentNode.get(&quot;hasChild&quot;)){&#xD;
-	currentNode.set(&quot;expanded&quot;,true);&#xD;
-}</ClientEvent>
               <ClientEvent name="onDataRowDoubleClick">//var dropdown = dorado.widget.DropDown.findDropDown(self);&#xD;
-var currentNode = self.get(&quot;currentNode&quot;);&#xD;
-var entity = currentNode.get(&quot;data&quot;);&#xD;
-var areaname = entity.get(&quot;areaname&quot;);&#xD;
-var areacode = entity.get(&quot;areacode&quot;);&#xD;
-var sh06Id = entity.get(&quot;sh06Id&quot;);&#xD;
-var level=currentNode.get(&quot;level&quot;);&#xD;
-var parentNode = currentNode.get(&quot;parent&quot;);&#xD;
-with(view.get(&quot;#dsSh06&quot;)){&#xD;
-	set(&quot;parameter&quot;, {sh06Id:sh06Id});&#xD;
-	flushAsync();&#xD;
-}&#xD;
+&#xD;
 /**if(level==1||level==2){&#xD;
 	currentNode.set(&quot;expanded&quot;,true);&#xD;
 }&#xD;
@@ -333,6 +326,23 @@ if(level==3){&#xD;
 	dropdown.close(areaname);&#xD;
 }*/&#xD;
 </ClientEvent>
+              <ClientEvent name="onDataRowClick">//打开下拉框&#xD;
+var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+if(currentNode.get(&quot;hasChild&quot;)){&#xD;
+	currentNode.set(&quot;expanded&quot;,true);&#xD;
+}&#xD;
+// 吧下拉框数据显示在右侧&#xD;
+var currentNode = self.get(&quot;currentNode&quot;);&#xD;
+var entity = currentNode.get(&quot;data&quot;);&#xD;
+//var areaname = entity.get(&quot;areaname&quot;);&#xD;
+//var areacode = entity.get(&quot;areacode&quot;);&#xD;
+var sh06Id = entity.get(&quot;sh06Id&quot;);&#xD;
+var level=currentNode.get(&quot;level&quot;);&#xD;
+var parentNode = currentNode.get(&quot;parent&quot;);&#xD;
+with(view.get(&quot;#dsSh06&quot;)){&#xD;
+	set(&quot;parameter&quot;, {sh06Id:sh06Id});&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
               <Property name="dataSet">dsArea</Property>
               <BindingConfigs>
                 <BindingConfig>

@@ -140,6 +140,19 @@ public class Tbwd03 implements Serializable {
 	 */
 	@PropertyDef(label = "版本号", description = "版本号:版本号")
 	private int version;
+	/**
+	 * 虚字段 为图片路径
+	 */
+	private String carImgPath;
+	
+	@Transient
+	public String getCarImgPath() {
+		return carImgPath;
+	}
+
+	public void setCarImgPath(String carImgPath) {
+		this.carImgPath = carImgPath;
+	}
 
 	public Tbwd03() {
 		super();
@@ -380,14 +393,6 @@ public class Tbwd03 implements Serializable {
 				+ ",version=" + version + "]";
 	}
 
-	 private String carShow;
 		
-	@Transient
-	public String getCarShow() {
-		return carShow;
-	}
-
-	public void setCarShow(String carShow) {
-		this.carShow = carShow;
-	}
+	
 }

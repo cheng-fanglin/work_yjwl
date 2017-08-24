@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih90">
+      <PropertyDef name="wareQwCode">
+        <Property name="dataType">String</Property>
+        <Property name="label">库位</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCode">
+        <Property name="dataType">String</Property>
+        <Property name="label">层数</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property name="dataType">String</Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property name="dataType">String</Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">产品编码</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property name="dataType">String</Property>
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property name="dataType">String</Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="gradeNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="steelNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">钢种</Property>
+      </PropertyDef>
+      <PropertyDef name="qb">
+        <Property name="dataType">String</Property>
+        <Property name="label">切边</Property>
+      </PropertyDef>
+      <PropertyDef name="dc">
+        <Property name="dataType">String</Property>
+        <Property name="label">定尺信息</Property>
+      </PropertyDef>
+      <PropertyDef name="thick">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">厚度</Property>
+      </PropertyDef>
+      <PropertyDef name="width">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">宽度</Property>
+      </PropertyDef>
+      <PropertyDef name="length">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">长度</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property name="dataType">String</Property>
+        <Property name="label">尺寸信息</Property>
+      </PropertyDef>
+      <PropertyDef name="pieceNum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">件数</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">数量</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property name="dataType">String</Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property name="dataType">String</Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="dayIn">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">当日入库</Property>
+      </PropertyDef>
+      <PropertyDef name="monthIn">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">当月入库</Property>
+      </PropertyDef>
+      <PropertyDef name="dayOut">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">当日出库</Property>
+      </PropertyDef>
+      <PropertyDef name="monthOut">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">当月出库</Property>
+      </PropertyDef>
+      <PropertyDef name="beginWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">期初库存</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">当日库存</Property>
+      </PropertyDef>
+      <PropertyDef name="kfWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">可发量</Property>
+      </PropertyDef>
+      <PropertyDef name="ykdDtWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">已开单待提</Property>
+      </PropertyDef>
+      <PropertyDef name="dktdWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">待开提单量</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="formCondition">
+      <PropertyDef name="wareQwCode">
+        <Property name="label">库位</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property name="label">客户</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property name="label">客户编码</Property>
+      </PropertyDef>
+      <PropertyDef name="dateS">
+        <Property name="label">开始日期</Property>
+      </PropertyDef>
+      <PropertyDef name="dateE">
+        <Property name="label">截至日期</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+      <PropertyDef name="gradeNo">
+        <Property name="label">牌号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">查询</Property>
+    <DataSet id="dataSetCondition">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dataSetCondition&quot;);&#xD;
+var entityNew=datas.insert();&#xD;
+entityNew.set(&quot;dateE&quot;,new Date().formatDate (&quot;Ymd&quot;));&#xD;
+entityNew.set(&quot;dateS&quot;,new Date().formatDate (&quot;Ym&quot;)+&quot;01&quot;);&#xD;
+with(view.get(&quot;#dataSetTbih90&quot;)){&#xD;
+	set(&quot;parameter&quot;, entityNew);&#xD;
+	flush();&#xD;
+}</ClientEvent>
+      <Property name="dataType">[formCondition]</Property>
+    </DataSet>
+    <DataSet id="dataSetTbih90">
+      <Property name="dataProvider">ihjc90Service#loadTbih90</Property>
+      <Property name="dataType">[Tbih90]</Property>
+      <Property name="readOnly">true</Property>
+    </DataSet>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*,*,*,*</Property>
+      <Property name="dataSet">dataSetCondition</Property>
+      <Property name="dataType">BaseIhCondition</Property>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">custName</Property>
+        <Property name="label">客户名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">wareQwCode</Property>
+        <Property name="label">库位</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">productName</Property>
+        <Property name="label">产品名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button>
+        <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih90&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+        <Property name="caption">查询</Property>
+        <Property name="width">80</Property>
+      </Button>
+      <Button id="btnReset">
+        <ClientEvent name="onClick">var datas = view.get(&quot;#dataSetCondition.data&quot;);&#xD;
+datas.insert();&#xD;
+</ClientEvent>
+        <Property name="caption">重置</Property>
+        <Property name="width">80</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+      </Button>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">dateS</Property>
+        <Property name="label">开始日期</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement layoutConstraint="colSpan:2">
+        <Property name="name">dateE</Property>
+        <Property name="label">截止日期</Property>
+        <Property name="trigger">dateDropDown1</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
+    <ToolBar>
+      <Separator/>
+      <ToolBarLabel id="msg"/>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbih90</Property>
+      <Property name="dataType">Tbih90</Property>
+      <Property name="stretchColumnsMode">auto</Property>
+      <Property name="showFooter">true</Property>
+      <DataColumn name="wareQwCode">
+        <Property name="property">wareQwCode</Property>
+      </DataColumn>
+      <DataColumn name="productName">
+        <Property name="property">productName</Property>
+      </DataColumn>
+      <DataColumn name="gradeNo">
+        <Property name="property">gradeNo</Property>
+      </DataColumn>
+      <DataColumn name="custName">
+        <Property name="property">custName</Property>
+      </DataColumn>
+      <DataColumn name="beginWgt">
+        <Property name="property">beginWgt</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="dayIn">
+        <Property name="property">dayIn</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="monthIn">
+        <Property name="property">monthIn</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="dayOut">
+        <Property name="property">dayOut</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="monthOut">
+        <Property name="property">monthOut</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="kfWgt">
+        <Property name="property">kfWgt</Property>
+        <Property name="visible">false</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="ykdDtWgt">
+        <Property name="property">ykdDtWgt</Property>
+        <Property name="visible">false</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="dktdWgt">
+        <Property name="property">dktdWgt</Property>
+        <Property name="visible">false</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+      <DataColumn name="wgt">
+        <Property name="property">wgt</Property>
+        <Property name="summaryType">sum</Property>
+      </DataColumn>
+    </DataGrid>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+  </View>
+</ViewConfig>

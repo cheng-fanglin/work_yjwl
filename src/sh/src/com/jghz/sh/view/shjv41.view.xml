@@ -4,25 +4,29 @@
   <Context/>
   <Model>
     <DataType name="dtSh10a">
-      <PropertyDef name="transItem">
-        <Property></Property>
-        <Property name="label">运单项次号</Property>
-      </PropertyDef>
+      <Property name="creationType">com.jghz.sh.entity.Tbsh10a</Property>
       <PropertyDef name="carNo">
         <Property></Property>
         <Property name="label">车号</Property>
-      </PropertyDef>
-      <PropertyDef name="phoneNo">
-        <Property></Property>
-        <Property name="label">司机手机</Property>
       </PropertyDef>
       <PropertyDef name="userName">
         <Property></Property>
         <Property name="label">司机姓名</Property>
       </PropertyDef>
+      <PropertyDef name="transItem">
+        <Property></Property>
+        <Property name="label">运单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="phoneNo">
+        <Property></Property>
+        <Property name="label">司机手机</Property>
+      </PropertyDef>
       <PropertyDef name="onWay">
         <Property></Property>
         <Property name="label">是否在途</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;shjcCommService#loadYn&quot;).getResult()}</Property>
+        </Property>
       </PropertyDef>
       <PropertyDef name="deliveryAddress">
         <Property name="label">目的地</Property>
@@ -39,9 +43,11 @@
       <Property name="pageSize">20</Property>
     </DataSet>
     <UpdateAction id="uaSh10a">
-      <Property name="dataResolver">shjc31Service#saveSh31</Property>
+      <Property name="dataResolver">shjc41Service#saveTbsh10a</Property>
+      <Property name="successMessage">操作成功</Property>
+      <Property name="executingMessage">任务执行中.....</Property>
       <UpdateItem>
-        <Property name="dataSet">dsSh31</Property>
+        <Property name="dataSet">dsSh10a</Property>
       </UpdateItem>
     </UpdateAction>
     <AutoForm id="formCondition">
@@ -84,15 +90,59 @@ view.get(&quot;#dsSh10a&quot;).flushAsync(function(entityList){&#xD;
     </AutoForm>
     <ToolBar>
       <DataPilot id="sh10a">
-        <Property name="itemCodes">pages</Property>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsSh10a.data&quot;);&#xD;
+var action = view.get(&quot;#uaSh10a&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+        var dataList = view.get(&quot;#dsSh10a&quot;).getData(); //取得原始数据列表&#xD;
+        var selectedItems = []; //定义一个数组&#xD;
+        dataList.each(function(entity){&#xD;
+            if (entity.state == dorado.Entity.STATE_NEW) {&#xD;
+                selectedItems.push(entity);&#xD;
+                view.get(&quot;#dsSh10a.data&quot;).setCurrent(entity);&#xD;
+            }&#xD;
+        });&#xD;
+		&#xD;
+		view.set((&quot;#dgSh10a.selection&quot;), selectedItems);&#xD;
+		view.get(&quot;#dialogSh10a&quot;).show();&#xD;
+		&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		var selections = view.get(&quot;#dgSh10a&quot;).get(&quot;selection&quot;);&#xD;
+		if(selections.length>0){&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selections.each(function(select){&#xD;
+            	    select.remove();&#xD;
+                });&#xD;
+                action.execute();&#xD;
+            });&#xD;
+			&#xD;
+		}else{&#xD;
+			alert(&quot;请至少选中一条数据&quot;);&#xD;
+		}&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="itemCodes">pages,+,-,x</Property>
         <Property name="dataSet">dsSh10a</Property>
       </DataPilot>
       <Separator/>
-      <ToolBarLabel id="msg"/>
+      <ToolBarLabel id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </ToolBarLabel>
     </ToolBar>
     <DataGrid id="dgSh10a">
       <Property name="dataSet">dsSh10a</Property>
       <Property name="dataType">dtSh10a</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <Property name="readOnly">true</Property>
+      <RowSelectorColumn/>
       <DataColumn name="carNo">
         <Property name="property">carNo</Property>
       </DataColumn>
@@ -141,6 +191,74 @@ var dialog=view.id(&quot;$dialogCont&quot;);&#xD;
  </ClientEvent>
       <Import src="com.jghz.sh.view.select.cdpCont#$dialogCont"/>
     </CustomDropDown>
+    <Dialog id="dialogSh10a">
+      <Property name="height">300</Property>
+      <Property name="width">600</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogSh10a&quot;);&#xD;
+var action=view.get(&quot;#uaSh10a&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确认</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dsSh10a&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogSh10a&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dsSh10a</Property>
+          <Property name="dataType">dtSh10a</Property>
+          <AutoFormElement>
+            <Property name="name">transItem</Property>
+            <Property name="property">transItem</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carNo</Property>
+            <Property name="property">carNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">phoneNo</Property>
+            <Property name="property">phoneNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">userName</Property>
+            <Property name="property">userName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">onWay</Property>
+            <Property name="property">onWay</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">deliveryAddress</Property>
+            <Property name="property">deliveryAddress</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">outDate</Property>
+            <Property name="property">outDate</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
     <DateDropDown id="dateDropDown1">
       <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
 arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>

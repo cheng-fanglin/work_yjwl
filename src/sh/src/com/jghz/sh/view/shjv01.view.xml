@@ -242,12 +242,14 @@
     <UpdateAction id="uaSh01">
       <Property name="dataResolver">shjc01Service#saveSh01</Property>
       <Property name="executingMessage">正在保存……</Property>
+      <Property name="successMessage">操作成功</Property>
       <UpdateItem>
         <Property name="dataSet">dsSh01</Property>
       </UpdateItem>
     </UpdateAction>
     <UpdateAction id="uaSh01b">
       <Property name="dataResolver">shjc01Service#saveSh01b</Property>
+      <Property name="successMessage">操作成功</Property>
       <UpdateItem>
         <Property name="dataSet">dsSh01b</Property>
       </UpdateItem>
@@ -345,50 +347,55 @@ view.get(&quot;#dsSh01&quot;).flushAsync(function(entityList){&#xD;
         <Container>
           <ToolBar>
             <DataPilot id="sh01b">
-              <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
-   &#xD;
-   switch(code){&#xD;
-     case &quot;+&quot;:{&#xD;
-	 view.get(&quot;#dlSh01b&quot;).show(); &#xD;
-	&#xD;
-	 view.set((&quot;#dgSh01b.selection&quot;),view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
-     //得到主表的数据集对象&#xD;
-     var sh01Entity = this.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
-	 &#xD;
-     //根据主表的数据集得到其中的那个reference对应的数据集&#xD;
-     var dsTbsh01b = this.get(&quot;#dsSh01b&quot;);&#xD;
-     &#xD;
-     //根据得到的数据集向其中插入一条对象，注意的是：这里的deptId不是数据库中的字段，而是实体类的属性&#xD;
-     dsTbsh01b.insert({sh01bId:sh01Entity.get(&quot;sh01Id&quot;),compId:sh01Entity.get(&quot;compId&quot;),compCode:sh01Entity.get(&quot;compCode&quot;)&#xD;
-	 ,stationcode:sh01Entity.get(&quot;stationcode&quot;),transport:sh01Entity.get(&quot;transport&quot;)});&#xD;
-     view.set((&quot;#dgSh01b.selection&quot;),view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
-     //防止系统自动的添加一行&#xD;
-     arg.processDefault = false;&#xD;
-     break;&#xD;
-	 }&#xD;
-   	 case &quot;-&quot; :{&#xD;
-	 	var dataGrid = view.get(&quot;#dgSh01b&quot;);//获取数据表格控件&#xD;
+              <ClientEvent name="onSubControlAction">var code = arg.code;&#xD;
+&#xD;
+switch (code) {&#xD;
+    case &quot;+&quot;:{&#xD;
+        view.get(&quot;#dlSh01b&quot;).show();&#xD;
+        &#xD;
+        view.set((&quot;#dgSh01b.selection&quot;), view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
+        //得到主表的数据集对象&#xD;
+        var sh01Entity = this.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
+        &#xD;
+        //根据主表的数据集得到其中的那个reference对应的数据集&#xD;
+        var dsTbsh01b = this.get(&quot;#dsSh01b&quot;);&#xD;
+        &#xD;
+        //根据得到的数据集向其中插入一条对象，注意的是：这里的deptId不是数据库中的字段，而是实体类的属性&#xD;
+        dsTbsh01b.insert({&#xD;
+            compId: sh01Entity.get(&quot;compId&quot;),&#xD;
+            compCode: sh01Entity.get(&quot;compCode&quot;),&#xD;
+            stationcode: sh01Entity.get(&quot;stationcode&quot;),&#xD;
+            transport: sh01Entity.get(&quot;transport&quot;)&#xD;
+        });&#xD;
+        view.set((&quot;#dgSh01b.selection&quot;), view.get(&quot;#dgSh01b&quot;).getCurrentItem());&#xD;
+        //防止系统自动的添加一行&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+    }&#xD;
+    case &quot;-&quot;:{&#xD;
+        var dataGrid = view.get(&quot;#dgSh01b&quot;);//获取数据表格控件&#xD;
         var selEntitys = dataGrid.get(&quot;selection&quot;);//获取所有被勾选的实体集合entityList&#xD;
         var action = view.get(&quot;#uaSh01b&quot;)&#xD;
-        if(selEntitys.length>0){&#xD;
-			dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
-			selEntitys.each(function(select){&#xD;
-				select.remove();&#xD;
-			})&#xD;
-				action.execute(function(){&#xD;
-					view.get(&quot;#uaSh01b&quot;).set(&quot;successMessage&quot;,&quot;删除成功!&quot;);&#xD;
-				});&#xD;
-			});&#xD;
-		}&#xD;
-        if(selEntitys.length&lt;1){&#xD;
-	         view.get(&quot;#msgb&quot;).set(&quot;text&quot;,&quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
-	        &#xD;
-         }&#xD;
-		arg.processDefault=false;&#xD;
-		break;&#xD;
-	 	&#xD;
-	 }&#xD;
-   }</ClientEvent>
+        if (selEntitys.length > 0) {&#xD;
+            dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;, function(){&#xD;
+                selEntitys.each(function(select){&#xD;
+                    select.remove();&#xD;
+                })&#xD;
+                action.execute(function(){&#xD;
+                    view.get(&quot;#uaSh01b&quot;).set(&quot;successMessage&quot;, &quot;删除成功!&quot;);&#xD;
+                });&#xD;
+            });&#xD;
+        }&#xD;
+        if (selEntitys.length &lt; 1) {&#xD;
+            view.get(&quot;#msgb&quot;).set(&quot;text&quot;, &quot;消息提示：请至少勾选一条数据！&quot;);&#xD;
+            &#xD;
+        }&#xD;
+        arg.processDefault = false;&#xD;
+        break;&#xD;
+        &#xD;
+    }&#xD;
+}&#xD;
+</ClientEvent>
               <Property name="itemCodes">pages,+,-,x</Property>
               <Property name="dataSet">dsSh01b</Property>
             </DataPilot>
@@ -408,11 +415,11 @@ if(selEntitys.length==1){&#xD;
               <Property name="caption">修改</Property>
             </ToolBarButton>
             <Separator/>
-            <ToolBarLabel id="msgb">
+            <Label id="msgb">
               <Property name="style">
                 <Property name="color">red</Property>
               </Property>
-            </ToolBarLabel>
+            </Label>
           </ToolBar>
           <DataGrid id="dgSh01b">
             <Property name="dataSet">dsSh01b</Property>
@@ -504,12 +511,16 @@ if(selEntitys.length==1){&#xD;
               <Property name="caption">修改</Property>
             </ToolBarButton>
             <Separator/>
-            <ToolBarLabel id="msg"/>
+            <Label id="msg">
+              <Property name="style">
+                <Property name="color">red</Property>
+              </Property>
+            </Label>
           </ToolBar>
           <DataGrid id="dgSh01">
             <ClientEvent name="onDataRowClick">var dsSh01 = view.get(&quot;#dsSh01&quot;).getData(&quot;#&quot;);&#xD;
-var sh01Id=dsSh01.get(&quot;sh01Id&quot;);&#xD;
-view.get(&quot;#dsSh01b&quot;).set(&quot;parameter&quot;,{sh01Id: sh01Id}).flushAsync();&#xD;
+var stationcode=dsSh01.get(&quot;stationcode&quot;);&#xD;
+view.get(&quot;#dsSh01b&quot;).set(&quot;parameter&quot;,{stationcode: stationcode}).flushAsync();&#xD;
 &#xD;
 &#xD;
 //var entity=view.get(&quot;#dsTbih01&quot;).getData(&quot;#&quot;);&#xD;
@@ -576,7 +587,6 @@ view.get(&quot;#dlSh01&quot;).hide();&#xD;
       <Children>
         <AutoForm id="afSh01">
           <Property name="dataSet">dsSh01</Property>
-          <Property name="dataType">dtSh01</Property>
           <Property name="cols">240,240,240</Property>
           <Property name="labelWidth">90</Property>
           <Property name="padding">0</Property>

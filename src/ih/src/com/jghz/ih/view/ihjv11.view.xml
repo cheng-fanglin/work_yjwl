@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih11">
+      <Property name="creationType">com.jghz.ih.entity.Tbih11</Property>
+      <PropertyDef name="ih11Id">
+        <Property></Property>
+        <Property name="label">系统ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司编码</Property>
+      </PropertyDef>
+      <PropertyDef name="inNo">
+        <Property></Property>
+        <Property name="label">入库单编号</Property>
+      </PropertyDef>
+      <PropertyDef name="inType">
+        <Property></Property>
+        <Property name="label">入库单类型</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadInType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="ownnerCompNo">
+        <Property></Property>
+        <Property name="label">货主单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="ownnerCompName">
+        <Property></Property>
+        <Property name="label">货主单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompNo">
+        <Property></Property>
+        <Property name="label">收货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="receiptCompName">
+        <Property></Property>
+        <Property name="label">收货单位</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同协议号</Property>
+      </PropertyDef>
+      <PropertyDef name="contractNo">
+        <Property></Property>
+        <Property name="label">采购合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="tranOrderNo">
+        <Property></Property>
+        <Property name="label">运输订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="forecastNo">
+        <Property></Property>
+        <Property name="label">通知单号</Property>
+      </PropertyDef>
+      <PropertyDef name="ladingNo">
+        <Property></Property>
+        <Property name="label">提单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNo">
+        <Property></Property>
+        <Property name="label">出厂订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderItem">
+        <Property></Property>
+        <Property name="label">订单项次号</Property>
+      </PropertyDef>
+      <PropertyDef name="transNo">
+        <Property></Property>
+        <Property name="label">运单号</Property>
+      </PropertyDef>
+      <PropertyDef name="labelNo">
+        <Property></Property>
+        <Property name="label">标签号</Property>
+      </PropertyDef>
+      <PropertyDef name="batchNo">
+        <Property></Property>
+        <Property name="label">检验批号</Property>
+      </PropertyDef>
+      <PropertyDef name="soure">
+        <Property></Property>
+        <Property name="label">数据来源</Property>
+      </PropertyDef>
+      <PropertyDef name="checkNo">
+        <Property></Property>
+        <Property name="label">关联单号</Property>
+      </PropertyDef>
+      <PropertyDef name="applyMode">
+        <Property></Property>
+        <Property name="label">单据类别</Property>
+      </PropertyDef>
+      <PropertyDef name="unit">
+        <Property></Property>
+        <Property name="label">计量单位</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">产品编码</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productDetail">
+        <Property></Property>
+        <Property name="label">产品描述</Property>
+      </PropertyDef>
+      <PropertyDef name="qb">
+        <Property></Property>
+        <Property name="label">切边</Property>
+      </PropertyDef>
+      <PropertyDef name="dc">
+        <Property></Property>
+        <Property name="label">定尺信息</Property>
+      </PropertyDef>
+      <PropertyDef name="gradeNo">
+        <Property></Property>
+        <Property name="label">牌号</Property>
+      </PropertyDef>
+      <PropertyDef name="steelNo">
+        <Property></Property>
+        <Property name="label">钢种</Property>
+      </PropertyDef>
+      <PropertyDef name="size">
+        <Property></Property>
+        <Property name="label">产品型号</Property>
+      </PropertyDef>
+      <PropertyDef name="thick">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">厚度</Property>
+      </PropertyDef>
+      <PropertyDef name="width">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">宽度</Property>
+      </PropertyDef>
+      <PropertyDef name="length">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">长度</Property>
+      </PropertyDef>
+      <PropertyDef name="pieceNum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库件数</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库数量</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">入库重量</Property>
+      </PropertyDef>
+      <PropertyDef name="volume">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">体积</Property>
+      </PropertyDef>
+      <PropertyDef name="unitWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">单重</Property>
+      </PropertyDef>
+      <PropertyDef name="inDate">
+        <Property></Property>
+        <Property name="label">入库日期</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值单价</Property>
+      </PropertyDef>
+      <PropertyDef name="cargoAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">货值金额</Property>
+      </PropertyDef>
+      <PropertyDef name="applyStatus">
+        <Property></Property>
+        <Property name="label">单据状态</Property>
+      </PropertyDef>
+      <PropertyDef name="outIx01No">
+        <Property></Property>
+        <Property name="label">发出仓库</Property>
+      </PropertyDef>
+      <PropertyDef name="deliveryTime">
+        <Property></Property>
+        <Property name="label">发货时间</Property>
+      </PropertyDef>
+      <PropertyDef name="startAddress">
+        <Property></Property>
+        <Property name="label">发运地</Property>
+      </PropertyDef>
+      <PropertyDef name="arrivalAddress">
+        <Property></Property>
+        <Property name="label">收货地</Property>
+      </PropertyDef>
+      <PropertyDef name="inIx01No">
+        <Property></Property>
+        <Property name="label">收货仓库</Property>
+      </PropertyDef>
+      <PropertyDef name="inEmp">
+        <Property></Property>
+        <Property name="label">收货人</Property>
+      </PropertyDef>
+      <PropertyDef name="tranType">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+      </PropertyDef>
+      <PropertyDef name="carTeam">
+        <Property></Property>
+        <Property name="label">车行</Property>
+      </PropertyDef>
+      <PropertyDef name="carNo">
+        <Property></Property>
+        <Property name="label">车号</Property>
+      </PropertyDef>
+      <PropertyDef name="telephone">
+        <Property></Property>
+        <Property name="label">联系电话</Property>
+      </PropertyDef>
+      <PropertyDef name="carriageAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">运费</Property>
+      </PropertyDef>
+      <PropertyDef name="tareWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">过磅皮重</Property>
+      </PropertyDef>
+      <PropertyDef name="grossWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">过磅毛重</Property>
+      </PropertyDef>
+      <PropertyDef name="netWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">过磅净重</Property>
+      </PropertyDef>
+      <PropertyDef name="kwWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">扣量</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property></Property>
+        <Property name="label">市场</Property>
+      </PropertyDef>
+      <PropertyDef name="costPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">单价</Property>
+      </PropertyDef>
+      <PropertyDef name="costAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">金额</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算单号</Property>
+      </PropertyDef>
+      <PropertyDef name="invoice">
+        <Property></Property>
+        <Property name="label">发票号</Property>
+      </PropertyDef>
+      <PropertyDef name="theoryWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">理论重量</Property>
+      </PropertyDef>
+      <PropertyDef name="weightKeep">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">重量保留</Property>
+      </PropertyDef>
+      <PropertyDef name="wareQwCode">
+        <Property></Property>
+        <Property name="label">库位</Property>
+      </PropertyDef>
+      <PropertyDef name="layerCode">
+        <Property></Property>
+        <Property name="label">层号</Property>
+      </PropertyDef>
+      <PropertyDef name="checkOut">
+        <Property></Property>
+        <Property name="label">是否合格</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadInStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="liftingTeam">
+        <Property></Property>
+        <Property name="label">装卸班组</Property>
+      </PropertyDef>
+      <PropertyDef name="liftingEmp">
+        <Property></Property>
+        <Property name="label">理货员</Property>
+      </PropertyDef>
+      <PropertyDef name="craneDriver">
+        <Property></Property>
+        <Property name="label">行车工</Property>
+      </PropertyDef>
+      <PropertyDef name="packageNo">
+        <Property></Property>
+        <Property name="label">包装物型号</Property>
+      </PropertyDef>
+      <PropertyDef name="packageWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">包装物重量</Property>
+      </PropertyDef>
+      <PropertyDef name="packageMode">
+        <Property></Property>
+        <Property name="label">包装方式</Property>
+      </PropertyDef>
+      <PropertyDef name="ifMix">
+        <Property></Property>
+        <Property name="label">是否混箱</Property>
+      </PropertyDef>
+      <PropertyDef name="desp">
+        <Property></Property>
+        <Property name="label">入库备注说明</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建者</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改者</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">VERSION</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbih11信息维护</Property>
+    <DataSet id="dataSetTbih11">
+      <Property name="dataProvider">ihjc11Service#loadTbih11</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbih11]</Property>
+    </DataSet>
+    <DataSet id="dataSetCondition">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dataSetCondition.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[BaseIhCondition]</Property>
+    </DataSet>
+    <UpdateAction id="updateActionIh11">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ihjc11Service#saveTbih11</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbih11</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionConfrim">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc11Service#saveConfirm</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxActionCancle">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc11Service#saveCancle</Property>
+    </AjaxAction>
+    <AjaxAction id="ajaxActionWareQwNo">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc11Service#savewareQwCode</Property>
+    </AjaxAction>
+    <ImportExcelAction id="importExcelAction">
+      <ClientEvent name="onSuccess">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih11&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="bigData">true</Property>
+      <Property name="startRow">2</Property>
+    </ImportExcelAction>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="formCondition">
+          <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+          <Property name="dataSet">dataSetCondition</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">inNo</Property>
+            <Property name="label">入库单编号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">labelNo</Property>
+            <Property name="label">标签号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">ladingNo</Property>
+            <Property name="label">提货单号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:4">
+            <Property name="name">custName</Property>
+            <Property name="label">客户名称</Property>
+            <Property name="trigger">cDDCustCondition</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">orderItem</Property>
+            <Property name="label">订单项次号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">inStatus</Property>
+            <Property name="label">状态</Property>
+            <Property name="property">inStatus</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">inDateS</Property>
+            <Property name="label">入库日期从</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">inDateE</Property>
+            <Property name="label">入库日期到</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Button>
+            <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih11&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync(function(entityList){&#xD;
+	if(entityList.isEmpty()){&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询无数据&quot;);&#xD;
+	}else{&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： 查询成功&quot;);&#xD;
+	}&#xD;
+});&#xD;
+}</ClientEvent>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+            <Property name="caption">查询</Property>
+          </Button>
+          <Button id="btnReset">
+            <ClientEvent name="onClick">var datas = view.get(&quot;#dataSetCondition.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+            <Property name="caption">重置</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction"> var code = arg.code;&#xD;
+&#xD;
+   switch(code){&#xD;
+     case &quot;+&quot;:{&#xD;
+	 	//得到主表的数据集对象&#xD;
+	      var dsTbih11 = view.get(&quot;#dataSetTbih11&quot;);  &#xD;
+	     //根据得到的数据集向其中插入一条对象，注意的是：这里的deptId不是数据库中的字段，而是实体类的属性&#xD;
+	     dsTbih11.insert();&#xD;
+	     view.get(&quot;#dialog1&quot;).show();&#xD;
+	     //防止系统自动的添加一行&#xD;
+	     arg.processDefault = false;&#xD;
+		 break;&#xD;
+	 }&#xD;
+	 case &quot;-&quot;:{&#xD;
+        var dgTbih11 = view.get(&quot;#dgTbih11&quot;);&#xD;
+		var updateActionIh11 = view.get(&quot;#updateActionIh11&quot;);&#xD;
+		var selection = dgTbih11.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActionIh11.execute();&#xD;
+			});&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+    }&#xD;
+&#xD;
+   }</ClientEvent>
+        <Property name="dataSet">dataSetTbih11</Property>
+        <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+      </DataPilot>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        <Property name="action">updateActionIh11</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var dgTbih11 = view.get(&quot;#dgTbih11&quot;);&#xD;
+var selection = dgTbih11.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionConfrim = view.get(&quot;#ajaxActionConfrim&quot;);&#xD;
+	ajaxActionConfrim.set(&quot;parameter&quot;,{&#xD;
+		'ListIh11' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionConfrim.execute(function() {&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;确认成功&quot;);&#xD;
+		var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with (view.get(&quot;#dataSetTbih11&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要确认的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">审核</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+        <Property name="action">updateActionConfrim</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var dgTbih11 = view.get(&quot;#dgTbih11&quot;);&#xD;
+var selection = dgTbih11.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionCancle = view.get(&quot;#ajaxActionCancle&quot;);&#xD;
+	ajaxActionCancle.set(&quot;parameter&quot;,{&#xD;
+		'ListIh11' : selection,&#xD;
+		'status' : &quot;00&quot;&#xD;
+	});&#xD;
+	ajaxActionCancle.execute(function() {&#xD;
+		dorado.widget.NotifyTipManager.notify(&quot;取消确认成功&quot;);&#xD;
+		var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+		with (view.get(&quot;#dataSetTbih11&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要取消确认的数据&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">取消审核</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var importExcelAction=view.get(&quot;#importExcelAction&quot;);&#xD;
+	importExcelAction.set(&quot;excelModelId&quot;,&quot;IH0004&quot;);&#xD;
+	importExcelAction.execute(function(arg){&#xD;
+	dorado.MessageBox.alert(&quot;成功解析导入[&quot; + arg + &quot;]数据！&quot;);&#xD;
+});&#xD;
+</ClientEvent>
+        <Property name="caption">上传导入</Property>
+        <Property name="icon">dorado/res/com/bstek/bdf2/importexcel/view/icons/page_excel.png</Property>
+      </ToolBarButton>
+      <Separator/>
+      <ToolBarLabel id="msg">
+        <Property name="style">
+          <Property name="color">red</Property>
+        </Property>
+      </ToolBarLabel>
+    </ToolBar>
+    <GroupBox layout="padding:0;regionPadding:0">
+      <Property name="caption">入库信息录入</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="formC">
+          <Property name="cols">*,*,*,*,*,*,*,*,*,*,*,*</Property>
+          <Property name="labelWidth">70</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">wareQwCode</Property>
+            <Property name="label">库位</Property>
+            <Property name="trigger">customDropDownWareNo</Property>
+            <Property name="property">wareQwCode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">liftingEmp</Property>
+            <Property name="label">理货员</Property>
+            <Property name="property">liftingEmp</Property>
+            <Property name="trigger">cDDLiftingEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">craneDriver</Property>
+            <Property name="label">行车员</Property>
+            <Property name="property">craneDriver</Property>
+            <Property name="trigger">cDDCraneDriver</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">liftingTeam</Property>
+            <Property name="label">装卸班组</Property>
+            <Property name="property">liftingTeam</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">productName</Property>
+            <Property name="label">产品名称</Property>
+            <Property name="property">productName</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Button>
+            <ClientEvent name="onClick">var entityForm = view.get(&quot;#formC&quot;).get(&quot;entity&quot;);&#xD;
+var data = view.get(&quot;#formCondition&quot;).get(&quot;entity&quot;);&#xD;
+var dgTbih11 = view.get(&quot;#dgTbih11&quot;);&#xD;
+var selection = dgTbih11.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionWareQwNo = view.get(&quot;#ajaxActionWareQwNo&quot;);&#xD;
+	ajaxActionWareQwNo.set(&quot;parameter&quot;,{&#xD;
+		'wareQwCode' : entityForm.wareQwCode,&#xD;
+		'liftingEmp' : entityForm.liftingEmp,&#xD;
+		'craneDriver' : entityForm.craneDriver,&#xD;
+		'liftingTeam' : entityForm.liftingTeam,&#xD;
+		'productName' : entityForm.productName,&#xD;
+		'ListIh11' : selection&#xD;
+	});&#xD;
+	ajaxActionWareQwNo.execute(function(returnValue) {&#xD;
+		var flag = returnValue[&quot;flag&quot;];&#xD;
+	    var msg = returnValue[&quot;msg&quot;];&#xD;
+		if(flag){&#xD;
+			with (view.get(&quot;#dataSetTbih11&quot;)){&#xD;
+				set(&quot;parameter&quot;, data);&#xD;
+				view.get(&quot;#dataSetTbih11&quot;).flush();&#xD;
+			}&#xD;
+		}&#xD;
+	&#xD;
+	});	&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要批量设置的数据&quot;);&#xD;
+}</ClientEvent>
+            <Property name="caption">批量设置</Property>
+            <Property name="width">80</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </GroupBox>
+    <DataGrid id="dgTbih11">
+      <Property name="dataSet">dataSetTbih11</Property>
+      <Property name="dataType">Tbih11</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
+      <DataColumn name="inNo">
+        <Property name="property">inNo</Property>
+        <Property name="width">90</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">checkNo</Property>
+        <Property name="name">checkNo</Property>
+        <Property name="width">120</Property>
+      </DataColumn>
+      <DataColumn name="custName">
+        <Property name="property">custName</Property>
+        <Property name="trigger">customDropDownCust</Property>
+        <Property name="width">120</Property>
+      </DataColumn>
+      <DataColumn name="labelNo">
+        <Property name="property">labelNo</Property>
+        <Property name="width">100</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">orderItem</Property>
+        <Property name="name">orderItem</Property>
+        <Property name="caption">订单项次号</Property>
+        <Property name="width">115</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">steelNo</Property>
+        <Property name="name">steelNo</Property>
+      </DataColumn>
+      <DataColumn name="productName">
+        <Property name="property">productName</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">gradeNo</Property>
+        <Property name="caption">牌号</Property>
+        <Property name="name">gradeNo</Property>
+      </DataColumn>
+      <DataColumn name="wgt">
+        <Property name="property">wgt</Property>
+        <Property name="width">60</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">wareQwCode</Property>
+        <Property name="name">wareQwCode</Property>
+        <Property name="width">50</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">layerCode</Property>
+        <Property name="name">layerCode</Property>
+        <Property name="width">40</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">size</Property>
+        <Property name="name">size</Property>
+        <Property name="width">110</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">thick</Property>
+        <Property name="name">thick</Property>
+      </DataColumn>
+      <DataColumn name="width">
+        <Property name="property">width</Property>
+      </DataColumn>
+      <DataColumn name="length">
+        <Property name="property">length</Property>
+      </DataColumn>
+      <DataColumn name="inEmp">
+        <Property name="property">inEmp</Property>
+        <Property name="caption">入库人</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">liftingEmp</Property>
+        <Property name="name">liftingEmp</Property>
+        <Property name="caption">理货员</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">craneDriver</Property>
+        <Property name="name">craneDriver</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">liftingTeam</Property>
+        <Property name="name">liftingTeam</Property>
+      </DataColumn>
+      <DataColumn name="status">
+        <Property name="property">status</Property>
+      </DataColumn>
+      <DataColumn name="inType">
+        <Property name="property">inType</Property>
+      </DataColumn>
+      <DataColumn name="inDate">
+        <Property name="property">inDate</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">qb</Property>
+        <Property name="name">qb</Property>
+      </DataColumn>
+      <DataColumn name="desp">
+        <Property name="property">desp</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialog1">
+      <Property name="height">350</Property>
+      <Property name="width">900</Property>
+      <Property name="caption">入库信息</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var action=view.get(&quot;#updateActionIh11&quot;);&#xD;
+action.execute(function(returnValue){&#xD;
+		view.get(&quot;#dialog1&quot;).hide();&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;消息提示： &quot;+returnValue[&quot;msg&quot;]);&#xD;
+});&#xD;
+</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="action">updateActionIh11</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var entityTbih11=view.get(&quot;#dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+if(entityTbih11.get(&quot;ih11Id&quot;)){&#xD;
+	&#xD;
+}else{&#xD;
+	entityTbih11.remove();&#xD;
+}&#xD;
+view.get(&quot;#dialog1&quot;).hide();</ClientEvent>
+          <Property name="caption">关闭</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm id="afTbih11">
+          <Property name="dataSet">dataSetTbih11</Property>
+          <Property name="dataType">Tbih11</Property>
+          <Property name="cols">*,*,*,*</Property>
+          <Property name="labelWidth">85</Property>
+          <AutoFormElement>
+            <Property name="name">inNo</Property>
+            <Property name="property">inNo</Property>
+            <Property name="readOnly">true</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">inType</Property>
+            <Property name="property">inType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">checkNo</Property>
+            <Property name="property">checkNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">ladingNo</Property>
+            <Property name="property">ladingNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">orderItem</Property>
+            <Property name="property">orderItem</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">custName</Property>
+            <Property name="property">custName</Property>
+            <Property name="trigger">customDropDownCust</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">labelNo</Property>
+            <Property name="property">labelNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">unit</Property>
+            <Property name="property">unit</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">productName</Property>
+            <Property name="property">productName</Property>
+            <Property name="trigger">customDropDownPro</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">thick</Property>
+            <Property name="property">thick</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">width</Property>
+            <Property name="property">width</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">length</Property>
+            <Property name="property">length</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">pieceNum</Property>
+            <Property name="property">pieceNum</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">num</Property>
+            <Property name="property">num</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">wgt</Property>
+            <Property name="property">wgt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">inDate</Property>
+            <Property name="property">inDate</Property>
+            <Property name="trigger">dateDropDown1</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">inEmp</Property>
+            <Property name="property">inEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">costPrice</Property>
+            <Property name="property">costPrice</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">costAmt</Property>
+            <Property name="property">costAmt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">wareQwCode</Property>
+            <Property name="property">wareQwCode</Property>
+            <Property name="trigger">customFormWareNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">layerCode</Property>
+            <Property name="property">layerCode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">status</Property>
+            <Property name="property">status</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">packageMode</Property>
+            <Property name="property">packageMode</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:4">
+            <Property name="name">desp</Property>
+            <Property name="property">desp</Property>
+            <Property name="editorType">TextArea</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <CustomDropDown id="customDropDownCust">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="cDDCustCondition">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetCondition&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownCarrier">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;carrierNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;carrierName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownOrderComp">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;orderCompNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;orderCompName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.custNoSelect#$dialogCustNo"/>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+    <CustomDropDown id="customDropDownPro">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个数据!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogProdNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;prodType&quot;,selectArray[&quot;typeId&quot;]);&#xD;
+			data.set(&quot;prodTypeName&quot;,selectArray[&quot;typeName&quot;]);&#xD;
+			data.set(&quot;productNo&quot;,selectArray[&quot;id&quot;]);&#xD;
+			data.set(&quot;productName&quot;,selectArray[&quot;name&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+      <Import src="com.jghz.dc.view.select.prodNoSelect#$dialogProdNo"/>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownWareNo">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogWareNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			formC.set(&quot;entity&quot;,{'wareQwCode':selectArray[&quot;qwCode&quot;],&#xD;
+			'liftingEmp':entity.liftingEmp,&#xD;
+			'craneDriver':entity.craneDriver,&#xD;
+			'liftingTeam':entity.liftingTeam,&#xD;
+			'productName':entity.productName});&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customFormWareNo">
+      <ClientEvent name="onOpen">var entity = view.id(&quot;dataSetTbih11&quot;).getData(&quot;#&quot;);&#xD;
+var dialog=view.id(&quot;$dialogWareNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			entity.set(&quot;wareQwCode&quot;,selectArray[&quot;qwCode&quot;]);&#xD;
+			entity.set(&quot;inIx01No&quot;,selectArray[&quot;wareCode&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.ih.view.select.wareNoSelect#$dialogWareNo"/>
+    <CustomDropDown id="cDDLiftingEmp">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogUser&quot;);&#xD;
+dialog.$show({&#xD;
+	width:600,&#xD;
+	height:400,&#xD;
+	callback:function(selectArray){&#xD;
+		dialog.hide();	&#xD;
+		formC.set(&quot;entity&quot;,{'wareQwCode':entity.wareQwCode,&#xD;
+		'liftingEmp':selectArray[&quot;cname&quot;],&#xD;
+		'craneDriver':entity.craneDriver,&#xD;
+		'liftingTeam':entity.liftingTeam,&#xD;
+		'productName':entity.productName});&#xD;
+	}&#xD;
+});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="cDDCraneDriver">
+      <ClientEvent name="onOpen">var formC = view.id(&quot;formC&quot;);&#xD;
+var entity = view.id(&quot;formC&quot;).get(&quot;entity&quot;);&#xD;
+var dialog=view.id(&quot;$dialogUser&quot;);&#xD;
+dialog.$show({&#xD;
+	width:600,&#xD;
+	height:400,&#xD;
+	callback:function(selectArray){&#xD;
+		dialog.hide();	&#xD;
+		formC.set(&quot;entity&quot;,{'wareQwCode':entity.wareQwCode,&#xD;
+		'liftingEmp':entity.liftingEmp,&#xD;
+		'craneDriver':selectArray[&quot;cname&quot;],&#xD;
+		'liftingTeam':entity.liftingTeam,&#xD;
+		'productName':entity.productName});&#xD;
+	}&#xD;
+});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.userSelect#$dialogUser"/>
+  </View>
+</ViewConfig>

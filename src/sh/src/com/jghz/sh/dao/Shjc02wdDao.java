@@ -18,11 +18,17 @@ public class Shjc02wdDao extends BaseDao {
 			throws Exception {
 		String hql = " from "+Tbwd02.class.getName()+ " where 1=1 ";
 		if (paramater != null) {
-			if(paramater.get("carNo")!=null){
-				hql += " and carNo like '%" +paramater.get("carNo")+"%'";
+			if(paramater.get("phoneNo")!=null){
+				hql += " and phoneNo like '%" +paramater.get("phoneNo")+"%'";
 			}
-			if(paramater.get("carType")!=null){
-				hql += " and carType like '%" +paramater.get("carType")+"%'";
+			if(paramater.get("userType")!=null){
+				hql += " and userType like '%" +paramater.get("userType")+"%'";
+			} 
+			if(paramater.get("carrierName")!=null){
+				hql += " and carrierName like '%" +paramater.get("carrierName")+"%'";
+			} 
+			if(paramater.get("state")!=null){
+				hql += " and state like '%" +paramater.get("state")+"%'";
 			} 
 		}	
 		this.pagingQuery(page, hql, "select count(*) " + hql);

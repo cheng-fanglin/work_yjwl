@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih02b">
+      <Property name="creationType">com.jghz.ih.entity.Tbih02b</Property>
+      <PropertyDef name="ih02bId">
+        <Property></Property>
+        <Property name="label">记录ID</Property>
+      </PropertyDef>
+      <PropertyDef name="ih02Id">
+        <Property></Property>
+        <Property name="label">主键ID</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="lb">
+        <Property></Property>
+        <Property name="label">类别(JY-经营/ZY-自营)</Property>
+      </PropertyDef>
+      <PropertyDef name="area">
+        <Property></Property>
+        <Property name="label">区域</Property>
+      </PropertyDef>
+      <PropertyDef name="taxNo">
+        <Property></Property>
+        <Property name="label">税号</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="dsName">
+        <Property></Property>
+        <Property name="label">抵税单位名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="dsNo">
+        <Property></Property>
+        <Property name="label">抵税单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="address">
+        <Property></Property>
+        <Property name="label">地址</Property>
+      </PropertyDef>
+      <PropertyDef name="openedBank">
+        <Property></Property>
+        <Property name="label">开户行</Property>
+      </PropertyDef>
+      <PropertyDef name="bankAcct">
+        <Property></Property>
+        <Property name="label">账号</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建者</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改者</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">VERSION</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编码</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户全称</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition">
+      <PropertyDef name="taxNo">
+        <Property></Property>
+        <Property name="label">税号</Property>
+      </PropertyDef>
+      <PropertyDef name="dsName">
+        <Property></Property>
+        <Property name="label">抵税单位名称</Property>
+      </PropertyDef>
+      <PropertyDef name="dsNo">
+        <Property></Property>
+        <Property name="label">抵税单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户全称</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编码</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSetCondition">
+      <ClientEvent name="onReady">view.get(&quot;#dataSetCondition.data&quot;).insert();</ClientEvent>
+      <Property name="dataType">[dtCondition]</Property>
+    </DataSet>
+    <DataSet id="dataSetTbih02b">
+      <Property name="dataType">[Tbih02b]</Property>
+      <Property name="dataProvider">ihjc02Service#loadTbih02b</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <FieldSet>
+      <Property name="caption">查询条件</Property>
+      <Buttons/>
+      <Children>
+        <AutoForm id="afCondition">
+          <Property name="cols">*,*,*,*,*,*,*,*,*,*</Property>
+          <Property name="labelWidth">90</Property>
+          <Property name="dataSet">dataSetCondition</Property>
+          <Property name="dataType">dtCondition</Property>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">custName</Property>
+            <Property name="property">custName</Property>
+            <Property name="label">客户全称</Property>
+            <Property name="trigger">customConditionCust</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="property">dsNo</Property>
+            <Property name="name">dsNo</Property>
+            <Property name="label">抵税单位编号</Property>
+            <Property name="trigger">customConditionCustDS</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="property">dsName</Property>
+            <Property name="name">dsName</Property>
+            <Property name="label">抵税单位名称</Property>
+            <Property name="trigger">customConditionCustDS</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement layoutConstraint="colSpan:2">
+            <Property name="name">taxNo</Property>
+            <Property name="property">taxNo</Property>
+            <Property name="label">税号</Property>
+            <Editor/>
+          </AutoFormElement>
+          <Button id="btnQuery">
+            <ClientEvent name="onClick">var data = view.get(&quot;#afCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih02b&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+            <Property name="caption">查询</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+          </Button>
+          <Button id="btnReset">
+            <ClientEvent name="onClick">view.get(&quot;#dataSetCondition.data&quot;).insert();</ClientEvent>
+            <Property name="caption">重置</Property>
+            <Property name="width">80</Property>
+            <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+          </Button>
+        </AutoForm>
+      </Children>
+    </FieldSet>
+    <ToolBar>
+      <DataPilot>
+        <Property name="dataSet">dataSetTbih02b</Property>
+        <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="action">updateActionIh02b</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbih02b</Property>
+      <Property name="dataType">Tbih02b</Property>
+      <DataColumn name="custName">
+        <Property name="property">custName</Property>
+        <Property name="trigger">customDropDownCust</Property>
+      </DataColumn>
+      <DataColumn name="taxNo">
+        <Property name="property">taxNo</Property>
+      </DataColumn>
+      <DataColumn name="dsNo">
+        <Property name="property">dsNo</Property>
+        <Property name="trigger">customDropDownCustDS</Property>
+      </DataColumn>
+      <DataColumn name="dsName">
+        <Property name="property">dsName</Property>
+        <Property name="trigger">customDropDownCustDS</Property>
+      </DataColumn>
+      <DataColumn name="address">
+        <Property name="property">address</Property>
+      </DataColumn>
+      <DataColumn name="openedBank">
+        <Property name="property">openedBank</Property>
+      </DataColumn>
+      <DataColumn name="bankAcct">
+        <Property name="property">bankAcct</Property>
+      </DataColumn>
+      <DataColumn name="area">
+        <Property name="property">area</Property>
+      </DataColumn>
+    </DataGrid>
+    <UpdateAction id="updateActionIh02b">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc02Service#saveTbih02b</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbih02b</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <CustomDropDown id="customDropDownCustDS">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih02b&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;dsNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;dsName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownCust">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih02b&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.custNoSelect#$dialogCustNo"/>
+    <CustomDropDown id="customConditionCustDS">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetCondition&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;dsNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;dsName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customConditionCust">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetCondition&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+  </View>
+</ViewConfig>

@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dtTbih03">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03</Property>
+      <PropertyDef name="ih03Id">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="yearMonth">
+        <Property></Property>
+        <Property name="label">合同年月</Property>
+      </PropertyDef>
+      <PropertyDef name="settleType">
+        <Property></Property>
+        <Property name="label">结算方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadSettleType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="tranType">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadTranType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="storagePrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">仓储价</Property>
+      </PropertyDef>
+      <PropertyDef name="kb">
+        <Property></Property>
+        <Property name="label">库别</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadKB&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="cycle">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">存储周期</Property>
+      </PropertyDef>
+      <PropertyDef name="overduePrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">超期费</Property>
+      </PropertyDef>
+      <PropertyDef name="discountPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">优惠价格</Property>
+      </PropertyDef>
+      <PropertyDef name="wareCode">
+        <Property></Property>
+        <Property name="label">仓库编码</Property>
+      </PropertyDef>
+      <PropertyDef name="wareName">
+        <Property></Property>
+        <Property name="label">仓库名称</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="usedate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="ismonth">
+        <Property></Property>
+        <Property name="label">ISMONTH_</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">起始库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结束库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="overdueStdPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">超期基价</Property>
+      </PropertyDef>
+      <PropertyDef name="overdueType">
+        <Property></Property>
+        <Property name="label">超期单价累计方式</Property>
+      </PropertyDef>
+      <PropertyDef name="prodType">
+        <Property></Property>
+        <Property name="label">产品大类</Property>
+      </PropertyDef>
+      <PropertyDef name="prodTypeName">
+        <Property></Property>
+        <Property name="label">产品大类名称</Property>
+      </PropertyDef>
+      <PropertyDef name="productNo">
+        <Property></Property>
+        <Property name="label">产品编码</Property>
+      </PropertyDef>
+      <PropertyDef name="productName">
+        <Property></Property>
+        <Property name="label">产品名称</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03a">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03a</Property>
+      <PropertyDef name="ih03aId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">起始库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结束库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="overdueStdPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">超期基价</Property>
+      </PropertyDef>
+      <PropertyDef name="overduePrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">超期单价</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="usedate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03b">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03b</Property>
+      <PropertyDef name="ih03bId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编码</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">起始库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结束库龄</Property>
+      </PropertyDef>
+      <PropertyDef name="storagePrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">仓储单价</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="usedate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="businature">
+        <Property></Property>
+        <Property name="label">经营属性</Property>
+      </PropertyDef>
+      <PropertyDef name="city">
+        <Property></Property>
+        <Property name="label">所在城市</Property>
+      </PropertyDef>
+      <PropertyDef name="kb">
+        <Property></Property>
+        <Property name="label">库别</Property>
+      </PropertyDef>
+      <PropertyDef name="isall">
+        <Property></Property>
+        <Property name="label">包干</Property>
+      </PropertyDef>
+      <PropertyDef name="stationCode">
+        <Property></Property>
+        <Property name="label">到站</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03c">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03c</Property>
+      <PropertyDef name="ih03cId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">合同号</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编码</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户</Property>
+      </PropertyDef>
+      <PropertyDef name="contWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">订货量</Property>
+      </PropertyDef>
+      <PropertyDef name="discountReason">
+        <Property></Property>
+        <Property name="label">优惠原因</Property>
+      </PropertyDef>
+      <PropertyDef name="tranType">
+        <Property></Property>
+        <Property name="label">运输方式</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadTranType&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="cycle">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">存储周期</Property>
+      </PropertyDef>
+      <PropertyDef name="discountPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">优惠价格</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="usedate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03d">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03d</Property>
+      <PropertyDef name="ih03dId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="liftingWgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">装卸重量</Property>
+      </PropertyDef>
+      <PropertyDef name="liftingNum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">装卸数量</Property>
+      </PropertyDef>
+      <PropertyDef name="transitPort">
+        <Property></Property>
+        <Property name="label">中转港口</Property>
+      </PropertyDef>
+      <PropertyDef name="liftingPrice">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">吊装价格</Property>
+      </PropertyDef>
+      <PropertyDef name="status">
+        <Property></Property>
+        <Property name="label">状态</Property>
+      </PropertyDef>
+      <PropertyDef name="stratDate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property></Property>
+        <Property name="label">截止时间</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="by4">
+        <Property></Property>
+        <Property name="label">备用4</Property>
+      </PropertyDef>
+      <PropertyDef name="by5">
+        <Property></Property>
+        <Property name="label">备用5</Property>
+      </PropertyDef>
+      <PropertyDef name="by6">
+        <Property></Property>
+        <Property name="label">备用6</Property>
+      </PropertyDef>
+      <PropertyDef name="by7">
+        <Property></Property>
+        <Property name="label">备用7</Property>
+      </PropertyDef>
+      <PropertyDef name="by8">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用8</Property>
+      </PropertyDef>
+      <PropertyDef name="by9">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用9</Property>
+      </PropertyDef>
+      <PropertyDef name="by10">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">备用10</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03e">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03e</Property>
+      <PropertyDef name="ih03eId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="date">
+        <Property></Property>
+        <Property name="label">日期</Property>
+      </PropertyDef>
+      <PropertyDef name="holiName">
+        <Property></Property>
+        <Property name="label">节假日名称</Property>
+      </PropertyDef>
+      <PropertyDef name="weekDay">
+        <Property></Property>
+        <Property name="label">周几</Property>
+      </PropertyDef>
+      <PropertyDef name="addMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">增补费用</Property>
+      </PropertyDef>
+      <PropertyDef name="type">
+        <Property></Property>
+        <Property name="label">特殊周末及法定假日区分</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="startEmp">
+        <Property></Property>
+        <Property name="label">启用人</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property></Property>
+        <Property name="label">停用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endEmp">
+        <Property></Property>
+        <Property name="label">停用人</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtTbih03f">
+      <Property name="creationType">com.jghz.ih.entity.Tbih03f</Property>
+      <PropertyDef name="ih03fId">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="startTime">
+        <Property></Property>
+        <Property name="label">时段起始时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endTime">
+        <Property></Property>
+        <Property name="label">时段截止时间</Property>
+      </PropertyDef>
+      <PropertyDef name="weekDay">
+        <Property></Property>
+        <Property name="label">周几</Property>
+      </PropertyDef>
+      <PropertyDef name="addMoney">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">增补费用</Property>
+      </PropertyDef>
+      <PropertyDef name="startDate">
+        <Property></Property>
+        <Property name="label">启用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="startEmp">
+        <Property></Property>
+        <Property name="label">启用人</Property>
+      </PropertyDef>
+      <PropertyDef name="endDate">
+        <Property></Property>
+        <Property name="label">停用时间</Property>
+      </PropertyDef>
+      <PropertyDef name="endEmp">
+        <Property></Property>
+        <Property name="label">停用人</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="state">
+        <Property></Property>
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;ihjcCommonDao#loadBasicStatus&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition1">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition2">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition3">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition4">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition5">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition6">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="dtCondition7">
+      <PropertyDef name="status">
+        <Property name="label">状态</Property>
+        <Property name="mapping">
+          <Property name="keyProperty">key</Property>
+          <Property name="mapValues">
+            <Collection>
+              <Entity>
+                <Property name="key">ON</Property>
+                <Property name="label">启用</Property>
+              </Entity>
+              <Entity>
+                <Property name="key">OFF</Property>
+                <Property name="label">停用</Property>
+              </Entity>
+            </Collection>
+          </Property>
+          <Property name="valueProperty">label</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dsCondition1">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition1.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition1]</Property>
+    </DataSet>
+    <DataSet id="dsCondition2">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition2.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition2]</Property>
+    </DataSet>
+    <DataSet id="dsCondition3">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition3.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition3]</Property>
+    </DataSet>
+    <DataSet id="dsCondition4">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition4.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition4]</Property>
+    </DataSet>
+    <DataSet id="dsCondition5">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition5.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition5]</Property>
+    </DataSet>
+    <DataSet id="dsCondition6">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition5.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition6]</Property>
+    </DataSet>
+    <DataSet id="dsCondition7">
+      <ClientEvent name="onReady">var datas = view.get(&quot;#dsCondition5.data&quot;);&#xD;
+datas.insert();</ClientEvent>
+      <Property name="dataType">[dtCondition7]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03">
+      <Property name="dataType">[dtTbih03]</Property>
+      <Property name="dataProvider">ihjc03Service#loadTbih03</Property>
+      <Property name="pageSize">20</Property>
+    </DataSet>
+    <DataSet id="dsTbih03a">
+      <Property name="dataProvider">ihjc03Service#loadTbih03a</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03a]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03b">
+      <Property name="dataProvider">ihjc03Service#loadTbih03b</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03b]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03c">
+      <Property name="dataProvider">ihjc03Service#loadTbih03c</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03c]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03d">
+      <Property name="dataProvider">ihjc03Service#loadTbih03d</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03d]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03e">
+      <Property name="dataProvider">ihjc03Service#loadTbih03e</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03e]</Property>
+    </DataSet>
+    <DataSet id="dsTbih03f">
+      <Property name="dataProvider">ihjc03Service#loadTbih03f</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[dtTbih03f]</Property>
+    </DataSet>
+    <UpdateAction id="updateAction1">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03a</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03a</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03a">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03aStu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateAction">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03Stu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateActionb">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03b</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03b</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03b">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03bStu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateActionc">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03c</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03c</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03c">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03cStu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateActiond">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03d</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03d</Property>
+        <Property name="dataPath">[#all]</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03d">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03dStu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateActione">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03e</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03e</Property>
+        <Property name="dataPath">!DIRTY_TREE</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03e">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03eStu</Property>
+    </AjaxAction>
+    <UpdateAction id="updateActionf">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="dataResolver">ihjc03Service#saveTbih03f</Property>
+      <UpdateItem>
+        <Property name="dataSet">dsTbih03f</Property>
+        <Property name="dataPath">!DIRTY_TREE</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AjaxAction id="ajaxActionIh03f">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="service">ihjc03Service#updateTbih03fStu</Property>
+    </AjaxAction>
+    <CustomDropDown id="customDropDownCusta">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsTbih03a&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+	</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownCustb">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsTbih03b&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+	</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownCustc">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dsTbih03c&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});&#xD;
+	</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.custNoSelect#$dialogCustNo"/>
+    <ListDropDown id="LDDStatus">
+      <Property name="items">
+        <Collection>
+          <Entity>
+            <Property name="key">ON</Property>
+            <Property name="lable">启用</Property>
+          </Entity>
+          <Entity>
+            <Property name="key">OFF</Property>
+            <Property name="lable">停用</Property>
+          </Entity>
+        </Collection>
+      </Property>
+      <Property name="property">key</Property>
+      <Property name="displayProperty">lable</Property>
+    </ListDropDown>
+    <TabControl>
+      <ControlTab>
+        <Property name="caption">临时价格</Property>
+        <Container>
+          <AutoForm id="afCondition4">
+            <Property name="dataType">dtCondition4</Property>
+            <Property name="dataSet">dsCondition4</Property>
+            <Property name="cols">*,*,*,*,</Property>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">status</Property>
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+              <Editor/>
+            </AutoFormElement>
+            <Button layoutConstraint="colSpan:1;align:right">
+              <ClientEvent name="onClick">var data = view.get(&quot;#dsCondition4&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+              <Property name="width">80</Property>
+            </Button>
+            <Button layoutConstraint="colSpan:1;align:left">
+              <ClientEvent name="onClick">//view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+var datas = view.get(&quot;#dsCondition4.data&quot;);&#xD;
+datas.insert();&#xD;
+</ClientEvent>
+              <Property name="caption">重置</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+              <Property name="width">80</Property>
+            </Button>
+          </AutoForm>
+          <ToolBar>
+            <DataPilot>
+              <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		&#xD;
+        var dgTbih03 = view.get(&quot;#dgTbih03&quot;);&#xD;
+	    var updateAction = view.get(&quot;#updateAction&quot;);&#xD;
+		var selection = dgTbih03.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateAction.execute();&#xD;
+	        });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg3&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+              <Property name="dataSet">dsTbih03</Property>
+              <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">updateAction</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03 = view.get(&quot;#dgTbih03&quot;);&#xD;
+var selection = dgTbih03.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03 = view.get(&quot;#ajaxActionIh03&quot;);&#xD;
+	ajaxActionIh03.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03.execute(function() {&#xD;
+		view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition4&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">启用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03 = view.get(&quot;#dgTbih03&quot;);&#xD;
+var selection = dgTbih03.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03 = view.get(&quot;#ajaxActionIh03&quot;);&#xD;
+	ajaxActionIh03.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03.execute(function() {&#xD;
+		view.get(&quot;#msg3&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		view.get(&quot;#dgTbih03&quot;).unselectAll();&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg3&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+              <Property name="caption">停用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msg3"/>
+          </ToolBar>
+          <DataGrid id="dgTbih03">
+            <Property name="dataSet">dsTbih03</Property>
+            <Property name="dataType">dtTbih03</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn/>
+            <DataColumn name="yearMonth">
+              <Property name="property">yearMonth</Property>
+              <Property name="trigger">yearMonthDropDown1</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">settleType</Property>
+              <Property name="name">settleType</Property>
+            </DataColumn>
+            <DataColumn>
+              <Property name="property">productName</Property>
+              <Property name="name">productName</Property>
+            </DataColumn>
+            <DataColumn name="kb">
+              <Property name="property">kb</Property>
+            </DataColumn>
+            <DataColumn name="cycle">
+              <Property name="property">cycle</Property>
+            </DataColumn>
+            <DataColumn name="startDate">
+              <Property name="property">startDate</Property>
+            </DataColumn>
+            <DataColumn name="endDate">
+              <Property name="property">endDate</Property>
+            </DataColumn>
+            <DataColumn name="storagePrice">
+              <Property name="property">storagePrice</Property>
+            </DataColumn>
+            <DataColumn name="overduePrice">
+              <Property name="property">overduePrice</Property>
+            </DataColumn>
+            <DataColumn name="overdueStdPrice">
+              <Property name="property">overdueStdPrice</Property>
+            </DataColumn>
+            <DataColumn name="overdueType">
+              <Property name="property">overdueType</Property>
+            </DataColumn>
+            <DataColumn name="discountPrice">
+              <Property name="property">discountPrice</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab>
+        <Property name="caption">节假日设定</Property>
+        <Container>
+          <AutoForm id="afCondition6">
+            <Property name="cols">*,*,*,*,</Property>
+            <Property name="dataSet">dsCondition6</Property>
+            <Property name="dataType">dtCondition6</Property>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">status</Property>
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+              <Editor/>
+            </AutoFormElement>
+            <Button layoutConstraint="colSpan:1;align:right">
+              <ClientEvent name="onClick">var data = view.get(&quot;#dsCondition5&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03d&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+              <Property name="width">80</Property>
+            </Button>
+            <Button layoutConstraint="colSpan:1;align:left">
+              <ClientEvent name="onClick">//view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+var datas = view.get(&quot;#dsCondition1.data&quot;);&#xD;
+datas.insert();&#xD;
+</ClientEvent>
+              <Property name="caption">重置</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+              <Property name="width">80</Property>
+            </Button>
+          </AutoForm>
+          <ToolBar>
+            <DataPilot>
+              <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03e.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+        var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+	    var updateActione = view.get(&quot;#updateActione&quot;);&#xD;
+		var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActione.execute();&#xD;
+	        });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+              <Property name="dataSet">dsTbih03e</Property>
+              <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">updateActione</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03e = view.get(&quot;#ajaxActionIh03e&quot;);&#xD;
+	ajaxActionIh03e.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03e' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03e.execute(function() {&#xD;
+		view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition6&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03e&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">启用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03e = view.get(&quot;#dgTbih03e&quot;);&#xD;
+var selection = dgTbih03e.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03e = view.get(&quot;#ajaxActionIh03e&quot;);&#xD;
+	ajaxActionIh03e.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03e' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03e.execute(function() {&#xD;
+		view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition6&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03e&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg6&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+              <Property name="caption">停用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msg6"/>
+          </ToolBar>
+          <DataGrid id="dgTbih03e">
+            <Property name="dataSet">dsTbih03e</Property>
+            <Property name="dataType">dtTbih03e</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn/>
+            <DataColumn name="date">
+              <Property name="property">date</Property>
+              <Property name="trigger">dateDropDown1</Property>
+            </DataColumn>
+            <DataColumn name="holiName">
+              <Property name="property">holiName</Property>
+            </DataColumn>
+            <DataColumn name="weekDay">
+              <Property name="property">weekDay</Property>
+            </DataColumn>
+            <DataColumn name="addMoney">
+              <Property name="property">addMoney</Property>
+            </DataColumn>
+            <DataColumn name="type">
+              <Property name="property">type</Property>
+            </DataColumn>
+            <DataColumn name="startDate">
+              <Property name="property">startDate</Property>
+            </DataColumn>
+            <DataColumn name="startEmp">
+              <Property name="property">startEmp</Property>
+            </DataColumn>
+            <DataColumn name="endDate">
+              <Property name="property">endDate</Property>
+            </DataColumn>
+            <DataColumn name="endEmp">
+              <Property name="property">endEmp</Property>
+            </DataColumn>
+            <DataColumn name="state">
+              <Property name="property">state</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab>
+        <Property name="caption">加班时间段设定</Property>
+        <Container>
+          <AutoForm id="afCondition7">
+            <Property name="cols">*,*,*,*,</Property>
+            <Property name="dataSet">dsCondition7</Property>
+            <Property name="dataType">dtCondition7</Property>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">status</Property>
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+              <Editor/>
+            </AutoFormElement>
+            <Button layoutConstraint="colSpan:1;align:right">
+              <ClientEvent name="onClick">var data = view.get(&quot;#dsCondition5&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03d&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+              <Property name="width">80</Property>
+            </Button>
+            <Button layoutConstraint="colSpan:1;align:left">
+              <ClientEvent name="onClick">//view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+var datas = view.get(&quot;#dsCondition1.data&quot;);&#xD;
+datas.insert();&#xD;
+</ClientEvent>
+              <Property name="caption">重置</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+              <Property name="width">80</Property>
+            </Button>
+          </AutoForm>
+          <ToolBar>
+            <DataPilot>
+              <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03f.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+        var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+	    var updateActionf = view.get(&quot;#updateActionf&quot;);&#xD;
+		var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActionf.execute();&#xD;
+	        });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg4&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+              <Property name="dataSet">dsTbih03f</Property>
+              <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">updateActionf</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03f = view.get(&quot;#ajaxActionIh03f&quot;);&#xD;
+	ajaxActionIh03f.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03f' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03f.execute(function() {&#xD;
+		view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition7&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03f&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">启用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03f = view.get(&quot;#dgTbih03f&quot;);&#xD;
+var selection = dgTbih03f.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03f = view.get(&quot;#ajaxActionIh03f&quot;);&#xD;
+	ajaxActionIh03f.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03f' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03f.execute(function() {&#xD;
+		view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition7&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03f&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg7&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+              <Property name="caption">停用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msg7"/>
+          </ToolBar>
+          <DataGrid id="dgTbih03f">
+            <Property name="dataSet">dsTbih03f</Property>
+            <Property name="dataType">dtTbih03f</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn/>
+            <DataColumn name="startTime">
+              <Property name="property">startTime</Property>
+              <Property name="trigger">dateDropDownT</Property>
+            </DataColumn>
+            <DataColumn name="endTime">
+              <Property name="property">endTime</Property>
+              <Property name="trigger">dateDropDownT</Property>
+            </DataColumn>
+            <DataColumn name="weekDay">
+              <Property name="property">weekDay</Property>
+            </DataColumn>
+            <DataColumn name="addMoney">
+              <Property name="property">addMoney</Property>
+            </DataColumn>
+            <DataColumn name="startDate">
+              <Property name="property">startDate</Property>
+            </DataColumn>
+            <DataColumn name="startEmp">
+              <Property name="property">startEmp</Property>
+            </DataColumn>
+            <DataColumn name="endDate">
+              <Property name="property">endDate</Property>
+            </DataColumn>
+            <DataColumn name="endEmp">
+              <Property name="property">endEmp</Property>
+            </DataColumn>
+            <DataColumn name="state">
+              <Property name="property">state</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+      <ControlTab>
+        <Property name="caption">优惠政策</Property>
+        <Container>
+          <AutoForm id="afCondition3">
+            <Property name="dataType">dtCondition3</Property>
+            <Property name="dataSet">dsCondition3</Property>
+            <Property name="cols">*,*,*,*,</Property>
+            <AutoFormElement layoutConstraint="colSpan:2">
+              <Property name="name">status</Property>
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+              <Editor/>
+            </AutoFormElement>
+            <Button layoutConstraint="colSpan:1;align:right">
+              <ClientEvent name="onClick">var data = view.get(&quot;#dsCondition3&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03c&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}</ClientEvent>
+              <Property name="caption">查询</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+              <Property name="width">80</Property>
+            </Button>
+            <Button layoutConstraint="colSpan:1;align:left">
+              <ClientEvent name="onClick">//view.get(&quot;#formCondition&quot;).set(&quot;entity&quot;,{});&#xD;
+var datas = view.get(&quot;#dsCondition3.data&quot;);&#xD;
+datas.insert();&#xD;
+</ClientEvent>
+              <Property name="caption">重置</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -20px -200px</Property>
+              <Property name="width">80</Property>
+            </Button>
+          </AutoForm>
+          <ToolBar>
+            <DataPilot>
+              <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dsTbih03c.data&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		&#xD;
+        var dgTbih03c = view.get(&quot;#dgTbih03c&quot;);&#xD;
+	    var updateActionc = view.get(&quot;#updateActionc&quot;);&#xD;
+		var selection = dgTbih03c.get('selection');//获取所有选中的数据&#xD;
+		if(selection.length>0){&#xD;
+			dorado.MessageBox.confirm(&quot;您真的想删除勾选数据吗?&quot;,function(){&#xD;
+				selection.each(function(entity){&#xD;
+					entity.remove();&#xD;
+				});&#xD;
+				updateActionc.execute();&#xD;
+		    });&#xD;
+		}else{&#xD;
+			view.get(&quot;#msg2&quot;).set(&quot;text&quot;,&quot;请先勾选需要删除的数据&quot;);&#xD;
+		}&#xD;
+        arg.processDefault=false;&#xD;
+        break;&#xD;
+	}&#xD;
+}</ClientEvent>
+              <Property name="dataSet">dsTbih03c</Property>
+              <Property name="itemCodes">pages,pageSize,+,-,x</Property>
+            </DataPilot>
+            <ToolBarButton>
+              <Property name="caption">保存</Property>
+              <Property name="action">updateActionc</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03c = view.get(&quot;#dgTbih03c&quot;);&#xD;
+var selection = dgTbih03c.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03c = view.get(&quot;#ajaxActionIh03c&quot;);&#xD;
+	ajaxActionIh03c.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03c' : selection,&#xD;
+		'status' : &quot;01&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03c.execute(function() {&#xD;
+		view.get(&quot;#msg2&quot;).set(&quot;text&quot;,&quot;启用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition3&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03c&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg2&quot;).set(&quot;text&quot;,&quot;请先勾选需要启用的数据&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+              <Property name="caption">启用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <ToolBarButton>
+              <ClientEvent name="onClick">var dgTbih03c = view.get(&quot;#dgTbih03c&quot;);&#xD;
+var selection = dgTbih03c.get('selection');//获取所有选中的数据&#xD;
+if(selection.length>0){&#xD;
+	var ajaxActionIh03c = view.get(&quot;#ajaxActionIh03c&quot;);&#xD;
+	ajaxActionIh03c.set(&quot;parameter&quot;,{&#xD;
+		'ListIh03c' : selection,&#xD;
+		'status' : &quot;10&quot;&#xD;
+	});&#xD;
+	ajaxActionIh03c.execute(function() {&#xD;
+		view.get(&quot;#msg2&quot;).set(&quot;text&quot;,&quot;停用成功&quot;);&#xD;
+		var data = view.get(&quot;#dsCondition3&quot;).getData(&quot;#&quot;);&#xD;
+		with(view.get(&quot;#dsTbih03c&quot;)){&#xD;
+			set(&quot;parameter&quot;, data);&#xD;
+			flushAsync();&#xD;
+		}&#xD;
+	});&#xD;
+}else{&#xD;
+	view.get(&quot;#msg2&quot;).set(&quot;text&quot;,&quot;请先勾选需要停用的数据&quot;);&#xD;
+}</ClientEvent>
+              <Property name="caption">停用</Property>
+              <Property name="icon">url(>skin>common/icons.gif) -100px -20px</Property>
+            </ToolBarButton>
+            <Separator/>
+            <ToolBarLabel id="msg2"/>
+          </ToolBar>
+          <DataGrid id="dgTbih03c">
+            <Property name="dataSet">dsTbih03c</Property>
+            <Property name="dataType">dtTbih03c</Property>
+            <Property name="selectionMode">multiRows</Property>
+            <RowSelectorColumn/>
+            <DataColumn name="contNo">
+              <Property name="property">contNo</Property>
+            </DataColumn>
+            <DataColumn name="custName">
+              <Property name="property">custName</Property>
+              <Property name="trigger">customDropDownCustc</Property>
+            </DataColumn>
+            <DataColumn name="contWgt">
+              <Property name="property">contWgt</Property>
+            </DataColumn>
+            <DataColumn name="tranType">
+              <Property name="property">tranType</Property>
+            </DataColumn>
+            <DataColumn name="cycle">
+              <Property name="property">cycle</Property>
+            </DataColumn>
+            <DataColumn name="discountPrice">
+              <Property name="property">discountPrice</Property>
+            </DataColumn>
+            <DataColumn name="status">
+              <Property name="property">status</Property>
+              <Property name="trigger">LDDStatus</Property>
+            </DataColumn>
+            <DataColumn name="usedate">
+              <Property name="property">usedate</Property>
+            </DataColumn>
+            <DataColumn name="createEmp">
+              <Property name="property">createEmp</Property>
+            </DataColumn>
+          </DataGrid>
+        </Container>
+      </ControlTab>
+    </TabControl>
+    <YearMonthDropDown id="yearMonthDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ym&quot;);</ClientEvent>
+    </YearMonthDropDown>
+    <DateDropDown id="dateDropDown1">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;Ymd&quot;);</ClientEvent>
+    </DateDropDown>
+    <DateDropDown id="dateDropDownT">
+      <ClientEvent name="onValueSelect">var date = new Date(arg.selectedValue );&#xD;
+arg.selectedValue = date.formatDate (&quot;H:m:s&quot;);</ClientEvent>
+      <Property name="showTimeSpinner">true</Property>
+    </DateDropDown>
+  </View>
+</ViewConfig>

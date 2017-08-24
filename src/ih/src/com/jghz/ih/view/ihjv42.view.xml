@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="Tbih42">
+      <Property name="creationType">com.jghz.ih.entity.Tbih42</Property>
+      <PropertyDef name="ih42Id">
+        <Property></Property>
+        <Property name="label">主键</Property>
+      </PropertyDef>
+      <PropertyDef name="compId">
+        <Property></Property>
+        <Property name="label">公司别</Property>
+      </PropertyDef>
+      <PropertyDef name="settleDate">
+        <Property></Property>
+        <Property name="label">结算时间</Property>
+      </PropertyDef>
+      <PropertyDef name="settleYm">
+        <Property></Property>
+        <Property name="label">结算年月</Property>
+      </PropertyDef>
+      <PropertyDef name="custNo">
+        <Property></Property>
+        <Property name="label">客户编号</Property>
+      </PropertyDef>
+      <PropertyDef name="custName">
+        <Property></Property>
+        <Property name="label">客户名称</Property>
+      </PropertyDef>
+      <PropertyDef name="orderCompNo">
+        <Property></Property>
+        <Property name="label">订货单位编号</Property>
+      </PropertyDef>
+      <PropertyDef name="orderCompName">
+        <Property></Property>
+        <Property name="label">订货单位</Property>
+      </PropertyDef>
+      <PropertyDef name="invCustNo">
+        <Property></Property>
+        <Property name="label">开票单位编码</Property>
+      </PropertyDef>
+      <PropertyDef name="invCustName">
+        <Property></Property>
+        <Property name="label">开票单位</Property>
+      </PropertyDef>
+      <PropertyDef name="payCompNo">
+        <Property></Property>
+        <Property name="label">付款公司编码</Property>
+      </PropertyDef>
+      <PropertyDef name="payCompName">
+        <Property></Property>
+        <Property name="label">付款公司名称</Property>
+      </PropertyDef>
+      <PropertyDef name="settleNo">
+        <Property></Property>
+        <Property name="label">结算单号</Property>
+      </PropertyDef>
+      <PropertyDef name="billNo">
+        <Property></Property>
+        <Property name="label">开票编号</Property>
+      </PropertyDef>
+      <PropertyDef name="billType">
+        <Property></Property>
+        <Property name="label">开票类型</Property>
+      </PropertyDef>
+      <PropertyDef name="fkxm">
+        <Property></Property>
+        <Property name="label">付款项目</Property>
+      </PropertyDef>
+      <PropertyDef name="wgt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发货重量</Property>
+      </PropertyDef>
+      <PropertyDef name="num">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">发货数量</Property>
+      </PropertyDef>
+      <PropertyDef name="price">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">结算价</Property>
+      </PropertyDef>
+      <PropertyDef name="totalAmt">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">金额</Property>
+      </PropertyDef>
+      <PropertyDef name="taxNo">
+        <Property></Property>
+        <Property name="label">税号</Property>
+      </PropertyDef>
+      <PropertyDef name="openedBank">
+        <Property></Property>
+        <Property name="label">开户行名称</Property>
+      </PropertyDef>
+      <PropertyDef name="bankAcct">
+        <Property></Property>
+        <Property name="label">账号</Property>
+      </PropertyDef>
+      <PropertyDef name="adderss">
+        <Property></Property>
+        <Property name="label">开票单位地址</Property>
+      </PropertyDef>
+      <PropertyDef name="falg">
+        <Property></Property>
+        <Property name="label">审核标志</Property>
+      </PropertyDef>
+      <PropertyDef name="checkMan">
+        <Property></Property>
+        <Property name="label">审核人</Property>
+      </PropertyDef>
+      <PropertyDef name="checkDate">
+        <Property></Property>
+        <Property name="label">审核日期</Property>
+      </PropertyDef>
+      <PropertyDef name="isBill">
+        <Property></Property>
+        <Property name="label">是否开票</Property>
+      </PropertyDef>
+      <PropertyDef name="spEmp">
+        <Property></Property>
+        <Property name="label">收票人</Property>
+      </PropertyDef>
+      <PropertyDef name="spDate">
+        <Property></Property>
+        <Property name="label">收票日期</Property>
+      </PropertyDef>
+      <PropertyDef name="isfk">
+        <Property></Property>
+        <Property name="label">是否付款</Property>
+      </PropertyDef>
+      <PropertyDef name="settleType">
+        <Property></Property>
+        <Property name="label">结算方式</Property>
+      </PropertyDef>
+      <PropertyDef name="payEmp">
+        <Property></Property>
+        <Property name="label">付款人</Property>
+      </PropertyDef>
+      <PropertyDef name="payDate">
+        <Property></Property>
+        <Property name="label">付款日期</Property>
+      </PropertyDef>
+      <PropertyDef name="ysyf">
+        <Property></Property>
+        <Property name="label">应收应付标志</Property>
+      </PropertyDef>
+      <PropertyDef name="orderNo">
+        <Property></Property>
+        <Property name="label">订单号</Property>
+      </PropertyDef>
+      <PropertyDef name="contNo">
+        <Property></Property>
+        <Property name="label">协议号</Property>
+      </PropertyDef>
+      <PropertyDef name="discount">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">折扣</Property>
+      </PropertyDef>
+      <PropertyDef name="tax">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">税率</Property>
+      </PropertyDef>
+      <PropertyDef name="taxSum">
+        <Property name="dataType">BigDecimal</Property>
+        <Property name="label">价税合计</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierNo">
+        <Property></Property>
+        <Property name="label">承运商编号</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierName">
+        <Property></Property>
+        <Property name="label">承运商名称</Property>
+      </PropertyDef>
+      <PropertyDef name="carrierDept">
+        <Property></Property>
+        <Property name="label">承运部门</Property>
+      </PropertyDef>
+      <PropertyDef name="by1">
+        <Property></Property>
+        <Property name="label">备用1</Property>
+      </PropertyDef>
+      <PropertyDef name="by2">
+        <Property></Property>
+        <Property name="label">备用2</Property>
+      </PropertyDef>
+      <PropertyDef name="by3">
+        <Property></Property>
+        <Property name="label">备用3</Property>
+      </PropertyDef>
+      <PropertyDef name="createEmp">
+        <Property></Property>
+        <Property name="label">创建人</Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">创建时间</Property>
+      </PropertyDef>
+      <PropertyDef name="updateEmp">
+        <Property></Property>
+        <Property name="label">修改人</Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+        <Property name="label">修改时间</Property>
+      </PropertyDef>
+      <PropertyDef name="version">
+        <Property name="dataType">int</Property>
+        <Property name="label">版本号</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="title">Tbih41信息维护</Property>
+    <DataSet id="dataSetTbih42">
+      <Property name="dataProvider">ihjc42Service#loadTbih42</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[Tbih42]</Property>
+    </DataSet>
+    <UpdateAction id="actionUpdate">
+      <ClientEvent name="onFailure">dorado.MessageBox.alert(arg.error.message);&#xD;
+arg.processDefault = false;</ClientEvent>
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">ihjc42Service#saveTbih42</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetTbih41</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="cols">*,*,*,*,*</Property>
+      <AutoFormElement>
+        <Property name="name">settleYm</Property>
+        <Property name="label">结算年月</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">custName</Property>
+        <Property name="label">客户名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">orderCompName</Property>
+        <Property name="label">订货单位</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">billCompName</Property>
+        <Property name="label">开票单位</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">getCompName</Property>
+        <Property name="label">收款公司</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">billNo</Property>
+        <Property name="label">开票编号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">fkxm</Property>
+        <Property name="label">付款项目</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">payDate</Property>
+        <Property name="label">付款日期</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">settleNo</Property>
+        <Property name="label">结算单号</Property>
+        <Editor/>
+      </AutoFormElement>
+      <Button>
+        <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetTbih41&quot;)){&#xD;
+	set(&quot;parameter&quot;, data);&#xD;
+	flushAsync();&#xD;
+}</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -20px -40px</Property>
+      </Button>
+    </AutoForm>
+    <ToolBar>
+      <DataPilot>
+        <ClientEvent name="onSubControlAction">var datas = view.get(&quot;#dataSetTbih42.data&quot;);&#xD;
+var action = view.get(&quot;#actionUpdate&quot;);&#xD;
+switch(arg.code){&#xD;
+	case &quot;+&quot;:{&#xD;
+		datas.insert();&#xD;
+		view.get(&quot;#dialogTbih42&quot;).show();&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+	case &quot;-&quot;:{&#xD;
+		dorado.MessageBox.confirm(&quot;您真的想删除当前数据吗?&quot;,function(){&#xD;
+			datas.remove();&#xD;
+			actionUpdate.execute();&#xD;
+		});&#xD;
+		arg.processDefault=false;&#xD;
+		break;&#xD;
+	}&#xD;
+}</ClientEvent>
+        <Property name="dataSet">dataSetTbih42</Property>
+        <Property name="itemCodes">pages,+,-,x</Property>
+      </DataPilot>
+      <Separator/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbih42.data&quot;);&#xD;
+if(data.current){&#xD;
+	view.get(&quot;#dialogTbih42&quot;).show();&#xD;
+}else{&#xD;
+	dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">修改</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -200px -0px</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">保存</Property>
+        <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        <Property name="action">actionUpdate</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid>
+      <Property name="dataSet">dataSetTbih42</Property>
+      <Property name="dataType">Tbih42</Property>
+      <Property name="readOnly">true</Property>
+      <Property name="stretchColumnsMode">off</Property>
+      <DataColumn name="settleDate">
+        <Property name="property">settleDate</Property>
+      </DataColumn>
+      <DataColumn name="settleYm">
+        <Property name="property">settleYm</Property>
+      </DataColumn>
+      <DataColumn name="custName">
+        <Property name="property">custName</Property>
+        <Property name="trigger">customDropDownCust</Property>
+      </DataColumn>
+      <DataColumn name="orderCompName">
+        <Property name="property">orderCompName</Property>
+        <Property name="trigger">customDropDownOrderComp</Property>
+      </DataColumn>
+      <DataColumn name="invCustName">
+        <Property name="property">invCustName</Property>
+        <Property name="trigger">customDropDownBillComp</Property>
+      </DataColumn>
+      <DataColumn name="payCompName">
+        <Property name="property">payCompName</Property>
+        <Property name="trigger">customDropDownPayComp</Property>
+      </DataColumn>
+      <DataColumn name="settleNo">
+        <Property name="property">settleNo</Property>
+      </DataColumn>
+      <DataColumn name="billNo">
+        <Property name="property">billNo</Property>
+      </DataColumn>
+      <DataColumn name="billType">
+        <Property name="property">billType</Property>
+      </DataColumn>
+      <DataColumn name="fkxm">
+        <Property name="property">fkxm</Property>
+      </DataColumn>
+      <DataColumn name="wgt">
+        <Property name="property">wgt</Property>
+      </DataColumn>
+      <DataColumn name="num">
+        <Property name="property">num</Property>
+      </DataColumn>
+      <DataColumn name="price">
+        <Property name="property">price</Property>
+      </DataColumn>
+      <DataColumn name="totalAmt">
+        <Property name="property">totalAmt</Property>
+      </DataColumn>
+      <DataColumn name="taxNo">
+        <Property name="property">taxNo</Property>
+      </DataColumn>
+      <DataColumn name="openedBank">
+        <Property name="property">openedBank</Property>
+      </DataColumn>
+      <DataColumn name="bankAcct">
+        <Property name="property">bankAcct</Property>
+      </DataColumn>
+      <DataColumn name="adderss">
+        <Property name="property">adderss</Property>
+      </DataColumn>
+      <DataColumn name="falg">
+        <Property name="property">falg</Property>
+      </DataColumn>
+      <DataColumn name="checkMan">
+        <Property name="property">checkMan</Property>
+      </DataColumn>
+      <DataColumn name="checkDate">
+        <Property name="property">checkDate</Property>
+      </DataColumn>
+      <DataColumn name="isBill">
+        <Property name="property">isBill</Property>
+      </DataColumn>
+      <DataColumn name="spEmp">
+        <Property name="property">spEmp</Property>
+      </DataColumn>
+      <DataColumn name="spDate">
+        <Property name="property">spDate</Property>
+      </DataColumn>
+      <DataColumn name="isfk">
+        <Property name="property">isfk</Property>
+      </DataColumn>
+      <DataColumn name="settleType">
+        <Property name="property">settleType</Property>
+      </DataColumn>
+      <DataColumn name="payEmp">
+        <Property name="property">payEmp</Property>
+      </DataColumn>
+      <DataColumn name="payDate">
+        <Property name="property">payDate</Property>
+      </DataColumn>
+      <DataColumn name="ysyf">
+        <Property name="property">ysyf</Property>
+      </DataColumn>
+      <DataColumn name="orderNo">
+        <Property name="property">orderNo</Property>
+      </DataColumn>
+      <DataColumn name="contNo">
+        <Property name="property">contNo</Property>
+      </DataColumn>
+      <DataColumn name="discount">
+        <Property name="property">discount</Property>
+      </DataColumn>
+      <DataColumn name="tax">
+        <Property name="property">tax</Property>
+      </DataColumn>
+      <DataColumn name="taxSum">
+        <Property name="property">taxSum</Property>
+      </DataColumn>
+      <DataColumn name="carrierName">
+        <Property name="property">carrierName</Property>
+        <Property name="trigger">customDropDownCarrier</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogTbih42">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">false</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.get(&quot;#dialogTbih42&quot;);&#xD;
+var action=view.get(&quot;#actionUpdate&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+	action.execute(function(){&#xD;
+		dialog.hide();&#xD;
+	});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -140px -20px</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var data=view.get(&quot;#dataSetTbih42&quot;).getData();&#xD;
+var dialog=view.get(&quot;#dialogTbih42&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+	data.cancel();&#xD;
+	dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="icon">url(>skin>common/icons.gif) -40px -0px</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="dataSet">dataSetTbih42</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement>
+            <Property name="name">settleDate</Property>
+            <Property name="property">settleDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">settleYm</Property>
+            <Property name="property">settleYm</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">custName</Property>
+            <Property name="property">custName</Property>
+            <Property name="trigger">customDropDownCust</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">orderCompName</Property>
+            <Property name="property">orderCompName</Property>
+            <Property name="trigger">customDropDownOrderComp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">invCustName</Property>
+            <Property name="property">invCustName</Property>
+            <Property name="trigger">customDropDownBillComp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">payCompName</Property>
+            <Property name="property">payCompName</Property>
+            <Property name="trigger">customDropDownPayComp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">carrierName</Property>
+            <Property name="property">carrierName</Property>
+            <Property name="trigger">customDropDownCarrier</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">settleNo</Property>
+            <Property name="property">settleNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">billNo</Property>
+            <Property name="property">billNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">billType</Property>
+            <Property name="property">billType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">fkxm</Property>
+            <Property name="property">fkxm</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">wgt</Property>
+            <Property name="property">wgt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">num</Property>
+            <Property name="property">num</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">price</Property>
+            <Property name="property">price</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">totalAmt</Property>
+            <Property name="property">totalAmt</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">taxNo</Property>
+            <Property name="property">taxNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">openedBank</Property>
+            <Property name="property">openedBank</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">bankAcct</Property>
+            <Property name="property">bankAcct</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">adderss</Property>
+            <Property name="property">adderss</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">falg</Property>
+            <Property name="property">falg</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">checkMan</Property>
+            <Property name="property">checkMan</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">checkDate</Property>
+            <Property name="property">checkDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isBill</Property>
+            <Property name="property">isBill</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">spEmp</Property>
+            <Property name="property">spEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">spDate</Property>
+            <Property name="property">spDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">isfk</Property>
+            <Property name="property">isfk</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">settleType</Property>
+            <Property name="property">settleType</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">payEmp</Property>
+            <Property name="property">payEmp</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">payDate</Property>
+            <Property name="property">payDate</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">ysyf</Property>
+            <Property name="property">ysyf</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">orderNo</Property>
+            <Property name="property">orderNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">contNo</Property>
+            <Property name="property">contNo</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">discount</Property>
+            <Property name="property">discount</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">tax</Property>
+            <Property name="property">tax</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement>
+            <Property name="name">taxSum</Property>
+            <Property name="property">taxSum</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <CustomDropDown id="customDropDownCust">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih42&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;custNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;custName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownCarrier">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih42&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;carrierNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;carrierName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownOrderComp">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih42&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;orderCompNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;orderCompName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownBillComp">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih42&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;invCustNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;invCustName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <CustomDropDown id="customDropDownPayComp">
+      <ClientEvent name="onOpen">var data=view.id(&quot;dataSetTbih42&quot;).getData(&quot;#&quot;);&#xD;
+if(!data){&#xD;
+	dorado.MessageBox.alert(&quot;请先选中一个角色!&quot;);&#xD;
+	arg.processDefault=false;&#xD;
+	return;&#xD;
+}&#xD;
+var dialog=view.id(&quot;$dialogCustNo&quot;);&#xD;
+	dialog.$show({&#xD;
+		width:600,&#xD;
+		height:500,&#xD;
+		callback:function(selectArray){&#xD;
+			dialog.hide();&#xD;
+			data.set(&quot;payCompNo&quot;,selectArray[&quot;custNo&quot;]);&#xD;
+			data.set(&quot;payCompName&quot;,selectArray[&quot;custName&quot;]);&#xD;
+		}&#xD;
+	});</ClientEvent>
+    </CustomDropDown>
+    <Import src="com.jghz.dc.view.select.custNoSelect#$dialogCustNo"/>
+  </View>
+</ViewConfig>
